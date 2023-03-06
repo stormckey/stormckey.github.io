@@ -56,8 +56,19 @@ markdown_extensions:
 #enable math syntax
   - pymdownx.arithmatex:
       generic: true
+#enable table of content
+  - toc
+
 
 extra_javascript:
-  - javascripts/mathjax.js
+  - https://github.com/stormckey/Reference/blob/main/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Blog: 
+    - Blog/index.md
+    - New: Blog/New.md
+  - nblog:
+    - NewNew: Blog/NewNew.md
