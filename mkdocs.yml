@@ -1,0 +1,17 @@
+# Project information
+site_name: Stormckey
+site_url: https://stormckey.github.io/
+site_author: Stormckey
+# Repository
+repo_name: stormckey
+repo_url: https://github.com/stormckey
+
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; stormckey
+
+theme:
+    name: material
+    features:
+        - content.action.edit
