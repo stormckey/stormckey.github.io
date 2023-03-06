@@ -4,7 +4,7 @@ site_url: https://stormckey.github.io/
 site_author: Stormckey
 # Repository
 repo_name: stormckey
-repo_url: https://github.com/stormckey
+repo_url: https://github.com/stormckey/stormckey.github.io
 
 edit_uri: edit/main/docs/
 
@@ -14,4 +14,9 @@ copyright: Copyright &copy; stormckey
 theme:
     name: material
     features:
-        - content.action.edit
+        - content.action.edit # the edit icon in page
+        - content.action.view # the view icon in page
+        - content.code.copy
+        - navigation.tabs
+        - navigation.tabs.sticky
+        - navigation.sections
