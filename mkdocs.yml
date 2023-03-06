@@ -18,5 +18,46 @@ theme:
         - content.action.view # the view icon in page
         - content.code.copy
         - navigation.tabs
-        - navigation.tabs.sticky
         - navigation.sections
+
+plugins:
+    # - table-reader     cant find the plugin for unknow reason
+
+markdown_extensions:
+#enable admonition
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences # allow nest codes
+#enable code config
+  - pymdownx.inlinehilite #inline code highlight
+  - pymdownx.snippets #enable to embed arbitrary files
+  - pymdownx.highlight:
+        linenums: true
+#enable button
+  - attr_list  
+#enable content tabs
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - tables
+#daigrams are not enabled
+  - footnotes
+#enable emoji
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+#image alignment
+  - md_in_html
+#better list
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+#abbr
+  - abbr 
+#enable math syntax
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
