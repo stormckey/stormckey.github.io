@@ -2,11 +2,11 @@
 comments: true
 ---
 # Format Catagory
-??? abstraction
+!!! abstraction
     Thie page includes all the formats this website can employ.
     Most of the formats are available from the [Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/) 
 
-!!! info
+!!! warning
     Early version. All formats are just listed below.
 
 ```C

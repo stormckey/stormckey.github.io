@@ -5,5 +5,5 @@ comments: true
 ## My notes during college
 
 !!! info 
-    Please wait for furter upload.
+    Please wait for further upload.
     I dont take much notes during my college

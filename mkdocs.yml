@@ -1,5 +1,5 @@
 # Project information
-site_name: Stormckey
+site_name: Stormckey's Page
 site_url: https://stormckey.github.io/
 site_author: Stormckey
 # Repository
@@ -128,6 +128,7 @@ nav:
   - Blog: 
     - Blog/index.md
     - Format: Blog/Format.md
-    - How I build such a website: Blog/Build_this_website.md
+    - How to build a website like this?: Blog/Build_this_website.md
+    - 原型、妇女节: Blog/Women_and_prototype.md
   - Note:
     - Note/index.md
