@@ -11,12 +11,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stormckey.github.io/Blog/New/</loc>
+         <loc>https://stormckey.github.io/Blog/Build_this_website/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stormckey.github.io/Blog/NewNew/</loc>
+         <loc>https://stormckey.github.io/Blog/Format/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Note/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
