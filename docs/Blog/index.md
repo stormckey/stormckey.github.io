@@ -1,36 +1,9 @@
+---
+comments: true
+---
 # Blog 
-## 1
-### 2
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-i   
-## 3
-### 4
+
+## Just some funny things found
+
+!!! info
+    This page is under constructing:warning:, please wait
