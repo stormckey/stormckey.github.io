@@ -1,7 +1,8 @@
 ---
 comments: true
 ---
-# My notes during college
+# Note
+## My notes during college
 
 !!! info 
     Please wait for furter upload.

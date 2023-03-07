@@ -128,6 +128,6 @@ nav:
   - Blog: 
     - Blog/index.md
     - Format: Blog/Format.md
-    - How_to_build_such_website: Blog/Build_this_website.md
+    - How I build such a website: Blog/Build_this_website.md
   - Note:
     - Note/index.md

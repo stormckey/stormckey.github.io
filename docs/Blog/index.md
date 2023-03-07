@@ -3,7 +3,7 @@ comments: true
 ---
 # Blog 
 
-## Just some funny things found
+## Maybe some funny things I found
 
 !!! info
-    This page is under constructing:warning:, please wait
+    This page is under constructing :warning: , please wait
