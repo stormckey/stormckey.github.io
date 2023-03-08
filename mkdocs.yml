@@ -40,8 +40,9 @@ theme:
 
 plugins:
   - search:
-      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+      separator: '[\s\u200b\-]'
   - git-revision-date-localized:
+  - tooltips
       # enable_creation_date: f
 
 
@@ -102,6 +103,8 @@ extra:
   #     find what they're searching for. With your consent, you're helping us to
   #     make our documentation better.
 
+extra_css:
+  - css/hint.min.css
 
 #enable analytics
 # extra:
