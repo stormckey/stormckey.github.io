@@ -4,8 +4,7 @@
 [data-md-color-accent=indigo] {
   --md-accent-fg-color: #FFACA6;
 }
-:root, [data-md-color-scheme=default] {
-    --md-default-bg-color: #FFFFD9;
+[data-md-color-scheme=default] {
     --md-typeset-a-color: #526cfe;
 }
 /* 图片放大start */
