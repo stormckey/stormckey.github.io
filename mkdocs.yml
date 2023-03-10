@@ -139,8 +139,12 @@ nav:
   - Note:
     - Note/index.md
     - DS:
-      # - BST,AVL,Splay: Note/DS/BST&AVL&Splay.md
-      - B-Tree,B+Tree: Note/DS/B-Tree B+Tree.md
+      - BST,AVL,Splay: Note/DS/BST_AVL_Splay.md
+      - B-Tree,B+Tree: Note/DS/B-Tree_B+Tree.md
+      - Red-Black Tree: Note/DS/RBTree.md
     - Missing Semester:
       - Shell: Note/Missing Semester/Shell.md
+      - Shell++: Note/Missing Semester/Shell++.md
+      - Vim: Note/Missing Semester/Vim.md
+      - Data: Note/Missing Semester/Data.md
       - Git: Note/Missing Semester/Git.md
