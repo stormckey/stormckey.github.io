@@ -10,8 +10,10 @@
         <meta name="author" content="Stormckey">
       
       
-        <link rel="canonical" href="https://stormckey.github.io/Note/DS/BST%26AVL%26Splay/">
+        <link rel="canonical" href="https://stormckey.github.io/Note/Missing%20Semester/Git/">
       
+      
+        <link rel="prev" href="../Shell/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -19,7 +21,7 @@
     
     
       
-        <title>BST&AVL&Splay - Stormckey's Page</title>
+        <title>Git - Stormckey's Page</title>
       
     
     
@@ -72,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#git-learning-notes" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -101,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              BST&AVL&Splay
+              Git
             
           </span>
         </div>
@@ -227,13 +234,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Note
       </a>
     </li>
@@ -396,14 +405,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -412,7 +423,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Note
@@ -468,9 +479,171 @@
   
   
     <li class="md-nav__item">
-      <a href="../B-Tree%2CB%2BTree/" class="md-nav__link">
+      <a href="../../DS/B-Tree%20B%2BTree/" class="md-nav__link">
         B-Tree,B+Tree
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          Missing Semester
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Missing Semester
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Shell/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Git
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-terminology" class="md-nav__link">
+    1. Terminology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-git-data-model" class="md-nav__link">
+    2. Git Data Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-commands" class="md-nav__link">
+    3. Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branching-and-merging" class="md-nav__link">
+    Branching and Merging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remotes" class="md-nav__link">
+    Remotes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undo" class="md-nav__link">
+    Undo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-git" class="md-nav__link">
+    Advanced Git
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -506,6 +679,78 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-terminology" class="md-nav__link">
+    1. Terminology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-git-data-model" class="md-nav__link">
+    2. Git Data Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-commands" class="md-nav__link">
+    3. Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branching-and-merging" class="md-nav__link">
+    Branching and Merging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remotes" class="md-nav__link">
+    Remotes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undo" class="md-nav__link">
+    Undo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-git" class="md-nav__link">
+    Advanced Git
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -520,7 +765,7 @@
                   
 
   
-    <a href="https://github.com/stormckey/stormckey.github.io/edit/main/docs/Note/DS/BST&AVL&Splay.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/stormckey/stormckey.github.io/edit/main/docs/Note/Missing Semester/Git.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -529,56 +774,134 @@
     
       
     
-    <a href="https://github.com/stormckey/stormckey.github.io/raw/main/docs/Note/DS/BST&AVL&Splay.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/stormckey/stormckey.github.io/raw/main/docs/Note/Missing Semester/Git.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-  <h1>BST&AVL&Splay</h1>
+<h1 id="git-learning-notes">Git Learning Notes</h1>
+<h2 id="1-terminology">1. Terminology</h2>
+<ul>
+<li>一个文件被称作<strong>blob</strong>.  </li>
+<li>一个文件夹被称作<strong>tree</strong>.  </li>
+<li>整个仓库的快照被称作<strong>commit</strong>.  </li>
+<li>commit的有向无环图构成<strong>history</strong>. </li>
+<li>一个<strong>object</strong>是blob、tree或者commit，没个对象都有自己对应的hash.</li>
+<li>一个<strong>reference</strong>是一个对象的别名，或者我们通过hash来引用一个对象.</li>
+<li><strong>main/master</strong> 作为一个特殊的reference总是指向开发中的最新稳定版本.</li>
+<li><strong>HEAD</strong> 作为一个特殊引用指向我们目前在历史中的何处.</li>
+<li>一个 <strong>Git repository</strong>* 是object和reference的集合.</li>
+<li><strong>Staging area</strong> 是一种机制来让我们指定哪些对象要被commit, 而非整个仓库.</li>
+</ul>
+<h2 id="2-git-data-model">2. Git Data Model</h2>
+<p>首先定义数据对象
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>// a file is a bunch of bytes
+type blob = array&lt;byte&gt;
 
-<ol>
-<li>
-<p>我们在调用search时会多传递一个引用的参数hot 其意义如下：</p>
-<p><img alt="" src="../images/media/image1.png" /></p>
-<p>这有利于我们实现insert delete</p>
-</li>
-<li>
-<p>BST的平均高度，有两种计算方式</p>
-<ol>
-<li>
-<p>随机组成：计算一共有多少种可能的拓扑结构 根号n Catalan（N）种结构</p>
-</li>
-<li>
-<p>随机生成：计算一共有多少种可能的输入序列 ln N N！种序列</p>
-</li>
-</ol>
-<p><img alt="" src="../images/media/image2.png" /></p>
-<p>随机组成更加可信，因为随机生成会额外增大213和231这一较低树的权重，重复了</p>
-</li>
-<li>
-<p>等价BST</p>
-<p>上下具有一定的灵活度</p>
-<p><img alt="" src="../images/media/image3.png" /></p>
-<p><img alt="" src="../images/media/image4.png" /></p>
-</li>
-<li>
-<p><img alt="" src="../images/media/image5.png" /></p>
-<p>左分叉是zig右分叉是zag，旋转可以保持BST的等价</p>
-</li>
-<li>
-<p>AVL的插入可能会导致一系列祖先的失衡，但是删除只可能导致某一个祖先的失衡</p>
-</li>
-<li>
-<p><img alt="" src="../images/media/image6.png" /></p>
-<p>注意到我们找到第一个失衡点之后，循环走啊路径只要往下找两次高度最高的孩子就好</p>
-</li>
-<li>
-<p>伸展树的删除和插入，由于1都需要用search操作，search完后self/hot会成为新的根节点，我们的插入删除只要在搜索完后对根操作即可。</p>
-<p><img alt="" src="../images/media/image7.png" /></p>
-</li>
-</ol>
+// a directory contains named files and directories
+type tree = map&lt;string, tree | blob&gt;
+
+// a commit has parents, metadata, and the top-level tree
+type commit = struct {
+    parents: array&lt;commit&gt;
+    author: string
+    message: string
+    snapshot: tree
+}
+
+//An object is a blob,tree,or commit
+type object = blob | tree | commit
+</code></pre></div></td></tr></table></div></p>
+<p>在Git存储结构中，每个对象对应一个hash
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>objects = map&lt;string, object&gt;
+
+def store(object):
+    id = sha1(object)
+    objects[id] = object
+
+def load(id):
+    return objects[id]
+</code></pre></div></td></tr></table></div></p>
+<h2 id="3-commands">3. Commands</h2>
+<h3 id="basics">Basics</h3>
+<ul>
+<li><code>git help &lt;command&gt;</code> : get help for a git command</li>
+<li><code>git init</code> : creates a new git repo, with data stored in the .git directory</li>
+<li><code>git status</code> : tells you what’s going on</li>
+<li><code>git add &lt;filename&gt;</code> : adds files to staging area</li>
+<li><code>git commit</code> : creates a new commit</li>
+<li><code>git log</code> : shows a flattened log of history</li>
+<li><code>git log --all --graph --decorate</code> : visualizes history as a DAG</li>
+<li><code>git diff &lt;filename&gt;</code> : show the differences between current file and HEAD version file</li>
+<li><code>git diff &lt;revision&gt; &lt;filename&gt;</code> : shows differences between current file and specified snapshot</li>
+<li><code>git diff &lt;reversin&gt; &lt;reversion&gt; &lt;filename&gt;</code> shows the differences between two specified version of file</li>
+<li><code>git checkout &lt;revision&gt;</code> : updates HEAD and current branch</li>
+<li><code>git checkout &lt;filename&gt;</code> : erase all the changes we made after the HEAD version for this file</li>
+<li><code>git cat-file -p &lt;hash&gt;</code> : The instruction to catch a tree or blob</li>
+</ul>
+<h3 id="branching-and-merging">Branching and Merging</h3>
+<ul>
+<li><code>git branch</code>: shows branches</li>
+<li><code>git branch &lt;name&gt;</code>: creates a branch</li>
+<li><code>git checkout -b &lt;name&gt;</code>: creates a branch and switches to it</li>
+<li>same as <code>git branch &lt;name&gt;</code>; <code>git checkout &lt;name&gt;</code></li>
+<li><code>git merge &lt;revision&gt;</code> : merges into current branch;wait for latter adjustments when conflictions occur(But the file has been changed already)</li>
+<li><code>git merge --abort</code> : erase the changes git try to make when an merge conflict occurs</li>
+<li><code>git merge --continue</code> : continue to merge after you fix the merge confliction</li>
+<li><code>git mergetool</code>: use a fancy tool to help resolve merge conflicts</li>
+<li><code>git rebase</code>: rebase set of patches onto a new base</li>
+</ul>
+<h3 id="remotes">Remotes</h3>
+<ul>
+<li><code>git remote</code>: list remotes</li>
+<li><code>git remote add &lt;name&gt; &lt;url&gt;</code>: add a remote ;name is origin by convention if we have only one remote; url can be a web address or a local directory </li>
+<li><code>git push &lt;remote&gt; &lt;local branch&gt;:&lt;remote branch&gt;</code>: send objects to remote, and update remote reference</li>
+<li><code>git branch --set-upstream-to=&lt;remote&gt;/&lt;remote branch&gt;</code>: set up correspondence between local and remote branch</li>
+<li><code>git fetch</code>: retrieve objects/references from a remote; be aware of the changes pushed here from the remote </li>
+<li><code>git pull</code>: same as git fetch; git merge</li>
+<li><code>git clone</code>: download repository from remote</li>
+</ul>
+<h3 id="undo">Undo</h3>
+<ul>
+<li><code>git commit --amend</code>: edit a commit’s contents/message</li>
+<li><code>git reset HEAD &lt;file&gt;</code>: unstage a file</li>
+<li><code>git checkout &lt;file&gt;</code>: discard changes</li>
+</ul>
+<h3 id="advanced-git">Advanced Git</h3>
+<ul>
+<li><code>git config</code>: Git is highly customizable</li>
+<li><code>git clone --depth=1</code>: shallow clone, without entire version history</li>
+<li><code>git add -p</code>: interactive staging</li>
+<li><code>git rebase -i</code>: interactive rebasing</li>
+<li><code>git blame</code>: show who last edited which line</li>
+<li><code>git stash</code>: temporarily remove modifications to working directory</li>
+<li><code>git bisect</code>: binary search history (e.g. for regressions)</li>
+<li><code>.gitignore</code>: specify intentionally untracked files to ignore</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
@@ -606,6 +929,27 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Shell/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Shell" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                Shell
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

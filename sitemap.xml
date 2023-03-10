@@ -31,12 +31,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stormckey.github.io/Note/DS/B-Tree%2CB%2BTree/</loc>
+         <loc>https://stormckey.github.io/Note/DS/B-Tree%20B%2BTree/</loc>
          <lastmod>2023-03-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stormckey.github.io/Note/DS/BST%26AVL%26Splay/</loc>
+         <loc>https://stormckey.github.io/Note/DS/BST%20AVL%20Splay/</loc>
+         <lastmod>2023-03-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Note/Missing%20Semester/Git/</loc>
+         <lastmod>2023-03-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Note/Missing%20Semester/Shell/</loc>
          <lastmod>2023-03-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
