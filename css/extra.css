@@ -5,6 +5,7 @@
   --md-accent-fg-color: #FFACA6;
 }
 :root, [data-md-color-scheme=default] {
+    --md-default-bg-color: #FFFFD9;
     --md-typeset-a-color: #526cfe;
 }
 /* 图片放大start */
