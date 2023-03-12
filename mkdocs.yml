@@ -148,3 +148,5 @@ nav:
       - Vim: Note/Missing Semester/Vim.md
       - Data: Note/Missing Semester/Data.md
       - Git: Note/Missing Semester/Git.md
+  - Research:
+    - Research/index.md
