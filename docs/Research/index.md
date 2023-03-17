@@ -4,10 +4,8 @@
 
 !!! abstract "To do list"
     - [ ] pytorch
-    - [ ] 重参数
     - [ ] diffusion
     - [ ] Unet
-    - [ ] Stochastic Gradient Descent with momentum
 
 
 
@@ -17,9 +15,10 @@
     - [x] [Stochastic Gradient Descent with momentum](https://towardsdatascience.com/stochastic-gradient-descent-with-momentum-a84097641a5d) 
     - [x] [KL散度](https://www.bilibili.com/video/BV1JY411q72n/?spm_id_from=333.337.search-card.all.click&vd_source=3bf0a9181b6c28910c810d7e49b5e64c)
     - [x] 重参数 
+    - [VAE](https://www.gwylab.com/note-vae.html) [还有一个很优秀的解答](https://zhuanlan.zhihu.com/p/348498294)
 
-Useful pages:  
+Useful pages:   
+
 - [Reverse-mode automatic differentiation from scratch, in Python](https://sidsite.com/posts/autodiff/)  
-
 - [Example implementation of reverse-mode autodiff](https://colab.research.google.com/drive/1VpeE6UvEPRz9HmsHh1KS0XxXjYu533EC#scrollTo=erjC686T4S4c)  
 
