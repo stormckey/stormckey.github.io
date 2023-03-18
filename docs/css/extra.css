@@ -5,8 +5,30 @@
   --md-accent-fg-color: #FFACA6;
 }
 [data-md-color-scheme=default] {
-    --md-typeset-a-color: #526cfe;
+    --md-typeset-a-color: #000000;
+    --my-changlog-color: #EFEFEF;
 }
+[data-md-color-scheme=slate] {
+    --md-typeset-a-color: #FFFFFF;
+    --my-changlog-color: #161616;
+}
+/* changelog config*/
+.timeline-card{
+  background-color: var(--my-changlog-color); 
+}
+.timeline-content::before{
+  background-color: var(--my-changlog-color); 
+} 
+.changelog-type{
+  background-color: #CC8A85;
+}
+.changelog-type-newpage{
+  background-color: #FF9C80;
+}
+.changelog-type-refactor::before {
+  content: "文档更新";
+}
+
 /* 图片放大start */
 .shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

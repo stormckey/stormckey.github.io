@@ -44,7 +44,9 @@ plugins:
   - search:
       separator: '[\s\u200b\-]'
   - git-revision-date-localized
+  - changelog #see https://github.com/TonyCrane/mkdocs-changelog-plugin
   - tooltips
+
 
 
 
@@ -108,6 +110,7 @@ extra:
 extra_css:
   - css/hint.min.css
   - css/extra.css
+
 
 #enable analytics
 # extra:

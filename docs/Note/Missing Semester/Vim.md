@@ -1,5 +1,5 @@
 # Vim （Revisited）
-!!! abstract "重写这篇笔记的时候我已经用了一段时间vim，笔记可能会过于简略，可参考[课程网站](https://missing.csail.mit.edu/2020/editors/)"
+!!! abstract "重写这篇笔记的时候我已经用了一段时间vim，笔记可能会过于简略，可参考[:octicons-link-16:课程网站](https://missing.csail.mit.edu/2020/editors/)"
 
 
 ## Basic
@@ -42,6 +42,6 @@
 
 ## Advanced Vim
 
-- Vim 是高度可定制化的。只要要改变用户目录下的配置文件即可(~/.vimrc)。也可参考笔者自己非常简单的的[配置文件](https://github.com/stormckey/dotfiles/blob/main/dot_vimrc)  
+- Vim 是高度可定制化的。只要要改变用户目录下的配置文件即可(~/.vimrc)。也可参考笔者自己非常简单的的[:octicons-link-16:配置文件](https://github.com/stormckey/dotfiles/blob/main/dot_vimrc)  
 - Vim也有许多优质的插件，笔者几乎没有添加任何插件，而是把Vim作为一个插件在VSCode上使用  
 - Vim 的命令行高深莫测，笔者最常用的只是退出、替换而已

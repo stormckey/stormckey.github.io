@@ -19,7 +19,7 @@
     ```
     回显同时写入文件  
     在前台运行并等待从stdin的输入; 不需要被写入的文件提前存在  
-    可以用在pipeline中，解决echo在pipeline中可能引发的[[权限问题](https://missing.csail.mit.edu/2020/course-shell/)]{在这个网页中搜索tee以查看相应描述}。 
+    可以用在pipeline中，解决echo在pipeline中可能引发的[[:octicons-link-16:权限问题](https://missing.csail.mit.edu/2020/course-shell/)]{在这个网页中搜索tee以查看相应描述}。 
 !!! info "touch"
     ```
     touch <file1> <file2> ...

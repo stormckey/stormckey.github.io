@@ -6,7 +6,7 @@
 Sed是 Stream editor 流编辑器
 
 !!! info "用Sed替换"
-    ` Sed 's/REGEX/SUBSTITUTION/'
+    `Sed 's/REGEX/SUBSTITUTION/'`
 
 !!! info "简单的正则表达式"
     - 正则表达式可以实现字符串匹配，大部分自负都保持愿意除了一些特殊的
