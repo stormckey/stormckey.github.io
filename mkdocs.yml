@@ -138,7 +138,7 @@ nav:
     - Blog/index.md
     - Format: Blog/Format.md
     - How to build a website like this?: Blog/Build_this_website.md
-    - 原型、妇女节: Blog/Women_and_prototype.md
+    - 原型: Blog/Women_and_prototype.md
   - Note:
     - Note/index.md
     - DS:
@@ -153,3 +153,4 @@ nav:
       - Git: Note/Missing Semester/Git.md
   - Research:
     - Research/index.md
+    - Diffusion: Research/Diffusion.md
