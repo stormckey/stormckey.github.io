@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Diffusion 
 
 !!! abstract "记录一下Diffusion学习过程"
