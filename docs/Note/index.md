@@ -1,5 +1,6 @@
 ---
 comments: true
+nostatistics: true
 ---
 # Note
 ## My notes during college

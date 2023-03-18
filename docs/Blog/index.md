@@ -1,5 +1,6 @@
 ---
 comments: true
+nostatistics: true
 ---
 # Blog 
 

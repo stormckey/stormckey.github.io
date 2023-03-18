@@ -1,3 +1,6 @@
+---
+nostatistics: true
+---
 # Research
 
 !!! info "暂定在这一模块放一些科研相关的内容"
