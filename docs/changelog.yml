@@ -1,5 +1,5 @@
 - "2023":
   - "2023-03-18":
-    - newpage: 新增了changelog页面
+    - newpage: index > 最近更新
     - refactor: 修改了网站的色彩,使用了更多样的图标
-    - newpage: 新增了Diffusion页面
+    - newpage: Research > Diffusion > DDPM

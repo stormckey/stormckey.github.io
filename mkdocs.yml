@@ -153,4 +153,5 @@ nav:
       - Git: Note/Missing Semester/Git.md
   - Research:
     - Research/index.md
-    - Diffusion: Research/Diffusion.md
+    - Diffusion: 
+      - DDPM: Research/DDPM.md
