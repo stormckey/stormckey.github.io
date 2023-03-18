@@ -46,7 +46,7 @@ plugins:
   - git-revision-date-localized
   - changelog #see https://github.com/TonyCrane/mkdocs-changelog-plugin
   - tooltips
-
+  - statistics
 
 
 
