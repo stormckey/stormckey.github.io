@@ -1,5 +1,6 @@
 - "2023":
   - "2023-03-18":
-    - newpage: index > 最近更新
+    - newpage: Home > 最近更新
     - refactor: 修改了网站的色彩,使用了更多样的图标
     - newpage: Research > Diffusion > DDPM
+    - newpage: Research > Diffusion > DDIM

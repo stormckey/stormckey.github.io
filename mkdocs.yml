@@ -155,3 +155,4 @@ nav:
     - Research/index.md
     - Diffusion: 
       - DDPM: Research/DDPM.md
+      - DDIM: Research/DDIM.md
