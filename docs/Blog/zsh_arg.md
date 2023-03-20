@@ -1,6 +1,6 @@
 # zsh的的参数传递
 
-今天在调用DDPM模型的时候使用官方给的[:octocons-link-16:命令行代码](https://github.com/openai/guided-diffusion)，竟然报错说参数不存在：
+今天在调用DDPM模型的时候使用官方给的[:octicons-link-16:命令行代码](https://github.com/openai/guided-diffusion)，竟然报错说参数不存在：
 命令是
 ```
 MODEL_FLAGS="--attention_resolutions 32,16,8 --class_cond True --diffusion_steps 1000 --dropout 0.1 --image_size 64 --learn_sigma True --noise_schedule cosine --num_channels 192 --num_head_channels 64 --num_res_blocks 3 --resblock_updown True --use_new_attention_order True --use_fp16 True --use_scale_shift_norm True"
@@ -36,4 +36,4 @@ classifier_sample.py: error: unrecognized arguments: --attention_resolutions 32,
 - 用bash执行脚本，也不会有问题。  
 - 如果还使用zsh和变量的话需要改为`"$FLAG"`，就好了  
 
-算是个小坑吧
+算是个小坑吧,shell脚本是有点玄学在里面的，建议以后没事都加个双引号
