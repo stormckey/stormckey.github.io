@@ -139,6 +139,7 @@ nav:
     - Format: Blog/Format.md
     - How to build a website like this?: Blog/Build_this_website.md
     - 原型: Blog/Women_and_prototype.md
+    - zsh中的参数传递: Blog/zsh_arg.md
   - Note:
     - Note/index.md
     - DS:
