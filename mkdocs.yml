@@ -140,6 +140,7 @@ nav:
     - How to build a website like this?: Blog/Build_this_website.md
     - 原型: Blog/Women_and_prototype.md
     - zsh中的参数传递: Blog/zsh_arg.md
+    - wsl上启用cuda: Blog/wsl_cuda.md
   - Note:
     - Note/index.md
     - DS:
