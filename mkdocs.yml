@@ -141,6 +141,7 @@ nav:
     - 原型: Blog/Women_and_prototype.md
     - zsh中的参数传递: Blog/zsh_arg.md
     - wsl上启用cuda: Blog/wsl_cuda.md
+    - VSCode终端上无法启用conda虚拟环境: Blog/VSCode_conda.md
   - Note:
     - Note/index.md
     - DS:

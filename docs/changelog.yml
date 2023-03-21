@@ -1,6 +1,7 @@
 - "2023":
   - "2023-03-21":
     - newpage: Blog > wsl上启用cuda
+    - newpage: Blog > VSCode终端上无法启用conda虚拟环境
   - "2023-03-20":
     - newpage: Blog > zsh中的参数传递
   - "2023-03-18":
