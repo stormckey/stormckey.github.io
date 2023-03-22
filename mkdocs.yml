@@ -142,6 +142,7 @@ nav:
     - zsh中的参数传递: Blog/zsh_arg.md
     - wsl上启用cuda: Blog/wsl_cuda.md
     - VSCode终端上无法启用conda虚拟环境: Blog/VSCode_conda.md
+    - 用ssh连接同一局域网下的wsl: Blog/ssh_wsl.md
   - Note:
     - Note/index.md
     - DS:

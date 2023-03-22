@@ -1,4 +1,6 @@
 - "2023":
+  - "2023-03-22":
+    - newpage: Blog > 用ssh连接同一局域网下的wsl
   - "2023-03-21":
     - newpage: Blog > wsl上启用cuda
     - newpage: Blog > VSCode终端上无法启用conda虚拟环境

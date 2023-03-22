@@ -22,7 +22,7 @@ sudo apt-key add /var/cuda-repo-wsl-ubuntu-11-4-local/7fa2af80.pub
 apt-get update
 sudo apt-get -y install cuda
 ```
-有些安装比较满慢，没有换过源的可以换下国内镜像，可以用[:octicons-link-16:浙大源](http://mirrors.zju.edu.cn/)  
+有些安装比较慢，没有换过源的可以换下国内镜像，可以用[:octicons-link-16:浙大源](http://mirrors.zju.edu.cn/)  
 
 笔者在上面的命令执行中还遇到一个问题，最后一步报错liburcu6没有安装。  
 可以在[:octicons-link-16:官方软件源](https://packages.debian.org/bullseye/liburcu6)上可以下载，但是浏览器提示下载不安全。如果可以的话，选择合适的版本。  
@@ -34,7 +34,7 @@ sudo apt update
 sudo apt install liburcu6
 ```
 第一条命令似乎需要科学上网，我没开的时候连接超时了。  
-随后就可以安装cuda了。安装完毕后用nvidia-smi命令查看是否成功。
+随后就可以安装cuda了。安装完毕后用nvidia-smi命令查看是否成功。(仍提示找不到命令的话，再按照提示安装)
 
 此时仍然不能直接使用cuda，需要再安装nvcc，因为上面安装的是最新版的cuda，这里也不用控制版本，直接下载就好了。  
 
