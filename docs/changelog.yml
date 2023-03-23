@@ -1,6 +1,7 @@
 - "2023":
   - "2023-02-23":
     - newpage: Blog > 在VSCode下编写Markdown
+    - newpage: Blog > 配置Github个人Profile
   - "2023-03-22":
     - newpage: Blog > 用ssh连接同一局域网下的wsl
     - newpage: Blog > wsl终端配置

@@ -1,6 +1,7 @@
 ---
-comments:true
+comments: true
 ---
+
 # 用VSCode写Markdown
 
 ## 起步

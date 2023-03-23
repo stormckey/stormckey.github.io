@@ -145,6 +145,7 @@ nav:
     - 用ssh连接同一局域网下的wsl: Blog/ssh_wsl.md
     - wsl终端配置: Blog/wsl_config.md
     - 在VSCode下编写Markdown: Blog/VSCode-Markdown.md
+    -  配置Github个人Profile: Blog/github_profile.md
   - Note:
     - Note/index.md
     - DS:
