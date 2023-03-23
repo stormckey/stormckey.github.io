@@ -54,6 +54,12 @@ markdown_extensions:
 #enable admonition
   - admonition
   - pymdownx.details
+  - pymdownx.highlight:
+      # anchor_linenums: true
+      # use_pygments: true
+      # auto_title: true
+      # line_spans: __span
+      pygments_lang_class: true
   - pymdownx.superfences # allow nest codes
 #enable code config
   - pymdownx.inlinehilite #inline code highlight

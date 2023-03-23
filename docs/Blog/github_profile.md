@@ -21,9 +21,9 @@ Metrics使用GitHub Action自动更新，我们只要照着链接里的介绍就
 
 ??? info "参考配置"
 
-    === "METRIC.yml"
+    === "Metrics.yml"
 
-        ``` yml
+        ``` yaml
         name: Metrics
         on:
         # Schedule updates per hour
@@ -101,7 +101,8 @@ Metrics使用GitHub Action自动更新，我们只要照着链接里的介绍就
 
     === "README.md"
 
-        ``` markdown
+        ``` html
+
         <h3 align="center"> Stormckey </h3>
 
         <p align="center">
@@ -119,4 +120,5 @@ Metrics使用GitHub Action自动更新，我们只要照着链接里的介绍就
             <img width="400" align="top" src="https://github.com/stormckey/stormckey/blob/main/matrics-right.svg" />
         </a>
         </p>
+
         ```
