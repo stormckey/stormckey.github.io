@@ -144,6 +144,7 @@ nav:
     - VSCode终端上无法启用conda虚拟环境: Blog/VSCode_conda.md
     - 用ssh连接同一局域网下的wsl: Blog/ssh_wsl.md
     - wsl终端配置: Blog/wsl_config.md
+    - 在VSCode下编写Markdown: Blog/VSCode-Markdown.md
   - Note:
     - Note/index.md
     - DS:

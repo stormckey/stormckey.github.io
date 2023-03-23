@@ -1,3 +1,6 @@
+---
+comments:true
+---
 # 用ssh连接同一局域网下的wsl2
 
 ## 检查通路
@@ -8,7 +11,7 @@ Windows会给wsl2分配一个虚拟的本地的地址，我们在wsl中输入`if
 随后我们希望从局域网连接Windows也是通的，我们就在poweshell下输入`ipconfig`得到本机ip，尝试`ping [IP]`来试着连接一下，或者直接用ssh连接一下Windows。保证局域网到Windows这条路都是通的。 
 
 !!! warning
-    一些标明为“Secure”的局域网可能不允许局域网内连接，在这些局域网下是互相ping不同的，尝试换个局域网！这点坑了笔者很久。
+    一些标明为“Secure”的局域网可能不允许局域网内连接，在这些局域网下是互相ping不通的，尝试换个局域网！这点坑了笔者很久。
 
 最后我们需要确保把局域网，Windows，wsl都连接起来，需要Windows把我们从ssh发来的连接请求转到内部的wsl的端口，这样就通了。（对应的操作在上文的博客中已经提及，如果还有问题，可以尝试[:octicons-link-16:这篇](https://cloud.tencent.com/developer/article/1420930)看看是不是局域网到Windows的问题）
 

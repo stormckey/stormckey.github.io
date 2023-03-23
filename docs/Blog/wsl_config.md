@@ -1,3 +1,6 @@
+---
+comments:true
+---
 # wsl终端配置
 
 ## 启用zsh
