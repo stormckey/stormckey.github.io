@@ -47,6 +47,7 @@ plugins:
   - changelog #see https://github.com/TonyCrane/mkdocs-changelog-plugin
   - tooltips
   - statistics
+  - glightbox
 
 
 
@@ -59,7 +60,7 @@ markdown_extensions:
       # use_pygments: true
       # auto_title: true
       # line_spans: __span
-      pygments_lang_class: true
+      # pygments_lang_class: true
   - pymdownx.superfences # allow nest codes
 #enable code config
   - pymdownx.inlinehilite #inline code highlight

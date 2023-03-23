@@ -11,7 +11,8 @@ comments: true
 我们先创建一个跟自己账号同名的公开仓库，这是一个特殊的仓库，Github会在主页上显示这一仓库的README文档，也就是实现Profile配置的仓库。
 我们只要编写这个README文档就好啦
 ??? "本人主页预览"
-    ![](images/github_profile/2023-03-23-14-49-05.png)
+    ![](images/github_profile/2023-03-23-14-49-05.png#pic)
+
 
 ## 启用Metrics生成 Profile图片
 

@@ -1,5 +1,6 @@
 - "2023":
   - "2023-02-23":
+    - refactor: 重构了全站的图片样式，现在是默认圆角矩形加阴影
     - newpage: Blog > 在VSCode下编写Markdown
     - newpage: Blog > 配置Github个人Profile
   - "2023-03-22":
