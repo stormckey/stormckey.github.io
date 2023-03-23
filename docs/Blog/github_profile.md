@@ -98,7 +98,7 @@ Metrics使用GitHub Action自动更新，我们只要照着链接里的介绍就
                 
                 
         ```
-
+        [查看文件](https://github.com/stormckey/stormckey/blob/main/.github/workflows/main.yml){ .md-button }
     === "README.md"
 
         ``` html
@@ -122,3 +122,4 @@ Metrics使用GitHub Action自动更新，我们只要照着链接里的介绍就
         </p>
 
         ```
+        [查看文件](https://github.com/stormckey/stormckey/blob/main/README.md){ .md-button }
