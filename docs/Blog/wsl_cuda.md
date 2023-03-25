@@ -42,3 +42,6 @@ sudo apt install liburcu6
 
 ## pytorch
 这不很简单，直接用pip安装即可，建议使用venv，防止环境混乱。
+
+!!! tip 
+    如果在使用`from mpi4py import MPI`中发生连接库找不着了，可以尝试`sudo apt install libopenmpi-dev`来安装所需的库

@@ -5,13 +5,11 @@ comments: true
 # 用VSCode写Markdown
 
 ## 起步
-![](images/VSCode-Markdown/2023-03-23-16-57-43.png#pic)
 首先启用以下的两个插件，就可以开始写markdown，并在右侧预览了
 
 ![](images/VSCode-markdown/2023-03-23-14-24-20.png#pic)
 ??? info "效果图"
     ![](images/VSCode-markdown/2023-03-23-14-25-15.png#pic)
-    编写数学公式也没问题：
     ![](images/VSCode-markdown/2023-03-23-14-32-24.png#pic)
 注意预览需要在编辑器右上角点击预览按钮开启或者使用快捷键
 
