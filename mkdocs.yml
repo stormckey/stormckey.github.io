@@ -140,7 +140,9 @@ extra_css:
 #             using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
 
 nav:
-  - Home: index.md
+  - Home: 
+    - index.md
+    - changelog.md
   - Blog: 
     - Blog/index.md
     - Format: Blog/Format.md
@@ -165,6 +167,7 @@ nav:
       - Vim: Note/Missing Semester/Vim.md
       - Data: Note/Missing Semester/Data.md
       - Git: Note/Missing Semester/Git.md
+      - Commandline Environment: Note/Missing Semester/commandline_env.md
   - Research:
     - Research/index.md
     - Diffusion: 
