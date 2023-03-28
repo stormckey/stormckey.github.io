@@ -155,6 +155,7 @@ nav:
     - wsl终端配置: Blog/wsl_config.md
     - 在VSCode下编写Markdown: Blog/VSCode-Markdown.md
     -  配置Github个人Profile: Blog/github_profile.md
+    - 启用chatGPT-academic: Blog/GPT_academic.md
   - Note:
     - Note/index.md
     - DS:
