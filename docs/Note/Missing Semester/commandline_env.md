@@ -1,3 +1,6 @@
+---
+comments: true
+---
 # Commandline Enviroment
 
 !!! abstract
@@ -88,7 +91,7 @@
 
 `ssh-copy-id USERNAME@IP_ADDRESS`: 复制公钥到remote machine的指定文件中
 
-用rsync或者scp传输文件，rsync可以从中断处恢复
+用rsync或者scp传输文件，rsync可以从中断处恢复,检查重复，符号连接等
 
 `scp -p xxxx LOCAL_PATH USERNAME@IP_ADDRESS:REMOTE_PATH`:复制过去
 
