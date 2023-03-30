@@ -158,6 +158,7 @@ nav:
     - 启用chatGPT-academic: Blog/GPT_academic.md
   - Note:
     - Note/index.md
+    - 计组拾遗: Note/CO_review.md
     - DS:
       - BST,AVL,Splay: Note/DS/BST_AVL_Splay.md
       - B-Tree,B+Tree: Note/DS/B-Tree_B+Tree.md
