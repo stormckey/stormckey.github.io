@@ -2,6 +2,8 @@
 !!! warning "极其简略，只有部分易忘、或不显然的知识点"
 
 !!! info "整理自[:octicons-link-16:咸鱼暄的代码空间](https://xuan-insr.github.io/computer_organization/1_prelude/)"
+
+!!! tip "[:octicons-link-16:这里](https://bank.engzenon.com/tmp/60746e35-6aec-4163-86ed-7fdec0feb99b/626db954-7f2c-45af-9aa3-42dfc0feb99b/Computer_Organization_Manual_solution.pdf)是答案"
 ## Ch2 Instructions
 
 - PC relative addressing: `PC + offset` 而非 `PC + 4 + offset`
@@ -12,6 +14,15 @@
 - 合理利用`bgeu`来检测越界（小于零或者大于某个数）
 - `lui`加载了立即数的高20位后，用`aadi`加载低12位，若因符号扩展导致进位，只要多加1000就可以抵消FFFFF000的影响
 
+还有几张常用表：
+![](images/CO_review/2023-03-31-17-29-23.png#pic)
+
+![](images/CO_review/2023-03-31-17-29-33.png#pic)
+
+![](images/CO_review/2023-03-31-17-29-45.png#pic)
+
+（下图里的j imm要改成PC+imm）
+![](images/CO_review/2023-03-31-17-30-14.png#pic)
 ## Ch3 Arithmetic
 
 - 检测加法溢出:最高运算单元的Cin Cout进行异或，不一样就是溢出
