@@ -156,6 +156,7 @@ nav:
     - 在VSCode下编写Markdown: Blog/VSCode-Markdown.md
     -  配置Github个人Profile: Blog/github_profile.md
     - 启用chatGPT-academic: Blog/GPT_academic.md
+    - 我的CLI工具: Blog/CLI_tools.md
   - Note:
     - Note/index.md
     - 计组拾遗: Note/CO_review.md
