@@ -15,5 +15,5 @@ comments: true
 ```
 pip install --upgrade gradio -i https://pypi.org/simple
 ```
-
+!!! tip "-i 是 --index-url 的缩写，意思是从指定源下载"
 建议使用虚拟环境。
