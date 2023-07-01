@@ -34,7 +34,8 @@ usage: classifier_sample.py [-h] [--clip_denoised CLIP_DENOISED] [--num_samples 
 classifier_sample.py: error: unrecognized arguments: --attention_resolutions 32,16,8 --class_cond True --diffusion_steps 1000 --dropout 0.1 --image_size 64 --learn_sigma True --noise_schedule cosine --num_channels 192 --num_head_channels 64 --num_res_blocks 3 --resblock_updown True --use_new_attention_order True --use_fp16 True --use_scale_shift_norm True
 ```
 貌似是因为用这种方式传递的参数不会被按空格分开，所以无法识别。
-笔者还是了用bash执行，或者是使用`"$FLAG"`，都不能奏效。
-恼，解决的办法是:  
+笔者还是了用bash执行，或者是使用`"$FLAG"`，都不能奏效。😡
+
+解决的办法是:  
 `$=FLAG`
 可以参考[:octicons-link-16:这篇解答](https://unix.stackexchange.com/questions/26661/what-is-word-splitting-why-is-it-important-in-shell-programming)

@@ -11,6 +11,7 @@ comments: true
 笔者没有用docker部署，部署过程中只遇到一个问题，换过源后pip找不到高版本的gradio
 ![](images/GPT_academic/2023-03-29-01-35-34.png#pic)  
 
+
 解决方案是：
 ```
 pip install --upgrade gradio -i https://pypi.org/simple

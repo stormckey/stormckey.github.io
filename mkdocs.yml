@@ -158,6 +158,11 @@ nav:
     - 启用chatGPT-academic: Blog/GPT_academic.md
     - 我的CLI工具: Blog/CLI_tools.md
     - 在Mac上使用VSCode进行C/C++调试: Blog/Mac_VSC_DEBUG.md
+    - Minisql: 
+    #   - Introduction: Blog/Minisql/index.md
+    #   - Minisql#0: Blog/Minisql/minisql_part0.md
+    #   - Minisql#1: Blog/Minisql/minisql_part1.md
+      - 在docker上部署minisql环境: Blog/docker_minisql.md
   - Note:
     - Note/index.md
     - 计组拾遗: Note/CO_review.md
