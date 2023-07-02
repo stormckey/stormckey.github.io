@@ -43,6 +43,11 @@ pip install markdown==3.2.1
 pip install mkdocs-material
 ```
 
+图片处理的依赖库：
+```bash
+pip install pillow cairosvg
+```
+
 
 
 
@@ -263,7 +268,23 @@ extra:
 随后前往Google Analytics注册使用即可。
 
 !!! warning "启用这项功能需要向每个网页注入google code"
+
+### 3.5启用最新更新时间
+
+安装库：
+```bash
+pip install mkdocs-git-revision-date-localized-plugin
+```
+添加设置到`mkdocs.yml`：
+```yaml
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
+```
+
+### 3.6启用评论区
     
+[:octicons-link-16:原文档](https://squidfunk.github.io/mkdocs-material/setup/setting-up-comments/)介绍的很清楚了
 
 ### 3.x更多特性（我还不会用但考虑启用的）
 
