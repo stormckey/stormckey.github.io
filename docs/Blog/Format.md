@@ -1,32 +1,35 @@
 ---
 comments: true
 ---
-# Format Catagory
+# 样式一览
 !!! abstraction
-    Thie page includes all the formats this website can employ.
-    Most of the formats are available from the [Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/) 
-
-!!! warning
-    Early version. All formats are just listed below.
+    此页面将会列出本站点目前支持的所有显示样式  
+    许多都来自[:octicons-link-16: Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/) 
 
 ```C
 int main(){
     printf("Hello World");
 }
 ```
+
 ```C++
 #include <iostream>
 using namespace std;
 ```
+
 !!! note " my title"
     something
-!!! note ""
+
+!!! tip ""
     no title
-??? note "my title"
+
+??? warning "my title"
     something
+
 !!! info  "no inline"
     Now it suppports Note,Abstract,Info,Tip,Success,Question,Warining,Failure,Danger,Bug,Example,Quote
-!!! info inline  "inline"
+
+!!! abstract inline  "inline"
     somthing
 [Subscribe to our newsletter](#){ .md-button }
 
@@ -65,6 +68,8 @@ using namespace std;
 </figure>
 ![Image title](https://dummyimage.com/600x400/){ loading=lazy }
 
+![](images/Format/2023-07-01-22-00-36.png#pic)
+
 - [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
 - [ ] Vestibulum convallis sit amet nisi a tincidunt
     * [x] In hac habitasse platea dictumst
@@ -75,3 +80,13 @@ using namespace std;
 $$
 \operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
 $$
+
+[鼠标悬停！]{😋}
+
+[:material-information-outline:]{Important information}
+
+[Hover me](https://example.com "I'm a tooltip!")
+
+The HTML specification is maintained by the W3C.
+
+

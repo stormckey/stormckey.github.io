@@ -2,9 +2,9 @@
 comments: true
 nostatistics: true
 ---
-# Blog 
+# 欢迎来到我的博客👏👏👏
 
-## Maybe some funny things I found
+!!! info "公告🪧"
+    持续施工建设中，有什么外观内容上的建议都欢迎提出捏
 
-!!! info
-    Under constructing :warning: , please wait
+

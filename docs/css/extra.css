@@ -12,6 +12,9 @@
     --md-typeset-a-color: #FFFFFF;
     --my-changlog-color: #161616;
 }
+.md-grid {
+  max-width: 1400px; 
+}/* make the page wider */
 /* changelog config*/
 .timeline-card{
   background-color: var(--my-changlog-color); 
@@ -53,8 +56,8 @@
 /*图片格式设置*/
 /*默认样式*/
 img[src*="pic"] {
-  box-shadow: 4px 4px 15px #666;
-  border-radius: 10px;
+  box-shadow: 2px 2px 10px #666;
+  border-radius: 4px;
 }
 /*样式1 同默认样式*/
 img[src*="pic1"] {

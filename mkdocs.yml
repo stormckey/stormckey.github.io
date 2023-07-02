@@ -15,15 +15,20 @@ theme:
   name: material
   custom_dir: overrides
   features:
-      - content.action.edit # the edit icon in page
-      - content.action.view # the view icon in page
-      - content.code.copy
-      - navigation.tabs
-      - navigation.sections
-      - navigation.footer
-      - search.suggest
-      - search.highlight
-      - search.share
+      - content.action.edit # enable the button to edit the source code of the page
+      - content.action.view # enable the button to view the source code of the page
+      - content.code.copy # enable the button to copy the code block
+      - navigation.tabs  # enable the row of tabs under the title 
+      # - navigation.sections # unfold the secondary titles to the left
+      # - navigation.footer # enable the next and previous button
+      - navigation.indexes # the index page will be incoperate into the tab
+      - search.suggest # auto suggestion
+      - search.highlight # highlight when search
+      - search.share # enable share when search
+      - navigation.instant # optimize loading
+      - navigation.tracking # URL will change as we scroll down
+      - toc.follow # the sidebar will scroll automatically following the user
+      - navigation.top # button to back to the top
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -34,15 +39,21 @@ theme:
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      # primary: indigo
-      # accent: indigo
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  font:
+    code: Roboto Mono
+
 
 plugins:
-  - search:
-      separator: '[\s\u200b\-]'
+  - search
+      # lang:
+      #   - zh
+      #   - en
+  - social:
+      enabled: !ENV [CI, false]
+      cards: !ENV [CI, false]
   - git-revision-date-localized
   - changelog #see https://github.com/TonyCrane/mkdocs-changelog-plugin
   - tooltips
@@ -64,9 +75,12 @@ markdown_extensions:
   - pymdownx.superfences # allow nest codes
 #enable code config
   - pymdownx.inlinehilite #inline code highlight
-  - pymdownx.snippets #enable to embed arbitrary files
+  - pymdownx.snippets: #enable to embed arbitrary files
+      auto_append:
+          - includes/abbreviations.md
   - pymdownx.highlight:
         linenums: true
+
 #enable button
   - attr_list  
 #enable content tabs
@@ -95,24 +109,33 @@ markdown_extensions:
 
 extra_javascript:
   - javascripts/extra.js
-  - https://github.com/stormckey/Reference/blob/main/mathjax.js
+  - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 extra:
   social:
-    - icon: fontawesome/brands/github 
+    - icon: fontawesome/brands/github # icons to the right bottom of the page
       link: https://github.com/stormckey
-    - icon: fontawesome/solid/paper-plane
+    - icon: fontawesome/solid/paper-plane # icons to the right bottom of the page
       link: mailto:sortygraph@gmail.com
-  #enable cookies consent
-  # consent:
-  #   title: Cookie consent
-  #   description: >- 
-  #     We use cookies to recognize your repeated visits and preferences, as well
-  #     as to measure the effectiveness of our documentation and whether users
-  #     find what they're searching for. With your consent, you're helping us to
-  #     make our documentation better.
+  alternate: # change the language, the link should point to different directories
+    - name: English
+      link: /
+      lang: en
+    - name: 中文
+      link: /
+      lang: zh
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
 
 extra_css:
   - css/hint.min.css
@@ -142,19 +165,17 @@ extra_css:
 nav:
   - Home: 
     - index.md
-    - changelog.md
   - Blog: 
-    - Blog/index.md
-    - Format: Blog/Format.md
-    - How to build a website like this?: Blog/Build_this_website.md
+    - Home: Blog/index.md
+    - Blog/Build_this_website.md
     - 原型: Blog/Women_and_prototype.md
-    - zsh中的参数传递: Blog/zsh_arg.md
-    - wsl上启用cuda: Blog/wsl_cuda.md
-    - VSCode终端上无法启用conda虚拟环境: Blog/VSCode_conda.md
-    - 用ssh连接同一局域网下的wsl: Blog/ssh_wsl.md
-    - wsl终端配置: Blog/wsl_config.md
-    - 在VSCode下编写Markdown: Blog/VSCode-Markdown.md
-    -  配置Github个人Profile: Blog/github_profile.md
+    - Blog/zsh_arg.md
+    - Blog/wsl_cuda.md
+    - Blog/VSCode_conda.md
+    - Blog/ssh_wsl.md
+    - Blog/wsl_config.md
+    - Blog/VSCode-Markdown.md
+    - Blog/github_profile.md
     - 启用chatGPT-academic: Blog/GPT_academic.md
     - 我的CLI工具: Blog/CLI_tools.md
     - 在Mac上使用VSCode进行C/C++调试: Blog/Mac_VSC_DEBUG.md
@@ -164,7 +185,7 @@ nav:
     #   - Minisql#1: Blog/Minisql/minisql_part1.md
       - 在docker上部署minisql环境: Blog/docker_minisql.md
   - Note:
-    - Note/index.md
+    - Home: Note/index.md
     - 计组拾遗: Note/CO_review.md
     - DS:
       - BST,AVL,Splay: Note/DS/BST_AVL_Splay.md

@@ -1,16 +1,16 @@
 ---
 comments: true
 ---
-# zsh的的参数
+# zsh的命令行参数传递
 
-今天在调用DDPM模型的时候使用官方给的[:octicons-link-16:命令行代码](https://github.com/openai/guided-diffusion)，竟然报错说参数不存在：
+今天在调用DDPM模型的时候使用[:octicons-link-16:官方代码](https://github.com/openai/guided-diffusion)，竟然报错说参数不存在：
 命令是
-```
+```bash
 MODEL_FLAGS="--attention_resolutions 32,16,8 --class_cond True --diffusion_steps 1000 --dropout 0.1 --image_size 64 --learn_sigma True --noise_schedule cosine --num_channels 192 --num_head_channels 64 --num_res_blocks 3 --resblock_updown True --use_new_attention_order True --use_fp16 True --use_scale_shift_norm True"
 python classifier_sample.py $MODEL_FLAGS --classifier_scale 1.0 --classifier_path models/64x64_classifier.pt --classifier_depth 4 --model_path models/64x64_diffusion.pt $SAMPLE_FLAGS
 ```
 报错为：
-```
+```bash
 python classifier_sample.py $MODEL_FLAGS --classifier_scale 1.0 --classifier_path models/64x64_classifier.pt --classifier_depth 4 --model_path models/64x64_diffusion.pt $SAMPLE_FLAGS
 usage: classifier_sample.py [-h] [--clip_denoised CLIP_DENOISED] [--num_samples NUM_SAMPLES] [--batch_size BATCH_SIZE]
                             [--use_ddim USE_DDIM] [--model_path MODEL_PATH] [--classifier_path CLASSIFIER_PATH]
@@ -33,9 +33,7 @@ usage: classifier_sample.py [-h] [--clip_denoised CLIP_DENOISED] [--num_samples 
                             [--classifier_pool CLASSIFIER_POOL]
 classifier_sample.py: error: unrecognized arguments: --attention_resolutions 32,16,8 --class_cond True --diffusion_steps 1000 --dropout 0.1 --image_size 64 --learn_sigma True --noise_schedule cosine --num_channels 192 --num_head_channels 64 --num_res_blocks 3 --resblock_updown True --use_new_attention_order True --use_fp16 True --use_scale_shift_norm True
 ```
-貌似是因为用这种方式传递的参数不会被按空格分开，所以无法识别。
-笔者还是了用bash执行，或者是使用`"$FLAG"`，都不能奏效。😡
+貌似是因为用这种方式传递的参数不会被按空格分开，所以无法识别  
+我还试过换用bash，或者是使用`"$FLAG"`，都没用😡
 
-解决的办法是:  
-`$=FLAG`
-可以参考[:octicons-link-16:这篇解答](https://unix.stackexchange.com/questions/26661/what-is-word-splitting-why-is-it-important-in-shell-programming)
+解决的办法是使用`$=FLAG`  （可以参考[:octicons-link-16:这篇解答](https://unix.stackexchange.com/questions/26661/what-is-word-splitting-why-is-it-important-in-shell-programming)）

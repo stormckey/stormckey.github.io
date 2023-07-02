@@ -2,12 +2,16 @@
 comments: true
 ---
 
-# MacOS上利用Docker搭建MiniSQL环境
+# 利用Docker搭建MiniSQL环境
 
 !!! abstract 
-    一个简易的教程来介绍如何在MacOS上用docker搭建minisql环境，那么有人要问了，为什么不直接本地部署呢。
-    
+    一个简易的教程来介绍如何在MacOS上用docker搭建minisql环境，那么有人要问了，为什么不直接本地部署呢。  
     我也想本地部署啊，但是编译起来破事太多了😅，索性试一种跨平台的方案。
+
+!!! info "环境"
+    MacOS: Ventura 13.4.1  
+    Docker: 4.16.2  
+    Ubuntu: 20.04  
 
 ## 1.启动容器
 
@@ -80,7 +84,7 @@ docker run -it  -p 2333:22 --name minisql ubuntu:20.04
     apt update
     apt upgrade
     ```
-    即可
+    即可(该方法来自[:octicons-link-16:此博客](https://blog.csdn.net/Chaowanq/article/details/121559709))
 直接执行命令即可
 ```bash
 cp /etc/apt/sources.list /etc/apt/sources.list.bak
@@ -105,7 +109,7 @@ apt upgrade
 
 安装一些必要的工具：
 ```bash
-apt install openssh-server vim git cmake gcc g++ gdb
+apt install openssh-server vim git cmake gcc g++ gdb sudo
 ```
 
 ## 3.配置SSH，使用VSCode开发
@@ -119,12 +123,22 @@ passwd stormckey
 ```
 这里的stormckey换成你自己起的用户名
 
+给用户添加sudo权限，需要在`/etc/sudoers`文件中`# User privilege specification`添加：  
+
+![](images/docker_minisql/2023-07-01-21-25-52.png#pic)
+
 ### 3.2配置免密登陆
 来到远程连接的发起者端（这里就是宿主机），执行下面命令生成密钥，输入paseephrase时直接回车（为空）
 ```bash
 ssh-keygen
 ```
 来到提示的目录下，复制id_rsa.pub的内容，将它写入被连接端（这里是容器）的`/home/stormckey/.ssh/authorized_keys`文件中
+??? info "另一种更方便的方案"
+    在可以用密码登录了之后，可以用`ssh-copy-id`命令一键把密钥放置到服务器并做好相应的设置
+    ```bash
+    ssh-copy-id -i ~/.ssh/id_rsa.pub stormckey@localhost -p 2333
+    ```
+
 
 接着配置容器的sshd:
 `vim /etc/ssh/sshd_config`
@@ -137,6 +151,10 @@ ssh-keygen
 更改完配置后启动/重启sshd
 ```bash
 service ssh start
+```
+我们最好把自动启动ssh服务加入bashrc，这样启动容器的时候就会自动启动ssh服务了
+```bash
+echo "service ssh start" >> /root/.bashrc
 ```
 
 此时你在宿主机上就可以通过`ssh stormckey@localhost -p 2333`登陆容器了:
@@ -155,6 +173,14 @@ service ssh start
 
 此后就没有什么特别的了，打开终端直接按照助教的文档配置minisql即可。
 ![](images/docker_minisql/2023-07-01-20-52-01.png#pic)
+
+## 4.更多设置
+
+现在你就可以用这个简陋的命令行开始工作了，但如果你喜欢的话可以加入更多设置！
+
+=== "终端美化"
+    见[:octicons-link-16:此博客](https://stormckey.github.io/Blog/wsl_config/)
+
 
 
 

@@ -2,9 +2,6 @@
 comments: true
 nostatistics: true
 ---
-# Note
-## My notes during college
-
-!!! info 
-    Please wait for further upload.
-    I dont take much notes during my college
+#  笔记本！
+!!! abstract "大学期间的笔记合集"
+    我其实一直都没有做笔记的习惯，记笔记主要就是两个目的，一个是记录一些突然理解了一切的瞬间，另一个是记一些八股应付考试

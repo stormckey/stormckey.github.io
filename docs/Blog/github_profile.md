@@ -4,12 +4,12 @@ comments: true
 
 # 配置Github个人Profile
 
-??? abstract 
+!!! abstract 
     我配置Github主页Profile的方案，灵感来自[:octicons-link-16:Tonycrane的GitHub主页](https://github.com/TonyCrane)
 
 ## 启用Github主页Profile
-我们先创建一个跟自己账号同名的公开仓库，这是一个特殊的仓库，Github会在主页上显示这一仓库的README文档，也就是实现Profile配置的仓库。
-我们只要编写这个README文档就好啦
+我们先创建一个跟自己账号同名的公开仓库，这是一个特殊的用作主页仓库  
+Github会在主页上显示这一仓库的README文档作为Profile，所以我们只要编写这个README文档即可
 ??? "本人主页预览"
     ![](images/github_profile/2023-03-23-14-49-05.png#pic)
 
@@ -99,7 +99,6 @@ Metrics使用GitHub Action自动更新，我们只要照着链接里的介绍就
                 
                 
         ```
-        [查看文件](https://github.com/stormckey/stormckey/blob/main/.github/workflows/main.yml){ .md-button }
     === "README.md"
 
         ``` html
@@ -123,4 +122,3 @@ Metrics使用GitHub Action自动更新，我们只要照着链接里的介绍就
         </p>
 
         ```
-        [查看文件](https://github.com/stormckey/stormckey/blob/main/README.md){ .md-button }
