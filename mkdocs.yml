@@ -159,7 +159,7 @@ nav:
   - Home: 
     - index.md
   - Blog: 
-    - Home: Blog/index.md
+    - Blog/index.md
     - Blog/Build_this_website.md
     - 原型: Blog/Women_and_prototype.md
     - Blog/zsh_arg.md
@@ -178,7 +178,7 @@ nav:
     #   - Minisql#1: Blog/Minisql/minisql_part1.md
       - 在docker上部署minisql环境: Blog/docker_minisql.md
   - Note:
-    - Home: Note/index.md
+    - Note/index.md
     - 计组拾遗: Note/CO_review.md
     - DS:
       - BST,AVL,Splay: Note/DS/BST_AVL_Splay.md
