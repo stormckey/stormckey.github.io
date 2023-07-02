@@ -132,6 +132,8 @@ mkdocs gh-deploy
         - run: pip install mkdocs-material 
         - run: mkdocs gh-deploy --force
     ```
+    注意，推送到Github的话需要你的token有workflow权限  
+    如果你依赖了额外的库，需要修改action
 
 ## 3.添加特性
 
