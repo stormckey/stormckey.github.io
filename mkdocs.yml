@@ -15,6 +15,7 @@ theme:
   name: material
   custom_dir: overrides
   features:
+      - content.code.annotate
       - content.action.edit # enable the button to edit the source code of the page
       - content.action.view # enable the button to view the source code of the page
       - content.code.copy # enable the button to copy the code block
@@ -58,6 +59,7 @@ plugins:
       enable_creation_date: true
   - offline: # enable searching offline
       enabled: !ENV [OFFLINE, false]
+  - table-reader
   - changelog #see https://github.com/TonyCrane/mkdocs-changelog-plugin
   - tooltips
   - statistics
@@ -75,7 +77,11 @@ markdown_extensions:
       # auto_title: true
       # line_spans: __span
       # pygments_lang_class: true
-  - pymdownx.superfences # allow nest codes
+  - pymdownx.superfences: # allow nest codes
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 #enable code config
   - pymdownx.inlinehilite #inline code highlight
   - pymdownx.snippets: #enable to embed arbitrary files
@@ -83,12 +89,11 @@ markdown_extensions:
           - includes/abbreviations.md
   - pymdownx.highlight:
         linenums: true # enable line display
+        line_spans: __span
         pygments_lang_class: true # detect language automatically
         anchor_linenums: true # offer line anchor
   - pymdownx.keys # render key symbols
   - pymdownx.smartsymbols
-
-
 #enable button
   - attr_list  
 #enable content tabs
@@ -124,6 +129,8 @@ markdown_extensions:
 extra_javascript:
   - javascripts/extra.js
   - javascripts/mathjax.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js # enable table sort
+  - javascripts/tablesort.js # enable table sort
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
@@ -173,7 +180,7 @@ nav:
     - 我的CLI工具: Blog/CLI_tools.md
     - 在Mac上使用VSCode进行C/C++调试: Blog/Mac_VSC_DEBUG.md
     - Minisql: 
-    #   - Introduction: Blog/Minisql/index.md
+      - Blog/Minisql/index.md
     #   - Minisql#0: Blog/Minisql/minisql_part0.md
     #   - Minisql#1: Blog/Minisql/minisql_part1.md
       - 在docker上部署minisql环境: Blog/docker_minisql.md

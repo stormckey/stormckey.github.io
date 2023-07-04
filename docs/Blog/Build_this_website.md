@@ -235,6 +235,15 @@ extra_javascript:
             MathJax.typesetPromise()
         })
         ```
+    === tablesort.js
+        ```javascript
+        document$.subscribe(function() {
+            var tables = document.querySelectorAll("article table:not([class])")
+            tables.forEach(function(table) {
+            new Tablesort(table)
+            })
+        })
+        ```
 
 ### 3.3添加全局脚注
 
@@ -287,6 +296,27 @@ plugins:
 ### 3.6启用评论区
     
 [:octicons-link-16:原文档](https://squidfunk.github.io/mkdocs-material/setup/setting-up-comments/)介绍的很清楚了
+
+### 3.7从文件读取表格
+
+参考[:octicons-link-16原文档:](https://squidfunk.github.io/mkdocs-material/reference/data-tables/#import-table-from-file)
+
+### 3.8使用emojis和icons
+
+这个[:octicons-link-16:链接](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search)可以搜索emoji
+
+### 3.9 图片放大
+
+先安装插件：
+```bash
+pip install mkdocs-glightbox
+```
+
+然后加入配置：
+```yaml
+plugins:
+  - glightbox
+```
 
 ### 3.x更多特性（我还不会用但考虑启用的）
 
