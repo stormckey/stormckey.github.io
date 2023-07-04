@@ -1,5 +1,8 @@
 ---
 comments: true
+hide:
+  - navigation
+  - toc
 ---
 # 样式一览
 !!! abstraction

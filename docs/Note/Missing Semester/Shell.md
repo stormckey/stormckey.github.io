@@ -1,3 +1,6 @@
+---
+comments: true
+---
 # Shell Notes (revisited)
 
 !!! abstract "一个离散的知识列表，没有逻辑顺序"

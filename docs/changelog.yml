@@ -1,4 +1,9 @@
 - "2023":
+  - "2023-07-04":
+    - refactor: 润色了博客和笔记的内容
+    - newpage: Home > Build_this_page
+    - refactor: 重构了网站的结构，启用了新的material功能
+    - newpage: Blog > docker_minisql
   - "2023-04-06":
     - newpage: Blog > 在Mac上使用VSCode进行C/C++调试
   - "2023-04-01":

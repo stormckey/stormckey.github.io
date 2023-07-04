@@ -1,10 +1,13 @@
+---
+comments: true
+---
 # Vim （Revisited）
-!!! abstract "重写这篇笔记的时候我已经用了一段时间vim，笔记可能会过于简略，可参考[:octicons-link-16:课程网站](https://missing.csail.mit.edu/2020/editors/)"
+!!! abstract "重写这篇笔记的时候我已经用了一段时间vim，笔记可能会过于简略，详细可参考[:octicons-link-16:课程网站](https://missing.csail.mit.edu/2020/editors/)"
 
 
 ## Basic
 
-我们写代码事并不一直都是连续的输入，有时是跳转到某个地方，有时是做些小修改替换，有时是阅读代码，或者才是连续输入。   
+我们写代码事并不一直都是连续的输入，有时是跳转到某个地方，有时是做些小修改替换，有时是阅读代码，或者是连续输入。   
 为此，vim使用不同模式来便利各个不同目的的操作模式，使得相同的键在不同模式下意义不同。
 
 !!! info "vim中最常用的模式有"
@@ -31,8 +34,8 @@
     - o / O ：在下/上新建一行并进入插入模式
     - d{motion} ：按照motion删除，motion见 move 部分
     - c{motion} ：比d{motion}多一步进入插入模式
-    - x ： 删除当光标字符
-    - s ： 以下一个输入代替当光标字符
+    - x ： 删除当前光标字符
+    - s <char>： 以<char>代替当光标字符
     - Visual mode + manipulation ： 这些操作也适用于选择模式选中后
     - u 撤回, <C-r> 取消撤回
     - y 复制
@@ -42,6 +45,6 @@
 
 ## Advanced Vim
 
-- Vim 是高度可定制化的。只要要改变用户目录下的配置文件即可(~/.vimrc)。也可参考笔者自己非常简单的的[:octicons-link-16:配置文件](https://github.com/stormckey/dotfiles/blob/main/dot_vimrc)  
-- Vim也有许多优质的插件，笔者几乎没有添加任何插件，而是把Vim作为一个插件在VSCode上使用  
-- Vim 的命令行高深莫测，笔者最常用的只是退出、替换而已
+- Vim 是高度可定制化的。只要要改变用户目录下的配置文件即可(~/.vimrc)。也可参考我非常简单的的[:octicons-link-16:配置文件](https://github.com/stormckey/dotfiles/blob/main/dot_vimrc)  
+- Vim也有许多优质的插件，我几乎没有添加任何插件，而是把Vim作为一个插件在VSCode上使用  
+- Vim 的命令行高深莫测，我最常用的只是退出、替换而已

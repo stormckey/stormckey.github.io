@@ -1,5 +1,7 @@
 ---
 comments: true
+hide:
+    - navigation
 ---
 # 如何构建一个像这样的网站！
 

@@ -1,19 +1,42 @@
-# Git Learning Notes
+---
+comments: true
+---
+# Notes for Git
 
 !!! abstract "一个自底向上的学习过程，最后附上了常用指令，暂无操作演示，可以参考原[:octicons-link-16:课程网站](https://missing.csail.mit.edu/2020/version-control/)"
 ## Terminology
 
 !!! info "定义"
-    - 一个文件被称作**blob**.  
-    - 一个文件夹被称作**tree**.  
-    - 整个仓库的快照被称作**commit**.  
-    - commit的有向无环图构成**history**. 
-    - 一个**object**是blob、tree或者commit，没个对象都有自己对应的hash.
-    - 一个**reference**是一个对象的别名，或者我们通过hash来引用一个对象.
-    - **main/master** 作为一个特殊的reference总是指向开发中的最新稳定版本.
-    - **HEAD** 作为一个特殊引用指向我们目前在历史中的何处.
-    - 一个 **Git repository*** 是object和reference的集合.
-    - **Staging area** 是一种机制来让我们指定哪些对象要被commit, 而非整个仓库.
+    `blob`
+    :   一个文件被称作**blob**.  
+
+    `tree`
+    :   一个文件夹被称作**tree**.  
+
+    `commit`
+    :   整个仓库的快照被称作**commit**.  
+
+    `history`
+    :   commit的有向无环图构成**history**. 
+
+    `object`
+    :   一个**object**是blob、tree或者commit，每个对象都有自己对应的hash.
+
+    `reference`
+    :   一个**reference**是一个对象的别名，除了别名，我们还可以通过hash来引用一个对象.
+
+    `main/master`
+    :   **main/master** 作为一个特殊的reference总是指向开发中的最新稳定版本.
+
+    `HEAD`
+    :   **HEAD** 作为一个特殊引用指向我们目前在历史中的位置.
+
+    `Git repository`
+    :   一个 **Git repository*** 是object和reference的集合.
+
+    `Staging area`
+    :   **Staging area** 是一种机制来让我们指定哪些对象要被commit, 而非整个仓库.
+
 ## Git Data Model
 首先定义数据对象
 ```
@@ -72,6 +95,32 @@ def load(id):
     - `git merge --continue` : continue to merge after you fix the merge confliction
     - `git mergetool`: use a fancy tool to help resolve merge conflicts
     - `git rebase`: rebase set of patches onto a new base
+!!! info "More on rebase"
+    Commonly used to "move" an entire branch to another base, creating copies of the commits in the new location.
+
+    - Rebase the current branch on top of another specified branch:  
+        `git rebase new_base_branch`
+
+    - Start an interactive rebase, which allows the commits to be reordered, omitted, combined or modified:  
+        `git rebase -i target_base_branch_or_commit_hash`
+
+    - Continue a rebase that was interrupted by a merge failure, after editing conflicting files:  
+        `git rebase --continue`
+
+    - Continue a rebase that was paused due to merge conflicts, by skipping the conflicted commit:  
+        `git rebase --skip`
+
+    - Abort a rebase in progress (e.g. if it is interrupted by a merge conflict):  
+        `git rebase --abort`
+
+    - Move part of the current branch onto a new base, providing the old base to start from:  
+        `git rebase --onto new_base old_base`
+
+    - Reapply the last 5 commits in-place, stopping to allow them to be reordered, omitted, combined or modified:  
+        `git rebase -i HEAD~5`
+
+    - Auto-resolve any conflicts by favoring the working branch version (`theirs` keyword has reversed meaning in this case):  
+        `git rebase -X theirs branch_name`
 !!! info "Remotes"
     - `git remote`: list remotes
     - `git remote add <name> <url>`: add a remote ;name is origin by convention if we have only one remote; url can be a web address or a local directory 

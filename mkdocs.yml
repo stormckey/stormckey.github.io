@@ -167,31 +167,38 @@ nav:
     - index.md
   - Blog: 
     - Blog/index.md
-    - Blog/Build_this_website.md
-    - 原型: Blog/Women_and_prototype.md
-    - Blog/zsh_arg.md
-    - Blog/wsl_cuda.md
-    - Blog/VSCode_conda.md
-    - Blog/ssh_wsl.md
-    - Blog/wsl_config.md
-    - Blog/VSCode-Markdown.md
-    - Blog/github_profile.md
-    - 启用chatGPT-academic: Blog/GPT_academic.md
-    - 我的CLI工具: Blog/CLI_tools.md
-    - 在Mac上使用VSCode进行C/C++调试: Blog/Mac_VSC_DEBUG.md
+    - Environment:
+      - Blog/Environment/zsh_arg.md
+      - Blog/Environment/VSCode_conda.md
+      - Blog/Environment/VSCode-Markdown.md
+      - Blog/Environment/wsl_cuda.md
+      - Blog/Environment/ssh_wsl.md
+      - Blog/Environment/Mac_VSC_DEBUG.md
+      - Blog/Environment/index.md
+      - Blog/Environment/linux_config.md
+      - Blog/Environment/CLI_tools.md
     - Minisql: 
       - Blog/Minisql/index.md
     #   - Minisql#0: Blog/Minisql/minisql_part0.md
     #   - Minisql#1: Blog/Minisql/minisql_part1.md
-      - 在docker上部署minisql环境: Blog/docker_minisql.md
+      - 在docker上部署minisql环境: Blog/Minisql/docker_minisql.md
+    - Fun:
+      - Blog/Fun/index.md
+      - 原型: Blog/Fun/Women_and_prototype.md
+    - Cool:
+      - Blog/Cool/index.md
+      - Blog/Cool/GPT_academic.md
+      - Blog/Cool/github_profile.md
+
   - Note:
     - Note/index.md
     - 计组拾遗: Note/CO_review.md
     - DS:
-      - BST,AVL,Splay: Note/DS/BST_AVL_Splay.md
-      - B-Tree,B+Tree: Note/DS/B-Tree_B+Tree.md
-      - Red-Black Tree: Note/DS/RBTree.md
+      - BST,AVL,Splay: Note/ADS/BST_AVL_Splay.md
+      - B-Tree,B+Tree: Note/ADS/B-Tree_B+Tree.md
+      - Red-Black Tree: Note/ADS/RBTree.md
     - Missing Semester:
+      - Note/Missing Semester/index.md
       - Shell: Note/Missing Semester/Shell.md
       - Shell++: Note/Missing Semester/Shell++.md
       - Vim: Note/Missing Semester/Vim.md
@@ -200,6 +207,6 @@ nav:
       - Commandline Environment: Note/Missing Semester/commandline_env.md
   - Research:
     - Research/index.md
-    - Diffusion: 
-      - DDPM: Research/DDPM.md
-      - DDIM: Research/DDIM.md
+    - Diffusion Model: 
+      - DDPM: Research/Diffusion Model/DDPM.md
+      - DDIM: Research/Diffusion Model/DDIM.md
