@@ -6,6 +6,7 @@ site_author: Stormckey
 repo_name: stormckey
 repo_url: https://github.com/stormckey/stormckey.github.io
 
+# The path to edit the content
 edit_uri: edit/main/docs/
 
 # Copyright
@@ -14,8 +15,11 @@ copyright: Copyright &copy; stormckey
 theme:
   name: material
   custom_dir: overrides
+  favicon: cat.svg # put in /docs/cat.svg
+  font: 
+    text: Roboto Mono
+    code: Roboto Mono
   features:
-      - content.code.annotate
       - content.action.edit # enable the button to edit the source code of the page
       - content.action.view # enable the button to view the source code of the page
       - content.code.copy # enable the button to copy the code block
@@ -30,7 +34,7 @@ theme:
       - navigation.tracking # URL will change as we scroll down
       - toc.follow # the sidebar will scroll automatically following the user
       - navigation.top # button to back to the top
-  palette:
+  palette: # my customized schema
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: indigo
@@ -43,17 +47,16 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  font:
-    code: Roboto Mono
   icon:
-    repo: fontawesome/brands/github-alt
+    repo: fontawesome/brands/github-alt # the github cat icon in the topright
+    logo: material/cat # the cat icon in the topleft
 
 plugins:
   - search
-  - social:
-      enabled: !ENV [CI, false]
-      cards: !ENV [CI, false]
-      cards_font: Noto Sans SC
+  # - social: #social card
+  #     enabled: !ENV [CI, false]
+  #     cards: !ENV [CI, false]
+  #     cards_font: Noto Sans SC
   - git-revision-date-localized:
       enabled: !ENV [CI, false]
       enable_creation_date: true
@@ -72,11 +75,6 @@ markdown_extensions:
   - admonition
   - pymdownx.details # enable ??? admonition
   - pymdownx.betterem # better emphasize
-      # anchor_linenums: true
-      # use_pygments: true
-      # auto_title: true
-      # line_spans: __span
-      # pygments_lang_class: true
   - pymdownx.superfences: # allow nest codes
       custom_fences:
         - name: mermaid
@@ -106,6 +104,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - "overrides/.icons"
 #image alignment
   - md_in_html
 #better list
@@ -181,7 +182,7 @@ nav:
       - Blog/Minisql/index.md
     #   - Minisql#0: Blog/Minisql/minisql_part0.md
     #   - Minisql#1: Blog/Minisql/minisql_part1.md
-      - 在docker上部署minisql环境: Blog/Minisql/docker_minisql.md
+      - Blog/Minisql/docker_minisql.md
     - Fun:
       - Blog/Fun/index.md
       - 原型: Blog/Fun/Women_and_prototype.md
@@ -200,7 +201,6 @@ nav:
     - Missing Semester:
       - Note/Missing Semester/index.md
       - Shell: Note/Missing Semester/Shell.md
-      - Shell++: Note/Missing Semester/Shell++.md
       - Vim: Note/Missing Semester/Vim.md
       - Data: Note/Missing Semester/Data.md
       - Git: Note/Missing Semester/Git.md

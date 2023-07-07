@@ -2,13 +2,11 @@
 comments: true
 ---
 # 计组笔记📒
-!!! warning "极其简略，只有部分易忘、或不显然的知识点"
-
-!!! danger "计租堂堂大课只有一页内容捏，猜猜是为什么😋"
+!!! warning "极其简略，只有部分易忘、或不显然的知识点，所以祭祖堂堂大颗只用了一页"
 
 !!! info "许多内容整理自[:octicons-link-16:咸鱼暄的代码空间](https://xuan-insr.github.io/computer_organization/1_prelude/)"
 
-!!! tip "[:octicons-link-16:这里](https://bank.engzenon.com/tmp/60746e35-6aec-4163-86ed-7fdec0feb99b/626db954-7f2c-45af-9aa3-42dfc0feb99b/Computer_Organization_Manual_solution.pdf)是课本答案"
+!!! tip "[:octicons-link-16:这里](https://bank.engzenon.com/tmp/60746e35-6aec-4163-86ed-7fdec0feb99b/626db954-7f2c-45af-9aa3-42dfc0feb99b/Computer_Organization_Manual_solution.pdf)是课本作业答案"
 
 ## Ch2 Instructions
 

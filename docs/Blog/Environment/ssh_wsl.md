@@ -1,7 +1,7 @@
 ---
 comments: true
 ---
-# 用ssh连接同一局域网下的Wsl2
+# Use SSH to Connect WSL2 in the same LAN
 !!! abstract 
     基础的流程参考[:octicons-link-16:这篇博客](https://blog.csdn.net/qq_24211837/article/details/117386077)就好，本文记录一下踩的雷和更进阶的设置
 

@@ -1,7 +1,7 @@
 ---
 comments: true
 ---
-# 启用chatGPT_academic
+# Enable ChatGPT_academic
 
 !!! info "准备工作"
     请在阅读此文前准备好ChatGPT的API Key和好用的代理。（前者主要是注册好账号就行，合理利用https://sms-activate.org/）

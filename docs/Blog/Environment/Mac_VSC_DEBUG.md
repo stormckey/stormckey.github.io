@@ -1,7 +1,7 @@
 ---
 comments: true
 ---
-# 在Mac上使用VSCode进行C/C++调试
+# Conduct C/C++ Debugging in VSCode on Mac
 
 !!! info "环境"
     MacOS: Ventura 13.2.1  

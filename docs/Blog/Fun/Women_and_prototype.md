@@ -1,7 +1,7 @@
 ---
 comments: true
 ---
-# 原型
+# Prototype
 
 妇女节将至，我看见了一篇讨论妇女节这个名称的[:octicons-link-16:文章](https://mp.weixin.qq.com/s/yuGoPszsDpBs6GPdw52AOQ)。这篇文章并不讨论妇女权益，它讨论大家为什么不喜欢被称作妇女。  
 

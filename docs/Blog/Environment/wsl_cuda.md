@@ -1,7 +1,7 @@
 ---
 comments: true
 ---
-# 在Wsl Ubuntu22.02上启用Cuda
+# Enable CUDA on Wsl Ubuntu22.02
 
 !!! info "主要是参考了[:octicons-link-16:这篇文章](https://zhuanlan.zhihu.com/p/506477744)"
 

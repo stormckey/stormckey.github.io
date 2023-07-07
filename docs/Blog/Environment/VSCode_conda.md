@@ -1,7 +1,7 @@
 ---
 comments: true
 ---
-# VSCode终端里无法启用conda虚拟环境
+# Issue when using conda in VSCode 
 
 最近开始使用conda，试图在VSCode终端里切换虚拟环境，命令行提示已经切换，但是python环境实际上没有变。  
 解决方案如下：

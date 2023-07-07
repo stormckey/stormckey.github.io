@@ -1,7 +1,7 @@
 ---
 comments: true
 ---
-# Linux终端配置
+# Linux Terminal Configurations
 
 ## 启用zsh
 ```
