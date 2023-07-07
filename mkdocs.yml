@@ -193,7 +193,7 @@ nav:
 
   - Note:
     - Note/index.md
-    - 计组拾遗: Note/CO_review.md
+    - Note/CO_review.md
     - DS:
       - BST,AVL,Splay: Note/ADS/BST_AVL_Splay.md
       - B-Tree,B+Tree: Note/ADS/B-Tree_B+Tree.md
