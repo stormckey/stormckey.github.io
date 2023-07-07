@@ -6,7 +6,7 @@ hide:
 # 如何构建一个像这样的网站！
 
 !!! abstract "网站搭建教程"
-    本站点使用mkdocs搭建，部署于Github Pages，使用了[:octicons-linkk-16:material](https://squidfunk.github.io/mkdocs-material/)主题
+    本站点使用mkdocs搭建，部署于Github Pages，使用了[:octicons-link-16:material](https://squidfunk.github.io/mkdocs-material/)主题
 
 ## 1.环境准备
 
@@ -319,6 +319,177 @@ pip install mkdocs-glightbox
 plugins:
   - glightbox
 ```
+
+### 3.10 我的所有配置
+
+以下附上我的`mkdocs.yml`文件，已经删去了导航部分，所以可以直接复制使用：
+??? example "mkdocs.yml"
+    ```yaml
+    # Project information
+    site_name: Stormckey's Page
+    site_url: https://stormckey.github.io/
+    site_author: Stormckey
+    # Repository
+    repo_name: stormckey
+    repo_url: https://github.com/stormckey/stormckey.github.io
+
+    # The path to edit the content
+    edit_uri: edit/main/docs/
+
+    # Copyright
+    copyright: Copyright &copy; stormckey
+
+    theme:
+    name: material
+    custom_dir: overrides
+    favicon: cat.svg # put in /docs/cat.svg
+    font: 
+        text: Roboto Mono
+        code: Roboto Mono
+    features:
+        - content.action.edit # enable the button to edit the source code of the page
+        - content.action.view # enable the button to view the source code of the page
+        - content.code.copy # enable the button to copy the code block
+        - navigation.tabs  # enable the row of tabs under the title 
+        # - navigation.sections # unfold the secondary titles to the left
+        # - navigation.footer # enable the next and previous button
+        - navigation.indexes # the index page will be incoperate into the tab
+        - search.suggest # auto suggestion
+        - search.highlight # highlight when search
+        - search.share # enable share when search
+        - navigation.instant # optimize loading
+        - navigation.tracking # URL will change as we scroll down
+        - toc.follow # the sidebar will scroll automatically following the user
+        - navigation.top # button to back to the top
+    palette: # my customized schema
+        - media: "(prefers-color-scheme: light)"
+        scheme: default
+        primary: indigo
+        accent: indigo
+        toggle:
+            icon: material/brightness-7
+            name: Switch to dark mode
+        - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        toggle:
+            icon: material/brightness-4
+            name: Switch to light mode
+    icon:
+        repo: fontawesome/brands/github-alt # the github cat icon in the topright
+        logo: material/cat # the cat icon in the topleft
+
+    plugins:
+    - search
+    # - social: #social card
+    #     enabled: !ENV [CI, false]
+    #     cards: !ENV [CI, false]
+    #     cards_font: Noto Sans SC
+    - git-revision-date-localized:
+        enabled: !ENV [CI, false]
+        enable_creation_date: true
+    - offline: # enable searching offline
+        enabled: !ENV [OFFLINE, false]
+    - table-reader
+    - changelog #see https://github.com/TonyCrane/mkdocs-changelog-plugin
+    - tooltips
+    - statistics
+    - glightbox
+
+
+
+    markdown_extensions:
+    #enable admonition
+    - admonition
+    - pymdownx.details # enable ??? admonition
+    - pymdownx.betterem # better emphasize
+    - pymdownx.superfences: # allow nest codes
+        custom_fences:
+            - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
+    #enable code config
+    - pymdownx.inlinehilite #inline code highlight
+    - pymdownx.snippets: #enable to embed arbitrary files
+        auto_append:
+            - includes/abbreviations.md
+    - pymdownx.highlight:
+            linenums: true # enable line display
+            line_spans: __span
+            pygments_lang_class: true # detect language automatically
+            anchor_linenums: true # offer line anchor
+    - pymdownx.keys # render key symbols
+    - pymdownx.smartsymbols
+    #enable button
+    - attr_list  
+    #enable content tabs
+    - pymdownx.tabbed:
+        alternate_style: true 
+    - tables
+    #daigrams are not enabled
+    - footnotes
+    #enable emoji
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+        options:
+            custom_icons:
+            - "overrides/.icons"
+    #image alignment
+    - md_in_html
+    #better list
+    - def_list
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    #abbr
+    - abbr
+    #enable math syntax
+    - pymdownx.arithmatex:
+        generic: true
+    #enable table of content
+    - toc:
+        permalink: true
+        permalink_title: Anchor link to this section for reference
+    - pymdownx.caret
+    - pymdownx.mark
+    - pymdownx.tilde
+    - pymdownx.critic
+
+    extra_javascript:
+    - javascripts/extra.js
+    - javascripts/mathjax.js
+    - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js # enable table sort
+    - javascripts/tablesort.js # enable table sort
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+    extra:
+    social:
+        - icon: fontawesome/brands/github # icons to the right bottom of the page
+        link: https://github.com/stormckey
+        - icon: fontawesome/solid/paper-plane # icons to the right bottom of the page
+        link: mailto:sortygraph@gmail.com
+    alternate: # change the language, the link should point to different directories
+        - name: English
+        link: /
+        lang: en
+        - name: 中文
+        link: /
+        lang: zh
+    consent:
+        title: Cookie consent
+        description: >- 
+        We use cookies to recognize your repeated visits and preferences, as well
+        as to measure the effectiveness of our documentation and whether users
+        find what they're searching for. With your consent, you're helping us to
+        make our documentation better.
+    analytics:
+        provider: google
+        property: G-XXXXXXXXXX
+
+    extra_css:
+    - css/hint.min.css
+    - css/extra.css
+    ```
 
 ### 3.x更多特性（我还不会用但考虑启用的）
 
