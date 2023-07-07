@@ -194,10 +194,10 @@ nav:
   - Note:
     - Note/index.md
     - Note/CO_review.md
-    - DS:
-      - BST,AVL,Splay: Note/ADS/BST_AVL_Splay.md
-      - B-Tree,B+Tree: Note/ADS/B-Tree_B+Tree.md
-      - Red-Black Tree: Note/ADS/RBTree.md
+    # - DS:
+    #   - BST,AVL,Splay: Note/ADS/BST_AVL_Splay.md
+    #   - B-Tree,B+Tree: Note/ADS/B-Tree_B+Tree.md
+    #   - Red-Black Tree: Note/ADS/RBTree.md
     - Missing Semester:
       - Note/Missing Semester/index.md
       - Shell: Note/Missing Semester/Shell.md
