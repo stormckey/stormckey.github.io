@@ -301,7 +301,7 @@ plugins:
 
 ### 3.7从文件读取表格
 
-参考[:octicons-link-16原文档:](https://squidfunk.github.io/mkdocs-material/reference/data-tables/#import-table-from-file)
+参考[:octicons-link-16:原文档](https://squidfunk.github.io/mkdocs-material/reference/data-tables/#import-table-from-file)
 
 ### 3.8使用emojis和icons
 
