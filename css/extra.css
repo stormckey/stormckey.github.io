@@ -1,0 +1,79 @@
+[data-md-color-primary=indigo] {
+    --md-primary-fg-color:  #FFACA6;
+}
+[data-md-color-accent=indigo] {
+  --md-accent-fg-color: #FFACA6;
+}
+[data-md-color-scheme=default] {
+    --md-typeset-a-color: #000000;
+    --my-changlog-color: #EFEFEF;
+}
+[data-md-color-scheme=slate] {
+    --md-typeset-a-color: #FFFFFF;
+    --my-changlog-color: #161616;
+}
+.md-grid {
+  max-width: 1400px; 
+}/* make the page wider */
+/* changelog config*/
+.timeline-card{
+  background-color: var(--my-changlog-color); 
+}
+.timeline-content::before{
+  background-color: var(--my-changlog-color); 
+} 
+.changelog-type{
+  background-color: #CC9052;
+}
+.changelog-type-newpage{
+  background-color: #FF9C80;
+}
+.changelog-type-refactor::before {
+  content: "文档更新";
+}
+
+/* 图片放大start */
+/* .shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.zoom {
+  transition: transform ease-in-out 0.5s;
+  cursor: zoom-in;
+}
+
+.image-zoom-large {
+  transform: scale(1.9);
+  cursor: zoom-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 100;
+  position: relative;
+} */
+/* 图片放大end */
+
+
+
+/*图片格式设置*/
+/*默认样式*/
+img[src*="pic"] {
+  box-shadow: 2px 2px 10px #666;
+  border-radius: 4px;
+}
+/*样式1 同默认样式*/
+img[src*="pic1"] {
+  box-shadow: 4px 4px 15px #666;
+  border-radius: 10px;
+}
+
+/* beat like a heart */
+@keyframes heart {
+  0%, 40%, 80%, 100% {
+    transform: scale(1);
+  }
+  20%, 60% {
+    transform: scale(1.15);
+  }
+}
+.heart {
+  animation: heart 1000ms infinite;
+}

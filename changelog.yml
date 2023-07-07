@@ -1,0 +1,36 @@
+- "2023":
+  - "2003-07-08":
+    - refactor: 更换了更新日志的色彩
+    - refactor: 移除DS笔记
+  - "2023-07-04":
+    - refactor: 润色了博客和笔记的内容
+    - newpage: Home > Build_this_page
+    - refactor: 重构了网站的结构，启用了新的material功能
+    - newpage: Blog > docker_minisql
+  - "2023-04-06":
+    - newpage: Blog > 在Mac上使用VSCode进行C/C++调试
+  - "2023-04-01":
+    - newpage: Blog > 我的CLI工具
+  - "2023-03-30":
+    - newpage: Note > 计组拾遗
+  - "2023-03-29":
+    - newpage: Blog > 启用chatGPT-academic
+  - "2023-03-27":
+    - newpage: Note > Missiing Semester > Commandline Environment
+  - "2023-03-23":
+    - refactor: 重构了全站的图片样式，现在是默认圆角矩形加阴影
+    - newpage: Blog > 在VSCode下编写Markdown
+    - newpage: Blog > 配置Github个人Profile
+  - "2023-03-22":
+    - newpage: Blog > 用ssh连接同一局域网下的wsl
+    - newpage: Blog > wsl终端配置
+  - "2023-03-21":
+    - newpage: Blog > wsl上启用cuda
+    - newpage: Blog > VSCode终端上无法启用conda虚拟环境
+  - "2023-03-20":
+    - newpage: Blog > zsh中的参数传递
+  - "2023-03-18":
+    - newpage: Home > 最近更新
+    - refactor: 修改了网站的色彩,使用了更多样的图标
+    - newpage: Research > Diffusion > DDPM
+    - newpage: Research > Diffusion > DDIM
