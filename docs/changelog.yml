@@ -1,4 +1,7 @@
 - "2023":
+  - "2003-07-08":
+    - refactor: 更换了更新日志的色彩
+    - refactor: 移除DS笔记
   - "2023-07-04":
     - refactor: 润色了博客和笔记的内容
     - newpage: Home > Build_this_page
