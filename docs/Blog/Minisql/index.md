@@ -2,7 +2,7 @@
 commnets: true
 ---
 
-# Minisql Project Blog
+# Minisql
 
 !!! abstract 
     Minisql是计算机科学与技术专业大二春夏的必修课数据库系统夏学期的大程。本博客记录了本人实现这一框架过程中遇到的问题和感想。

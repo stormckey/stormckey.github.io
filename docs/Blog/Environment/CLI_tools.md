@@ -2,7 +2,7 @@
 comments: true
 ---
 
-#  My CLI Tools
+# 我的CLI工具
 
 !!! abstract
     我在这里列出了我在日常工作中使用的一些 CLI 工具。我会不断更新这个列表。

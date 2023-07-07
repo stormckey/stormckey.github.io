@@ -1,7 +1,7 @@
 ---
 comments: true
 ---
-# The Commandline Arguments Passed in ZSH
+# ZSH的参数传递
 
 今天在调用DDPM模型的时候使用[:octicons-link-16:官方代码](https://github.com/openai/guided-diffusion)，竟然报错说参数不存在：
 命令是

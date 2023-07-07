@@ -2,7 +2,7 @@
 comments: true
 ---
 
-# Config Github Profile
+# 配置Github Profile
 
 !!! abstract 
     我配置Github主页Profile的方案，灵感来自[:octicons-link-16:Tonycrane的GitHub主页](https://github.com/TonyCrane)

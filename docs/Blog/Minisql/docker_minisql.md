@@ -2,7 +2,7 @@
 comments: true
 ---
 
-# Use Docker to Deploy Minisql
+# 用Docker搭建minisql环境
 
 !!! abstract 
     一个简易的教程来介绍如何在MacOS上用docker搭建minisql环境，那么有人要问了，为什么不直接本地部署呢。  

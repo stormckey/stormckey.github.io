@@ -2,7 +2,7 @@
 comments: true
 ---
 
-# Edit Markdown in VSCode
+# 在VSCode上写Markdown
 
 ## 起步
 首先启用以下的两个插件，就可以开始写markdown，并在右侧预览了
