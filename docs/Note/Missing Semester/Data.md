@@ -1,4 +1,4 @@
-# Data wranglling
+# Data wrangling
 
 !!! abstract "本节列举一些命令行常用的数据处理工具，不试图保持逻辑连贯"
 
