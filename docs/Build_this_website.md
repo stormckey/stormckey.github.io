@@ -108,7 +108,7 @@ mkdocs gh-deploy
     我们可以使用GitHub action来帮助我们每次更新master分支后自动编译网站并推送到gh-pages分支，这样我们就不用每次都手动执行`mkdocs gh-deploy`了。
     1. 在仓库中新建一个`.github/workflows/auto-deploy.yml`文件，内容如下：
     ```yaml
-    name: auto-deploy
+    name: ci 
     on:
     push:
         branches:
@@ -121,6 +121,8 @@ mkdocs gh-deploy
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v3
+            with:
+            fetch-depth: '0'
         - uses: actions/setup-python@v4
             with:
             python-version: 3.x
@@ -131,7 +133,7 @@ mkdocs gh-deploy
             path: .cache
             restore-keys: |
                 mkdocs-material-
-        - run: pip install mkdocs-material 
+        - run: pip install  mkdocs-material mkdocs-changelog-plugin mkdocs-glightbox jieba pillow cairosvg mkdocs-tooltips mkdocs-statistics-plugin mkdocs-table-reader-plugin mkdocs-git-revision-date-localized-plugin
         - run: mkdocs gh-deploy --force
     ```
     注意，推送到Github的话需要你的token有workflow权限  
