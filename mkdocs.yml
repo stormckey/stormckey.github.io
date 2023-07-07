@@ -59,7 +59,6 @@ plugins:
   #     cards_font: Noto Sans SC
   - git-revision-date-localized:
       enabled: !ENV [CI, false]
-      enable_creation_date: true
   - offline: # enable searching offline
       enabled: !ENV [OFFLINE, false]
   - table-reader
