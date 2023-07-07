@@ -37,8 +37,8 @@ theme:
   palette: # my customized schema
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: P
+      accent: P
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
