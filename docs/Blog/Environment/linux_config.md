@@ -40,3 +40,11 @@ sudo apt install autojump
 echo '#Enable autojump' >> ~/.zshrc
 echo 'source  /usr/share/autojump/autojump.sh'>>~/.zshrc
 ```
+
+## 在命令行中启用vi
+```
+git clone https://github.com/soheilpro/zsh-vi-search.git ~/.zsh/plugins/zsh-vi-search
+echo "Enable vi mode"
+echo "bindkey -v" >> ~/.zshrc
+echo "source ~/.zsh/plugins/zsh-vi-search/src/zsh-vi-search.zsh" >> ~/.zshrc
+```
