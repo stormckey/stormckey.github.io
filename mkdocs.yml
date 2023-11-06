@@ -211,3 +211,7 @@ nav:
     - Diffusion Model: 
       - DDPM: Research/Diffusion Model/DDPM.md
       - DDIM: Research/Diffusion Model/DDIM.md
+  
+  - PeiPei:
+    - PeiPei/index.md
+    - PeiPei/markdown.md
