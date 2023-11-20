@@ -184,9 +184,9 @@ nav:
     #   - Minisql#0: Blog/Minisql/minisql_part0.md
     #   - Minisql#1: Blog/Minisql/minisql_part1.md
       - Blog/Minisql/docker_minisql.md
-    - Fun:
-      - Blog/Fun/index.md
-      - 原型: Blog/Fun/Women_and_prototype.md
+    # - Fun:
+    #   - Blog/Fun/index.md
+    #   - 原型: Blog/Fun/Women_and_prototype.md
     - Cool:
       - Blog/Cool/index.md
       - Blog/Cool/GPT_academic.md
@@ -206,6 +206,9 @@ nav:
       - Data: Note/Missing Semester/Data.md
       - Git: Note/Missing Semester/Git.md
       - Commandline Environment: Note/Missing Semester/commandline_env.md
+    - Data_Modeling:
+      - Note/Data Modeling/index.md
+      - 感知机: Note/Data Modeling/Perceptron.md
   - Research:
     - Research/index.md
     - Diffusion Model: 
