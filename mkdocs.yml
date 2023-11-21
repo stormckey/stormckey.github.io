@@ -195,10 +195,10 @@ nav:
   - Note:
     - Note/index.md
     - Note/CO_review.md
-    # - DS:
-    #   - BST,AVL,Splay: Note/ADS/BST_AVL_Splay.md
-    #   - B-Tree,B+Tree: Note/ADS/B-Tree_B+Tree.md
-    #   - Red-Black Tree: Note/ADS/RBTree.md
+    - DS:
+      - BST,AVL,Splay: Note/ADS/BST_AVL_Splay.md
+      - B-Tree,B+Tree: Note/ADS/B-Tree_B+Tree.md
+      - Red-Black Tree: Note/ADS/RBTree.md
     - Missing Semester:
       - Note/Missing Semester/index.md
       - Shell: Note/Missing Semester/Shell.md
@@ -206,9 +206,10 @@ nav:
       - Data: Note/Missing Semester/Data.md
       - Git: Note/Missing Semester/Git.md
       - Commandline Environment: Note/Missing Semester/commandline_env.md
-    - Data_Modeling:
+    - 数据建模与基础:
       - Note/Data Modeling/index.md
       - 感知机: Note/Data Modeling/Perceptron.md
+      - K邻近: Note/Data Modeling/KNN.md
   - Research:
     - Research/index.md
     - Diffusion Model: 
