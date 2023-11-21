@@ -212,6 +212,7 @@ nav:
       - K邻近: Note/Data Modeling/KNN.md
       - 朴素贝叶斯算法: Note/Data Modeling/Naive_Bayesian.md
       - 决策树: Note/Data Modeling/Decision_Tree.md
+      - 逻辑斯蒂回归: Note/Data Modeling/Logistic Regression.md
   - Research:
     - Research/index.md
     - Diffusion Model: 
