@@ -206,7 +206,7 @@ nav:
       - Data: Note/Missing Semester/Data.md
       - Git: Note/Missing Semester/Git.md
       - Commandline Environment: Note/Missing Semester/commandline_env.md
-    - 数据建模与基础:
+    - 数据建模与分析:
       - Note/Data Modeling/index.md
       - 感知机: Note/Data Modeling/Perceptron.md
       - K邻近: Note/Data Modeling/KNN.md
