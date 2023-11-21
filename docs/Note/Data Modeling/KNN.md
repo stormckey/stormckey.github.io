@@ -7,14 +7,14 @@ header-includes:
 
 ## 问题及算法描述
 
-给定数据集$\{(x_i,y_i)\}$, 其中$y_i \in \{ c_1,c_2,....c_k\}$ 一共有K种类别，现在给出一个新的数据点$x$，求出它的类别$y$。  
+给定数据集$\{(x_i,y_i)\}$, 其中$x \in \mathbb{R}^n$，$y_i \in \{ c_1,c_2,....c_k\}$， 一共有K种类别，现在给出一个新的数据点$x$，求出它的类别$y$。  
 算法思想：  
 
 - 找出离x最近的K个邻居$N_{k}(x)$
 - 由着K个邻居进行多数表决:
 
 $$
-    y =\underset{c_j}{\operatorname{argmax}} \sum_{N_{k}(x)} I(y = c_j)
+    y =\underset{c_j}{\operatorname{arg max}} \sum_{N_{k}(x)} I(y = c_j)
 $$
 
 其中的$I(y = c_j)$是指示函数，当$y = c_j$时，$I(y = c_j) = 1$，否则$I(y = c_j) = 0$。
