@@ -176,7 +176,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stormckey.github.io/Note/Data%20Modeling/Logistic%20Regression/</loc>
+         <loc>https://stormckey.github.io/Note/Data%20Modeling/Logistic_Regression/</loc>
+         <lastmod>2023-11-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Note/Data%20Modeling/Max_Entropy/</loc>
          <lastmod>2023-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -187,6 +192,11 @@
     </url>
     <url>
          <loc>https://stormckey.github.io/Note/Data%20Modeling/Perceptron/</loc>
+         <lastmod>2023-11-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Note/Data%20Modeling/Support_Vector_Machine/</loc>
          <lastmod>2023-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
