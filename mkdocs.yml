@@ -184,7 +184,7 @@ nav:
       - Blog/Labs/docker_minisql.md
       - Blog/Labs/CN_lab2.md
       - Blog/Labs/OS_lab3.md
-      
+
     # - Minisql: 
     #   - Minisql#0: Blog/Minisql/minisql_part0.md
     #   - Minisql#1: Blog/Minisql/minisql_part1.md
@@ -216,7 +216,10 @@ nav:
       - K邻近: Note/Data Modeling/KNN.md
       - 朴素贝叶斯算法: Note/Data Modeling/Naive_Bayesian.md
       - 决策树: Note/Data Modeling/Decision_Tree.md
-      - 逻辑斯蒂回归: Note/Data Modeling/Logistic Regression.md
+      - 逻辑斯蒂回归: Note/Data Modeling/Logistic_Regression.md
+      - Note/Data Modeling/Max_Entropy.md
+      - Note/Data Modeling/Support_Vector_Machine.md
+
   - Research:
     - Research/index.md
     - Diffusion Model: 
