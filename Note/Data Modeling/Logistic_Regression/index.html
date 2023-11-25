@@ -1903,6 +1903,7 @@
 F(x)=\frac{1}{1+e^{-(x-\mu)/\gamma}}
 \]</div>
 <p>其中<span class="arithmatex">\(\mu\)</span>为位置参数，<span class="arithmatex">\(\gamma\)</span>为形状参数。该分布函数的图像为S型曲线，<span class="arithmatex">\(\mu\)</span>为函数的对称中心，<span class="arithmatex">\(\gamma\)</span>控制函数的陡峭程度，值越大，函数越陡峭。</p>
+<p><a class="glightbox" href="../images/Logistic_Regression/2023-11-25-23-39-04.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Logistic_Regression/2023-11-25-23-39-04.png#pic" /></a></p>
 <h2 id="_3">二项逻辑斯谛回归模型<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
 <p>给定数据集<span class="arithmatex">\(D=\{(x_1,y_1),(x_2,y_2),...,(x_m,y_m)\}\)</span>，其中<span class="arithmatex">\(x_i \in \mathbb{R}\)</span>，<span class="arithmatex">\(y_i \in \{0,1\}\)</span>，我们的目标是学习到一个线性模型来进行分类，在感知机中，我们用一个指示函数来将函数值的符号映射到不同的分类。</p>
 <p>对于逻辑斯蒂回归来说，我们想要得到的是某个x下属于0，或者1的概率，因为分布函数也是连续的，所以我们可以试图用线性的模型去拟合，我们先作如下的转化：</p>
