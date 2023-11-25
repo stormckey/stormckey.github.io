@@ -179,11 +179,15 @@ nav:
       - Blog/Environment/index.md
       - Blog/Environment/linux_config.md
       - Blog/Environment/CLI_tools.md
-    - Minisql: 
-      - Blog/Minisql/index.md
+    - Lab:
+      - Blog/Labs/index.md
+      - Blog/Labs/docker_minisql.md
+      - Blog/Labs/CN_lab2.md
+      - Blog/Labs/OS_lab3.md
+      
+    # - Minisql: 
     #   - Minisql#0: Blog/Minisql/minisql_part0.md
     #   - Minisql#1: Blog/Minisql/minisql_part1.md
-      - Blog/Minisql/docker_minisql.md
     # - Fun:
     #   - Blog/Fun/index.md
     #   - 原型: Blog/Fun/Women_and_prototype.md
