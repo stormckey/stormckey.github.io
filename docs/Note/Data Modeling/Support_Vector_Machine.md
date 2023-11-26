@@ -9,7 +9,7 @@ comments: true
 
 ## 模型描述
 
-对于数据集$\{(x_i,y_i)\}$,其中$x_i \in \mathbb{R}^n, y \in {1,-1}$,我们希望找到一个超平面$w\cdot x + b = 0$将数据集分开.
+对于数据集$\{(x_i,y_i)\}$,其中$x_i \in \mathbb{R}^n, y \in \{1,-1\}$,我们希望找到一个超平面$w\cdot x + b = 0$将数据集分开.
 
 !!! info "实例点到超平面的几何间隔"
     $$
@@ -121,7 +121,7 @@ $$
 
 若$\alpha_i^* > 0$,由(3)可以推出$y_i(w^*\cdot x_i + b^*) = 1$,回忆前文我们已经令$\hat{\gamma} = 1$,所以j的函数间隔跟最小函数间隔相等,每个j都因此成为一个支持向量,其中既有正例也有反例
 
-#### 求 $w^* b^*$
+#### 求最优w,b
 
 利用支持向量,我们可以得到
 
@@ -160,7 +160,7 @@ $$
 
 我们的对偶问题随之变成:
 
- \begin{aligned}
+\begin{aligned}
     \underset {\alpha}{\operatorname{max}} & \quad L(\alpha) =  \sum_{i=1}^{N}\alpha_i - \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) \\
     s.t. & \quad \sum_{i=1}^{N}\alpha_i y_i = 0 \\
     & \quad 0 \leq \alpha_i \leq C, i = 1,2,...,N \\
@@ -171,7 +171,7 @@ $$
 \begin{aligned}
     \nabla_{\xi_i} L(w,b,\alpha,\xi) = C - \alpha_i - \mu_i = 0  \quad i = 1,2,...,N \\
     \mu_i \geq 0 \quad i = 1,2,...,N \\
-\begin{aligned}
+\end{aligned}
 
 这也是上述条件中出现$\alpha_i \leq C$的原因
 
@@ -224,9 +224,13 @@ $$
     \begin{aligned}
         & \sum_{i=1}^{N}\alpha_i y_i = 0 \\
         & 0 \leq \alpha_i \leq C, i = 1,2,...,N \\
-        & y_i(g(x_i)) \geq 1 (\alpha_i = 0) \\
-        & y_i(g(x_i)) = 1 (0 < \alpha_i < C) \\
-        & y_i(g(x_i)) \leq 1 (\alpha_i = C) \\
+        & y_i(g(x_i)) = \left\{
+        \begin{aligned}
+            & \geq 1, \alpha_i = 0 \\
+            & = 1, 0 < \alpha_i < C \\
+            & \leq 1, \alpha_i = C \\
+        \end{aligned}
+        \right.
     \end{aligned}
 
     则令$\alpha = (\alpha_1,\alpha_2,...,\alpha_N)$,退出循环
