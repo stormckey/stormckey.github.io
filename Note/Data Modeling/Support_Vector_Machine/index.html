@@ -1361,7 +1361,7 @@
         
   
   <span class="md-ellipsis">
-    K邻近
+    K近邻
   </span>
   
 
@@ -1583,9 +1583,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#w-b" class="md-nav__link">
+  <a href="#wb" class="md-nav__link">
     <span class="md-ellipsis">
-      求 \(w^* b^*\)
+      求最优w,b
     </span>
   </a>
   
@@ -2006,9 +2006,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#w-b" class="md-nav__link">
+  <a href="#wb" class="md-nav__link">
     <span class="md-ellipsis">
-      求 \(w^* b^*\)
+      求最优w,b
     </span>
   </a>
   
@@ -2093,14 +2093,14 @@
 
 <h1 id="_1">支持向量机<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2061 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 7 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2059 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 7 分钟</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>很多人都吐槽,支持向量机这个名字起的依托</p>
 </div>
 <h2 id="_2">模型描述<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
-<p>对于数据集<span class="arithmatex">\(\{(x_i,y_i)\}\)</span>,其中<span class="arithmatex">\(x_i \in \mathbb{R}^n, y \in {1,-1}\)</span>,我们希望找到一个超平面<span class="arithmatex">\(w\cdot x + b = 0\)</span>将数据集分开.</p>
+<p>对于数据集<span class="arithmatex">\(\{(x_i,y_i)\}\)</span>,其中<span class="arithmatex">\(x_i \in \mathbb{R}^n, y \in \{1,-1\}\)</span>,我们希望找到一个超平面<span class="arithmatex">\(w\cdot x + b = 0\)</span>将数据集分开.</p>
 <div class="admonition info">
 <p class="admonition-title">实例点到超平面的几何间隔</p>
 <div class="arithmatex">\[
@@ -2177,7 +2177,7 @@
 \end{align}\]</div>
 <p>若<span class="arithmatex">\(\alpha^* = 0\)</span>,由(4)可以推出<span class="arithmatex">\(w^* = 0\)</span>,显然不对,所以<span class="arithmatex">\(\alpha^*\)</span>不全为零</p>
 <p>若<span class="arithmatex">\(\alpha_i^* &gt; 0\)</span>,由(3)可以推出<span class="arithmatex">\(y_i(w^*\cdot x_i + b^*) = 1\)</span>,回忆前文我们已经令<span class="arithmatex">\(\hat{\gamma} = 1\)</span>,所以j的函数间隔跟最小函数间隔相等,每个j都因此成为一个支持向量,其中既有正例也有反例</p>
-<h4 id="w-b">求 <span class="arithmatex">\(w^* b^*\)</span><a class="headerlink" href="#w-b" title="Anchor link to this section for reference">&para;</a></h4>
+<h4 id="wb">求最优w,b<a class="headerlink" href="#wb" title="Anchor link to this section for reference">&para;</a></h4>
 <p>利用支持向量,我们可以得到</p>
 <div class="arithmatex">\[\begin{align}
     &amp; w^* = \sum_{i=1}^{N}\alpha_i^* y_i x_i \\
@@ -2201,16 +2201,16 @@
 \]</div>
 <p>其中的C是一个我们手动设置的惩罚参数</p>
 <p>我们的对偶问题随之变成:</p>
-<p>\begin{aligned}
-    \underset {\alpha}{\operatorname{max}} &amp; \quad L(\alpha) =  \sum_{i=1}^{N}\alpha_i - \frac{1}{2}\sum_{i=1}<sup N="N">{N}\sum_{j=1}</sup>\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) \
-    s.t. &amp; \quad \sum_{i=1}^{N}\alpha_i y_i = 0 \
-    &amp; \quad 0 \leq \alpha_i \leq C, i = 1,2,...,N \
-\end{aligned}</p>
+<div class="arithmatex">\[\begin{aligned}
+    \underset {\alpha}{\operatorname{max}} &amp; \quad L(\alpha) =  \sum_{i=1}^{N}\alpha_i - \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) \\
+    s.t. &amp; \quad \sum_{i=1}^{N}\alpha_i y_i = 0 \\
+    &amp; \quad 0 \leq \alpha_i \leq C, i = 1,2,...,N \\
+\end{aligned}\]</div>
 <p>其中由于松弛条件,我们极小化的过程中新增了以下的约束:</p>
-<p>\begin{aligned}
-    \nabla_{\xi_i} L(w,b,\alpha,\xi) = C - \alpha_i - \mu_i = 0  \quad i = 1,2,...,N \
-    \mu_i \geq 0 \quad i = 1,2,...,N \
-\begin{aligned}</p>
+<div class="arithmatex">\[\begin{aligned}
+    \nabla_{\xi_i} L(w,b,\alpha,\xi) = C - \alpha_i - \mu_i = 0  \quad i = 1,2,...,N \\
+    \mu_i \geq 0 \quad i = 1,2,...,N \\
+\end{aligned}\]</div>
 <p>这也是上述条件中出现<span class="arithmatex">\(\alpha_i \leq C\)</span>的原因</p>
 <p>同样求解最优解<span class="arithmatex">\(\alpha^*\)</span>,然后带回原式,得到最优解<span class="arithmatex">\(w^*,b^*,\xi^*\)</span>,构成最优分离超平面</p>
 <p>那些被松弛的点的位置和<span class="arithmatex">\(\xi\)</span>的的关系为:</p>
@@ -2247,9 +2247,13 @@
 <div class="arithmatex">\[\begin{aligned}
     &amp; \sum_{i=1}^{N}\alpha_i y_i = 0 \\
     &amp; 0 \leq \alpha_i \leq C, i = 1,2,...,N \\
-    &amp; y_i(g(x_i)) \geq 1 (\alpha_i = 0) \\
-    &amp; y_i(g(x_i)) = 1 (0 &lt; \alpha_i &lt; C) \\
-    &amp; y_i(g(x_i)) \leq 1 (\alpha_i = C) \\
+    &amp; y_i(g(x_i)) = \left\{
+    \begin{aligned}
+        &amp; \geq 1, \alpha_i = 0 \\
+        &amp; = 1, 0 &lt; \alpha_i &lt; C \\
+        &amp; \leq 1, \alpha_i = C \\
+    \end{aligned}
+    \right.
 \end{aligned}\]</div>
 <p>则令<span class="arithmatex">\(\alpha = (\alpha_1,\alpha_2,...,\alpha_N)\)</span>,退出循环</p>
 </li>
@@ -2260,7 +2264,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
       
         <br>
         Created:
