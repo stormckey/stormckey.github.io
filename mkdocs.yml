@@ -20,6 +20,7 @@ theme:
     # text: Roboto Mono
     code: Roboto Mono
   features:
+      - navigation.prune
       - content.action.edit # enable the button to edit the source code of the page
       - content.action.view # enable the button to view the source code of the page
       - content.code.copy # enable the button to copy the code block
@@ -50,6 +51,7 @@ theme:
   icon:
     repo: fontawesome/brands/github-alt # the github cat icon in the topright
     logo: material/cat # the cat icon in the topleft
+    annotation: material/star-four-points-circle
 
 plugins:
   - search
@@ -59,8 +61,7 @@ plugins:
   #     cards_font: Noto Sans SC
   - git-revision-date-localized:
       enable_creation_date: true
-      # enabled: !ENV [CI, false]
-      # enable_creation_date: true
+      enabled: !ENV [CI, false]
   - offline: # enable searching offline
       enabled: !ENV [OFFLINE, false]
   - table-reader
@@ -110,9 +111,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-      options:
-        custom_icons:
-          - "overrides/.icons"
 #image alignment
   - md_in_html
 #better list

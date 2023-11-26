@@ -1,2 +1,5 @@
+---
+nostatistics: true
+---
 # Blog
 
