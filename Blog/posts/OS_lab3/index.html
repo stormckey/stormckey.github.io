@@ -1384,6 +1384,10 @@
 
 
 <h1 id="-lab3">操作系统 - lab3<a class="headerlink" href="#-lab3" title="Anchor link to this section for reference">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>比较high level的讲一下一些思想和需要注意的地方,很多细节问题还是要自己决定和思考的哒</p>
+</div>
 <!-- more -->
 
 <div class="admonition info">
@@ -1395,7 +1399,6 @@
 <summary>为什么是从 lab3 开始？</summary>
 <p>我也不知道</p>
 </details>
-<p>Lab3 的虚拟内存还是需要调一调的，本文只会 high level 的讲一点思想，如果实在想不明白可以参考.有问题也欢迎提出！</p>
 <h2 id="_1">初步启用虚拟内存<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
 <p>启用虚拟内存，在本实验的语境下，其实就是设置 satp 寄存器的那一下.在此之前，我们得先搞一个页表出来。</p>
 <p>注意到我们写 satp 的那一步只是一个<code>csrw</code>,所以这句话结束后我们启用了虚拟内存并且将要继续去 PC+4 执行下一条指令，所以 PC+4 这个地址在虚拟内存中该怎么被正确的处理就是个问题，这个问题就是思考题所关心的。</p>
