@@ -4,16 +4,26 @@ comments: true
 
 # 聚类方法
 
-## 定义
+## 一些定义
 
-!!! definition "Pied Piper"
+!!! definition "样本间距"
+    === "闵可夫斯基近距离"
+        $$
+            d_{ij} = \left( \sum_{k=1}^p \left| x_{ik} - x_{jk} \right|^r \right)^{\frac{1}{r}}
+        $$
+    === "马氏距离"
+        首先计算协方差矩阵S
+        $$
+            S = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})(x_i - \bar{x})^T
+        $$
+    === "相关系数"
+        $$
+            r_{ij} = \frac{S_{ij}}{\sqrt{S_{ii}S_{jj}}}
+        $$
+    === "夹角余弦"
+        $$
+            \cos \theta_{ij} = \frac{x_i^T x_j}{\sqrt{x_i^T x_i x_j^T x_j}}
+        $$
 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et
-    euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
-    purus auctor massa, nec semper lorem quam in massa.
 
-Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
-{ .annotate }
 
-1.  :man_raising_hand: I'm an annotation! I can contain `code`, __formatted
-    text__, images, ... basically anything that can be expressed in Markdown.
