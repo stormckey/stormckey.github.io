@@ -615,7 +615,7 @@
         
   
   <span class="md-ellipsis">
-    ZSH的参数传递
+    ZSH 的参数传递
   </span>
   
 
@@ -635,7 +635,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode中使用conda的虚拟环境问题
+    在 VSCode 中使用 conda 的虚拟环境问题
   </span>
   
 
@@ -655,7 +655,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode上写Markdown
+    在 VSCode 上写 Markdown
   </span>
   
 
@@ -675,7 +675,7 @@
         
   
   <span class="md-ellipsis">
-    在WSL2上启用CUDA
+    在 WSL2 上启用 CUDA
   </span>
   
 
@@ -695,7 +695,7 @@
         
   
   <span class="md-ellipsis">
-    用ssh连接同一局域网下的Wsl2
+    用 ssh 连接同一局域网下的 Wsl2
   </span>
   
 
@@ -715,7 +715,7 @@
         
   
   <span class="md-ellipsis">
-    用Mac的VSCode调试C/C++程序
+    用 Mac 的 VSCode 调试 C/C++程序
   </span>
   
 
@@ -737,7 +737,7 @@
         
   
   <span class="md-ellipsis">
-    Linux终端配置
+    Linux 终端配置
   </span>
   
 
@@ -757,7 +757,7 @@
         
   
   <span class="md-ellipsis">
-    我的CLI工具
+    我的 CLI 工具
   </span>
   
 
@@ -845,7 +845,7 @@
         
   
   <span class="md-ellipsis">
-    用Docker搭建minisql环境
+    用 Docker 搭建 minisql 环境
   </span>
   
 
@@ -1047,7 +1047,7 @@
         
   
   <span class="md-ellipsis">
-    配置Github Profile
+    配置 Github Profile
   </span>
   
 
@@ -1419,7 +1419,7 @@
         
   
   <span class="md-ellipsis">
-    K近邻
+    K 近邻
   </span>
   
 
@@ -1863,32 +1863,32 @@
 </div>
 <div class="admonition info">
 <p class="admonition-title">基本信息</p>
-<p>时间:2023秋冬</p>
-<p>实验文档:<a href="https://zju-sec.github.io/os23fall-stu/lab3/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"/></svg></span></a></p>
+<p>时间：2023 秋冬</p>
+<p>实验文档：<a href="https://zju-sec.github.io/os23fall-stu/lab3/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"/></svg></span></a></p>
 </div>
 <details class="warning">
-<summary>为什么是从lab3开始?</summary>
+<summary>为什么是从 lab3 开始？</summary>
 <p>我也不知道</p>
 </details>
-<p>Lab3的虚拟内存还是需要调一调的,本文只会high level的讲一点思想,如果实在想不明白可以参考.有问题也欢迎提出!</p>
+<p>Lab3 的虚拟内存还是需要调一调的，本文只会 high level 的讲一点思想，如果实在想不明白可以参考.有问题也欢迎提出！</p>
 <h2 id="_1">初步启用虚拟内存<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
-<p>启用虚拟内存,在本实验的语境下,其实就是设置satp寄存器的那一下.在此之前,我们得先搞一个页表出来.</p>
-<p>注意到我们写satp的那一步只是一个<code>csrw</code>,所以这句话结束后我们启用了虚拟内存并且将要继续去PC+4执行下一条指令,所以PC+4这个地址在虚拟内存中该怎么被正确的处理就是个问题,这个问题就是思考题所关心的.</p>
+<p>启用虚拟内存，在本实验的语境下，其实就是设置 satp 寄存器的那一下.在此之前，我们得先搞一个页表出来。</p>
+<p>注意到我们写 satp 的那一步只是一个<code>csrw</code>,所以这句话结束后我们启用了虚拟内存并且将要继续去 PC+4 执行下一条指令，所以 PC+4 这个地址在虚拟内存中该怎么被正确的处理就是个问题，这个问题就是思考题所关心的。</p>
 <details class="info">
 <summary>为什么在这一步中我们启用的页表是一级的</summary>
-<p>文档中其实已经有链接指向了解释这一点的文档,具体而言,是这段描述转化虚拟内存的过程的<a href="https://www.five-embeddev.com/riscv-isa-manual/latest/supervisor.html#sv32algorithm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"/></svg></span>手册</a></p>
-<p>仔细阅读,其中第四点提到若当前页表项的权限表明了可读或者可执行,那么就会直接跳走,当作是最后一级,否则才会把它当作某一级的页表</p>
+<p>文档中其实已经有链接指向了解释这一点的文档，具体而言，是这段描述转化虚拟内存的过程的<a href="https://www.five-embeddev.com/riscv-isa-manual/latest/supervisor.html#sv32algorithm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"/></svg></span>手册</a></p>
+<p>仔细阅读，其中第四点提到若当前页表项的权限表明了可读或者可执行，那么就会直接跳走，当作是最后一级，否则才会把它当作某一级的页表</p>
 </details>
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
-<p>当我们按照文档修改了链接文件后,我们gdb中直接用符号来打断点之类的操作就都是按照修改了链接文件之后的虚拟地址了,所以启用虚拟内存之前为了在正确的物理地址打断点,需要手动输入地址.</p>
+<p>当我们按照文档修改了链接文件后，我们 gdb 中直接用符号来打断点之类的操作就都是按照修改了链接文件之后的虚拟地址了，所以启用虚拟内存之前为了在正确的物理地址打断点，需要手动输入地址。</p>
 </div>
 <h2 id="_2">完全启用虚拟内存<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
-<p>这一步我们将使用多级页表并且分级进行权限设置.主要就是设置一个写入页表的函数,并且调用该函数来分权限填写页表.</p>
-<p>时刻注意什么地方要填物理地址,什么地方要用虚拟地址.在页表中,我们要填物理地址.</p>
+<p>这一步我们将使用多级页表并且分级进行权限设置.主要就是设置一个写入页表的函数，并且调用该函数来分权限填写页表。</p>
+<p>时刻注意什么地方要填物理地址，什么地方要用虚拟地址.在页表中，我们要填物理地址。</p>
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
-<p>如果你跟我一样改完页表没事,但是一刷新tlb就寄了.与我的经验而言,是页表写的有问题.</p>
+<p>如果你跟我一样改完页表没事，但是一刷新 tlb 就寄了.与我的经验而言，是页表写的有问题。</p>
 </div>
 
   <hr>
@@ -1896,7 +1896,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
       
         <br>
         Created:

@@ -607,7 +607,7 @@
         
   
   <span class="md-ellipsis">
-    ZSH的参数传递
+    ZSH 的参数传递
   </span>
   
 
@@ -627,7 +627,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode中使用conda的虚拟环境问题
+    在 VSCode 中使用 conda 的虚拟环境问题
   </span>
   
 
@@ -647,7 +647,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode上写Markdown
+    在 VSCode 上写 Markdown
   </span>
   
 
@@ -667,7 +667,7 @@
         
   
   <span class="md-ellipsis">
-    在WSL2上启用CUDA
+    在 WSL2 上启用 CUDA
   </span>
   
 
@@ -687,7 +687,7 @@
         
   
   <span class="md-ellipsis">
-    用ssh连接同一局域网下的Wsl2
+    用 ssh 连接同一局域网下的 Wsl2
   </span>
   
 
@@ -707,7 +707,7 @@
         
   
   <span class="md-ellipsis">
-    用Mac的VSCode调试C/C++程序
+    用 Mac 的 VSCode 调试 C/C++程序
   </span>
   
 
@@ -729,7 +729,7 @@
         
   
   <span class="md-ellipsis">
-    Linux终端配置
+    Linux 终端配置
   </span>
   
 
@@ -749,7 +749,7 @@
         
   
   <span class="md-ellipsis">
-    我的CLI工具
+    我的 CLI 工具
   </span>
   
 
@@ -835,7 +835,7 @@
         
   
   <span class="md-ellipsis">
-    用Docker搭建minisql环境
+    用 Docker 搭建 minisql 环境
   </span>
   
 
@@ -979,7 +979,7 @@
         
   
   <span class="md-ellipsis">
-    配置Github Profile
+    配置 Github Profile
   </span>
   
 
@@ -1351,7 +1351,7 @@
         
   
   <span class="md-ellipsis">
-    K近邻
+    K 近邻
   </span>
   
 
@@ -1786,21 +1786,21 @@
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
-<p>这一部分主要负责与内存磁盘空间申请释放等打交道，在项目中的地位大概相当于<code>new</code> <code>delete</code>，所以这一部分在后续会被频繁调用，也是直接与磁盘IO打交道的，实现既要求正确又要求效率</p>
+<p>这一部分主要负责与内存磁盘空间申请释放等打交道，在项目中的地位大概相当于<code>new</code> <code>delete</code>，所以这一部分在后续会被频繁调用，也是直接与磁盘 IO 打交道的，实现既要求正确又要求效率</p>
 </div>
 <h3 id="_1">动机<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h3>
-<p>假设我们手头上现在有65536（4096*16）页（一页为4096Bytes）的数据需要存在磁盘上，最自然的想法就是数组，实际上是变长数组，因为我们可以在文件尾继续写入新的页。</p>
-<p>但是，数据库会对数据进行删除。假设我们分配出去第0-9页用于记录某个表，然后删除了其中第2，4，6页的数据，那么下次再请求页面来存储信息的时候，就可以用这空闲的三页来存储。不这样做，那么面对申请100页，删100页，申请100页，删100页这样的操作，本来只要100页的空间就可以实现，实际上却会花的多得多。</p>
-<p>这就引出了BitMap，我们只要拿出一页来，把这一页4096个Byte，即32768个bit，每个bit的0指示该页未被使用，1指示已经被使用，这样这一页就可以管理其后的32768页了，我们每次都现在其中找0，没有0了，才去新开一页。</p>
-<p>当然实际上这一页的4096B我们不会都拿去用来记录使用情况，还有一些元数据比如记录目前以占用的有10页等等。</p>
-<p>但注意第一段假设我们有65536页要存，一页BitMap不够，那就多来几个。我们把1页BitMap和后面的（大概）32767页称为一段(extent)，我们需要两段来存储65536页，在最前面来个Disk Meta Page来管理所有页。</p>
+<p>假设我们手头上现在有 65536（4096*16）页（一页为 4096Bytes）的数据需要存在磁盘上，最自然的想法就是数组，实际上是变长数组，因为我们可以在文件尾继续写入新的页。</p>
+<p>但是，数据库会对数据进行删除。假设我们分配出去第 0-9 页用于记录某个表，然后删除了其中第 2，4，6 页的数据，那么下次再请求页面来存储信息的时候，就可以用这空闲的三页来存储。不这样做，那么面对申请 100 页，删 100 页，申请 100 页，删 100 页这样的操作，本来只要 100 页的空间就可以实现，实际上却会花的多得多。</p>
+<p>这就引出了 BitMap，我们只要拿出一页来，把这一页 4096 个 Byte，即 32768 个 bit，每个 bit 的 0 指示该页未被使用，1 指示已经被使用，这样这一页就可以管理其后的 32768 页了，我们每次都现在其中找 0，没有 0 了，才去新开一页。</p>
+<p>当然实际上这一页的 4096B 我们不会都拿去用来记录使用情况，还有一些元数据比如记录目前以占用的有 10 页等等。</p>
+<p>但注意第一段假设我们有 65536 页要存，一页 BitMap 不够，那就多来几个。我们把 1 页 BitMap 和后面的（大概）32767 页称为一段(extent)，我们需要两段来存储 65536 页，在最前面来个 Disk Meta Page 来管理所有页。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
       
         <br>
         Created:

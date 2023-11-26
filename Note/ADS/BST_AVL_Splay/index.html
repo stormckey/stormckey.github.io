@@ -602,7 +602,7 @@
         
   
   <span class="md-ellipsis">
-    ZSH的参数传递
+    ZSH 的参数传递
   </span>
   
 
@@ -622,7 +622,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode中使用conda的虚拟环境问题
+    在 VSCode 中使用 conda 的虚拟环境问题
   </span>
   
 
@@ -642,7 +642,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode上写Markdown
+    在 VSCode 上写 Markdown
   </span>
   
 
@@ -662,7 +662,7 @@
         
   
   <span class="md-ellipsis">
-    在WSL2上启用CUDA
+    在 WSL2 上启用 CUDA
   </span>
   
 
@@ -682,7 +682,7 @@
         
   
   <span class="md-ellipsis">
-    用ssh连接同一局域网下的Wsl2
+    用 ssh 连接同一局域网下的 Wsl2
   </span>
   
 
@@ -702,7 +702,7 @@
         
   
   <span class="md-ellipsis">
-    用Mac的VSCode调试C/C++程序
+    用 Mac 的 VSCode 调试 C/C++程序
   </span>
   
 
@@ -724,7 +724,7 @@
         
   
   <span class="md-ellipsis">
-    Linux终端配置
+    Linux 终端配置
   </span>
   
 
@@ -744,7 +744,7 @@
         
   
   <span class="md-ellipsis">
-    我的CLI工具
+    我的 CLI 工具
   </span>
   
 
@@ -830,7 +830,7 @@
         
   
   <span class="md-ellipsis">
-    用Docker搭建minisql环境
+    用 Docker 搭建 minisql 环境
   </span>
   
 
@@ -974,7 +974,7 @@
         
   
   <span class="md-ellipsis">
-    配置Github Profile
+    配置 Github Profile
   </span>
   
 
@@ -1346,7 +1346,7 @@
         
   
   <span class="md-ellipsis">
-    K近邻
+    K 近邻
   </span>
   
 
@@ -1763,25 +1763,33 @@
 </div>
 <ol>
 <li>
-<p>我们在调用search时会多传递一个引用的参数hot 其意义如下：</p>
+<p>我们在调用 search 时会多传递一个引用的参数 hot 其意义如下：</p>
 <p><a class="glightbox" href="../image/BST_AVL_Splay/media/image1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/BST_AVL_Splay/media/image1.png" /></a></p>
-<p>这有利于我们实现insert delete</p>
-</li>
-<li>
-<p>BST的平均高度，有两种计算方式</p>
-<ol>
-<li>
-<p>随机组成：计算一共有多少种可能的拓扑结构 根号n Catalan（N）种结构</p>
-</li>
-<li>
-<p>随机生成：计算一共有多少种可能的输入序列 ln N N！种序列</p>
+<p>这有利于我们实现 insert delete</p>
 </li>
 </ol>
-<p><a class="glightbox" href="../image/BST_AVL_Splay/media/image2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/BST_AVL_Splay/media/image2.png" /></a></p>
-<p>随机组成更加可信，因为随机生成会额外增大213和231这一较低树的权重，重复了</p>
-</li>
-</ol>
-<p>3.等价BST</p>
+<p>2.</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>BST 的平均高度，有两种计算方式
+
+  1.  随机组成：计算一共有多少种可能的拓扑结构 根号 n Catalan（N）种结构
+
+  2.  随机生成：计算一共有多少种可能的输入序列 ln N N！种序列
+
+![](image/BST_AVL_Splay/media/image2.png)
+
+
+随机组成更加可信，因为随机生成会额外增大 213 和 231 这一较低树的权重，重复了
+</code></pre></div></td></tr></table></div>
+<p>3.等价 BST</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1794,30 +1802,41 @@
 
 ![](image/BST_AVL_Splay/media/image4.png)
 </code></pre></div></td></tr></table></div>
-<ol>
-<li>
-<p><a class="glightbox" href="../image/BST_AVL_Splay/media/image5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/BST_AVL_Splay/media/image5.png" /></a></p>
-<p>左分叉是zig右分叉是zag，旋转可以保持BST的等价</p>
-</li>
-<li>
-<p>AVL的插入可能会导致一系列祖先的失衡，但是删除只可能导致某一个祖先的失衡</p>
-</li>
-<li>
-<p><a class="glightbox" href="../image/BST_AVL_Splay/media/image6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/BST_AVL_Splay/media/image6.png" /></a></p>
-<p>注意到我们找到第一个失衡点之后，循环走啊路径只要往下找两次高度最高的孩子就好</p>
-</li>
-<li>
-<p>伸展树的删除和插入，由于1都需要用search操作，search完后self/hot会成为新的根节点，我们的插入删除只要在搜索完后对根操作即可。</p>
-<p><a class="glightbox" href="../image/BST_AVL_Splay/media/image7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/BST_AVL_Splay/media/image7.png" /></a></p>
-</li>
-</ol>
+<p>4.</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>![](image/BST_AVL_Splay/media/image5.png)
+
+
+左分叉是 zig 右分叉是 zag，旋转可以保持 BST 的等价
+</code></pre></div></td></tr></table></div>
+<p>5.</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>AVL 的插入可能会导致一系列祖先的失衡，但是删除只可能导致某一个祖先的失衡
+</code></pre></div></td></tr></table></div>
+<p>6.</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>![](image/BST_AVL_Splay/media/image6.png)
+
+
+注意到我们找到第一个失衡点之后，循环走啊路径只要往下找两次高度最高的孩子就好
+</code></pre></div></td></tr></table></div>
+<p>7.</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>伸展树的删除和插入，由于 1 都需要用 search 操作，search 完后 self/hot 会成为新的根节点，我们的插入删除只要在搜索完后对根操作即可。
+
+![](image/BST_AVL_Splay/media/image7.png)
+</code></pre></div></td></tr></table></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 4, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
       
         <br>
         Created:

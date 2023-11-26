@@ -166,6 +166,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://stormckey.github.io/Note/Data%20Modeling/Boosting/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://stormckey.github.io/Note/Data%20Modeling/Decision_Tree/</loc>
          <lastmod>2023-11-26</lastmod>
          <changefreq>daily</changefreq>

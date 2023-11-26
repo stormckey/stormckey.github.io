@@ -24,7 +24,7 @@
     
     
       
-        <title>ZSH的参数传递 - Stormckey's Page</title>
+        <title>ZSH 的参数传递 - Stormckey's Page</title>
       
     
     
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ZSH的参数传递
+              ZSH 的参数传递
             
           </span>
         </div>
@@ -626,7 +626,7 @@
         
   
   <span class="md-ellipsis">
-    ZSH的参数传递
+    ZSH 的参数传递
   </span>
   
 
@@ -647,7 +647,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode中使用conda的虚拟环境问题
+    在 VSCode 中使用 conda 的虚拟环境问题
   </span>
   
 
@@ -667,7 +667,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode上写Markdown
+    在 VSCode 上写 Markdown
   </span>
   
 
@@ -687,7 +687,7 @@
         
   
   <span class="md-ellipsis">
-    在WSL2上启用CUDA
+    在 WSL2 上启用 CUDA
   </span>
   
 
@@ -707,7 +707,7 @@
         
   
   <span class="md-ellipsis">
-    用ssh连接同一局域网下的Wsl2
+    用 ssh 连接同一局域网下的 Wsl2
   </span>
   
 
@@ -727,7 +727,7 @@
         
   
   <span class="md-ellipsis">
-    用Mac的VSCode调试C/C++程序
+    用 Mac 的 VSCode 调试 C/C++程序
   </span>
   
 
@@ -749,7 +749,7 @@
         
   
   <span class="md-ellipsis">
-    Linux终端配置
+    Linux 终端配置
   </span>
   
 
@@ -769,7 +769,7 @@
         
   
   <span class="md-ellipsis">
-    我的CLI工具
+    我的 CLI 工具
   </span>
   
 
@@ -855,7 +855,7 @@
         
   
   <span class="md-ellipsis">
-    用Docker搭建minisql环境
+    用 Docker 搭建 minisql 环境
   </span>
   
 
@@ -999,7 +999,7 @@
         
   
   <span class="md-ellipsis">
-    配置Github Profile
+    配置 Github Profile
   </span>
   
 
@@ -1371,7 +1371,7 @@
         
   
   <span class="md-ellipsis">
-    K近邻
+    K 近邻
   </span>
   
 
@@ -1783,11 +1783,11 @@
   
 
 
-<h1 id="zsh">ZSH的参数传递<a class="headerlink" href="#zsh" title="Anchor link to this section for reference">&para;</a></h1>
+<h1 id="zsh">ZSH 的参数传递<a class="headerlink" href="#zsh" title="Anchor link to this section for reference">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 103 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 23 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 1 分钟</p>
 </div>
-<p>今天在调用DDPM模型的时候使用<a href="https://github.com/openai/guided-diffusion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>官方代码</a>，竟然报错说参数不存在：
+<p>今天在调用 DDPM 模型的时候使用<a href="https://github.com/openai/guided-diffusion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>官方代码</a>，竟然报错说参数不存在：
 命令是
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nv">MODEL_FLAGS</span><span class="o">=</span><span class="s2">&quot;--attention_resolutions 32,16,8 --class_cond True --diffusion_steps 1000 --dropout 0.1 --image_size 64 --learn_sigma True --noise_schedule cosine --num_channels 192 --num_head_channels 64 --num_res_blocks 3 --resblock_updown True --use_new_attention_order True --use_fp16 True --use_scale_shift_norm True&quot;</span>
@@ -1836,8 +1836,8 @@
 </span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">                            </span><span class="o">[</span>--classifier_pool<span class="w"> </span>CLASSIFIER_POOL<span class="o">]</span>
 </span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a>classifier_sample.py:<span class="w"> </span>error:<span class="w"> </span>unrecognized<span class="w"> </span>arguments:<span class="w"> </span>--attention_resolutions<span class="w"> </span><span class="m">32</span>,16,8<span class="w"> </span>--class_cond<span class="w"> </span>True<span class="w"> </span>--diffusion_steps<span class="w"> </span><span class="m">1000</span><span class="w"> </span>--dropout<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--image_size<span class="w"> </span><span class="m">64</span><span class="w"> </span>--learn_sigma<span class="w"> </span>True<span class="w"> </span>--noise_schedule<span class="w"> </span>cosine<span class="w"> </span>--num_channels<span class="w"> </span><span class="m">192</span><span class="w"> </span>--num_head_channels<span class="w"> </span><span class="m">64</span><span class="w"> </span>--num_res_blocks<span class="w"> </span><span class="m">3</span><span class="w"> </span>--resblock_updown<span class="w"> </span>True<span class="w"> </span>--use_new_attention_order<span class="w"> </span>True<span class="w"> </span>--use_fp16<span class="w"> </span>True<span class="w"> </span>--use_scale_shift_norm<span class="w"> </span>True
 </span></code></pre></div></td></tr></table></div>
-貌似是因为用这种方式传递的参数不会被按空格分开，所以无法识别<br />
-我还试过换用bash，或者是使用<code>"$FLAG"</code>，都没用😡</p>
+貌似是因为用这种方式传递的参数不会被按空格分开，所以无法识别
+我还试过换用 bash，或者是使用<code>"$FLAG"</code>，都没用😡</p>
 <p>解决的办法是使用<code>$=FLAG</code>  （可以参考<a href="https://unix.stackexchange.com/questions/26661/what-is-word-splitting-why-is-it-important-in-shell-programming"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>这篇解答</a>）</p>
 
   <hr>
@@ -1845,7 +1845,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
       
         <br>
         Created:

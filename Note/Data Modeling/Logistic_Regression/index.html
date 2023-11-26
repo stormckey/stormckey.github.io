@@ -613,7 +613,7 @@
         
   
   <span class="md-ellipsis">
-    ZSH的参数传递
+    ZSH 的参数传递
   </span>
   
 
@@ -633,7 +633,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode中使用conda的虚拟环境问题
+    在 VSCode 中使用 conda 的虚拟环境问题
   </span>
   
 
@@ -653,7 +653,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode上写Markdown
+    在 VSCode 上写 Markdown
   </span>
   
 
@@ -673,7 +673,7 @@
         
   
   <span class="md-ellipsis">
-    在WSL2上启用CUDA
+    在 WSL2 上启用 CUDA
   </span>
   
 
@@ -693,7 +693,7 @@
         
   
   <span class="md-ellipsis">
-    用ssh连接同一局域网下的Wsl2
+    用 ssh 连接同一局域网下的 Wsl2
   </span>
   
 
@@ -713,7 +713,7 @@
         
   
   <span class="md-ellipsis">
-    用Mac的VSCode调试C/C++程序
+    用 Mac 的 VSCode 调试 C/C++程序
   </span>
   
 
@@ -735,7 +735,7 @@
         
   
   <span class="md-ellipsis">
-    Linux终端配置
+    Linux 终端配置
   </span>
   
 
@@ -755,7 +755,7 @@
         
   
   <span class="md-ellipsis">
-    我的CLI工具
+    我的 CLI 工具
   </span>
   
 
@@ -841,7 +841,7 @@
         
   
   <span class="md-ellipsis">
-    用Docker搭建minisql环境
+    用 Docker 搭建 minisql 环境
   </span>
   
 
@@ -985,7 +985,7 @@
         
   
   <span class="md-ellipsis">
-    配置Github Profile
+    配置 Github Profile
   </span>
   
 
@@ -1361,7 +1361,7 @@
         
   
   <span class="md-ellipsis">
-    K近邻
+    K 近邻
   </span>
   
 
@@ -1902,17 +1902,17 @@
 <div class="arithmatex">\[
 F(x)=\frac{1}{1+e^{-(x-\mu)/\gamma}}
 \]</div>
-<p>其中<span class="arithmatex">\(\mu\)</span>为位置参数，<span class="arithmatex">\(\gamma\)</span>为形状参数。该分布函数的图像为S型曲线，<span class="arithmatex">\(\mu\)</span>为函数的对称中心，<span class="arithmatex">\(\gamma\)</span>控制函数的陡峭程度，值越大，函数越陡峭。</p>
+<p>其中<span class="arithmatex">\(\mu\)</span>为位置参数，<span class="arithmatex">\(\gamma\)</span>为形状参数。该分布函数的图像为 S 型曲线，<span class="arithmatex">\(\mu\)</span>为函数的对称中心，<span class="arithmatex">\(\gamma\)</span>控制函数的陡峭程度，值越大，函数越陡峭。</p>
 <p><a class="glightbox" href="../images/Logistic_Regression/2023-11-25-23-39-04.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Logistic_Regression/2023-11-25-23-39-04.png#pic" /></a></p>
 <h2 id="_3">二项逻辑斯谛回归模型<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
 <p>给定数据集<span class="arithmatex">\(D=\{(x_1,y_1),(x_2,y_2),...,(x_m,y_m)\}\)</span>，其中<span class="arithmatex">\(x_i \in \mathbb{R}\)</span>，<span class="arithmatex">\(y_i \in \{0,1\}\)</span>，我们的目标是学习到一个线性模型来进行分类，在感知机中，我们用一个指示函数来将函数值的符号映射到不同的分类。</p>
-<p>对于逻辑斯蒂回归来说，我们想要得到的是某个x下属于0，或者1的概率，因为分布函数也是连续的，所以我们可以试图用线性的模型去拟合，我们先作如下的转化：</p>
+<p>对于逻辑斯蒂回归来说，我们想要得到的是某个 x 下属于 0，或者 1 的概率，因为分布函数也是连续的，所以我们可以试图用线性的模型去拟合，我们先作如下的转化：</p>
 <ul>
 <li>概率的取值范围是<span class="arithmatex">\(P \in [0,1]\)</span></li>
 <li>如果我们使用几率<span class="arithmatex">\(\frac{p}{1-p}\)</span>，那么我们的取值范围就是<span class="arithmatex">\((0,\infty)\)</span></li>
 <li>再加一个对数，我们就得到对数几率<span class="arithmatex">\(logit(p)=ln\frac{p}{1-p}\)</span>，取值范围是<span class="arithmatex">\((-\infty,\infty)\)</span></li>
 </ul>
-<p>这样对数几率的取值范围就和线性函数的一样了，我们就可以试着用线性函数去进行拟合(如果某个分布的对数函数相关系数很高，自然可以拟合到比较好的效果，但如果一个分布的对数几率几乎不成线性，那么线性函数的拟合效果就会比较差。所以我们用逻辑斯蒂回归拟合的分布最好有类似逻辑斯蒂分布的分布函数)。</p>
+<p>这样对数几率的取值范围就和线性函数的一样了，我们就可以试着用线性函数去进行拟合（如果某个分布的对数函数相关系数很高，自然可以拟合到比较好的效果，但如果一个分布的对数几率几乎不成线性，那么线性函数的拟合效果就会比较差。所以我们用逻辑斯蒂回归拟合的分布最好有类似逻辑斯蒂分布的分布函数）。</p>
 <p>我们令</p>
 <div class="arithmatex">\[
     \ln(\frac{P(Y=1|x)}{1-P(Y=1|x)}) = w\cdot x + b
@@ -1924,7 +1924,7 @@ P(Y=1|x)=\frac{exp(w\cdot x+b)}{1+exp(w\cdot x+b)}
 <div class="arithmatex">\[
 P(Y=0|x)=\frac{1}{1+exp(w\cdot x+b)}
 \]</div>
-<p>这就是逻辑斯蒂回归，现在问题是我们有的是一对数据点而不是x和对应的概率，我们该如何进行拟合？</p>
+<p>这就是逻辑斯蒂回归，现在问题是我们有的是一对数据点而不是 x 和对应的概率，我们该如何进行拟合？</p>
 <h2 id="_4">极大似然估计<a class="headerlink" href="#_4" title="Anchor link to this section for reference">&para;</a></h2>
 <p>我们定义如下的似然函数</p>
 <div class="arithmatex">\[
@@ -1940,7 +1940,7 @@ P(Y=0|x)=\frac{1}{1+exp(w\cdot x+b)}
 \]</div>
 <p>在这个具体的求解过程需要用梯度下降法或者牛顿法，注意到因为逻辑斯蒂函数是凸函数，所以我们可以保证求解的结果是全局最优解。</p>
 <h2 id="_5">多项逻辑斯谛回归模型<a class="headerlink" href="#_5" title="Anchor link to this section for reference">&para;</a></h2>
-<p>类似的，多项逻辑斯蒂分布的分布函数如下:</p>
+<p>类似的，多项逻辑斯蒂分布的分布函数如下：</p>
 <div class="arithmatex">\[\begin{aligned}
     &amp;P(Y=1|x)=\frac{exp(w_1\cdot x+b_1)}{1+\sum_{i=1}^{k-1} e^{w_i \cdot x + b_i}} \\
     &amp;P(Y=2|x)=\frac{exp(w_2\cdot x+b_2)}{1+\sum_{i=1}^{k-1} e^{w_i \cdot x + b_i}} \\
@@ -1953,7 +1953,7 @@ P(Y=0|x)=\frac{1}{1+exp(w\cdot x+b)}
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
       
         <br>
         Created:

@@ -613,7 +613,7 @@
         
   
   <span class="md-ellipsis">
-    ZSH的参数传递
+    ZSH 的参数传递
   </span>
   
 
@@ -633,7 +633,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode中使用conda的虚拟环境问题
+    在 VSCode 中使用 conda 的虚拟环境问题
   </span>
   
 
@@ -653,7 +653,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode上写Markdown
+    在 VSCode 上写 Markdown
   </span>
   
 
@@ -673,7 +673,7 @@
         
   
   <span class="md-ellipsis">
-    在WSL2上启用CUDA
+    在 WSL2 上启用 CUDA
   </span>
   
 
@@ -693,7 +693,7 @@
         
   
   <span class="md-ellipsis">
-    用ssh连接同一局域网下的Wsl2
+    用 ssh 连接同一局域网下的 Wsl2
   </span>
   
 
@@ -713,7 +713,7 @@
         
   
   <span class="md-ellipsis">
-    用Mac的VSCode调试C/C++程序
+    用 Mac 的 VSCode 调试 C/C++程序
   </span>
   
 
@@ -735,7 +735,7 @@
         
   
   <span class="md-ellipsis">
-    Linux终端配置
+    Linux 终端配置
   </span>
   
 
@@ -755,7 +755,7 @@
         
   
   <span class="md-ellipsis">
-    我的CLI工具
+    我的 CLI 工具
   </span>
   
 
@@ -841,7 +841,7 @@
         
   
   <span class="md-ellipsis">
-    用Docker搭建minisql环境
+    用 Docker 搭建 minisql 环境
   </span>
   
 
@@ -985,7 +985,7 @@
         
   
   <span class="md-ellipsis">
-    配置Github Profile
+    配置 Github Profile
   </span>
   
 
@@ -1428,7 +1428,7 @@
         
   
   <span class="md-ellipsis">
-    K近邻
+    K 近邻
   </span>
   
 
@@ -1883,40 +1883,40 @@
 <p class="admonition-title">本节列举一些命令行常用的数据处理工具</p>
 </div>
 <h2 id="sed">Sed<a class="headerlink" href="#sed" title="Anchor link to this section for reference">&para;</a></h2>
-<p>Sed是 Stream editor 流编辑器，可以接受管道输入，对每一行进行处理，然后输出到标准输出。
+<p>Sed 是 Stream editor 流编辑器，可以接受管道输入，对每一行进行处理，然后输出到标准输出。
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sed [OPTION] &#39;edit-command&#39; [input-file]`
 </span></code></pre></div></td></tr></table></div></p>
-<p>选项是一些用于控制 sed 命令行为的参数,常见的有：</p>
+<p>选项是一些用于控制 sed 命令行为的参数，常见的有：</p>
 <ul>
-<li><code>-n</code> 不输出到标准输出  </li>
-<li><code>-e</code> 以后的参数作为脚本  </li>
-<li><code>-f</code> 以后的参数作为脚本文件  </li>
-<li><code>-i</code> 直接修改文件  </li>
-<li><code>-r</code> 使用扩展正则表达式  </li>
-<li><code>-E</code> 同上  </li>
-<li><code>-r</code> 使用基础正则表达式  </li>
-<li><code>-h</code> 不打印文件名  </li>
+<li><code>-n</code> 不输出到标准输出</li>
+<li><code>-e</code> 以后的参数作为脚本</li>
+<li><code>-f</code> 以后的参数作为脚本文件</li>
+<li><code>-i</code> 直接修改文件</li>
+<li><code>-r</code> 使用扩展正则表达式</li>
+<li><code>-E</code> 同上</li>
+<li><code>-r</code> 使用基础正则表达式</li>
+<li><code>-h</code> 不打印文件名</li>
 </ul>
-<p><code>sed</code>的编辑命令可以使用正则表达式来指定匹配模式，并通过替换、删除、插入等命令来修改文本。一些常见的 sed 编辑命令包括：  </p>
+<p><code>sed</code>的编辑命令可以使用正则表达式来指定匹配模式，并通过替换、删除、插入等命令来修改文本。一些常见的 sed 编辑命令包括：</p>
 <ul>
-<li>s/pattern/replacement/：替换指定模式的文本。  </li>
-<li>d：删除匹配到的行。  </li>
-<li>p：打印（输出）匹配到的行。  </li>
-<li>i：在指定行前插入文本。  </li>
-<li>a：在指定行后追加文本。  </li>
+<li>s/pattern/replacement/：替换指定模式的文本。</li>
+<li>d：删除匹配到的行。</li>
+<li>p：打印（输出）匹配到的行。</li>
+<li>i：在指定行前插入文本。</li>
+<li>a：在指定行后追加文本。</li>
 </ul>
 <details class="info">
 <summary>正则表达式</summary>
 <ul>
 <li>正则表达式可以实现字符串匹配，大部分字符都保持愿意除了一些特殊的</li>
 <li><code>.</code> 代表除了换行任何的单字符</li>
-<li><code>*</code> 前一个重复0-无限次</li>
-<li><code>+</code> 前一个重复1-无限次</li>
-<li><code>[abc]</code> abc任意一个</li>
+<li><code>*</code> 前一个重复 0-无限次</li>
+<li><code>+</code> 前一个重复 1-无限次</li>
+<li><code>[abc]</code> abc 任意一个</li>
 <li><code>(RX1|RX2)</code> 表达式一或者二</li>
 <li><code>^</code> 行首</li>
 <li><code>$</code> 行尾</li>
-<li><code>()</code> 捕获，位于补货内的字符串可在被替代部分用\1 \2 \3 引用</li>
+<li><code>()</code> 捕获，位于补货内的字符串可在被替代部分用、1 \2 \3 引用</li>
 </ul>
 </details>
 <h2 id="awk">Awk<a class="headerlink" href="#awk" title="Anchor link to this section for reference">&para;</a></h2>
@@ -1936,7 +1936,7 @@
 <p>以下是一个简单的示例，展示了如何使用 <code>awk</code> 提取文件中以冒号分隔的第一列和第二列，并输出它们：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>awk<span class="w"> </span>-F<span class="s1">&#39;:&#39;</span><span class="w"> </span><span class="s1">&#39;{ print $1, $2 }&#39;</span><span class="w"> </span>file.txt
 </span></code></pre></div></td></tr></table></div>
-<p><code>awk</code> 是一种非常实用的文本处理工具，适用于处理结构化的文本数据，如日志文件、CSV文件、报告等。它具有强大的功能和灵活性，可以大大简化文本处理任务，提高数据分析和转换的效率。</p>
+<p><code>awk</code> 是一种非常实用的文本处理工具，适用于处理结构化的文本数据，如日志文件、CSV 文件、报告等。它具有强大的功能和灵活性，可以大大简化文本处理任务，提高数据分析和转换的效率。</p>
 <h2 id="aided-command-line-tools">Aided Command line Tools<a class="headerlink" href="#aided-command-line-tools" title="Anchor link to this section for reference">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">辅助使用的命令行工具</p>
@@ -1948,7 +1948,7 @@
 <li>head: 截取尾部几条</li>
 <li>paste: 通过指定的间隔字符链连接两行</li>
 <li>bc: 计算器</li>
-<li>xargs: 把stdin转换为参数调用后续程序</li>
+<li>xargs: 把 stdin 转换为参数调用后续程序</li>
 </ul>
 </div>
 
@@ -1957,7 +1957,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
       
         <br>
         Created:

@@ -602,7 +602,7 @@
         
   
   <span class="md-ellipsis">
-    ZSH的参数传递
+    ZSH 的参数传递
   </span>
   
 
@@ -622,7 +622,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode中使用conda的虚拟环境问题
+    在 VSCode 中使用 conda 的虚拟环境问题
   </span>
   
 
@@ -642,7 +642,7 @@
         
   
   <span class="md-ellipsis">
-    在VSCode上写Markdown
+    在 VSCode 上写 Markdown
   </span>
   
 
@@ -662,7 +662,7 @@
         
   
   <span class="md-ellipsis">
-    在WSL2上启用CUDA
+    在 WSL2 上启用 CUDA
   </span>
   
 
@@ -682,7 +682,7 @@
         
   
   <span class="md-ellipsis">
-    用ssh连接同一局域网下的Wsl2
+    用 ssh 连接同一局域网下的 Wsl2
   </span>
   
 
@@ -702,7 +702,7 @@
         
   
   <span class="md-ellipsis">
-    用Mac的VSCode调试C/C++程序
+    用 Mac 的 VSCode 调试 C/C++程序
   </span>
   
 
@@ -724,7 +724,7 @@
         
   
   <span class="md-ellipsis">
-    Linux终端配置
+    Linux 终端配置
   </span>
   
 
@@ -744,7 +744,7 @@
         
   
   <span class="md-ellipsis">
-    我的CLI工具
+    我的 CLI 工具
   </span>
   
 
@@ -830,7 +830,7 @@
         
   
   <span class="md-ellipsis">
-    用Docker搭建minisql环境
+    用 Docker 搭建 minisql 环境
   </span>
   
 
@@ -974,7 +974,7 @@
         
   
   <span class="md-ellipsis">
-    配置Github Profile
+    配置 Github Profile
   </span>
   
 
@@ -1346,7 +1346,7 @@
         
   
   <span class="md-ellipsis">
-    K近邻
+    K 近邻
   </span>
   
 
@@ -1761,62 +1761,137 @@
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 424 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 1 分钟</p>
 </div>
-<ol>
-<li>
-<p>B树利用了局部性来加速访问</p>
-<p>B树的外部节点是指叶节点的空孩子</p>
-<p><a class="glightbox" href="../image/B-Tree_B%2BTree/media/image1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/B-Tree_B%2BTree/media/image1.png" /></a></p>
-</li>
-<li>
-<p>对B树的节点关键码数约定，注意下限是上取整，可用上下限命名
-如（3，5）树/5阶B树，5阶B数一个节点最多4个关键码</p>
-<p><a class="glightbox" href="../image/B-Tree_B%2BTree/media/image2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/B-Tree_B%2BTree/media/image2.png" /></a></p>
-</li>
-<li>
-<p>B树在内存中实际的存储形式为</p>
-<p><a class="glightbox" href="../image/B-Tree_B%2BTree/media/image3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/B-Tree_B%2BTree/media/image3.png" /></a></p>
-</li>
-<li>
-<p>注意 外部节点数=内部节点数+1</p>
-<p><a class="glightbox" href="../image/B-Tree_B%2BTree/media/image4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/B-Tree_B%2BTree/media/image4.png" /></a></p>
-<p>也可理解为内部节点对应N种成功，外部节点就是对应的N+1种失败的情况</p>
-</li>
-<li>
-<p>B树的高度就在\thetalogmn</p>
-<p><a class="glightbox" href="../image/B-Tree_B%2BTree/media/image5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/B-Tree_B%2BTree/media/image5.png" /></a></p>
-</li>
-<li>
-<p>B数的插入，如果导致节点key过多，则需要分裂，并把中点上移</p>
-<p><a class="glightbox" href="../image/B-Tree_B%2BTree/media/image6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/B-Tree_B%2BTree/media/image6.png" /></a></p>
-<p>如果分裂到根 那么高度加1</p>
-</li>
-<li>
-<p>B树的删除，如果导致下越界，但凡左右有一个兄弟有多的（借出后不下溢出），旋转</p>
-<p><a class="glightbox" href="../image/B-Tree_B%2BTree/media/image7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/B-Tree_B%2BTree/media/image7.png" /></a></p>
-<p>如果没有， 从上面拽一个下来，三部分一起合并</p>
-<p><a class="glightbox" href="../image/B-Tree_B%2BTree/media/image8.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/B-Tree_B%2BTree/media/image8.png" /></a></p>
-<p>合并到根，就把空根删除，至此高度减一</p>
-</li>
-<li>
-<p>B树把数据存在节点中，比起B+树存在根中，B除了key多了个指针的大小。除去指针索引可以容纳宽扁的树。</p>
-<p>另外加入要查找某一区间的点比如20-60，需要依次搜索，很麻烦</p>
-<p>引入B+树：</p>
-<p><a class="glightbox" href="../image/B-Tree_B%2BTree/media/image9.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/B-Tree_B%2BTree/media/image9.png" /></a></p>
-<p>索引值（内部点）不重复；</p>
-<p>不再需要B树的外部节点；</p>
-<p>叶子块单向链表，方便查找某个范围内的值，不必多遍从根出发。</p>
-<p>索引值（内部点的key）存的是右子树的最小叶子节点的值。</p>
-<p>如果有磁盘指针，也都存在有节点。</p>
-<p>插入删除与B树相仿。但都要深入到叶节点。</p>
-</li>
-</ol>
+<p>1.</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>B 树利用了局部性来加速访问
+
+B 树的外部节点是指叶节点的空孩子
+
+![](image/B-Tree_B+Tree/media/image1.png)
+</code></pre></div></td></tr></table></div>
+<p>2.</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>对 B 树的节点关键码数约定，注意下限是上取整，可用上下限命名
+如（3，5）树/5 阶 B 树，5 阶 B 数一个节点最多 4 个关键码
+
+![](image/B-Tree_B+Tree/media/image2.png)
+</code></pre></div></td></tr></table></div>
+<p>3.</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>B 树在内存中实际的存储形式为
+
+![](image/B-Tree_B+Tree/media/image3.png)
+</code></pre></div></td></tr></table></div>
+<p>4.</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>注意 外部节点数=内部节点数+1
+
+![](image/B-Tree_B+Tree/media/image4.png)
+
+
+也可理解为内部节点对应 N 种成功，外部节点就是对应的 N+1 种失败的情况
+</code></pre></div></td></tr></table></div>
+<p>5.</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>B 树的高度就在、\thetalogmn
+
+![](image/B-Tree_B+Tree/media/image5.png)
+</code></pre></div></td></tr></table></div>
+<p>6.</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>B 数的插入，如果导致节点 key 过多，则需要分裂，并把中点上移
+
+![](image/B-Tree_B+Tree/media/image6.png)
+
+
+如果分裂到根 那么高度加 1
+</code></pre></div></td></tr></table></div>
+<p>7.</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>B 树的删除，如果导致下越界，但凡左右有一个兄弟有多的（借出后不下溢出），旋转
+
+![](image/B-Tree_B+Tree/media/image7.png)
+
+
+如果没有， 从上面拽一个下来，三部分一起合并
+
+![](image/B-Tree_B+Tree/media/image8.png)
+
+
+合并到根，就把空根删除，至此高度减一
+</code></pre></div></td></tr></table></div>
+<p>8.</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code>B 树把数据存在节点中，比起 B+树存在根中，B 除了 key 多了个指针的大小。除去指针索引可以容纳宽扁的树。
+
+另外加入要查找某一区间的点比如 20-60，需要依次搜索，很麻烦
+
+引入 B+树：
+
+![](image/B-Tree_B+Tree/media/image9.png)
+
+
+索引值（内部点）不重复；
+
+不再需要 B 树的外部节点；
+
+叶子块单向链表，方便查找某个范围内的值，不必多遍从根出发。
+
+索引值（内部点的 key）存的是右子树的最小叶子节点的值。
+
+如果有磁盘指针，也都存在有节点。
+
+插入删除与 B 树相仿。但都要深入到叶节点。
+</code></pre></div></td></tr></table></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 4, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
       
         <br>
         Created:
