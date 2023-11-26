@@ -1,9 +1,9 @@
 ---
 comments: true
 ---
-# ZSH的参数传递
+# ZSH 的参数传递
 
-今天在调用DDPM模型的时候使用[:octicons-link-16:官方代码](https://github.com/openai/guided-diffusion)，竟然报错说参数不存在：
+今天在调用 DDPM 模型的时候使用[:octicons-link-16:官方代码](https://github.com/openai/guided-diffusion)，竟然报错说参数不存在：
 命令是
 ```bash
 MODEL_FLAGS="--attention_resolutions 32,16,8 --class_cond True --diffusion_steps 1000 --dropout 0.1 --image_size 64 --learn_sigma True --noise_schedule cosine --num_channels 192 --num_head_channels 64 --num_res_blocks 3 --resblock_updown True --use_new_attention_order True --use_fp16 True --use_scale_shift_norm True"
@@ -33,7 +33,7 @@ usage: classifier_sample.py [-h] [--clip_denoised CLIP_DENOISED] [--num_samples 
                             [--classifier_pool CLASSIFIER_POOL]
 classifier_sample.py: error: unrecognized arguments: --attention_resolutions 32,16,8 --class_cond True --diffusion_steps 1000 --dropout 0.1 --image_size 64 --learn_sigma True --noise_schedule cosine --num_channels 192 --num_head_channels 64 --num_res_blocks 3 --resblock_updown True --use_new_attention_order True --use_fp16 True --use_scale_shift_norm True
 ```
-貌似是因为用这种方式传递的参数不会被按空格分开，所以无法识别  
-我还试过换用bash，或者是使用`"$FLAG"`，都没用😡
+貌似是因为用这种方式传递的参数不会被按空格分开，所以无法识别
+我还试过换用 bash，或者是使用`"$FLAG"`，都没用😡
 
 解决的办法是使用`$=FLAG`  （可以参考[:octicons-link-16:这篇解答](https://unix.stackexchange.com/questions/26661/what-is-word-splitting-why-is-it-important-in-shell-programming)）

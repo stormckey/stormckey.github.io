@@ -6,8 +6,8 @@ hide:
 ---
 # 样式一览
 !!! abstraction
-    此页面将会列出本站点目前支持的所有显示样式  
-    许多都来自[:octicons-link-16: Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/) 
+    此页面将会列出本站点目前支持的所有显示样式
+    许多都来自[:octicons-link-16: Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/)
 
 ```C hl_lines="2 2"
 int main(){
@@ -23,7 +23,7 @@ using namespace std;
 
 The `#!python range()` function is used to generate a sequence of numbers.
 
-``` title="inlcude a file: .gitignore" 
+``` title="inlcude a file: .gitignore"
 --8<-- ".gitignore"
 ```
 
@@ -127,7 +127,7 @@ $$
 \operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
 $$
 
-[鼠标悬停！]{😋}
+【鼠标悬停！】{😋}
 
 [:material-information-outline:]{Important information}
 

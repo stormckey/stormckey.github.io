@@ -6,16 +6,16 @@ hide:
 # 如何构建一个像这样的网站！
 
 !!! abstract "网站搭建教程"
-    本站点使用mkdocs搭建，部署于Github Pages，使用了[:octicons-link-16:material](https://squidfunk.github.io/mkdocs-material/)主题
+    本站点使用 mkdocs 搭建，部署于 Github Pages，使用了[:octicons-link-16:material](https://squidfunk.github.io/mkdocs-material/)主题
 
 ## 1.环境准备
 
-安装python
+安装 python
 ```bash
 sudo apt install python3 python3-pip
 ```
 
-pip换源
+pip 换源
 ```bash
 pip install pip -U
 pip config set global.index-url https://mirrors.zju.edu.cn/pypi/web/simple
@@ -29,7 +29,7 @@ python -m venv webenv
 source webenv/bin/activate
 ```
 
-安装mkdocs
+安装 mkdocs
 ```bash
 pip install mkdocs-material
 ```
@@ -39,7 +39,7 @@ pip install mkdocs-material
 ERROR: mkdocs 1.4.3 has requirement markdown<3.4,>=3.2.1, but you'll have markdown 3.4.3 which is incompatible.
 ```
 
-修改markdown版本,然后重新安装mkdocs：
+修改 markdown 版本，然后重新安装 mkdocs：
 ```bash
 pip install markdown==3.2.1
 pip install mkdocs-material
@@ -53,15 +53,15 @@ pip install pillow cairosvg
 
 
 
-??? info "可选优化：yaml补全"
-    1. 安装VSCode-yaml  
-    2. 把下面设置写入settings.json:
+??? info "可选优化：yaml 补全"
+    1. 安装 VSCode-yaml
+    2. 把下面设置写入 settings.json:
     ```json
     {
     "yaml.schemas": {
         "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
     },
-    "yaml.customTags": [ 
+    "yaml.customTags": [
         "!ENV scalar",
         "!ENV sequence",
         "tag:yaml.org,2002:python/name:materialx.emoji.to_svg",
@@ -71,22 +71,22 @@ pip install pillow cairosvg
     }
     ```
 
-## 2.部署到Github Pages
+## 2.部署到 Github Pages
 
-新建一个空的公开仓库，并且克隆到本地，在其中新建一个mkdocs site：
+新建一个空的公开仓库，并且克隆到本地，在其中新建一个 mkdocs site：
 ```bash
 git clone repo
 cd repo
 mkdocs new .
 ```
 
-在mkdocs.yml中启用主题：
+在 mkdocs.yml 中启用主题：
 ```yaml
 theme:
   name: material
 ```
 
-如果你希望将markdown源文件也保存在同一个仓库里的话，先新建一个忽略`site/`的`.gitignore`文件，然后提交，推送：
+如果你希望将 markdown 源文件也保存在同一个仓库里的话，先新建一个忽略`site/`的`.gitignore`文件，然后提交，推送：
 ```bash
 echo "site/" > .gitignore
 git add .
@@ -94,25 +94,25 @@ git commit -m "init"
 git push -u origin master
 ```
 
-然后用`gh-deploy`命令一键部署到Github Pages:
+然后用`gh-deploy`命令一键部署到 Github Pages:
 ```bash
 mkdocs gh-deploy
 ```
-现在我们的仓库有两个分支了，master分支储存markdown源文件，gh-pages分支储存编译后的网站
+现在我们的仓库有两个分支了，master 分支储存 markdown 源文件，gh-pages 分支储存编译后的网站
 
-在settings-pages中可以看到网站的网址了，一般为`username.github.io/repo`,如果你创建的仓库是特殊的，名为`username.github.io`，那么网址就是`username.github.io`了  
+在 settings-pages 中可以看到网站的网址了，一般为`username.github.io/repo`,如果你创建的仓库是特殊的，名为`username.github.io`，那么网址就是`username.github.io`了
 当前的网站为默认样式：
 ![](images/Build_this_website/2023-07-02-02-35-34.png#pic)
 
 ??? info "可选优化：自动编译部署"
-    我们可以使用GitHub action来帮助我们每次更新master分支后自动编译网站并推送到gh-pages分支，这样我们就不用每次都手动执行`mkdocs gh-deploy`了。
+    我们可以使用 GitHub action 来帮助我们每次更新 master 分支后自动编译网站并推送到 gh-pages 分支，这样我们就不用每次都手动执行`mkdocs gh-deploy`了。
     1. 在仓库中新建一个`.github/workflows/auto-deploy.yml`文件，内容如下：
     ```yaml
-    name: ci 
+    name: ci
     on:
     push:
         branches:
-        - master 
+        - master
         - main
     permissions:
     contents: write
@@ -126,7 +126,7 @@ mkdocs gh-deploy
         - uses: actions/setup-python@v4
             with:
             python-version: 3.x
-        - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+        - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
         - uses: actions/cache@v3
             with:
             key: mkdocs-material-${{ env.cache_id }}
@@ -136,14 +136,14 @@ mkdocs gh-deploy
         - run: pip install  mkdocs-material mkdocs-changelog-plugin mkdocs-glightbox jieba pillow cairosvg mkdocs-tooltips mkdocs-statistics-plugin mkdocs-table-reader-plugin mkdocs-git-revision-date-localized-plugin
         - run: mkdocs gh-deploy --force
     ```
-    注意，推送到Github的话需要你的token有workflow权限  
-    如果你依赖了额外的库，需要修改action
+    注意，推送到 Github 的话需要你的 token 有 workflow 权限
+    如果你依赖了额外的库，需要修改 action
 
 ## 3.添加特性
 
-### 3.1 修改网站的css样式
+### 3.1 修改网站的 css 样式
 
-我们需要新增的样式君放置于`docs/css/`目录下,每个css文件都要在`mkdocs.yml`中添加：
+我们需要新增的样式君放置于`docs/css/`目录下，每个 css 文件都要在`mkdocs.yml`中添加：
 
 ```yaml
 extra_css:
@@ -167,15 +167,15 @@ extra_css:
         --my-changlog-color: #161616;
     }
     .md-grid {
-    max-width: 1400px; 
+    max-width: 1400px;
     }/* make the page wider */
     /* changelog config*/
     .timeline-card{
-    background-color: var(--my-changlog-color); 
+    background-color: var(--my-changlog-color);
     }
     .timeline-content::before{
-    background-color: var(--my-changlog-color); 
-    } 
+    background-color: var(--my-changlog-color);
+    }
     .changelog-type{
     background-color: #CC8A85;
     }
@@ -195,23 +195,23 @@ extra_css:
     ```
 
 ??? tip "自己定义样式"
-    我们可能不熟悉css，没事，我也完全不懂，对于一些简单的修改颜色修改字，直接用F12查看对应的样式改成自己喜欢的就好了，浏览器一般都支持直接改并且显示修改后的效果的  
+    我们可能不熟悉 css，没事，我也完全不懂，对于一些简单的修改颜色修改字，直接用 F12 查看对应的样式改成自己喜欢的就好了，浏览器一般都支持直接改并且显示修改后的效果的
     另一个好用的设置就是修改默认的图片样式，我们只要像这样引用图片
     ```
     ![](images/Build_this_website/2023-07-02-02-35-34.png#pic)
     ```
-    也就是在结尾加上#pic,就可以对图片应用默认样式了，我用的是圆角+阴影。这一添加的过程可以用VSCode插件Paste Image自动实现，我在[:octicons-link-16:这里](https://stormckey.github.io/Blog/VSCode-Markdown/#_2)有介绍
+    也就是在结尾加上#pic,就可以对图片应用默认样式了，我用的是圆角+阴影。这一添加的过程可以用 VSCode 插件 Paste Image 自动实现，我在[:octicons-link-16:这里](https://stormckey.github.io/Blog/VSCode-Markdown/#_2)有介绍
 
-### 3.2 添加额外的javascript
+### 3.2 添加额外的 javascript
 
-我们需要新增的js文件放置于`docs/js/`目录下,每个js文件都要在`mkdocs.yml`中添加：
+我们需要新增的 js 文件放置于`docs/js/`目录下，每个 js 文件都要在`mkdocs.yml`中添加：
 ```yaml
 extra_javascript:
   - js/extra.js
 ```
-这里的url可以指向网络上的js文件，也可以是本地的
+这里的 url 可以指向网络上的 js 文件，也可以是本地的
 
-??? exmaple "我使用的的js"
+??? exmaple "我使用的的 js"
     === "extra.js"
         ```javascript
         document.querySelectorAll('.zoom').forEach(item => {
@@ -234,8 +234,8 @@ extra_javascript:
             processHtmlClass: "arithmatex"
             }
         };
-        
-        document$.subscribe(() => { 
+
+        document$.subscribe(() => {
             MathJax.typesetPromise()
         })
         ```
@@ -249,9 +249,9 @@ extra_javascript:
         })
         ```
 
-### 3.3添加全局脚注
+### 3.3 添加全局脚注
 
-所有脚注都放在`includes/abbreviatioins.md`(在docs之外)，格式为：
+所有脚注都放在`includes/abbreviatioins.md`（在 docs 之外），格式为：
 ```md
 *[HTML]: Hyper Text Markup Language
 *[W3C]: World Wide Web Consortium
@@ -270,7 +270,7 @@ markdown_extensions:
 
 ??? example "效果图"
 
-### 3.4启用网站数据分析
+### 3.4 启用网站数据分析
 
 在`mkdocs.yml`中添加：
 ```yaml
@@ -280,11 +280,11 @@ extra:
     property: G-XXXXXXXXXX
 ```
 
-随后前往Google Analytics注册使用即可。
+随后前往 Google Analytics 注册使用即可。
 
-!!! warning "启用这项功能需要向每个网页注入google code"
+!!! warning "启用这项功能需要向每个网页注入 google code"
 
-### 3.5启用最新更新时间
+### 3.5 启用最新更新时间
 
 安装库：
 ```bash
@@ -297,17 +297,17 @@ plugins:
       enable_creation_date: true
 ```
 
-### 3.6启用评论区
-    
+### 3.6 启用评论区
+
 [:octicons-link-16:原文档](https://squidfunk.github.io/mkdocs-material/setup/setting-up-comments/)介绍的很清楚了
 
-### 3.7从文件读取表格
+### 3.7 从文件读取表格
 
 参考[:octicons-link-16:原文档](https://squidfunk.github.io/mkdocs-material/reference/data-tables/#import-table-from-file)
 
-### 3.8使用emojis和icons
+### 3.8 使用 emojis 和 icons
 
-这个[:octicons-link-16:链接](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search)可以搜索emoji
+这个[:octicons-link-16:链接](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search)可以搜索 emoji
 
 ### 3.9 图片放大
 
@@ -345,14 +345,14 @@ plugins:
     name: material
     custom_dir: overrides
     favicon: cat.svg # put in /docs/cat.svg
-    font: 
+    font:
         text: Roboto Mono
         code: Roboto Mono
     features:
         - content.action.edit # enable the button to edit the source code of the page
         - content.action.view # enable the button to view the source code of the page
         - content.code.copy # enable the button to copy the code block
-        - navigation.tabs  # enable the row of tabs under the title 
+        - navigation.tabs  # enable the row of tabs under the title
         # - navigation.sections # unfold the secondary titles to the left
         # - navigation.footer # enable the next and previous button
         - navigation.indexes # the index page will be incoperate into the tab
@@ -422,10 +422,10 @@ plugins:
     - pymdownx.keys # render key symbols
     - pymdownx.smartsymbols
     #enable button
-    - attr_list  
+    - attr_list
     #enable content tabs
     - pymdownx.tabbed:
-        alternate_style: true 
+        alternate_style: true
     - tables
     #daigrams are not enabled
     - footnotes
@@ -479,7 +479,7 @@ plugins:
         lang: zh
     consent:
         title: Cookie consent
-        description: >- 
+        description: >-
         We use cookies to recognize your repeated visits and preferences, as well
         as to measure the effectiveness of our documentation and whether users
         find what they're searching for. With your consent, you're helping us to
@@ -493,6 +493,6 @@ plugins:
     - css/extra.css
     ```
 
-### 3.x更多特性（我还不会用但考虑启用的）
+### 3.x 更多特性（我还不会用但考虑启用的）
 
-1. 自定义html样式[:octicons-link-16:](https://squidfunk.github.io/mkdocs-material/customization/#extending-the-theme)
+1. 自定义 html 样式[:octicons-link-16:](https://squidfunk.github.io/mkdocs-material/customization/#extending-the-theme)
