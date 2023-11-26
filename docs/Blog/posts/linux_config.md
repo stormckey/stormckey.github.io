@@ -8,6 +8,10 @@ date: 2023-03-22
 nostatistics: true
 ---
 # Linux 终端配置
+!!! abstract
+    一些极大地增强linux终端易用性的工具
+
+    对我来说,如果我要新开一个用一段时间的环境的话,就会把这些配置先跑一遍
 <!-- more -->
 
 ## 启用 zsh

@@ -10,20 +10,22 @@ nostatistics: true
 
 # 计算机网络 - lab2
 
-计网lab2指北,其实主要是讲了讲怎么让实验先跑起来,还有各种问题的处理之类的
+!!! abstract
+    因为这个实验做的时候几乎没什么指导，只有一个神秘的文档，一整个实验室的线和一箱子的神秘机器,所以就激情写个经验
+    
+    主要是讲了讲怎么让实验跑起来,还有各种意外问题的处理之类的
 
 <!-- more -->
 
 !!! info "基本信息"
     实验时间：2023 年秋冬
 
-    实验报告模板：[:octicons-file-16:]()
+    实验报告模板：[:octicons-file-16:](https://github.com/stormckey/stormckey.github.io/blob/main/resource/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A%E6%A8%A1%E7%89%88_%E5%AE%9E%E9%AA%8C2.doc)
 
     往期参考：[:octicons-file-16:](https://github.com/QSCTech/zju-icicles/raw/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Lab/Lab2-%E4%BD%BF%E7%94%A8%E4%BA%8C%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%BB%84%E7%BD%91/Lab2-%E4%BD%BF%E7%94%A8%E4%BA%8C%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%BB%84%E7%BD%91.doc) （来自浙江大学课程共享计划）
 
     指导老师：黄正谦
 
-因为这个实验做的时候几乎没什么指导，只有一个神秘的文档，一整个实验室的线和一箱子的神秘机器,所以就激情写下经验
 
 ## 认识实验室的仪器
 

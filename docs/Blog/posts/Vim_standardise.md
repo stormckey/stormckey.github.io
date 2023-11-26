@@ -9,12 +9,14 @@ nostatistics: true
 ---
 
 # 用 Vim 批量格式化
+!!! abstract
+    众所周知中英文混杂的排版其实是有讲究的,但是实际操作起来输入法切来切去麻烦得很,本文讲的是用vim的Pangu插件来批量自动格式化的方法
 <!-- more -->
 ## 安装 Vim 工具 Pangu
 
 首先安装 [:octicons-mark-github-16: vim-plug](),这是一个可以帮助我们方便的安装 vim 插件的插件
 
-随后安装 Pangu 插件，在~/.vimrc 中添加
+随后安装 Pangu 插件，在 ~/.vimrc 中添加
 
 ```bash
 Plug 'hotoo/pangu.vim', { 'for': ['markdown', 'vimwiki', 'text'] }

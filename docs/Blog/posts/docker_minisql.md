@@ -9,11 +9,11 @@ nostatistics: true
 ---
 
 # 用 Docker 搭建 minisql 环境
-<!-- more -->
-
 !!! abstract
     一个简易的教程来介绍如何在 MacOS 上用 docker 搭建 minisql 环境，那么有人要问了，为什么不直接本地部署呢。
     我也想本地部署啊，但是编译起来破事太多了😅，索性试一种跨平台的方案。
+<!-- more -->
+
 
 !!! info "环境"
     MacOS: Ventura 13.4.1

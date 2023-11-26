@@ -8,6 +8,8 @@ date: 2023-04-05
 nostatistics: true
 ---
 # 用 Mac 的 VSCode 调试 C/C++程序
+!!! abstract
+    在Mac的环境上用VSCode来debug捏,如果你也碰到些问题的话不妨来看看👀
 <!-- more -->
 
 !!! info "环境"

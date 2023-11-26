@@ -8,6 +8,8 @@ date: 2023-11-25
 nostatistics: true
 ---
 # 操作系统 - lab3
+!!! abstract
+    比较high level的讲一下一些思想和需要注意的地方,很多细节问题还是要自己决定和思考的哒
 <!-- more -->
 
 !!! info "基本信息"
@@ -18,7 +20,6 @@ nostatistics: true
 ??? warning "为什么是从 lab3 开始？"
     我也不知道
 
-Lab3 的虚拟内存还是需要调一调的，本文只会 high level 的讲一点思想，如果实在想不明白可以参考.有问题也欢迎提出！
 
 ##  初步启用虚拟内存
 

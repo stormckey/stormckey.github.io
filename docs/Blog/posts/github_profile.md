@@ -9,11 +9,10 @@ nostatistics: true
 ---
 
 # 配置 Github Profile
-
-<!-- more -->
-
 !!! abstract
     我配置 Github 主页 Profile 的方案，灵感来自[:octicons-link-16:Tonycrane 的 GitHub 主页](https://github.com/TonyCrane)
+<!-- more -->
+
 
 ## 启用 Github 主页 Profile
 我们先创建一个跟自己账号同名的公开仓库，这是一个特殊的用作主页仓库

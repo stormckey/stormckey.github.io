@@ -8,6 +8,8 @@ date: 2023-03-28
 nostatistics: true
 ---
 # Enable ChatGPT_academic
+!!! abstract
+    逛大街的时候偶然看到的工具,跑起来用用看!
 <!-- more -->
 !!! info "准备工作"
     请在阅读此文前准备好 ChatGPT 的 API Key 和好用的代理。（前者主要是注册好账号就行，合理利用 https://sms-activate.org/）

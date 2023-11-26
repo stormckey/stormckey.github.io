@@ -9,6 +9,8 @@ nostatistics: true
 
 ---
 # 用 ssh 连接同一局域网下的 Wsl2
+!!! abstract
+    为什么会有这个需求,因为我大学入学带的电脑室是一个续航稀碎的巨重的游戏本,后来有了mac之后游戏本基本成台式了(不是),用ssh连上去主要是用一下显卡啥的
 <!-- more -->
 !!! abstract
     基础的流程参考[:octicons-link-16:这篇博客](https://blog.csdn.net/qq_24211837/article/details/117386077)就好，本文记录一下踩的雷和更进阶的设置

@@ -9,6 +9,8 @@ nostatistics: true
 ---
 
 # 在 VSCode 上写 Markdown
+!!! abstract
+    markdown真方便啊真方便,本文讲了怎么在VSCode上配置一个好用的写markdown的环境
 <!-- more -->
 
 ## 起步
