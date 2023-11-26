@@ -24,7 +24,7 @@ comments: true
 
 首先我们先定义熵和条件熵
 
-!!! info "熵"
+!!! definition "熵"
     给定一个随机变量 X：
 
     $$
@@ -51,7 +51,7 @@ comments: true
 
     所以我们可以有一个直观的理解，某个信息来之后我的熵减少的越多，这个信息的信息量越大，越有用。
 
-!!! info "条件熵"
+!!! definition "条件熵"
     给定一个联合分布：
 
     $$
@@ -88,11 +88,12 @@ $$
 
 基尼指数是另一种特征选择的方法，它的定义如下：
 
-\begin{aligned}
-    &Gini(P) = 1 - \sum_{k=1}^{K} P_k^2 \\
-    &Gini(D) = 1 - \sum_{k=1}^{K} \frac{|D_i|}{|D|}^2 \\
-    &Gini(D,A) = \sum_{i=1}^{n} \frac{|D_i|}{|D|} Gini(D_i)
-\end{aligned}
+!!! definition "基尼指数"
+    \begin{aligned}
+        &Gini(P) = 1 - \sum_{k=1}^{K} P_k^2 \\
+        &Gini(D) = 1 - \sum_{k=1}^{K} \frac{|D_i|}{|D|}^2 \\
+        &Gini(D,A) = \sum_{i=1}^{n} \frac{|D_i|}{|D|} Gini(D_i)
+    \end{aligned}
 
 ![](images/Decision_Tree/2023-11-21-17-10-57.png#pic)
 

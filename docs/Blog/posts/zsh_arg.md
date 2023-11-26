@@ -1,7 +1,14 @@
 ---
 comments: true
+authors:
+    - stormckey
+categories:
+    - Environment
+date: 2023-03-20
+nostatistics: true
 ---
 # ZSH 的参数传递
+<!-- more -->
 
 今天在调用 DDPM 模型的时候使用[:octicons-link-16:官方代码](https://github.com/openai/guided-diffusion)，竟然报错说参数不存在：
 命令是

@@ -1,8 +1,15 @@
 ---
 comments: true
+authors:
+    - stormckey
+categories:
+    - Environment
+date: 2023-03-23
+nostatistics: true
 ---
 
 # 在 VSCode 上写 Markdown
+<!-- more -->
 
 ## 起步
 首先启用以下的两个插件，就可以开始写 markdown，并在右侧预览了

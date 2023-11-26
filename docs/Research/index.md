@@ -5,14 +5,9 @@ nostatistics: true
 
 !!! info "虽然是科研菜🐶但还是把一些笔记放在这里好了 QaQ"
 
-!!! abstract "To do list"
-    - [ ] pytorch
-    - [ ] diffusion
-    - [ ] Unet
-
-
-
-!!! abstract "Done list"
+!!! abstract "Research list"
+    - [x] diffusion
+    - [x] Unet
     - [x] batch nomarlization
     - [x] basic pytorch
     - [x] [:octicons-link-16:Stochastic Gradient Descent with momentum](https://towardsdatascience.com/stochastic-gradient-descent-with-momentum-a84097641a5d)

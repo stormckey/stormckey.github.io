@@ -84,6 +84,9 @@ graph LR
 !!! note
     Search for emojis [here](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/)
 
+!!! Definition
+    Define sth
+
 Text can be {--deleted--} and replacement text {++added++}. This can also be
 combined into {~~one~>a single~~} operation. {==Highlighting==} is also
 possible {>>and comments can be added inline<<}.
@@ -127,7 +130,7 @@ $$
 \operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
 $$
 
-【鼠标悬停！】{😋}
+[鼠标悬停！]{😋}
 
 [:material-information-outline:]{Important information}
 

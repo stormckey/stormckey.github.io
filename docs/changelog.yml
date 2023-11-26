@@ -1,5 +1,7 @@
 - "2023":
   - "2023-11-26":
+    - refactor: 新增了Definition样式
+    - refactor: 启用blog插件
     - refactor: 使用Pangu.vim插件进行文档格式化
     - newpage: Blog > Cool > 用Vim批量格式化
   - "2023-11-25":

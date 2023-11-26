@@ -1,8 +1,15 @@
 ---
 comments: true
+authors:
+    - stormckey
+categories:
+    - Lab
+date: 2023-07-01
+nostatistics: true
 ---
 
 # 用 Docker 搭建 minisql 环境
+<!-- more -->
 
 !!! abstract
     一个简易的教程来介绍如何在 MacOS 上用 docker 搭建 minisql 环境，那么有人要问了，为什么不直接本地部署呢。

@@ -1,7 +1,14 @@
 ---
 comments: true
+authors:
+    - stormckey
+categories:
+    - Environment
+date: 2023-03-22
+nostatistics: true
 ---
 # Linux 终端配置
+<!-- more -->
 
 ## 启用 zsh
 ```

@@ -1,12 +1,18 @@
 ---
 comments: true
+authors:
+    - stormckey
+categories:
+    - Cool
+date: 2023-11-26
+nostatistics: true
 ---
 
 # 用 Vim 批量格式化
-
+<!-- more -->
 ## 安装 Vim 工具 Pangu
 
-首先安装[:octicons-mark-github-16: vim-plug](),这是一个可以帮助我们方便的安装 vim 插件的插件
+首先安装 [:octicons-mark-github-16: vim-plug](),这是一个可以帮助我们方便的安装 vim 插件的插件
 
 随后安装 Pangu 插件，在~/.vimrc 中添加
 
@@ -17,7 +23,7 @@ let g:pangu_rule_date = 1
 
 随后在 vim 中执行`:PlugInstall`即可安装
 
-Pangu 的[:octicons-book-16: 官方首页](https://github.com/hotoo/pangu.vim)上已经有比较详细的说明了，想要启用其中的功能照着做就是了
+Pangu 的 [:octicons-book-16: 官方首页](https://github.com/hotoo/pangu.vim)上已经有比较详细的说明了，想要启用其中的功能照着做就是了
 
 ## 批量使用 Pangu 格式化
 

@@ -1,7 +1,15 @@
 ---
 comments: true
+authors:
+    - stormckey
+categories:
+    - Environment
+date: 2023-03-22
+nostatistics: true
+
 ---
 # 用 ssh 连接同一局域网下的 Wsl2
+<!-- more -->
 !!! abstract
     基础的流程参考[:octicons-link-16:这篇博客](https://blog.csdn.net/qq_24211837/article/details/117386077)就好，本文记录一下踩的雷和更进阶的设置
 

@@ -1,8 +1,14 @@
 ---
 comments: true
+authors:
+    - stormckey
+categories:
+    - Cool
+date: 2023-03-28
+nostatistics: true
 ---
 # Enable ChatGPT_academic
-
+<!-- more -->
 !!! info "准备工作"
     请在阅读此文前准备好 ChatGPT 的 API Key 和好用的代理。（前者主要是注册好账号就行，合理利用 https://sms-activate.org/）
 

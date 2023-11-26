@@ -11,14 +11,14 @@ comments: true
 
 对于数据集$\{(x_i,y_i)\}$,其中$x_i \in \mathbb{R}^n, y \in \{1,-1\}$,我们希望找到一个超平面$w\cdot x + b = 0$将数据集分开。
 
-!!! info "实例点到超平面的几何间隔"
+!!! definition "实例点到超平面的几何间隔"
     $$
         \gamma_i = \frac{y_i(w\cdot x_i + b)}{\|w\|}
     $$
 
     可以看出，其绝对值也就是点到直线距离
 
-!!! info "实例点到超平面的函数间隔"
+!!! definition "实例点到超平面的函数间隔"
     $$
         \hat{\gamma_i}   = y_i(w\cdot x_i + b)
     $$

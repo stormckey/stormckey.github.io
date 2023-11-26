@@ -1,8 +1,16 @@
 ---
 comments: true
+authors:
+    - stormckey
+categories:
+    - Cool
+date: 2023-03-23
+nostatistics: true
 ---
 
 # 配置 Github Profile
+
+<!-- more -->
 
 !!! abstract
     我配置 Github 主页 Profile 的方案，灵感来自[:octicons-link-16:Tonycrane 的 GitHub 主页](https://github.com/TonyCrane)

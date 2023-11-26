@@ -1,8 +1,14 @@
 ---
 comments: true
+authors:
+    - stormckey
+categories:
+    - Lab
+date: 2023-11-25
+nostatistics: true
 ---
-
 # 操作系统 - lab3
+<!-- more -->
 
 !!! info "基本信息"
     时间：2023 秋冬

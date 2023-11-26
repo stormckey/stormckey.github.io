@@ -1,7 +1,15 @@
 ---
 comments: true
+authors:
+    - stormckey
+categories:
+    - Environment
+date: 2023-03-21
+nostatistics: true
+
 ---
 # 在 WSL2 上启用 CUDA
+<!-- more -->
 
 !!! info "主要是参考了[:octicons-link-16:这篇文章](https://zhuanlan.zhihu.com/p/506477744)"
 

@@ -15,9 +15,9 @@ copyright: Copyright &copy; stormckey
 theme:
   name: material
   custom_dir: overrides
-  favicon: cat.svg # put in /docs/cat.svg
+  favicon: icons/cat.svg # put in /docs/icons/cat.svg
   font: 
-    text: Roboto Mono
+    # text: Roboto Mono
     code: Roboto Mono
   features:
       - content.action.edit # enable the button to edit the source code of the page
@@ -58,15 +58,21 @@ plugins:
   #     cards: !ENV [CI, false]
   #     cards_font: Noto Sans SC
   - git-revision-date-localized:
-      enabled: !ENV [CI, false]
       enable_creation_date: true
+      # enabled: !ENV [CI, false]
+      # enable_creation_date: true
   - offline: # enable searching offline
       enabled: !ENV [OFFLINE, false]
   - table-reader
   - changelog #see https://github.com/TonyCrane/mkdocs-changelog-plugin
   - tooltips
   - statistics
+      # page_check_metadata: statistics
   - glightbox
+  - blog:
+      blog_toc: true
+      post_date_format: medium
+      post_excerpt: required
 
 
 
@@ -168,22 +174,22 @@ nav:
   - Home: 
     - index.md
   - Blog: 
-    - Blog/index.md
-    - Environment:
-      - Blog/Environment/zsh_arg.md
-      - Blog/Environment/VSCode_conda.md
-      - Blog/Environment/VSCode-Markdown.md
-      - Blog/Environment/wsl_cuda.md
-      - Blog/Environment/ssh_wsl.md
-      - Blog/Environment/Mac_VSC_DEBUG.md
-      - Blog/Environment/index.md
-      - Blog/Environment/linux_config.md
-      - Blog/Environment/CLI_tools.md
-    - Lab:
-      - Blog/Labs/index.md
-      - Blog/Labs/docker_minisql.md
-      - Blog/Labs/CN_lab2.md
-      - Blog/Labs/OS_lab3.md
+    - blog/index.md
+    # - Environment:
+    #   - blog/Environment/zsh_arg.md
+    #   - blog/Environment/VSCode_conda.md
+    #   - blog/Environment/VSCode-Markdown.md
+    #   - blog/Environment/wsl_cuda.md
+    #   - blog/Environment/ssh_wsl.md
+    #   - blog/Environment/Mac_VSC_DEBUG.md
+    #   - blog/Environment/index.md
+    #   - blog/Environment/linux_config.md
+    #   - blog/Environment/CLI_tools.md
+    # - Lab:
+    #   - blog/Labs/index.md
+    #   - blog/Labs/docker_minisql.md
+    #   - blog/Labs/CN_lab2.md
+    #   - blog/Labs/OS_lab3.md
 
     # - Minisql: 
     #   - Minisql#0: Blog/Minisql/minisql_part0.md
@@ -191,11 +197,11 @@ nav:
     # - Fun:
     #   - Blog/Fun/index.md
     #   - 原型: Blog/Fun/Women_and_prototype.md
-    - Cool:
-      - Blog/Cool/index.md
-      - Blog/Cool/GPT_academic.md
-      - Blog/Cool/github_profile.md
-      - Blog/Cool/Vim_standardise.md
+  #   - Cool:
+  #     - Blog/Cool/index.md
+  #     - Blog/Cool/GPT_academic.md
+  #     - Blog/Cool/github_profile.md
+  #     - Blog/Cool/Vim_standardise.md
     
 
   - Note:
@@ -222,6 +228,7 @@ nav:
       - Note/Data Modeling/Max_Entropy.md
       - Note/Data Modeling/Support_Vector_Machine.md
       - Note/Data Modeling/Boosting.md
+      - Note/Data Modeling/Centering.md
 
   - Research:
     - Research/index.md

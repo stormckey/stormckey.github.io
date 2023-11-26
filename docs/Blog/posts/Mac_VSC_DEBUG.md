@@ -1,7 +1,14 @@
 ---
 comments: true
+authors:
+    - stormckey
+categories:
+    - Environment
+date: 2023-04-05
+nostatistics: true
 ---
 # 用 Mac 的 VSCode 调试 C/C++程序
+<!-- more -->
 
 !!! info "环境"
     MacOS: Ventura 13.2.1
