@@ -36,6 +36,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://stormckey.github.io/Blog/Cool/Vim_standardise/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://stormckey.github.io/Blog/Cool/github_profile/</loc>
          <lastmod>2023-11-26</lastmod>
          <changefreq>daily</changefreq>
