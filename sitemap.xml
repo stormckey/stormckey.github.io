@@ -26,101 +26,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stormckey.github.io/Blog/Cool/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Cool/GPT_academic/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Cool/Vim_standardise/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Cool/github_profile/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Environment/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Environment/CLI_tools/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Environment/Mac_VSC_DEBUG/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Environment/VSCode-Markdown/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Environment/VSCode_conda/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Environment/linux_config/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Environment/ssh_wsl/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Environment/wsl_cuda/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Environment/zsh_arg/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Fun/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Fun/Women_and_prototype/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Labs/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Labs/CN_lab2/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Labs/OS_lab3/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/Blog/Labs/docker_minisql/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://stormckey.github.io/Blog/Minisql/</loc>
          <lastmod>2023-11-26</lastmod>
          <changefreq>daily</changefreq>
@@ -132,6 +37,76 @@
     </url>
     <url>
          <loc>https://stormckey.github.io/Blog/Minisql/minisql_part1/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/CLI_tools/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/CN_lab2/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/GPT_academic/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/Mac_VSC_DEBUG/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/OS_lab3/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/VSCode-Markdown/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/VSCode_conda/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/Vim_standardise/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/docker_minisql/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/github_profile/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/linux_config/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/ssh_wsl/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/wsl_cuda/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Blog/posts/zsh_arg/</loc>
          <lastmod>2023-11-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -172,6 +147,11 @@
     </url>
     <url>
          <loc>https://stormckey.github.io/Note/Data%20Modeling/Boosting/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/Note/Data%20Modeling/Centering/</loc>
          <lastmod>2023-11-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -262,6 +242,11 @@
     </url>
     <url>
          <loc>https://stormckey.github.io/Research/Diffusion%20Model/DDPM/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/blog/</loc>
          <lastmod>2023-11-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
