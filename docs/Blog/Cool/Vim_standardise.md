@@ -2,7 +2,7 @@
 comments: true
 ---
 
-# 用 Vim 批量规范文档格式
+# 用 Vim 批量格式化
 
 ## 安装 Vim 工具 Pangu
 

@@ -1,4 +1,7 @@
 - "2023":
+  - "2023-11-26":
+    - refactor: 使用Pangu.vim插件进行文档格式化
+    - newpage: Blog > Cool > 用Vim批量格式化
   - "2023-11-25":
     - refactor: 重构了Blog的层级,加入了Lab部分
     - newpage: 加入了计网实验指南
