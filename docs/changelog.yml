@@ -1,4 +1,7 @@
 - "2023":
+  - "2023-11-28":
+    - newpage: Blog > PL
+    - refactor: 新增了Reference样式
   - "2023-11-26":
     - refactor: 新增了Definition样式
     - refactor: 启用blog插件

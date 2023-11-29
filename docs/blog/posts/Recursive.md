@@ -23,7 +23,7 @@ nostatistics: true
 
 当然可以,可以看到文中的`proto proto`本来就是等价于`Y u`的,要用这种方式实现递归主要走以下四步
 
-1. 写出调用自己的那一版的lambda: $fact_1 = \lambda n . is0\ n\ 1\ ( *\ n\ (fact\ (pred\ n)))$
+1. 写出调用自己的那一版的lambda: $fact_1 = \lambda n . is0\ n\ 1\ ( *\ n\ (fact_1\ (pred\ n)))$
 2. 把对自己的调用改成对参数f的调用: $fact_2 = \lambda f. \lambda n . is0\ n\ 1\ ( *\ n\ (f\ (pred\ n)))$
 3. 把f 改写成 f f: $fact_3 = \lambda f. \lambda n . is0\ n\ 1\ ( *\ n\ (f\ f\ (pred\ n)))$
 4. 对得到的新的lambda表达式应用自己: $fact = fact_3\ fact_3$
@@ -57,7 +57,7 @@ nostatistics: true
 
 上面那样已经实现了递归,为什么还需要 Y-combinator? 因为上面的实现方法中递归的逻辑和函数的逻辑混在了一起,我们可以把递归的逻辑抽象成Y,把函数的逻辑抽象成u,对Y 应用 u就得到了递归的u.具体来说可以分成以下三步
 
-1. 写出调用自己的那一版的lambda: $fact_1 = \lambda n . is0\ n\ 1\ ( *\ n\ (fact\ (pred\ n)))$
+1. 写出调用自己的那一版的lambda: $fact_1 = \lambda n . is0\ n\ 1\ ( *\ n\ (fact_1\ (pred\ n)))$
 2. 把对自己的调用改成对参数f的调用: $fact_2 = \lambda f. \lambda n . is0\ n\ 1\ ( *\ n\ (f\ (pred\ n)))$
 3. 应用于Y-combinator: $fact = Y\ fact_2$
 
@@ -104,3 +104,6 @@ nostatistics: true
 
 有以上性质,毫无疑问$Y fact_2$也实现了递归
     
+!!! reference
+    - [:octicons-book-16: Lambda 演算](https://note.tonycrane.cc/cs/pl/ppl/topic1/#y-combinator)
+    - [:octicons-book-16: Recursive Lambda Functions the Y-Combinator](https://sookocheff.com/post/fp/recursive-lambda-functions/)
