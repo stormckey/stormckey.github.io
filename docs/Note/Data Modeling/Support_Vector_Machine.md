@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 支持向量机
 
 !!! warning

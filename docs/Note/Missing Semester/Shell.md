@@ -1,5 +1,5 @@
 ---
-comments: true
+render_macros: false
 ---
 # Shell Notes (revisited)
 

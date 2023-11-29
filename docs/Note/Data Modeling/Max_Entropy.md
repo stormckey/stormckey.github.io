@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 最大熵模型
 
 !!! info "思想"

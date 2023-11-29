@@ -1,5 +1,6 @@
 ---
 comments: true
+render_macros: false
 hide:
     - navigation
 ---

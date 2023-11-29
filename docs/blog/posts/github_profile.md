@@ -6,6 +6,7 @@ categories:
     - Cool
 date: 2023-03-23
 nostatistics: true
+render_macros: false
 ---
 
 # 配置 Github Profile

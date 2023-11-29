@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 提升方法
 
 ## AdaBoost

@@ -1,6 +1,3 @@
----
-comments: true
----
 # Commandline Enviroment
 
 !!! abstract "记录 missing semester[:octicons-link-16:此堂课](https://missing-semester-cn.github.io/2020/command-line/)的一些笔记"

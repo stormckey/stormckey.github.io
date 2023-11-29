@@ -55,6 +55,8 @@ theme:
 
 plugins:
   - search
+  - meta-manager:
+      merge_tags: true
   # - social: #social card
   #     enabled: !ENV [CI, false]
   #     cards: !ENV [CI, false]
@@ -67,6 +69,7 @@ plugins:
   - table-reader
   - changelog #see https://github.com/TonyCrane/mkdocs-changelog-plugin
   - tooltips
+  - macros
   - statistics
       # page_check_metadata: statistics
   - glightbox

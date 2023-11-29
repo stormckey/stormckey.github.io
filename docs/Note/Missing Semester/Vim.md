@@ -1,6 +1,3 @@
----
-comments: true
----
 # Vim （Revisited）
 !!! abstract "重写这篇笔记的时候我已经用了一段时间 vim，笔记可能会过于简略，详细可参考[:octicons-link-16:课程网站](https://missing.csail.mit.edu/2020/editors/)"
 

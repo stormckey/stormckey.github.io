@@ -1,6 +1,3 @@
----
-comments: true
----
 # Missing Smester
 
 !!! abstract

@@ -1,8 +1,3 @@
----
-comments: true
-header-includes:
-  - \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
----
 # K 近邻
 
 ## 问题及算法描述

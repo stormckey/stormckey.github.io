@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 聚类方法
 
 !!! warning

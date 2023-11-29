@@ -1,6 +1,3 @@
----
-comments: true
----
 # Markdown All in One
 
 ## VSCode like highlighting

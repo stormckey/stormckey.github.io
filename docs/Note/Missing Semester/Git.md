@@ -1,6 +1,3 @@
----
-comments: true
----
 # Notes for Git
 
 !!! abstract "一个自底向上的学习过程，最后附上了常用指令，暂无操作演示，可以参考原[:octicons-link-16:课程网站](https://missing.csail.mit.edu/2020/version-control/)"
