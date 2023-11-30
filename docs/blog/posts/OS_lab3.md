@@ -4,10 +4,11 @@ authors:
     - stormckey
 categories:
     - Lab
+    - OS
 date: 2023-11-25
 nostatistics: true
 ---
-# 操作系统 - lab3
+# 操作系统 - lab3 虚拟内存
 !!! abstract
     比较high level的讲一下一些思想和需要注意的地方,很多细节问题还是要自己决定和思考的哒
 <!-- more -->

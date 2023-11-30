@@ -4,11 +4,12 @@ authors:
     - stormckey
 categories:
     - Lab
+    - 计算机网络
 date: 2023-11-25
 nostatistics: true
 ---
 
-# 计算机网络 - lab2
+# 计算机网络 - lab2 使用二层交换机组网
 
 !!! abstract
     因为这个实验做的时候几乎没什么指导，只有一个神秘的文档，一整个实验室的线和一箱子的神秘机器,所以就激情写个经验
