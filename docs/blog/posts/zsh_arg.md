@@ -3,13 +3,13 @@ comments: true
 authors:
     - stormckey
 categories:
-    - 神秘bug
+    - 神秘 bug
 date: 2023-03-20
 nostatistics: true
 ---
 # ZSH 的参数传递
 !!! abstract
-    zsh中一个参数传递的时候遇到的神秘问题🤔
+    zsh 中一个参数传递的时候遇到的神秘问题🤔
 <!-- more -->
 
 今天在调用 DDPM 模型的时候使用[:octicons-link-16:官方代码](https://github.com/openai/guided-diffusion)，竟然报错说参数不存在：

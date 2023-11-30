@@ -323,9 +323,9 @@ plugins:
   - glightbox
 ```
 
-### 3.10 启用blog
+### 3.10 启用 blog
 
-官方的起步[:octicons-link-16:指导](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/)很详细了,照着走就好!
+官方的起步[:octicons-link-16:指导](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/)很详细了，照着走就好！
 
 ### 3.11 我的所有配置
 

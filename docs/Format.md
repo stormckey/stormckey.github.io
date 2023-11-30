@@ -130,7 +130,7 @@ $$
 \operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
 $$
 
-[鼠标悬停！]{😋}
+【鼠标悬停！】{😋}
 
 [:material-information-outline:]{Important information}
 

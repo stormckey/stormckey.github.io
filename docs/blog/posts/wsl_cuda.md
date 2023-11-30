@@ -10,7 +10,7 @@ nostatistics: true
 ---
 # 在 WSL2 上启用 CUDA
 !!! abstract
-    别说了,开炼!
+    别说了，开炼！
 <!-- more -->
 
 !!! info "主要是参考了[:octicons-link-16:这篇文章](https://zhuanlan.zhihu.com/p/506477744)"

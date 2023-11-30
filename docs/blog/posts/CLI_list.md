@@ -10,9 +10,9 @@ nostatistics: true
 
 # 我的 CLI 工具
 !!! abstract
-    这里列出了很多好用的CLI(commandline interface)工具
+    这里列出了很多好用的 CLI(commandline interface)工具
 
-    如果仔细看看的化会发现大多数都是拿Rust重写的(Rewrite it in Rust!)                       
+    如果仔细看看的化会发现大多数都是拿 Rust 重写的(Rewrite it in Rust!)
 <!-- more -->
 
 ## 通用类

@@ -18,7 +18,7 @@ int find(const string &s, int pos = 0) const;//find substring s from pos , retur
 ```
 Just some funcs I used for homework.For mor details, retrieve in this [blog](https://blog.csdn.net/qq_37954088/article/details/82286530)
 
-### new and delete 
+### new and delete
 !!! info
     the delete[] will not change the space it freed, but change the number of deconstructor it calls
 ### sort and stable_sort
@@ -27,7 +27,7 @@ Just some funcs I used for homework.For mor details, retrieve in this [blog](htt
 sort(first,last,cmp);
 int cmp(const type& ,const type &);
 ```
-sort will sort the elements in [first,last).  
+sort will sort the elements in [first,last).
 cmp will ensure every pair in the sorted array to return.
 
-    
+
