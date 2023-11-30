@@ -51,7 +51,7 @@ graph LR
     something
 
 !!! info  "no inline"
-    Now it suppports Note,Abstract,Info,Tip,Success,Question,Warining,Failure,Danger,Bug,Example,Quote
+    Now it suppports Note，Abstract，Info，Tip，Success，Question，Warining，Failure，Danger，Bug，Example，Quote
 
 !!! abstract inline  "inline"
     somthing
@@ -119,12 +119,12 @@ tags on separate lines and adding new lines between the tags and the content.
 
 ![](images/Format/2023-07-01-22-00-36.png#pic)
 
-- [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
+- [x] Lorem ipsum dolor sit amet， consectetur adipiscing elit
 - [ ] Vestibulum convallis sit amet nisi a tincidunt
     * [x] In hac habitasse platea dictumst
     * [x] In scelerisque nibh non dolor mollis congue sed et metus
     * [ ] Praesent sed risus massa
-- [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
+- [ ] Aenean pretium efficitur erat， donec pharetra， ligula non scelerisque
 
 $$
 \operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
@@ -141,14 +141,14 @@ The HTML specification is maintained by the W3C.
 `Lorem ipsum dolor sit amet`
 
 :   Sed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus
-    tellus non sem sollicitudin, quis rutrum leo facilisis.
+    tellus non sem sollicitudin， quis rutrum leo facilisis.
 
 `Cras arcu libero`
 
-:   Aliquam metus eros, pretium sed nulla venenatis, faucibus auctor ex. Proin
+:   Aliquam metus eros， pretium sed nulla venenatis， faucibus auctor ex. Proin
     ut eros sed sapien ullamcorper consequat. Nunc ligula ante.
 
-    Duis mollis est eget nibh volutpat, fermentum aliquet dui mollis.
+    Duis mollis est eget nibh volutpat， fermentum aliquet dui mollis.
     Nam vulputate tincidunt fringilla.
     Nullam dignissim ultrices urna non auctor.
 

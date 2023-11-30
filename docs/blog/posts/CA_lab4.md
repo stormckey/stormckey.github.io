@@ -12,7 +12,7 @@ nostatistics: true
 # 计算机体系结构 - lab4  Cache
 
 !!! abstract
-    介绍一下实验中 Cache 设计的思想，从模块抽象的层面讲讲各模块的任务和交互的逻辑。
+    介绍一下实验中 Cache 设计的思想，从模块抽象的层面讲讲各模块的任务和交互的逻辑.
 
 <!-- more -->
 
@@ -21,17 +21,17 @@ nostatistics: true
 
     实验文档：[:octicons-book-16:](https://zju-arch.pages.zjusct.io/arch-fa23/lab4/)
 
-本次实验是要实现一个 cache,具体来说，会实现一个 CMU(Cache Management Unit)来完成 CPU, Memory, Cache 之间的交互和控制，结构如下：
+本次实验是要实现一个 Cache，具体来说，会实现一个 CMU(Cache Management Unit)来完成 CPU， Memory， Cache 之间的交互和控制，结构如下：
 
 ![](images/CA_lab4/2023-11-30-16-37-25.png#pic)
 
 ## Memory
 
-在本实验中 Memory 只与 CMU 交互。
+在本实验中 Memory 只与 CMU 交互.
 
 Memory 与 CMU 的交互的方式只有一种：
 
-- CMU 把读写需要的地址和数据给 Memory, Memory 进行读写操作然后返回数据给 CMU
+- CMU 把读写需要的地址和数据给 Memory， Memory 进行读写操作然后返回数据给 CMU
 
 ## Cache
 
@@ -39,14 +39,14 @@ Cache 内部维护着所有 Cache line 和标记位，并且与 CMU 进行交互
 
 <div class="annotate" markdown>
 
-- 返回部分控制信息给 CMU,包括
+- 返回部分控制信息给 CMU，包括
     - 是否命中
     - 被替换的 Cache line 是否有效且脏
     - 被写回的 Cache line 的 tag（这样 CMU 才能获得正确的地址，然后把数据写回 Memory）
 - 执行 CMU 要求的操作，包括
-    - load: 也就是从命中(1)Cache line 中读信息和标记(LRU),返回
-    - edit: 也就是对命中的 Cache line 进行修改和标记(LRU, dirty),返回
-    - store: 将 CMU 的给的数据替换进 Cache line,并且标记(valid, dirty, tag), 返回
+    - load: 也就是从命中(1)Cache line 中读信息和标记(LRU)，返回
+    - edit: 也就是对命中的 Cache line 进行修改和标记(LRU， dirty)，返回
+    - store: 将 CMU 的给的数据替换进 Cache line，并且标记(valid， dirty， tag)， 返回
     - invalid: 清空 Cache
 
 </div>

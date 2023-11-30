@@ -17,6 +17,6 @@ nostatistics: true
 
 Useful pages:
 
-- [:octicons-link-16:Reverse-mode automatic differentiation from scratch, in Python](https://sidsite.com/posts/autodiff/)
+- [:octicons-link-16:Reverse-mode automatic differentiation from scratch， in Python](https://sidsite.com/posts/autodiff/)
 - [:octicons-link-16:Example implementation of reverse-mode autodiff](https://colab.research.google.com/drive/1VpeE6UvEPRz9HmsHh1KS0XxXjYu533EC#scrollTo=erjC686T4S4c)
 

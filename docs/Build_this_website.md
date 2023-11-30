@@ -37,7 +37,7 @@ pip install mkdocs-material
 
 出现报错：
 ```bash
-ERROR: mkdocs 1.4.3 has requirement markdown<3.4,>=3.2.1, but you'll have markdown 3.4.3 which is incompatible.
+ERROR: mkdocs 1.4.3 has requirement markdown<3.4，>=3.2.1， but you'll have markdown 3.4.3 which is incompatible.
 ```
 
 修改 markdown 版本，然后重新安装 mkdocs：
@@ -61,13 +61,13 @@ pip install pillow cairosvg
     {
     "yaml.schemas": {
         "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
-    },
+    }，
     "yaml.customTags": [
-        "!ENV scalar",
-        "!ENV sequence",
-        "tag:yaml.org,2002:python/name:materialx.emoji.to_svg",
-        "tag:yaml.org,2002:python/name:materialx.emoji.twemoji",
-        "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
+        "!ENV scalar"，
+        "!ENV sequence"，
+        "tag:yaml.org，2002:python/name:materialx.emoji.to_svg"，
+        "tag:yaml.org，2002:python/name:materialx.emoji.twemoji"，
+        "tag:yaml.org，2002:python/name:pymdownx.superfences.fence_code_format"
     ]
     }
     ```
@@ -101,12 +101,12 @@ mkdocs gh-deploy
 ```
 现在我们的仓库有两个分支了，master 分支储存 markdown 源文件，gh-pages 分支储存编译后的网站
 
-在 settings-pages 中可以看到网站的网址了，一般为`username.github.io/repo`,如果你创建的仓库是特殊的，名为`username.github.io`，那么网址就是`username.github.io`了
+在 settings-pages 中可以看到网站的网址了，一般为`username.github.io/repo`，如果你创建的仓库是特殊的，名为`username.github.io`，那么网址就是`username.github.io`了
 当前的网站为默认样式：
 ![](images/Build_this_website/2023-07-02-02-35-34.png#pic)
 
 ??? info "可选优化：自动编译部署"
-    我们可以使用 GitHub action 来帮助我们每次更新 master 分支后自动编译网站并推送到 gh-pages 分支，这样我们就不用每次都手动执行`mkdocs gh-deploy`了。
+    我们可以使用 GitHub action 来帮助我们每次更新 master 分支后自动编译网站并推送到 gh-pages 分支，这样我们就不用每次都手动执行`mkdocs gh-deploy`了.
     1. 在仓库中新建一个`.github/workflows/auto-deploy.yml`文件，内容如下：
     ```yaml
     name: ci
@@ -201,7 +201,7 @@ extra_css:
     ```
     ![](images/Build_this_website/2023-07-02-02-35-34.png#pic)
     ```
-    也就是在结尾加上#pic,就可以对图片应用默认样式了，我用的是圆角+阴影。这一添加的过程可以用 VSCode 插件 Paste Image 自动实现，我在[:octicons-link-16:这里](https://stormckey.github.io/Blog/VSCode-Markdown/#_2)有介绍
+    也就是在结尾加上#pic，就可以对图片应用默认样式了，我用的是圆角+阴影.这一添加的过程可以用 VSCode 插件 Paste Image 自动实现，我在[:octicons-link-16:这里](https://stormckey.github.io/Blog/VSCode-Markdown/#_2)有介绍
 
 ### 3.2 添加额外的 javascript
 
@@ -216,7 +216,7 @@ extra_javascript:
     === "extra.js"
         ```javascript
         document.querySelectorAll('.zoom').forEach(item => {
-            item.addEventListener('click', function () {
+            item.addEventListener('click'， function () {
                 this.classList.toggle('image-zoom-large');
             })
         });
@@ -225,13 +225,13 @@ extra_javascript:
         ```javascript
         window.MathJax = {
             tex: {
-            inlineMath: [["\\(", "\\)"]],
-            displayMath: [["\\[", "\\]"]],
-            processEscapes: true,
+            inlineMath: [["\\("， "\\)"]]，
+            displayMath: [["\\["， "\\]"]]，
+            processEscapes: true，
             processEnvironments: true
-            },
+            }，
             options: {
-            ignoreHtmlClass: ".*|",
+            ignoreHtmlClass: ".*|"，
             processHtmlClass: "arithmatex"
             }
         };
@@ -281,7 +281,7 @@ extra:
     property: G-XXXXXXXXXX
 ```
 
-随后前往 Google Analytics 注册使用即可。
+随后前往 Google Analytics 注册使用即可.
 
 !!! warning "启用这项功能需要向每个网页注入 google code"
 
@@ -388,14 +388,14 @@ plugins:
     plugins:
     - search
     # - social: #social card
-    #     enabled: !ENV [CI, false]
-    #     cards: !ENV [CI, false]
+    #     enabled: !ENV [CI， false]
+    #     cards: !ENV [CI， false]
     #     cards_font: Noto Sans SC
     - git-revision-date-localized:
-        enabled: !ENV [CI, false]
+        enabled: !ENV [CI， false]
         enable_creation_date: true
     - offline: # enable searching offline
-        enabled: !ENV [OFFLINE, false]
+        enabled: !ENV [OFFLINE， false]
     - table-reader
     - changelog #see https://github.com/TonyCrane/mkdocs-changelog-plugin
     - tooltips
@@ -475,7 +475,7 @@ plugins:
         link: https://github.com/stormckey
         - icon: fontawesome/solid/paper-plane # icons to the right bottom of the page
         link: mailto:sortygraph@gmail.com
-    alternate: # change the language, the link should point to different directories
+    alternate: # change the language， the link should point to different directories
         - name: English
         link: /
         lang: en
@@ -485,9 +485,9 @@ plugins:
     consent:
         title: Cookie consent
         description: >-
-        We use cookies to recognize your repeated visits and preferences, as well
+        We use cookies to recognize your repeated visits and preferences， as well
         as to measure the effectiveness of our documentation and whether users
-        find what they're searching for. With your consent, you're helping us to
+        find what they're searching for. With your consent， you're helping us to
         make our documentation better.
     analytics:
         provider: google

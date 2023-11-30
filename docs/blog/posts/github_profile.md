@@ -26,7 +26,7 @@ Github 会在主页上显示这一仓库的 README 文档作为 Profile，所以
 
 推荐使用[:octicons-link-16:Metrics](https://github.com/lowlighter/metrics/blob/master/.github/readme/partials/documentation/setup/action.md)来生成好看的 Profile
 
-Metrics 使用 GitHub Action 自动更新，我们只要照着链接里的介绍就可以完成部署。Metrics 还支持许多不同的[:octicons-link-16:插件](https://github.com/lowlighter/metrics/blob/master/README.md)，大家可以随意选择自己喜欢的，最后贴上笔者注释的的 Action 配置和 README 源代码，欢迎借鉴使用！
+Metrics 使用 GitHub Action 自动更新，我们只要照着链接里的介绍就可以完成部署.Metrics 还支持许多不同的[:octicons-link-16:插件](https://github.com/lowlighter/metrics/blob/master/README.md)，大家可以随意选择自己喜欢的，最后贴上笔者注释的的 Action 配置和 README 源代码，欢迎借鉴使用！
 
 ??? info "参考配置"
 
@@ -40,7 +40,7 @@ Metrics 使用 GitHub Action 自动更新，我们只要照着链接里的介绍
         # (optional) Run workflow manually
         workflow_dispatch:
         # (optional) Run workflow when pushing on master/main
-        push: {branches: ["master", "main"]}
+        push: {branches: ["master"， "main"]}
         jobs:
         #generate the left picture
         github-left-metrics:
@@ -66,16 +66,16 @@ Metrics 使用 GitHub Action 自动更新，我们只要照着链接里的介绍
                 plugin_languages: yes
                 # repositories that wont be accounted
                 plugin_languages_skipped: stormckey/dotfiles
-                plugin_languages_ignored: html, css, ruby, perl, javascript
+                plugin_languages_ignored: html， css， ruby， perl， javascript
                 # show the size of source code and percentage of each language
-                plugin_languages_details: bytes-size, percentage
+                plugin_languages_details: bytes-size， percentage
 
 
                 plugin_starlists: yes
                 plugin_starlists_languages: yes
 
 
-                config_order: followup, languages, starlists
+                config_order: followup， languages， starlists
 
         github-right-metrics:
             runs-on: ubuntu-latest
@@ -100,10 +100,10 @@ Metrics 使用 GitHub Action 自动更新，我们只要照着链接里的介绍
 
                 plugin_anilist: yes
                 plugin_anilist_user: stormckey
-                plugin_anilist_sections: favorites, characters
+                plugin_anilist_sections: favorites， characters
 
 
-                config_order: topics, isocalendar, anilist
+                config_order: topics， isocalendar， anilist
 
 
         ```

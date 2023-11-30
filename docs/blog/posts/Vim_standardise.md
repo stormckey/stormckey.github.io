@@ -14,12 +14,12 @@ nostatistics: true
 <!-- more -->
 ## 安装 Vim 工具 Pangu
 
-首先安装 [:octicons-mark-github-16: vim-plug](),这是一个可以帮助我们方便的安装 vim 插件的插件
+首先安装 [:octicons-mark-github-16: vim-plug]()，这是一个可以帮助我们方便的安装 vim 插件的插件
 
 随后安装 Pangu 插件，在 ~/.vimrc 中添加
 
 ```bash
-Plug 'hotoo/pangu.vim', { 'for': ['markdown', 'vimwiki', 'text'] }
+Plug 'hotoo/pangu.vim'， { 'for': ['markdown'， 'vimwiki'， 'text'] }
 let g:pangu_rule_date = 1
 ```
 

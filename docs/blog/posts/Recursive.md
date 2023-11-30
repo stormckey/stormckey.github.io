@@ -11,11 +11,11 @@ nostatistics: true
 # Y-combinator 与递归
 
 !!! abstract
-    介绍了 lambda 演算中的 Y-combinator,主要是希望用抽象的思想来帮助理解
+    介绍了 lambda 演算中的 Y-combinator，主要是希望用抽象的思想来帮助理解
 
 <!-- more -->
 
-首先请看 xg[:octicons-link-16:的笔记这里](https://note.tonycrane.cc/cs/pl/ppl/topic1/#y-combinator),推导的过程讲的很清楚了。
+首先请看 xg[:octicons-link-16:的笔记这里](https://note.tonycrane.cc/cs/pl/ppl/topic1/#y-combinator)，推导的过程讲的很清楚了
 
 这里主要讨论另外几个问题
 
@@ -51,11 +51,11 @@ nostatistics: true
         =& *\ 2\ (fact_3\ fact_3\ 1)  \\
     \end{align}
 
-以上，第一个性质是 base case,第二个性质是 indection case,可以显然看出实现了递归
+以上，第一个性质是 base case，第二个性质是 indection case，可以显然看出实现了递归
 
 ## Y-combinator 的实例
 
-上面那样已经实现了递归，为什么还需要 Y-combinator? 因为上面的实现方法中递归的逻辑和函数的逻辑混在了一起，我们可以把递归的逻辑抽象成 Y,把函数的逻辑抽象成 u,对 Y 应用 u 就得到了递归的 u.具体来说可以分成以下三步
+上面那样已经实现了递归，为什么还需要 Y-combinator? 因为上面的实现方法中递归的逻辑和函数的逻辑混在了一起，我们可以把递归的逻辑抽象成 Y，把函数的逻辑抽象成 u，对 Y 应用 u 就得到了递归的 u.具体来说可以分成以下三步
 
 1. 写出调用自己的那一版的 lambda: $fact_1 = \lambda n . is0\ n\ 1\ ( *\ n\ (fact_1\ (pred\ n)))$
 2. 把对自己的调用改成对参数 f 的调用：$fact_2 = \lambda f. \lambda n . is0\ n\ 1\ ( *\ n\ (f\ (pred\ n)))$

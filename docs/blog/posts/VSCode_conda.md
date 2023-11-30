@@ -12,7 +12,7 @@ nostatistics: true
     用 conda 的过程中遇到的一个神秘问题🤔
 <!-- more -->
 
-最近开始使用 conda，试图在 VSCode 终端里切换虚拟环境，命令行提示已经切换，但是 python 环境实际上没有变。
+最近开始使用 conda，试图在 VSCode 终端里切换虚拟环境，命令行提示已经切换，但是 python 环境实际上没有变.
 解决方案如下：
 
 1. 快捷键`command shift p`，搜索 settings，打开 user settings json
@@ -20,6 +20,6 @@ nostatistics: true
   ```
       "terminal.integrated.env.osx": {
         "PATH": ""
-    },
+    }，
   ```
 3. 重启 VSCode 即可
