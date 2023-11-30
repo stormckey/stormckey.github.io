@@ -74,9 +74,11 @@ plugins:
       # page_check_metadata: statistics
   - glightbox
   - blog:
+      post_url_format: "{slug}"
       blog_toc: true
       post_date_format: medium
       post_excerpt: required
+      post_readtime_words_per_minute: 175
 
 
 

@@ -23,5 +23,5 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install  mkdocs-material mkdocs-changelog-plugin mkdocs-glightbox jieba pillow cairosvg mkdocs-tooltips mkdocs-statistics-plugin mkdocs-table-reader-plugin mkdocs-git-revision-date-localized-plugin mkdocs-meta-manager
+      - run: pip install  mkdocs-material mkdocs-changelog-plugin mkdocs-glightbox jieba pillow cairosvg mkdocs-tooltips mkdocs-statistics-plugin mkdocs-table-reader-plugin mkdocs-git-revision-date-localized-plugin mkdocs-meta-manager mkdocs-macros-plugin
       - run: mkdocs gh-deploy --force
