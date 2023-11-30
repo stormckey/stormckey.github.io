@@ -1221,11 +1221,11 @@
 <h1 id="y-combinator">Y-combinator 与递归<a class="headerlink" href="#y-combinator" title="Anchor link to this section for reference">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
-<p>介绍了 lambda 演算中的 Y-combinator,主要是希望用抽象的思想来帮助理解</p>
+<p>介绍了 lambda 演算中的 Y-combinator，主要是希望用抽象的思想来帮助理解</p>
 </div>
 <!-- more -->
 
-<p>首先请看 xg<a href="https://note.tonycrane.cc/cs/pl/ppl/topic1/#y-combinator"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>的笔记这里</a>,推导的过程讲的很清楚了。</p>
+<p>首先请看 xg<a href="https://note.tonycrane.cc/cs/pl/ppl/topic1/#y-combinator"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>的笔记这里</a>，推导的过程讲的很清楚了</p>
 <p>这里主要讨论另外几个问题</p>
 <h2 id="y-combinator_1">不用 Y-combinator 可以吗<a class="headerlink" href="#y-combinator_1" title="Anchor link to this section for reference">&para;</a></h2>
 <p>当然可以，可以看到文中的<code>proto proto</code>本来就是等价于<code>Y u</code>的，要用这种方式实现递归主要走以下四步</p>
@@ -1258,9 +1258,9 @@
 </div>
 </div>
 </div>
-<p>以上，第一个性质是 base case,第二个性质是 indection case,可以显然看出实现了递归</p>
+<p>以上，第一个性质是 base case，第二个性质是 indection case，可以显然看出实现了递归</p>
 <h2 id="y-combinator_2">Y-combinator 的实例<a class="headerlink" href="#y-combinator_2" title="Anchor link to this section for reference">&para;</a></h2>
-<p>上面那样已经实现了递归，为什么还需要 Y-combinator? 因为上面的实现方法中递归的逻辑和函数的逻辑混在了一起，我们可以把递归的逻辑抽象成 Y,把函数的逻辑抽象成 u,对 Y 应用 u 就得到了递归的 u.具体来说可以分成以下三步</p>
+<p>上面那样已经实现了递归，为什么还需要 Y-combinator? 因为上面的实现方法中递归的逻辑和函数的逻辑混在了一起，我们可以把递归的逻辑抽象成 Y，把函数的逻辑抽象成 u，对 Y 应用 u 就得到了递归的 u.具体来说可以分成以下三步</p>
 <ol>
 <li>写出调用自己的那一版的 lambda: <span class="arithmatex">\(fact_1 = \lambda n . is0\ n\ 1\ ( *\ n\ (fact_1\ (pred\ n)))\)</span></li>
 <li>把对自己的调用改成对参数 f 的调用：<span class="arithmatex">\(fact_2 = \lambda f. \lambda n . is0\ n\ 1\ ( *\ n\ (f\ (pred\ n)))\)</span></li>

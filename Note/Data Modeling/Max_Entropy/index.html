@@ -1402,48 +1402,48 @@
 </div>
 <div class="admonition info">
 <p class="admonition-title">思想</p>
-<p>有时候我们已有的数据并不足以我们唯一确定一个分布，这个时候对于所有候选的分布中，我们认为熵最大的那个分布是最好的.换言之，在满足约束的情况下，我们尽可能采取等可能分布。</p>
+<p>有时候我们已有的数据并不足以我们唯一确定一个分布，这个时候对于所有候选的分布中，我们认为熵最大的那个分布是最好的.换言之，在满足约束的情况下，我们尽可能采取等可能分布.</p>
 </div>
 <h2 id="_2">模型描述<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
-<p>对于数据集<span class="arithmatex">\(\{(x_i,y_i)\}\)</span>,统计经验分布（也就是频率）</p>
+<p>对于数据集<span class="arithmatex">\(\{(x_i，y_i)\}\)</span>，统计经验分布（也就是频率）</p>
 <div class="arithmatex">\[\begin{aligned}
-    &amp;\tilde{P}(X=x,Y=y) = \frac{v(X = x, Y = y)}{N} \\
+    &amp;\tilde{P}(X=x，Y=y) = \frac{v(X = x， Y = y)}{N} \\
     &amp;\tilde{P}(X=x) = \frac{v(X = x)}{N} \\
 \end{aligned}\]</div>
-<p>我们引入特征函数<span class="arithmatex">\(f(x,y) \ in {0,1}\)</span>,我们可以置顶某种条件，满足条件的<span class="arithmatex">\((x,y)\)</span>对应的特征函数值为 1,否则为 0.比如我们可以定义<span class="arithmatex">\(f(x,y) = 1\)</span>当且仅当<span class="arithmatex">\(x\)</span>和<span class="arithmatex">\(y\)</span>相等，否则为 0.定义了一个特征函数，我们就可以定义在特征函数上的期望：</p>
+<p>我们引入特征函数<span class="arithmatex">\(f(x，y) \ in {0，1}\)</span>，我们可以置顶某种条件，满足条件的<span class="arithmatex">\((x，y)\)</span>对应的特征函数值为 1，否则为 0.比如我们可以定义<span class="arithmatex">\(f(x，y) = 1\)</span>当且仅当<span class="arithmatex">\(x\)</span>和<span class="arithmatex">\(y\)</span>相等，否则为 0.定义了一个特征函数，我们就可以定义在特征函数上的期望：</p>
 <div class="arithmatex">\[
-    E_{\tilde{P}}(f) = \sum_{x,y}\tilde{P}(x,y)f(x,y)
+    E_{\tilde{P}}(f) = \sum_{x，y}\tilde{P}(x，y)f(x，y)
 \]</div>
-<p>简单来说，这就是对某些<span class="arithmatex">\((x,y)\)</span>上的频数求和，在上例中，就是对 xy 相等的那些项的频数求和</p>
-<p>假设我们学习到了一个条件分布<span class="arithmatex">\(P(Y|X)\)</span>,那么用我们学到的条件分布与 X 的经验分布算出来的期望是：</p>
+<p>简单来说，这就是对某些<span class="arithmatex">\((x，y)\)</span>上的频数求和，在上例中，就是对 xy 相等的那些项的频数求和</p>
+<p>假设我们学习到了一个条件分布<span class="arithmatex">\(P(Y|X)\)</span>，那么用我们学到的条件分布与 X 的经验分布算出来的期望是：</p>
 <div class="arithmatex">\[
-    E_{P}(f) = \sum_{x,y}P(y|x)\tilde{P}(x)f(x,y)
+    E_{P}(f) = \sum_{x，y}P(y|x)\tilde{P}(x)f(x，y)
 \]</div>
-<p>我们希望我们学到的条件呢分布尽可能符合实际，也就是<span class="arithmatex">\(P(y|x)\tilde{P}(x)\)</span>在特征函数的意义上尽可能贴近<span class="arithmatex">\(\tilde{P}(x,y)\)</span>,也就是说</p>
+<p>我们希望我们学到的条件呢分布尽可能符合实际，也就是<span class="arithmatex">\(P(y|x)\tilde{P}(x)\)</span>在特征函数的意义上尽可能贴近<span class="arithmatex">\(\tilde{P}(x，y)\)</span>，也就是说</p>
 <div class="arithmatex">\[
     E_{P}(f) = E_{\tilde{P}}(f)
 \]</div>
-<p>如果我们用上面例子中的特征函数，这里的意思就是我们学习到的分布中，xy 相等的频数等于实际观测到的 xy 相等的频数。</p>
+<p>如果我们用上面例子中的特征函数，这里的意思就是我们学习到的分布中，xy 相等的频数等于实际观测到的 xy 相等的频数.</p>
 <p>这里就是我们在思想中提到的约束，满足这样约束的模型并不唯一，我们计算各个模型的条件熵：</p>
 <div class="arithmatex">\[
-    H(P) = -\sum_{x,y}\tilde{P}(x)P(y|x)\log P(y|x)
+    H(P) = -\sum_{x，y}\tilde{P}(x)P(y|x)\log P(y|x)
 \]</div>
-<p>我们希望条件熵最大，条件熵越大的分布越好，这是一个优化问题。</p>
+<p>我们希望条件熵最大，条件熵越大的分布越好，这是一个优化问题.</p>
 <h2 id="_3">模型求解<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
 <p>写出形式化表达式：</p>
 <div class="arithmatex">\[\begin{aligned}
-    \underset{P \in C}{\operatorname{min}} &amp;-H(P) = \sum_{x,y}\tilde{P}(x)P(y|x)\log P(y|x) \\
+    \underset{P \in C}{\operatorname{min}} &amp;-H(P) = \sum_{x，y}\tilde{P}(x)P(y|x)\log P(y|x) \\
     s.t. &amp;\sum_{y}P(y|x) = 1 \\
     &amp; E_{P}(f_i) = E_{\tilde{P}}(f_i) \\
 \end{aligned}\]</div>
 <p>注意到我们可以用多个特征函数来进行约束</p>
 <p>为了解觉优化问题，我们用以下三步</p>
 <ul>
-<li>写出对偶问题，拉格朗日函数<span class="arithmatex">\(L(P,w)\)</span>为：
+<li>写出对偶问题，拉格朗日函数<span class="arithmatex">\(L(P，w)\)</span>为：
     $$
-        \undreset{P \in C}{\operatorname{min}} \underset{w}{\operatorname{max}} L(P,w) = \sum_{x,y}\tilde{P}(x)P(y|x)\log P(y|x) + \sum_{i=1}^{n}w_i(\sum_{x,y}\tilde{P}(x)P(y|x)f_i(x,y) - E_{\tilde{P}}(f_i))
+        \undreset{P \in C}{\operatorname{min}} \underset{w}{\operatorname{max}} L(P，w) = \sum_{x，y}\tilde{P}(x)P(y|x)\log P(y|x) + \sum_{i=1}^{n}w_i(\sum_{x，y}\tilde{P}(x)P(y|x)f_i(x，y) - E_{\tilde{P}}(f_i))
     $$</li>
-<li>极小化：在<span class="arithmatex">\(L(P,w)\)</span>中对 P 求偏导以进行最小化</li>
+<li>极小化：在<span class="arithmatex">\(L(P，w)\)</span>中对 P 求偏导以进行最小化</li>
 <li>极大化：同样求导或者使用其他最优化算法（梯度下降法，牛顿法，拟牛顿法）</li>
 </ul>
 
@@ -1452,7 +1452,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2023</span>
       
         <br>
         Created:

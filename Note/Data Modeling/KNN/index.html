@@ -1467,7 +1467,7 @@
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 732 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 2 分钟</p>
 </div>
 <h2 id="_1">问题及算法描述<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
-<p>给定数据集<span class="arithmatex">\(\{(x_i,y_i)\}\)</span>, 其中<span class="arithmatex">\(x \in \mathbb{R}^n\)</span>，<span class="arithmatex">\(y_i \in \{ c_1,c_2,....c_k\}\)</span>， 一共有 K 种类别，现在给出一个新的数据点<span class="arithmatex">\(x\)</span>，求出它的类别<span class="arithmatex">\(y\)</span>。
+<p>给定数据集<span class="arithmatex">\(\{(x_i，y_i)\}\)</span>， 其中<span class="arithmatex">\(x \in \mathbb{R}^n\)</span>，<span class="arithmatex">\(y_i \in \{ c_1，c_2，....c_k\}\)</span>， 一共有 K 种类别，现在给出一个新的数据点<span class="arithmatex">\(x\)</span>，求出它的类别<span class="arithmatex">\(y\)</span>.
 算法思想：</p>
 <ul>
 <li>找出离 x 最近的 K 个邻居<span class="arithmatex">\(N_{k}(x)\)</span></li>
@@ -1476,7 +1476,7 @@
 <div class="arithmatex">\[
     y =\underset{c_j}{\operatorname{arg max}} \sum_{N_{k}(x)} I(y = c_j)
 \]</div>
-<p>其中的<span class="arithmatex">\(I(y = c_j)\)</span>是指示函数，当<span class="arithmatex">\(y = c_j\)</span>时，<span class="arithmatex">\(I(y = c_j) = 1\)</span>，否则<span class="arithmatex">\(I(y = c_j) = 0\)</span>。</p>
+<p>其中的<span class="arithmatex">\(I(y = c_j)\)</span>是指示函数，当<span class="arithmatex">\(y = c_j\)</span>时，<span class="arithmatex">\(I(y = c_j) = 1\)</span>，否则<span class="arithmatex">\(I(y = c_j) = 0\)</span>.</p>
 <h2 id="k_1">K 近邻的三要素<a class="headerlink" href="#k_1" title="Anchor link to this section for reference">&para;</a></h2>
 <p>有了上述的算法框架后，K 近邻算法由三个要素决定：</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">距离度量</label><label for="__tabbed_1_2">K 值选择</label><label for="__tabbed_1_3">分类决策规则</label></div>
@@ -1484,24 +1484,24 @@
 <div class="tabbed-block">
 <p>一般来说我们使用<span class="arithmatex">\(L_p\)</span>距离，即：</p>
 <div class="arithmatex">\[
-    L_p(x_i,x_j) = (\sum_{l=1}^{n}|x_i^{(l)} - x_j^{(l)}|^p)^{\frac{1}{p}}
+    L_p(x_i，x_j) = (\sum_{l=1}^{n}|x_i^{(l)} - x_j^{(l)}|^p)^{\frac{1}{p}}
 \]</div>
 <p>当 p 的取值为 2 时，就是欧氏距离</p>
 </div>
 <div class="tabbed-block">
 <p>当 K 比较小的时候，模型比较复杂，容易过拟合；
-当 K 比较大的时候，模型比较简单，容易欠拟合。
-一般来说 K 值都不会选的太大。</p>
+当 K 比较大的时候，模型比较简单，容易欠拟合.
+一般来说 K 值都不会选的太大.</p>
 </div>
 <div class="tabbed-block">
-<p>一般使用多数表决规则，在此情景下多数表决规则等效于经验风险最小化。</p>
+<p>一般使用多数表决规则，在此情景下多数表决规则等效于经验风险最小化.</p>
 </div>
 </div>
 </div>
 <h2 id="kd-k">用 kd 树切分空间求解 K 近邻<a class="headerlink" href="#kd-k" title="Anchor link to this section for reference">&para;</a></h2>
 <h3 id="kd">kd 树的构造<a class="headerlink" href="#kd" title="Anchor link to this section for reference">&para;</a></h3>
 <ul>
-<li>输入： <span class="arithmatex">\(\{(x_i,y_i)\}\)</span></li>
+<li>输入： <span class="arithmatex">\(\{(x_i，y_i)\}\)</span></li>
 <li>开始： 取变量<span class="arithmatex">\(x\)</span>的第一个维度<span class="arithmatex">\(x_i^(1)\)</span>，第一个纬度的中位数<span class="arithmatex">\(x_j^(1)\)</span>，将数据集分为两部分，左子树和右子树，而<span class="arithmatex">\(x_j^(1)\)</span>就是根节点，左右子节点的深度为 1</li>
 <li>重复： 对左右子树继续进行分割，对于 j 深度的子树，取<span class="arithmatex">\(x\)</span>的第<span class="arithmatex">\(j+1\)</span>维度<span class="arithmatex">\(x_i^(j+1)\)</span>进行分割</li>
 <li>结束： 直到左右空间都不再有子节点</li>
@@ -1531,7 +1531,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2023</span>
       
         <br>
         Created:

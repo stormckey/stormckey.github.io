@@ -1416,42 +1416,42 @@
 
 <h1 id="_1">感知机<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 847 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 3 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 846 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 3 分钟</p>
 </div>
 <h2 id="_2">原始形式<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
-<p>感知机的结构如下图所示，被视为是最简单的前馈神经网络，是一种二元线性分类器。</p>
+<p>感知机的结构如下图所示，被视为是最简单的前馈神经网络，是一种二元线性分类器.</p>
 <div class="admonition example">
 <p><a class="glightbox" href="../images/Perceptron/2023-11-20-11-24-41.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Perceptron/2023-11-20-11-24-41.png#pic" /></a></p>
 </div>
 <p>下面给出形式化表述：</p>
 <div class="admonition definition">
 <p class="admonition-title">感知机</p>
-<p>给定数据集<span class="arithmatex">\(\{(x_i,y_i)\}\)</span>,其中<span class="arithmatex">\(y_i \in \{1,-1\}\)</span>是数据标签，我们需要找到一组<span class="arithmatex">\((w,b)\)</span>使得函数<span class="arithmatex">\(f(x) = sign(w \cdot x + b)\)</span>的损失函数最小：</p>
+<p>给定数据集<span class="arithmatex">\(\{(x_i，y_i)\}\)</span>，其中<span class="arithmatex">\(y_i \in \{1，-1\}\)</span>是数据标签，我们需要找到一组<span class="arithmatex">\((w，b)\)</span>使得函数<span class="arithmatex">\(f(x) = sign(w \cdot x + b)\)</span>的损失函数最小：</p>
 <div class="arithmatex">\[
-   \min L(w,b) = - \sum_{i=1}^{n} y_i(w \cdot x_i + b)
+   \min L(w，b) = - \sum_{i=1}^{n} y_i(w \cdot x_i + b)
 \]</div>
 </div>
 <p>注意上文中的<span class="arithmatex">\(sign\)</span>函数，它的定义如下：</p>
 <div class="arithmatex">\[
     sign(x) = \left\{
     \begin{aligned}
-        1, &amp; x \geq 0 \\
-        -1, &amp; x &lt; 0
+        1， &amp; x \geq 0 \\
+        -1， &amp; x &lt; 0
     \end{aligned}
     \right.
 \]</div>
-<p>可以看出，如果<span class="arithmatex">\(y_i\)</span>和<span class="arithmatex">\(f(x)\)</span>若是符号相同（也就是分类正确）,那么<span class="arithmatex">\(y_i(w \cdot x_i + b)\)</span>的值就是 1，反之则是-1。因此我们的目标就是尽可能最大化所有<span class="arithmatex">\(y_i(w \cdot x_i + b)\)</span>求和的值，这也等效于最小化其负数。（该领域约定俗成就是写成最小化优化目标，最小化和最大化之间只要加一个负号就可以互相转化）</p>
+<p>可以看出，如果<span class="arithmatex">\(y_i\)</span>和<span class="arithmatex">\(f(x)\)</span>若是符号相同（也就是分类正确），那么<span class="arithmatex">\(y_i(w \cdot x_i + b)\)</span>的值就是 1，反之则是-1.因此我们的目标就是尽可能最大化所有<span class="arithmatex">\(y_i(w \cdot x_i + b)\)</span>求和的值，这也等效于最小化其负数.（该领域约定俗成就是写成最小化优化目标，最小化和最大化之间只要加一个负号就可以互相转化）</p>
 <p>我们可以用 SGD（Stochastic Gradient Descent）来求解上述问题，损失函数的梯度为：</p>
 <div class="arithmatex">\[\begin{aligned}
-    &amp;\nabla_w L(w,b) = - \sum_{i=1}^{n} y_i x_i \\
-    &amp;\nabla_b L(w,b) = - \sum_{i=1}^{n} y_i
+    &amp;\nabla_w L(w，b) = - \sum_{i=1}^{n} y_i x_i \\
+    &amp;\nabla_b L(w，b) = - \sum_{i=1}^{n} y_i
 \end{aligned}\]</div>
-<p>从数据集中随机选取一个样本<span class="arithmatex">\((x_i,y_i)\)</span>，更新参数：</p>
+<p>从数据集中随机选取一个样本<span class="arithmatex">\((x_i，y_i)\)</span>，更新参数：</p>
 <div class="arithmatex">\[\begin{aligned}
     &amp; w = w + \eta y_i x_i\\
     &amp; b = b + \eta y_i \\
 \end{aligned}\]</div>
-<p>直到没有误分类点。其中<span class="arithmatex">\(\eta \in (0,1]\)</span>是学习率。</p>
+<p>直到没有误分类点.其中<span class="arithmatex">\(\eta \in (0，1]\)</span>是学习率.</p>
 <h2 id="_3">收敛性<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
 <p>可以证明，感知机的误分类次数 K 存在一个上界，即；</p>
 <div class="arithmatex">\[\begin{aligned}
@@ -1459,15 +1459,15 @@
     &amp; R = \max_{1 \leq i \leq n} ||x_i|| \\
     &amp; \gamma = \min_{1 \leq i \leq n} y_i(w^* \cdot x_i + b^*)
 \end{aligned}\]</div>
-<p>其中<span class="arithmatex">\(w^*,b^*\)</span>是最优解，<span class="arithmatex">\(R\)</span>是数据集中样本点的最大范数，<span class="arithmatex">\(\gamma\)</span>是数据集中所有样本点到超平面的最小距离。
-对证明过程感兴趣的可以看书，这里不展开。</p>
+<p>其中<span class="arithmatex">\(w^*，b^*\)</span>是最优解，<span class="arithmatex">\(R\)</span>是数据集中样本点的最大范数，<span class="arithmatex">\(\gamma\)</span>是数据集中所有样本点到超平面的最小距离.
+对证明过程感兴趣的可以看书，这里不展开.</p>
 <h2 id="_4">对偶形式<a class="headerlink" href="#_4" title="Anchor link to this section for reference">&para;</a></h2>
-<p>假设我们初始化参数为<span class="arithmatex">\(w_0 = 0,b_0 = 0\)</span>，那么我们可以得到：</p>
+<p>假设我们初始化参数为<span class="arithmatex">\(w_0 = 0，b_0 = 0\)</span>，那么我们可以得到：</p>
 <div class="arithmatex">\[\begin{aligned}
     &amp; w = \sum \eta y_i x_i \\
     &amp; b = \sum \eta y_i
 \end{aligned}\]</div>
-<p>其中<span class="arithmatex">\(\eta\)</span>是学习率。因为我们是从 0 开始每次都往参数上加一定的更新值，所以上式自然成立。</p>
+<p>其中<span class="arithmatex">\(\eta\)</span>是学习率.因为我们是从 0 开始每次都往参数上加一定的更新值，所以上式自然成立.</p>
 <p>假设其中第 i 个数据点在 SGD 中被随机选中了<span class="arithmatex">\(n_i\)</span>次，那么它因此导致了<span class="arithmatex">\(n_i\)</span>次参数的更新，我们可以把上式写成：</p>
 <div class="arithmatex">\[\begin{aligned}
     &amp; w = \sum_{i=1}^{n} \eta n_i y_i x_i \\
@@ -1489,7 +1489,7 @@
 <p>可以看到我们的分类函数中只有<span class="arithmatex">\(\alpha_i\)</span>需要每次更新，除此之外还有大量的 x 的内积运算，为了方便，我们可以把 x 的内积预先计算出来，这被称作 Gram 矩阵：</p>
 <div class="admonition info">
 <p class="admonition-title">Gram 矩阵</p>
-<p>给定 n 个向量<span class="arithmatex">\(x_1,x_2,...,x_n\)</span>，那么 Gram 矩阵<span class="arithmatex">\(G\)</span>是由这些向量所有可能的内积组成的矩阵，即：</p>
+<p>给定 n 个向量<span class="arithmatex">\(x_1，x_2，...，x_n\)</span>，那么 Gram 矩阵<span class="arithmatex">\(G\)</span>是由这些向量所有可能的内积组成的矩阵，即：</p>
 <div class="arithmatex">\[
     g_{ij} = x_i \cdot x_j
 \]</div>
@@ -1500,7 +1500,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2023</span>
       
         <br>
         Created:

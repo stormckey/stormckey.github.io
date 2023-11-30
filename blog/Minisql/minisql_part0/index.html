@@ -1181,8 +1181,8 @@
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">  </span>/Users/xxx/opt/anaconda3/lib/cmake/GTest/GTestConfig.cmake:32<span class="w"> </span><span class="o">(</span>include<span class="o">)</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span>thirdparty/glog/CMakeLists.txt:71<span class="w"> </span><span class="o">(</span>find_package<span class="o">)</span>
 </span></code></pre></div></td></tr></table></div></p>
-<p>我不懂 cmake，也搜不到这个问题，感觉可能跟版本兼容啥的有关（有知道的大佬可以直接在评论区里说说，感谢！）不过我看到了报错路径上了 anaconda3，想起来我终端的环境还是 conda base，所以我一个<code>conda deactivae</code>后，重建 build 目录，再 cmake 就没有这个问题了。</p>
-<p>但这个问题只是被暂时修复了算是，因为我调用 VSCode 的 cmake 插件啥的还是会这样，我也没找出来这里的要怎么解决。</p>
+<p>我不懂 cmake，也搜不到这个问题，感觉可能跟版本兼容啥的有关（有知道的大佬可以直接在评论区里说说，感谢！）不过我看到了报错路径上了 anaconda3，想起来我终端的环境还是 conda base，所以我一个<code>conda deactivae</code>后，重建 build 目录，再 cmake 就没有这个问题了.</p>
+<p>但这个问题只是被暂时修复了算是，因为我调用 VSCode 的 cmake 插件啥的还是会这样，我也没找出来这里的要怎么解决.</p>
 <h3 id="make">Make<a class="headerlink" href="#make" title="Anchor link to this section for reference">&para;</a></h3>
 <p>Cmake 通了 Make 又不通😅
 报错如下：
@@ -1205,25 +1205,25 @@
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>In<span class="w"> </span>file<span class="w"> </span>included<span class="w"> </span>from<span class="w"> </span>/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/ranges_sample.h:13:
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>In<span class="w"> </span>file<span class="w"> </span>included<span class="w"> </span>from<span class="w"> </span>/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/sample.h:18:
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__random/uniform_int_distribution.h:162:5:<span class="w"> </span>error:<span class="w"> </span>static_assert<span class="w"> </span>failed<span class="w"> </span>due<span class="w"> </span>to<span class="w"> </span>requirement<span class="w"> </span><span class="s1">&#39;__libcpp_random_is_valid_inttype&lt;char&gt;::value&#39;</span><span class="w"> </span><span class="s2">&quot;IntType must be a supported integer type&quot;</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span>static_assert<span class="o">(</span>__libcpp_random_is_valid_inttype&lt;_IntType&gt;::value,<span class="w"> </span><span class="s2">&quot;IntType must be a supported integer type&quot;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span>static_assert<span class="o">(</span>__libcpp_random_is_valid_inttype&lt;_IntType&gt;::value，<span class="w"> </span><span class="s2">&quot;IntType must be a supported integer type&quot;</span><span class="o">)</span><span class="p">;</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span>^<span class="w">             </span>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>/Users/xxx/Desktop/minisql/test/include/utils/utils.h:24:41:<span class="w"> </span>note:<span class="w"> </span><span class="k">in</span><span class="w"> </span>instantiation<span class="w"> </span>of<span class="w"> </span>template<span class="w"> </span>class<span class="w"> </span><span class="s1">&#39;std::uniform_int_distribution&lt;char&gt;&#39;</span><span class="w"> </span>requested<span class="w"> </span>here
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span>std::uniform_int_distribution&lt;char&gt;<span class="w"> </span>uniform_dist<span class="o">(</span><span class="m">33</span>,<span class="w"> </span><span class="m">122</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span>std::uniform_int_distribution&lt;char&gt;<span class="w"> </span>uniform_dist<span class="o">(</span><span class="m">33</span>，<span class="w"> </span><span class="m">122</span><span class="o">)</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-看起来是框架里实例化模板的时候用的的 char 类型，但是这里不让用 char 类型，那怎么办，要我去改框架吗，这玩意万一耦合的很紧我的理解成本加修改成本估计都够我受的了。这里的两个选择一个是换个 SDK 版本，这个不知道能不能起效，另一个就是跑路，因为我还有一台 Windows 游戏本，所以果断润了。</p>
+看起来是框架里实例化模板的时候用的的 char 类型，但是这里不让用 char 类型，那怎么办，要我去改框架吗，这玩意万一耦合的很紧我的理解成本加修改成本估计都够我受的了.这里的两个选择一个是换个 SDK 版本，这个不知道能不能起效，另一个就是跑路，因为我还有一台 Windows 游戏本，所以果断润了.</p>
 <h2 id="wsl2">二试：WSL2<a class="headerlink" href="#wsl2" title="Anchor link to this section for reference">&para;</a></h2>
-<p>我的 Win 本早就装过 WSL2 了，之前跑一些模型的时候把 ssh 啥的也配好了（不过玉湖只能用动态 IP 我三天两头就得换一下😅），所以成本其实不大。
+<p>我的 Win 本早就装过 WSL2 了，之前跑一些模型的时候把 ssh 啥的也配好了（不过玉湖只能用动态 IP 我三天两头就得换一下😅），所以成本其实不大.
 这里遇到两个问题，一是 cmake 阶段跟上面一样的问题，解决方法还是<code>conda deactivate</code>，二是提示没有 gflag 模块，这个最简单，直接安装一下就好了
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>gflags
 </span></code></pre></div></td></tr></table></div></p>
-<p>然后就能跑了，虽然在这里用各种 Cmake 插件一类的还是没一个能跑的（报 Cmake 阶段的那个错），我试图用 Clion 远程开发结果后端也崩坏了开不起来，各种事情搞得我很烦，但总算有个能用的 VSCode + ssh + WSL2 的方案能跑了，他的优点是能跑，缺点是能跑的补集，但我实在折腾不动了就先这样了。</p>
+<p>然后就能跑了，虽然在这里用各种 Cmake 插件一类的还是没一个能跑的（报 Cmake 阶段的那个错），我试图用 Clion 远程开发结果后端也崩坏了开不起来，各种事情搞得我很烦，但总算有个能用的 VSCode + ssh + WSL2 的方案能跑了，他的优点是能跑，缺点是能跑的补集，但我实在折腾不动了就先这样了.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2023</span>
       
         <br>
         Created:

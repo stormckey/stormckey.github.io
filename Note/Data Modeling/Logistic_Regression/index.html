@@ -1437,21 +1437,21 @@
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 842 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 3 分钟</p>
 </div>
 <h3 id="_2">逻辑斯谛分布<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h3>
-<p>首先直接给出逻辑斯蒂分布，一个随机变量<span class="arithmatex">\(X\)</span>满足<span class="arithmatex">\(Logistic(\mu,\gamma)\)</span>分布的分布函数：</p>
+<p>首先直接给出逻辑斯蒂分布，一个随机变量<span class="arithmatex">\(X\)</span>满足<span class="arithmatex">\(Logistic(\mu，\gamma)\)</span>分布的分布函数：</p>
 <div class="arithmatex">\[
 F(x)=\frac{1}{1+e^{-(x-\mu)/\gamma}}
 \]</div>
-<p>其中<span class="arithmatex">\(\mu\)</span>为位置参数，<span class="arithmatex">\(\gamma\)</span>为形状参数。该分布函数的图像为 S 型曲线，<span class="arithmatex">\(\mu\)</span>为函数的对称中心，<span class="arithmatex">\(\gamma\)</span>控制函数的陡峭程度，值越大，函数越陡峭。</p>
+<p>其中<span class="arithmatex">\(\mu\)</span>为位置参数，<span class="arithmatex">\(\gamma\)</span>为形状参数.该分布函数的图像为 S 型曲线，<span class="arithmatex">\(\mu\)</span>为函数的对称中心，<span class="arithmatex">\(\gamma\)</span>控制函数的陡峭程度，值越大，函数越陡峭.</p>
 <p><a class="glightbox" href="../images/Logistic_Regression/2023-11-25-23-39-04.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Logistic_Regression/2023-11-25-23-39-04.png#pic" /></a></p>
 <h2 id="_3">二项逻辑斯谛回归模型<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
-<p>给定数据集<span class="arithmatex">\(D=\{(x_1,y_1),(x_2,y_2),...,(x_m,y_m)\}\)</span>，其中<span class="arithmatex">\(x_i \in \mathbb{R}\)</span>，<span class="arithmatex">\(y_i \in \{0,1\}\)</span>，我们的目标是学习到一个线性模型来进行分类，在感知机中，我们用一个指示函数来将函数值的符号映射到不同的分类。</p>
+<p>给定数据集<span class="arithmatex">\(D=\{(x_1，y_1)，(x_2，y_2)，...，(x_m，y_m)\}\)</span>，其中<span class="arithmatex">\(x_i \in \mathbb{R}\)</span>，<span class="arithmatex">\(y_i \in \{0，1\}\)</span>，我们的目标是学习到一个线性模型来进行分类，在感知机中，我们用一个指示函数来将函数值的符号映射到不同的分类.</p>
 <p>对于逻辑斯蒂回归来说，我们想要得到的是某个 x 下属于 0，或者 1 的概率，因为分布函数也是连续的，所以我们可以试图用线性的模型去拟合，我们先作如下的转化：</p>
 <ul>
-<li>概率的取值范围是<span class="arithmatex">\(P \in [0,1]\)</span></li>
-<li>如果我们使用几率<span class="arithmatex">\(\frac{p}{1-p}\)</span>，那么我们的取值范围就是<span class="arithmatex">\((0,\infty)\)</span></li>
-<li>再加一个对数，我们就得到对数几率<span class="arithmatex">\(logit(p)=ln\frac{p}{1-p}\)</span>，取值范围是<span class="arithmatex">\((-\infty,\infty)\)</span></li>
+<li>概率的取值范围是<span class="arithmatex">\(P \in [0，1]\)</span></li>
+<li>如果我们使用几率<span class="arithmatex">\(\frac{p}{1-p}\)</span>，那么我们的取值范围就是<span class="arithmatex">\((0，\infty)\)</span></li>
+<li>再加一个对数，我们就得到对数几率<span class="arithmatex">\(logit(p)=ln\frac{p}{1-p}\)</span>，取值范围是<span class="arithmatex">\((-\infty，\infty)\)</span></li>
 </ul>
-<p>这样对数几率的取值范围就和线性函数的一样了，我们就可以试着用线性函数去进行拟合（如果某个分布的对数函数相关系数很高，自然可以拟合到比较好的效果，但如果一个分布的对数几率几乎不成线性，那么线性函数的拟合效果就会比较差。所以我们用逻辑斯蒂回归拟合的分布最好有类似逻辑斯蒂分布的分布函数）。</p>
+<p>这样对数几率的取值范围就和线性函数的一样了，我们就可以试着用线性函数去进行拟合（如果某个分布的对数函数相关系数很高，自然可以拟合到比较好的效果，但如果一个分布的对数几率几乎不成线性，那么线性函数的拟合效果就会比较差.所以我们用逻辑斯蒂回归拟合的分布最好有类似逻辑斯蒂分布的分布函数）.</p>
 <p>我们令</p>
 <div class="arithmatex">\[
     \ln(\frac{P(Y=1|x)}{1-P(Y=1|x)}) = w\cdot x + b
@@ -1467,17 +1467,17 @@ P(Y=0|x)=\frac{1}{1+exp(w\cdot x+b)}
 <h2 id="_4">极大似然估计<a class="headerlink" href="#_4" title="Anchor link to this section for reference">&para;</a></h2>
 <p>我们定义如下的似然函数</p>
 <div class="arithmatex">\[
-    L(w,b)=\prod_{i=1}^{m}P(Y=y_i|x_i)=\prod_{i=1}^{m}(\frac{exp(w\cdot x_i+b)}{1+exp(w\cdot x_i+b)})^{y_i}(\frac{1}{1+exp(w\cdot x_i+b)})^{1-y_i}
+    L(w，b)=\prod_{i=1}^{m}P(Y=y_i|x_i)=\prod_{i=1}^{m}(\frac{exp(w\cdot x_i+b)}{1+exp(w\cdot x_i+b)})^{y_i}(\frac{1}{1+exp(w\cdot x_i+b)})^{1-y_i}
 \]</div>
-<p>为了方便求解，我们可以极大化对数似然函数，这也等效于极大化似然函数，因为对数函数是单调递增的。</p>
+<p>为了方便求解，我们可以极大化对数似然函数，这也等效于极大化似然函数，因为对数函数是单调递增的.</p>
 <div class="arithmatex">\[\begin{aligned}
-    &amp;\ln L(w,b) = \sum_{i=1}^{m}y_i(w\cdot x_i+b)-\ln(1+exp(w\cdot x_i+b)) \\
+    &amp;\ln L(w，b) = \sum_{i=1}^{m}y_i(w\cdot x_i+b)-\ln(1+exp(w\cdot x_i+b)) \\
 \end{aligned}\]</div>
 <p>那么极大似然估计就要求我们找到使对数似然函数最大的参数</p>
 <div class="arithmatex">\[
-    \underset{w,b}{\operatorname{arg max}}  \ln L(w,b)
+    \underset{w，b}{\operatorname{arg max}}  \ln L(w，b)
 \]</div>
-<p>在这个具体的求解过程需要用梯度下降法或者牛顿法，注意到因为逻辑斯蒂函数是凸函数，所以我们可以保证求解的结果是全局最优解。</p>
+<p>在这个具体的求解过程需要用梯度下降法或者牛顿法，注意到因为逻辑斯蒂函数是凸函数，所以我们可以保证求解的结果是全局最优解.</p>
 <h2 id="_5">多项逻辑斯谛回归模型<a class="headerlink" href="#_5" title="Anchor link to this section for reference">&para;</a></h2>
 <p>类似的，多项逻辑斯蒂分布的分布函数如下：</p>
 <div class="arithmatex">\[\begin{aligned}
@@ -1492,7 +1492,7 @@ P(Y=0|x)=\frac{1}{1+exp(w\cdot x+b)}
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2023</span>
       
         <br>
         Created:

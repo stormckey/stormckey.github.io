@@ -1124,7 +1124,7 @@
           <li class="md-nav__item">
   <a href="#wb" class="md-nav__link">
     <span class="md-ellipsis">
-      求最优 w,b
+      求最优 w，b
     </span>
   </a>
   
@@ -1547,7 +1547,7 @@
           <li class="md-nav__item">
   <a href="#wb" class="md-nav__link">
     <span class="md-ellipsis">
-      求最优 w,b
+      求最优 w，b
     </span>
   </a>
   
@@ -1639,7 +1639,7 @@
 <p>很多人都吐槽，支持向量机这个名字起的依托</p>
 </div>
 <h2 id="_2">模型描述<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
-<p>对于数据集<span class="arithmatex">\(\{(x_i,y_i)\}\)</span>,其中<span class="arithmatex">\(x_i \in \mathbb{R}^n, y \in \{1,-1\}\)</span>,我们希望找到一个超平面<span class="arithmatex">\(w\cdot x + b = 0\)</span>将数据集分开。</p>
+<p>对于数据集<span class="arithmatex">\(\{(x_i，y_i)\}\)</span>，其中<span class="arithmatex">\(x_i \in \mathbb{R}^n， y \in \{1，-1\}\)</span>，我们希望找到一个超平面<span class="arithmatex">\(w\cdot x + b = 0\)</span>将数据集分开.</p>
 <div class="admonition definition">
 <p class="admonition-title">实例点到超平面的几何间隔</p>
 <div class="arithmatex">\[
@@ -1656,67 +1656,67 @@
 </div>
 <p><a class="glightbox" href="../images/Support_Vector_Machine/2023-11-25-23-37-51.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Support_Vector_Machine/2023-11-25-23-37-51.png#pic" /></a></p>
 <p>上述的变量的绝对值含义都表示某种距离，而符号表示分类正确与否，分类正确时间隔为正，分类错误时间隔为负</p>
-<p>给定一组数据点和一个超平面，我们可以计算出各个函数间隔和几何间隔.但是如果我们成比例的同时放缩 w 和 b,那么超平面和几何间隔都完全不变，但是所有点的函数间隔都会随着 w 的变化而变化，因为函数间隔其实就是几何间隔（不变）乘上 w 的模（正在被成比例放缩）</p>
+<p>给定一组数据点和一个超平面，我们可以计算出各个函数间隔和几何间隔.但是如果我们成比例的同时放缩 w 和 b，那么超平面和几何间隔都完全不变，但是所有点的函数间隔都会随着 w 的变化而变化，因为函数间隔其实就是几何间隔（不变）乘上 w 的模（正在被成比例放缩）</p>
 <p>为了提高分类的确信度和泛化能力，我们希望最大化最小几何间隔，也就是尽量提高所有点到超平面的距离的下界，也就是让所有点都尽可能离超平面远一点（离超平面很近的话，稍微有一点扰动就容易被分成另一类）</p>
 <p>于是我们写出优化目标</p>
 <div class="arithmatex">\[\begin{aligned}
-    \underset {w,b}{\operatorname{max}} &amp; \quad \gamma \\
-    s.t. &amp; \quad y_i(w\cdot x_i + b) \geq \gamma, i = 1,2,...,N \\
+    \underset {w，b}{\operatorname{max}} &amp; \quad \gamma \\
+    s.t. &amp; \quad y_i(w\cdot x_i + b) \geq \gamma， i = 1，2，...，N \\
 \end{aligned}\]</div>
-<p>其中的<span class="arithmatex">\(\gamma = \underset {i}{\operatorname{min}} \gamma_i\)</span>,也就是最小几何间隔</p>
-<p>观察到<span class="arithmatex">\(\gamma\|w\| = \hat{\gamma}\)</span>,我们可以将上述优化目标转化为</p>
+<p>其中的<span class="arithmatex">\(\gamma = \underset {i}{\operatorname{min}} \gamma_i\)</span>，也就是最小几何间隔</p>
+<p>观察到<span class="arithmatex">\(\gamma\|w\| = \hat{\gamma}\)</span>，我们可以将上述优化目标转化为</p>
 <div class="arithmatex">\[\begin{aligned}
-    \underset {w,b}{\operatorname{max}} &amp; \quad \frac{\hat{\gamma}}{\|w\|} \\
-    s.t. &amp; \quad y_i(w\cdot x_i + b) \geq \hat{\gamma}, i = 1,2,...,N \\
+    \underset {w，b}{\operatorname{max}} &amp; \quad \frac{\hat{\gamma}}{\|w\|} \\
+    s.t. &amp; \quad y_i(w\cdot x_i + b) \geq \hat{\gamma}， i = 1，2，...，N \\
 \end{aligned}\]</div>
-<p>因为我们可以通过成比例的放缩 w 和 b 来调节<span class="arithmatex">\(\hat{\gamma}\)</span>,我们就放缩<span class="arithmatex">\(w\)</span>使得<span class="arithmatex">\(\hat{\gamma} = 1\)</span>,上述优化目标转化为</p>
+<p>因为我们可以通过成比例的放缩 w 和 b 来调节<span class="arithmatex">\(\hat{\gamma}\)</span>，我们就放缩<span class="arithmatex">\(w\)</span>使得<span class="arithmatex">\(\hat{\gamma} = 1\)</span>，上述优化目标转化为</p>
 <div class="arithmatex">\[\begin{aligned}
-    \underset {w,b}{\operatorname{max}} &amp; \quad \frac{1}{\|w\|} \\
-    s.t. &amp; \quad y_i(w\cdot x_i + b) \geq 1, i = 1,2,...,N \\
+    \underset {w，b}{\operatorname{max}} &amp; \quad \frac{1}{\|w\|} \\
+    s.t. &amp; \quad y_i(w\cdot x_i + b) \geq 1， i = 1，2，...，N \\
 \end{aligned}\]</div>
-<p>求解上述优化问题可得到最优解<span class="arithmatex">\(w^*,b^*\)</span>,构成最优分离超平面，可以证明，该超平面存在且唯一，那些离超平面最近的点就被称为支持向量</p>
+<p>求解上述优化问题可得到最优解<span class="arithmatex">\(w^*，b^*\)</span>，构成最优分离超平面，可以证明，该超平面存在且唯一，那些离超平面最近的点就被称为支持向量</p>
 <h2 id="_3">模型求解<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
 <h3 id="_4">对偶问题<a class="headerlink" href="#_4" title="Anchor link to this section for reference">&para;</a></h3>
 <h4 id="_5">写出对偶问题<a class="headerlink" href="#_5" title="Anchor link to this section for reference">&para;</a></h4>
 <p>拉格朗日函数为：</p>
 <div class="arithmatex">\[
-    L(w,b,\alpha) = \frac{1}{2}||w||^2 - \sum_{i=1}^{N}\alpha_iy_i(w\cdot x_i + b) + \sum_{i=1}^{N}\alpha_i
+    L(w，b，\alpha) = \frac{1}{2}||w||^2 - \sum_{i=1}^{N}\alpha_iy_i(w\cdot x_i + b) + \sum_{i=1}^{N}\alpha_i
 \]</div>
 <p>我们将最小最大问题转化为最大最小问题，写出对偶问题：</p>
 <div class="arithmatex">\[
-    \underset {\alpha}{\operatorname{min}} \underset {w,b}{\operatorname{max}} L(w,b,\alpha) \rightarrow \underset {\alpha}{\operatorname{min}} \underset {w,b}{\operatorname{max}} L(w,b,\alpha)
+    \underset {\alpha}{\operatorname{min}} \underset {w，b}{\operatorname{max}} L(w，b，\alpha) \rightarrow \underset {\alpha}{\operatorname{min}} \underset {w，b}{\operatorname{max}} L(w，b，\alpha)
 \]</div>
 <h4 id="_6">极小化<a class="headerlink" href="#_6" title="Anchor link to this section for reference">&para;</a></h4>
-<p>我们需要让<span class="arithmatex">\(\nabla_w L(w,b,\alpha) = 0\)</span>和<span class="arithmatex">\(\nabla_b L(w,b,\alpha) = 0\)</span>,也就是</p>
+<p>我们需要让<span class="arithmatex">\(\nabla_w L(w，b，\alpha) = 0\)</span>和<span class="arithmatex">\(\nabla_b L(w，b，\alpha) = 0\)</span>，也就是</p>
 <div class="arithmatex">\[\begin{aligned}
     &amp; w = \sum_{i=1}^{N}\alpha_i y_i x_i \\
     &amp; 0 = \sum_{i=1}^{N}\alpha_i y_i \\
 \end{aligned}\]</div>
 <p>带回原式中，得到：</p>
 <div class="arithmatex">\[
-    L(w,b,\alpha) = \sum_{i=1}^{N}\alpha_i - \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)
+    L(w，b，\alpha) = \sum_{i=1}^{N}\alpha_i - \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)
 \]</div>
 <h4 id="_7">极大化<a class="headerlink" href="#_7" title="Anchor link to this section for reference">&para;</a></h4>
 <p>在极小化之后，剩下的问题就是</p>
 <div class="arithmatex">\[\begin{aligned}
     \underset {\alpha}{\operatorname{max}} &amp; \quad L(\alpha) =  \sum_{i=1}^{N}\alpha_i - \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) \\
     s.t. &amp; \quad \sum_{i=1}^{N}\alpha_i y_i = 0 \\
-    &amp; \quad \alpha_i \geq 0, i = 1,2,...,N \\
+    &amp; \quad \alpha_i \geq 0， i = 1，2，...，N \\
 \end{aligned}\]</div>
 <p>通过某种方式求解上述问题，我们得到最优解<span class="arithmatex">\(\alpha^*\)</span></p>
 <h3 id="_8">原始问题<a class="headerlink" href="#_8" title="Anchor link to this section for reference">&para;</a></h3>
 <h4 id="kkt">应用 KKT 条件<a class="headerlink" href="#kkt" title="Anchor link to this section for reference">&para;</a></h4>
-<p>有了对偶问题的最优解<span class="arithmatex">\(\alpha^* = (\alpha_1^*,\alpha_2^*,...,\alpha_N^*)\)</span>,应用 KKT 条件：</p>
+<p>有了对偶问题的最优解<span class="arithmatex">\(\alpha^* = (\alpha_1^*，\alpha_2^*，...，\alpha_N^*)\)</span>，应用 KKT 条件：</p>
 <div class="arithmatex">\[\begin{align}
     &amp; \alpha_i^* \geq 0 \tag{1}\\
     &amp; y_i(w^*\cdot x_i + b^*) - 1 \geq 0 \tag{2}\\
     &amp; \alpha_i^*(y_i(w^*\cdot x_i + b^*) - 1) = 0 \tag{3}\\
-    &amp; \nabla_w L(w^*,b^*,\alpha^*) = w^* - \sum_{i=1}^{N}\alpha_i^* y_i x_i = 0 \tag{4}\\
-    &amp; \nabla_b L(w^*,b^*,\alpha^*) = \sum_{i=1}^{N}\alpha_i^* y_i = 0 \tag{5}\\
+    &amp; \nabla_w L(w^*，b^*，\alpha^*) = w^* - \sum_{i=1}^{N}\alpha_i^* y_i x_i = 0 \tag{4}\\
+    &amp; \nabla_b L(w^*，b^*，\alpha^*) = \sum_{i=1}^{N}\alpha_i^* y_i = 0 \tag{5}\\
 \end{align}\]</div>
-<p>若<span class="arithmatex">\(\alpha^* = 0\)</span>,由(4)可以推出<span class="arithmatex">\(w^* = 0\)</span>,显然不对，所以<span class="arithmatex">\(\alpha^*\)</span>不全为零</p>
-<p>若<span class="arithmatex">\(\alpha_i^* &gt; 0\)</span>,由(3)可以推出<span class="arithmatex">\(y_i(w^*\cdot x_i + b^*) = 1\)</span>,回忆前文我们已经令<span class="arithmatex">\(\hat{\gamma} = 1\)</span>,所以 j 的函数间隔跟最小函数间隔相等，每个 j 都因此成为一个支持向量，其中既有正例也有反例</p>
-<h4 id="wb">求最优 w,b<a class="headerlink" href="#wb" title="Anchor link to this section for reference">&para;</a></h4>
+<p>若<span class="arithmatex">\(\alpha^* = 0\)</span>，由(4)可以推出<span class="arithmatex">\(w^* = 0\)</span>，显然不对，所以<span class="arithmatex">\(\alpha^*\)</span>不全为零</p>
+<p>若<span class="arithmatex">\(\alpha_i^* &gt; 0\)</span>，由(3)可以推出<span class="arithmatex">\(y_i(w^*\cdot x_i + b^*) = 1\)</span>，回忆前文我们已经令<span class="arithmatex">\(\hat{\gamma} = 1\)</span>，所以 j 的函数间隔跟最小函数间隔相等，每个 j 都因此成为一个支持向量，其中既有正例也有反例</p>
+<h4 id="wb">求最优 w，b<a class="headerlink" href="#wb" title="Anchor link to this section for reference">&para;</a></h4>
 <p>利用支持向量，我们可以得到</p>
 <div class="arithmatex">\[\begin{align}
     &amp; w^* = \sum_{i=1}^{N}\alpha_i^* y_i x_i \\
@@ -1731,70 +1731,70 @@
 <h2 id="_10">软间隔<a class="headerlink" href="#_10" title="Anchor link to this section for reference">&para;</a></h2>
 <p>一般而言，由于噪声的干扰，我们很难直接拿到一个线性可分的数据集，而是一个近似线性可分的数据集，我们去掉大部分的噪点后可以做到线性可分，但是这些噪点实际上是跑到了支持向量以内甚至超平面对面的，这意味着</p>
 <div class="arithmatex">\[
-    y_i(w\cdot x_i + b) \geq 1 - \xi_i \quad i = 1,2,...,N (\xi_i \geq 0 )
+    y_i(w\cdot x_i + b) \geq 1 - \xi_i \quad i = 1，2，...，N (\xi_i \geq 0 )
 \]</div>
-<p>也就是说，并非所有点的函数间隔都大于 1 了（函数间隔为 1 的是支持向量，不大于一就位于支持向量以内了）,</p>
+<p>也就是说，并非所有点的函数间隔都大于 1 了（函数间隔为 1 的是支持向量，不大于一就位于支持向量以内了），</p>
 <p>当然，我们不能允许无限制的松弛，不然所谓的其他向量都可以随意跑到支持向量以内的话，支持向量也就没有意义的，我们进形正则化</p>
 <div class="arithmatex">\[
- \underset {w,b,\xi}{\operatorname{min}} \quad \frac{1}{2}||w||^2 + C\sum_{i=1}^{N}\xi_i \\
+ \underset {w，b，\xi}{\operatorname{min}} \quad \frac{1}{2}||w||^2 + C\sum_{i=1}^{N}\xi_i \\
 \]</div>
 <p>其中的 C 是一个我们手动设置的惩罚参数</p>
 <p>我们的对偶问题随之变成：</p>
 <div class="arithmatex">\[\begin{aligned}
     \underset {\alpha}{\operatorname{max}} &amp; \quad L(\alpha) =  \sum_{i=1}^{N}\alpha_i - \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) \\
     s.t. &amp; \quad \sum_{i=1}^{N}\alpha_i y_i = 0 \\
-    &amp; \quad 0 \leq \alpha_i \leq C, i = 1,2,...,N \\
+    &amp; \quad 0 \leq \alpha_i \leq C， i = 1，2，...，N \\
 \end{aligned}\]</div>
 <p>其中由于松弛条件，我们极小化的过程中新增了以下的约束：</p>
 <div class="arithmatex">\[\begin{aligned}
-    \nabla_{\xi_i} L(w,b,\alpha,\xi) = C - \alpha_i - \mu_i = 0  \quad i = 1,2,...,N \\
-    \mu_i \geq 0 \quad i = 1,2,...,N \\
+    \nabla_{\xi_i} L(w，b，\alpha，\xi) = C - \alpha_i - \mu_i = 0  \quad i = 1，2，...，N \\
+    \mu_i \geq 0 \quad i = 1，2，...，N \\
 \end{aligned}\]</div>
 <p>这也是上述条件中出现<span class="arithmatex">\(\alpha_i \leq C\)</span>的原因</p>
-<p>同样求解最优解<span class="arithmatex">\(\alpha^*\)</span>,然后带回原式，得到最优解<span class="arithmatex">\(w^*,b^*,\xi^*\)</span>,构成最优分离超平面</p>
+<p>同样求解最优解<span class="arithmatex">\(\alpha^*\)</span>，然后带回原式，得到最优解<span class="arithmatex">\(w^*，b^*，\xi^*\)</span>，构成最优分离超平面</p>
 <p>那些被松弛的点的位置和<span class="arithmatex">\(\xi\)</span>的的关系为：</p>
 <p><a class="glightbox" href="../images/Support_Vector_Machine/2023-11-26-00-47-33.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Support_Vector_Machine/2023-11-26-00-47-33.png#pic" /></a></p>
 <h2 id="_11">核函数<a class="headerlink" href="#_11" title="Anchor link to this section for reference">&para;</a></h2>
-<p>我们想要把点<span class="arithmatex">\(x, z \in \mathbb{R}^n\)</span>映射到一个更高维的空间，也就是(<span class="arithmatex">\(\phi(x)\)</span>被映射到更高维）,在这个映射中，我们需要保证高维空间中二者的点积是原空间中点积的函数，也就是</p>
+<p>我们想要把点<span class="arithmatex">\(x， z \in \mathbb{R}^n\)</span>映射到一个更高维的空间，也就是(<span class="arithmatex">\(\phi(x)\)</span>被映射到更高维），在这个映射中，我们需要保证高维空间中二者的点积是原空间中点积的函数，也就是</p>
 <div class="arithmatex">\[
-    K(x,z) = \phi(x)\cdot \phi(z)
+    K(x，z) = \phi(x)\cdot \phi(z)
 \]</div>
 <p>一般而言，给定这个把原内积映射到高维内积的 K 就可以了，不用具体给出把向量映射到高位向量的<span class="arithmatex">\(\phi()\)</span></p>
 <p>在对偶问题中，我们注意到<span class="arithmatex">\(x_i\)</span>之间只有内积，所以我们就直接用映射后的高位内积进行替换</p>
 <div class="arithmatex">\[
-    \underset {\alpha}{\operatorname{max}} \quad L(\alpha) =  \sum_{i=1}^{N}\alpha_i - \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_jK(x_i,x_j) \\
+    \underset {\alpha}{\operatorname{max}} \quad L(\alpha) =  \sum_{i=1}^{N}\alpha_i - \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_jK(x_i，x_j) \\
 \]</div>
 <div class="admonition info">
 <p class="admonition-title">常用核函数</p>
 <p>多项式核函数</p>
 <div class="arithmatex">\[
-    K(x,z) = (x\cdot z + 1)^p
+    K(x，z) = (x\cdot z + 1)^p
 \]</div>
 <p>高斯核函数(KBF)</p>
 <div class="arithmatex">\[
-    K(x,z) = \exp(-\frac{||x-z||^2}{2\sigma^2})
+    K(x，z) = \exp(-\frac{||x-z||^2}{2\sigma^2})
 \]</div>
 </div>
 <h2 id="smo">SMO 算法<a class="headerlink" href="#smo" title="Anchor link to this section for reference">&para;</a></h2>
-<p>最后我们给出 SMO 算法，这是一种具体求解上述的<span class="arithmatex">\(\alpha^*\)</span>的数值方法。</p>
-<p>输入：数据集<span class="arithmatex">\(D = \{(x_i,y_i)\}\)</span>,核函数<span class="arithmatex">\(K(x,z)\)</span>,容忍度<span class="arithmatex">\(\epsilon\)</span></p>
+<p>最后我们给出 SMO 算法，这是一种具体求解上述的<span class="arithmatex">\(\alpha^*\)</span>的数值方法.</p>
+<p>输入：数据集<span class="arithmatex">\(D = \{(x_i，y_i)\}\)</span>，核函数<span class="arithmatex">\(K(x，z)\)</span>，容忍度<span class="arithmatex">\(\epsilon\)</span></p>
 <ul>
-<li>初始化<span class="arithmatex">\(\alpha = 0\)</span>,k = 0</li>
-<li>取优化变量<span class="arithmatex">\(\alpha_1,\alpha_2\)</span>,解析求解最优化问题，更新<span class="arithmatex">\(\alpha_1,\alpha_2\)</span></li>
+<li>初始化<span class="arithmatex">\(\alpha = 0\)</span>，k = 0</li>
+<li>取优化变量<span class="arithmatex">\(\alpha_1，\alpha_2\)</span>，解析求解最优化问题，更新<span class="arithmatex">\(\alpha_1，\alpha_2\)</span></li>
 <li>
 <p>若在容忍度<span class="arithmatex">\(\epsilon\)</span>内满足：</p>
 <div class="arithmatex">\[\begin{aligned}
     &amp; \sum_{i=1}^{N}\alpha_i y_i = 0 \\
-    &amp; 0 \leq \alpha_i \leq C, i = 1,2,...,N \\
+    &amp; 0 \leq \alpha_i \leq C， i = 1，2，...，N \\
     &amp; y_i(g(x_i)) = \left\{
     \begin{aligned}
-        &amp; \geq 1, \alpha_i = 0 \\
-        &amp; = 1, 0 &lt; \alpha_i &lt; C \\
-        &amp; \leq 1, \alpha_i = C \\
+        &amp; \geq 1， \alpha_i = 0 \\
+        &amp; = 1， 0 &lt; \alpha_i &lt; C \\
+        &amp; \leq 1， \alpha_i = C \\
     \end{aligned}
     \right.
 \end{aligned}\]</div>
-<p>则令<span class="arithmatex">\(\alpha = (\alpha_1,\alpha_2,...,\alpha_N)\)</span>,退出循环</p>
+<p>则令<span class="arithmatex">\(\alpha = (\alpha_1，\alpha_2，...，\alpha_N)\)</span>，退出循环</p>
 </li>
 </ul>
 
@@ -1803,7 +1803,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2023</span>
       
         <br>
         Created:

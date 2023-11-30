@@ -1338,7 +1338,7 @@
 <p class="admonition-title">本节列举一些命令行常用的数据处理工具</p>
 </div>
 <h2 id="sed">Sed<a class="headerlink" href="#sed" title="Anchor link to this section for reference">&para;</a></h2>
-<p>Sed 是 Stream editor 流编辑器，可以接受管道输入，对每一行进行处理，然后输出到标准输出。
+<p>Sed 是 Stream editor 流编辑器，可以接受管道输入，对每一行进行处理，然后输出到标准输出.
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sed [OPTION] &#39;edit-command&#39; [input-file]`
 </span></code></pre></div></td></tr></table></div></p>
 <p>选项是一些用于控制 sed 命令行为的参数，常见的有：</p>
@@ -1352,13 +1352,13 @@
 <li><code>-r</code> 使用基础正则表达式</li>
 <li><code>-h</code> 不打印文件名</li>
 </ul>
-<p><code>sed</code>的编辑命令可以使用正则表达式来指定匹配模式，并通过替换、删除、插入等命令来修改文本。一些常见的 sed 编辑命令包括：</p>
+<p><code>sed</code>的编辑命令可以使用正则表达式来指定匹配模式，并通过替换、删除、插入等命令来修改文本.一些常见的 sed 编辑命令包括：</p>
 <ul>
-<li>s/pattern/replacement/：替换指定模式的文本。</li>
-<li>d：删除匹配到的行。</li>
-<li>p：打印（输出）匹配到的行。</li>
-<li>i：在指定行前插入文本。</li>
-<li>a：在指定行后追加文本。</li>
+<li>s/pattern/replacement/：替换指定模式的文本.</li>
+<li>d：删除匹配到的行.</li>
+<li>p：打印（输出）匹配到的行.</li>
+<li>i：在指定行前插入文本.</li>
+<li>a：在指定行后追加文本.</li>
 </ul>
 <details class="info">
 <summary>正则表达式</summary>
@@ -1375,23 +1375,23 @@
 </ul>
 </details>
 <h2 id="awk">Awk<a class="headerlink" href="#awk" title="Anchor link to this section for reference">&para;</a></h2>
-<p><code>awk</code> 是一种强大的文本处理工具，用于从结构化文本数据中提取和操作信息。它可以逐行读取输入文件或标准输入的文本，根据指定的模式和动作进行匹配、处理和输出。</p>
+<p><code>awk</code> 是一种强大的文本处理工具，用于从结构化文本数据中提取和操作信息.它可以逐行读取输入文件或标准输入的文本，根据指定的模式和动作进行匹配、处理和输出.</p>
 <p><code>awk</code> 的基本语法如下：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>awk<span class="w"> </span><span class="s1">&#39;pattern { action }&#39;</span><span class="w"> </span>file
 </span></code></pre></div></td></tr></table></div>
-<p>其中，<code>pattern</code> 是用于匹配文本的模式，<code>action</code> 是在匹配到的文本上执行的操作，<code>file</code> 是待处理的输入文件。</p>
-<p><code>awk</code> 的工作原理是逐行读取输入文本，并根据指定的模式进行匹配。当某行匹配到指定模式时，执行相应的动作。动作可以是打印行、计算、赋值变量、进行条件判断等。</p>
-<p><code>awk</code> 提供了丰富的内置功能和变量，使其能够对文本进行灵活处理。一些常用的 <code>awk</code> 功能包括：</p>
+<p>其中，<code>pattern</code> 是用于匹配文本的模式，<code>action</code> 是在匹配到的文本上执行的操作，<code>file</code> 是待处理的输入文件.</p>
+<p><code>awk</code> 的工作原理是逐行读取输入文本，并根据指定的模式进行匹配.当某行匹配到指定模式时，执行相应的动作.动作可以是打印行、计算、赋值变量、进行条件判断等.</p>
+<p><code>awk</code> 提供了丰富的内置功能和变量，使其能够对文本进行灵活处理.一些常用的 <code>awk</code> 功能包括：</p>
 <ul>
-<li>字段分割：<code>awk</code> 默认将每一行以空格或制表符为分隔符划分为多个字段，可以通过 <code>$n</code> 的形式引用字段（例如 <code>$1</code>、<code>$2</code>）。</li>
-<li>模式匹配：可以使用正则表达式进行模式匹配，指定匹配的文本模式。</li>
-<li>内置变量：<code>awk</code> 提供了许多内置变量，如 <code>NR</code>（当前行数）、<code>NF</code>（当前行的字段数）和 <code>$0</code>（整行文本）等。</li>
-<li>内置函数：<code>awk</code> 提供了丰富的内置函数，如字符串处理函数、数学函数、日期函数等。</li>
+<li>字段分割：<code>awk</code> 默认将每一行以空格或制表符为分隔符划分为多个字段，可以通过 <code>$n</code> 的形式引用字段（例如 <code>$1</code>、<code>$2</code>）.</li>
+<li>模式匹配：可以使用正则表达式进行模式匹配，指定匹配的文本模式.</li>
+<li>内置变量：<code>awk</code> 提供了许多内置变量，如 <code>NR</code>（当前行数）、<code>NF</code>（当前行的字段数）和 <code>$0</code>（整行文本）等.</li>
+<li>内置函数：<code>awk</code> 提供了丰富的内置函数，如字符串处理函数、数学函数、日期函数等.</li>
 </ul>
 <p>以下是一个简单的示例，展示了如何使用 <code>awk</code> 提取文件中以冒号分隔的第一列和第二列，并输出它们：</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>awk<span class="w"> </span>-F<span class="s1">&#39;:&#39;</span><span class="w"> </span><span class="s1">&#39;{ print $1, $2 }&#39;</span><span class="w"> </span>file.txt
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>awk<span class="w"> </span>-F<span class="s1">&#39;:&#39;</span><span class="w"> </span><span class="s1">&#39;{ print $1， $2 }&#39;</span><span class="w"> </span>file.txt
 </span></code></pre></div></td></tr></table></div>
-<p><code>awk</code> 是一种非常实用的文本处理工具，适用于处理结构化的文本数据，如日志文件、CSV 文件、报告等。它具有强大的功能和灵活性，可以大大简化文本处理任务，提高数据分析和转换的效率。</p>
+<p><code>awk</code> 是一种非常实用的文本处理工具，适用于处理结构化的文本数据，如日志文件、CSV 文件、报告等.它具有强大的功能和灵活性，可以大大简化文本处理任务，提高数据分析和转换的效率.</p>
 <h2 id="aided-command-line-tools">Aided Command line Tools<a class="headerlink" href="#aided-command-line-tools" title="Anchor link to this section for reference">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">辅助使用的命令行工具</p>
@@ -1412,7 +1412,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2023</span>
       
         <br>
         Created:
