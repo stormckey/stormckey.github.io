@@ -10,7 +10,7 @@ nostatistics: true
 ---
 # 操作系统 - lab4 用户态
 !!! abstract
-    比较 high level 的讲一下一些思想和需要注意的地方，很多细节问题还是要自己决定和思考的哒
+    比较 high level 的讲一下一些思想和需要注意的地方,以及一个CPU执行流程
 <!-- more -->
 
 !!! info "基本信息"
@@ -63,8 +63,12 @@ nostatistics: true
 - 如果uapp.S中我们用的是纯二进制文件,那么_sramdisk第一行就是程序第一行
 - 如果uapp.S中我们用的是elf文件,我们需要解码elf头来定位具体的文件位置
 
-## phdr->p_flags
+### phdr->p_flags
 
 注意这一项虽然是声明权限的的但定义不等同于页表项的perm,定义如下:
 
 ![](images/OS_lab4/2023-12-01-17-51-47.png#pic)
+
+### 执行权限
+
+注意设置好页表和sstatus保证运行用户态代码时权限检查能够通过, 否则会导致 scause = 0xc的 inst page fault 此时也许我们可以在gdb中读信息但是一执行就出错

@@ -10,16 +10,13 @@ nostatistics: true
 ---
 # 操作系统 - lab3 虚拟内存
 !!! abstract
-    比较 high level 的讲一下一些思想和需要注意的地方，很多细节问题还是要自己决定和思考的哒
+    比较 high level 的讲一下一些思想和需要注意的地方,以及一个CPU执行流程总结
 <!-- more -->
 
 !!! info "基本信息"
     时间：2023 秋冬
 
     实验文档：[:octicons-book-16:](https://zju-sec.github.io/os23fall-stu/lab3/)
-
-??? warning "为什么是从 lab3 开始？"
-    我也不知道
 
 ## CPU执行流程
 
