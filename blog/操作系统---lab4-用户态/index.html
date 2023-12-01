@@ -1308,7 +1308,8 @@
 </ul>
 </li>
 <li><code>start_kernel</code>: 不进入 test 等时钟中断(3)，而是直接调用 schedule 调度走</li>
-<li><code>switch_to</code>: 在调度中选择下一个要调度的线程</li>
+<li><code>schedule</code>: 根据policy选择下一个要调度的线程,调用 switch_to 至该线程</li>
+<li><code>switch_to</code>: 获取先后线程的PCB地址，调用__switch_to</li>
 <li><code>__switch_to</code>: 当前上下文存入 PCB，加载下一个进程的 PCB(6)</li>
 <li><code>__dummy</code>: 切用户栈，sret 返回用户段(4)，而 sepc 是我们初始化的时候就指定的的 USER_START(5)</li>
 <li><code>USER_START</code>: 开始执行用户态代码，包括各种系统调用，直到时间片用完</li>
