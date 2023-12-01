@@ -27,5 +27,3 @@ nostatistics: true
 - httpie
 - hyperfine
 - fzf
-
-$\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad$

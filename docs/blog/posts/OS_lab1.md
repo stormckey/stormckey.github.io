@@ -33,5 +33,3 @@ nostatistics: true
 - `_traps`: 返回_traps 后恢复上下文 sret 返回死循环
 - `test`: 死循环直到时钟中断，重复上述流程
 </div>
-
-$\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad$
