@@ -1,7 +1,7 @@
-# 计组笔记📒
-!!! warning "极其简略，只有部分易忘、或不显然的知识点，所以祭祖堂堂大颗只用了一页"
+# 计算机组成
+!!! warning "极其简略，只有部分易忘、或不那么显然的知识点(拿来查表)，所以祭祖只用了一页"
 
-!!! info "许多内容整理自[:octicons-link-16:咸鱼暄的代码空间](https://xuan-insr.github.io/computer_organization/1_prelude/)"
+!!! info "许多内容摘自[:octicons-link-16:咸鱼暄的代码空间](https://xuan-insr.github.io/computer_organization/1_prelude/)"
 
 !!! tip "[:octicons-link-16:这里](https://bank.engzenon.com/tmp/60746e35-6aec-4163-86ed-7fdec0feb99b/626db954-7f2c-45af-9aa3-42dfc0feb99b/Computer_Organization_Manual_solution.pdf)是课本作业答案"
 
@@ -25,6 +25,7 @@
 ![](images/CO_review/2023-03-31-17-30-14.png#pic)
 
 ![](images/CO_review/2023-03-31-18-04-03.png#pic)
+
 ## Ch3 Arithmetic
 
 - 检测加减法溢出：最高位全加器的 Cin Cout 进行异或即可，这俩信号不一样，就意味着溢出了
