@@ -38,7 +38,8 @@ nostatistics: true
                 - 分配新的一页作栈，把这一页的物理地址映射到 USER_END-4K
                 - 根据新页表地址计算satp
 - `start_kernel`: 不进入 test 等时钟中断(3)，而是直接调用 schedule 调度走
-- `switch_to`: 在调度中选择下一个要调度的线程
+- `schedule`: 根据policy选择下一个要调度的线程,调用 switch_to 至该线程
+- `switch_to`: 获取先后线程的PCB地址，调用__switch_to
 - `__switch_to`: 当前上下文存入 PCB，加载下一个进程的 PCB(6)
 - `__dummy`: 切用户栈，sret 返回用户段(4)，而 sepc 是我们初始化的时候就指定的的 USER_START(5)
 - `USER_START`: 开始执行用户态代码，包括各种系统调用，直到时间片用完
