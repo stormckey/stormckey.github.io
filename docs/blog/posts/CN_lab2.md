@@ -4,7 +4,6 @@ authors:
     - stormckey
 categories:
     - Lab
-    - 计算机网络
 date: 2023-11-25
 nostatistics: true
 ---

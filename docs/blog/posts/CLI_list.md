@@ -15,8 +15,6 @@ nostatistics: true
     如果仔细看看的化会发现大多数都是拿 Rust 重写的(Rewrite it in Rust!)
 <!-- more -->
 
-## 通用类
-
 - dust
 - duf
 - procs
@@ -29,3 +27,5 @@ nostatistics: true
 - httpie
 - hyperfine
 - fzf
+
+$\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad$

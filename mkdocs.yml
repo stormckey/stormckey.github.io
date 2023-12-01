@@ -78,7 +78,7 @@ plugins:
       blog_toc: true
       post_date_format: medium
       post_excerpt: required
-      post_readtime_words_per_minute: 175
+      post_readtime_words_per_minute: 150
 
 
 

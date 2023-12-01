@@ -1,5 +1,5 @@
 # 计算机组成
-!!! warning "极其简略，只有部分易忘、或不那么显然的知识点(拿来查表)，所以祭祖只用了一页"
+!!! warning "极其简略，只有部分易忘、或不那么显然的知识点（拿来查表），所以祭祖只用了一页"
 
 !!! info "许多内容摘自[:octicons-link-16:咸鱼暄的代码空间](https://xuan-insr.github.io/computer_organization/1_prelude/)"
 
