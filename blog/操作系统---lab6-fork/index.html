@@ -1253,7 +1253,7 @@
 </span></span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="hll">              - thread.sscratch: 子进程在内核态的sscratch，在返回用户态时会与sp交换，所以实质是子进程用户态的sp (1)
 </span></span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="hll">              - satp: 根据子进程页表修改
 </span></span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="hll">              - pgd: 子进程页表
-</span></span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="hll">          - pt_regs: 位于该页高地址  
+</span></span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="hll">          - pt_regs: 位于该页高地址，其中内容在子进程从内核态返回用户态时将会被加载，以下项需要改动  
 </span></span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="hll">              - a0: 返回用户态后携带的调用返回值，也就是子进程得到的fork返回值，0
 </span></span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="hll">              - sepc: fork对应ecall的下一条指令
 </span></span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="hll">- `_traps`: 父进程fork完毕，携带子进程pid恢复用户态上下文返回
