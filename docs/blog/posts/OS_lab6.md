@@ -47,7 +47,7 @@ nostatistics: true
               - thread.sscratch: 子进程在内核态的sscratch，在返回用户态时会与sp交换，所以实质是子进程用户态的sp (1)
               - satp: 根据子进程页表修改
               - pgd: 子进程页表
-          - pt_regs: 位于该页高地址  
+          - pt_regs: 位于该页高地址，其中内容在子进程从内核态返回用户态时将会被加载，以下项需要改动  
               - a0: 返回用户态后携带的调用返回值，也就是子进程得到的fork返回值，0
               - sepc: fork对应ecall的下一条指令
 - `_traps`: 父进程fork完毕，携带子进程pid恢复用户态上下文返回
