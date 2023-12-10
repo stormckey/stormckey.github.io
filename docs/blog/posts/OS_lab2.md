@@ -24,6 +24,7 @@ nostatistics: true
 ## kernel 执行流程
 
 <div class="annotate" markdown>
+```title="kernel 执行流程" hl_lines="4-9 11-18" linenums="0"
 - `opensbi`执行完毕
 - `_start`: 完成 stvec， sie， mtimecmp， sstatus 和栈的设置，然后依次调用以下函数
     - `mm_init`: 完成内存分配函数的初始化
@@ -40,8 +41,10 @@ nostatistics: true
 - `schedule`: 根据 policy 选择下一个要调度的线程，调用 switch_to()至该线程(2)，如果所有线程时间都用完了就先初始化时间再选择
 - `switch_to`: 前后线程的 PCB，调用__switch_to
 - `__switch_to`: 保存上下文，加载下一个线程的 PCB(3)
-- `__dummy`: 从__switch_to 返回，返回地址就是 PCB 中恢复的__dummy.我们在 dummy 中结束此次中断用 sret 回到该线程执行的函数 dummy，直到时钟中断
+- `__dummy`: 从__switch_to 返回，返回地址就是 PCB 中恢复的__dummy.我们在 dummy 中结束此次中断用 sret 回到该线程执行的函数 dummy
+- `dummy`: 该线程主函数，切换回来后进行一次输出然后循环等待时钟中断
 - `_traps`: 时钟中断，一般是剩余时间减一然后继续，直到时间用完，再次进入 schedule 循环
+```
 </div>
 
 1.  也就是帮每个线程填好 task_struct

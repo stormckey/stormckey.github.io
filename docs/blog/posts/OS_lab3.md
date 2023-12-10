@@ -21,6 +21,7 @@ nostatistics: true
 ## kernel 执行流程
 
 <div class="annotate" markdown>
+```title="kernel 执行流程" hl_lines="3-4 6" linenums="0"
 - `opensbi`执行完毕
 - `_start`: 完成 stvec， sie， mtimecmp， sstatus 和栈(1)的设置，然后依次调用以下函数
     - `setup_vm`: 填写页表(2)
@@ -29,6 +30,7 @@ nostatistics: true
     - `setup_vm_final`: 利用 mm 中的函数分配新的页来设置多级分段页表，切换到新的页表(3)
     - `task_init`: 初始化进程
 - `start_kernel`: 进入 test 死循环，等待被调度走
+```
 </div>
 
 1.  注意要使用栈的物理地址，此时符号表里的都是虚拟地址

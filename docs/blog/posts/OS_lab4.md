@@ -21,6 +21,7 @@ nostatistics: true
 ## kernel 执行流程
 
 <div class="annotate" markdown>
+```title="kernel 执行流程" hl_lines="7-17 20-22" linenums="0"
 - `opensbi` 执行完毕
 - `_start`: 完成 stvec， sie， mtimecmp， sstatus(1) 和栈的设置，然后依次调用以下函数
     - `setup_vm`: 填写页表
@@ -45,6 +46,7 @@ nostatistics: true
 - `USER_START`: 开始执行用户态代码，包括各种系统调用，直到时间片用完
 - `_traps`: 时钟中断，切系统栈，保存上下文，调度下一个进程
 - `__switch_to`: 同上，此后轮流调度
+```
 </div>
 
 1.  注意对 sstatus 的设置禁止中断，这意味着我们的 idle 进程不会被时钟中断调度走
@@ -82,3 +84,6 @@ nostatistics: true
 在_traps 中，对于一些内核线程发起的异常是不需要切换栈的，我们通过检查 sscratch 为 0 来确认这一点
 
 这一检查需要用到额外的寄存器（如 t0），但是我们是要保证 t0 的值在中断前后值不变，所以不能直接用，需要先压栈，返回之前记得恢复
+
+!!! bug
+    这里提到的压栈的办法在此处仍然可行，但在Lab5中会遇到问题，现在有一个更好用也更简洁的[:octicons-link-16:方法](https://stormckey.github.io/blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F---lab5-demand-paging/)

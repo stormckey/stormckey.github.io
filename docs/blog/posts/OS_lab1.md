@@ -24,6 +24,7 @@ nostatistics: true
 # kernel 执行流程
 
 <div class="annotate" markdown>
+```linenums="0" title="kernel 执行流程"
 - `opensbi`执行完毕
 - `_start`: 完成 stvec， sie， mtimecmp， sstatus 和栈的设置
 - `start_kernel`: 进行一些输出，进入 test()死循环，直到时钟中断
@@ -32,4 +33,5 @@ nostatistics: true
 - `clock_set_next`: 利用 sbi_ecall 设置下一次中断时间
 - `_traps`: 返回_traps 后恢复上下文 sret 返回死循环
 - `test`: 死循环直到时钟中断，重复上述流程
+```
 </div>

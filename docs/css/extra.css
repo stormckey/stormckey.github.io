@@ -114,3 +114,8 @@ img[src*="pic1"] {
   -webkit-mask-image: var(--md-admonition-icon--reference);
           mask-image: var(--md-admonition-icon--reference);
 }
+/* new code highlight lines*/
+:root > * {
+  --md-code-hl-color: rgb(255, 240, 166);
+  --md-code-hl-color--light: rgb(255, 240, 166, 0.35);
+}
