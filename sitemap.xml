@@ -226,6 +226,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://stormckey.github.io/blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F---lab6-fork/</loc>
+         <lastmod>2023-12-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://stormckey.github.io/blog/y-combinator-%E4%B8%8E%E9%80%92%E5%BD%92/</loc>
          <lastmod>2023-12-10</lastmod>
          <changefreq>daily</changefreq>
@@ -321,7 +326,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://stormckey.github.io/blog/page/3/</loc>
+         <lastmod>2023-12-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://stormckey.github.io/blog/archive/2023/page/2/</loc>
+         <lastmod>2023-12-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/blog/archive/2023/page/3/</loc>
          <lastmod>2023-12-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
