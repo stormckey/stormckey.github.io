@@ -64,10 +64,11 @@ nostatistics: true
 - 起地址不应小于文件内容开头地址`vm_start`
 - 起地址不应大于文件内容结尾地址`vm_start + vm_content_size_in_file`
 - 终地址不应大于文件内容结尾地址`vm_start + vm_content_size_in_file`
+- 拷贝
 
 ## vmas
 
-在kernel终，我们分配了一整页，其中的低地址放了个task_struct，高地址就是栈顶（如下图，来自实验文档）。所以我们要稍微限制一下vmas的大小，不能把分配的一页全给了，还要留点给栈用。
+在kernel终，我们分配了一整页，其中的低地址放了个task_struct，高地址就是栈顶（如下图，来自实验文档）。所以我们要稍微限制一下vmas的大小，不能把分配的一页全给用了，还要留点给栈用。
 
 ```
                     ┌─────────────┐◄─── High Address
