@@ -60,10 +60,10 @@ nostatistics: true
 
 ### uapp 的加载
 
-在 vmlinux.lds 中，我们指定了 uapp.S 文件会被加载到 _sramdisk，_eramdisk 之间
+在 vmlinux.lds 中，我们指定的 uapp.S 文件会被加载到 _sramdisk，_eramdisk 之间
 
 - 如果 uapp.S 中我们用的是纯二进制文件，那么_sramdisk 第一行就是程序第一行
-- 如果 uapp.S 中我们用的是 elf 文件，我们需要解码 elf 头来定位具体的文件位置
+- 如果 uapp.S 中我们用的是 elf 文件，我们需要解码 elf 头来定位具体的二进制位置， 同时elf中也制定了程序入口一类的信息
 
 ### phdr->p_flags
 
@@ -86,4 +86,4 @@ nostatistics: true
 这一检查需要用到额外的寄存器（如 t0），但是我们是要保证 t0 的值在中断前后值不变，所以不能直接用，需要先压栈，返回之前记得恢复
 
 !!! bug
-    这里提到的压栈的办法在此处仍然可行，但在Lab5中会遇到问题，现在有一个更好用也更简洁的[:octicons-link-16:方法](https://stormckey.github.io/blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F---lab5-demand-paging/)
+    这里提到的压栈的办法在此处仍然可行，但在Lab5中会遇到问题，现在有一个更好用也更简洁的[:octicons-link-16:方法](https://stormckey.github.io/blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F---lab5-demand-paging/#_1)

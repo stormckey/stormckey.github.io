@@ -22,7 +22,7 @@ draft: true
 
     course website: [:octicons-book-16:](https://stanford-cs242.github.io/f19/lectures/01-2-syntax-semantics)
 
-    my assignment: [:octicons-mark-github-16:]()
+    my assignment: [:octicons-book-github-16:](https://github.com/stormckey/CS242-PL/blob/master/assign1/written/assign1.pdf)
 
 ## The Idea of Backus's paper
 
