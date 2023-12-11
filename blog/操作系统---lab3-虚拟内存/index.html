@@ -1094,16 +1094,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      注意事项
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="注意事项">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#satp" class="md-nav__link">
     <span class="md-ellipsis">
       写 satp
@@ -1111,27 +1101,22 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       为什么第一次我们启用的页表是一级的
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#debug" class="md-nav__link">
     <span class="md-ellipsis">
       debug 注意
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1279,17 +1264,16 @@
 <li>注意这里跳填表要填直接映射和等值映射两段</li>
 <li>确定好不同段的物理虚拟地址和权限等，调用 creat_mapping 函数分配并填写页表，注意页表项均使用物理地址</li>
 </ol>
-<h2 id="_1">注意事项<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
-<h3 id="satp">写 satp<a class="headerlink" href="#satp" title="Anchor link to this section for reference">&para;</a></h3>
+<h2 id="satp">写 satp<a class="headerlink" href="#satp" title="Anchor link to this section for reference">&para;</a></h2>
 <p>我们启用虚拟内存的那一步，也就是写 satp 的那一步只是一句<code>csrw</code>，指令写完寄存器也不会干什么额外的事情，CP 还是要继续去 PC+4 执行下一条指令.</p>
 <p class="annotate">所以 PC+4 这个地址在虚拟内存下该怎么取指(1)，这个问题就是思考题所关心的.</p>
 <ol>
 <li>有对应的映射吗，或者是用中断处理？</li>
 </ol>
-<h3 id="_2">为什么第一次我们启用的页表是一级的<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h3>
+<h2 id="_1">为什么第一次我们启用的页表是一级的<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
 <p>文档中其实已经有链接指向了解释这一点的文档，具体而言，在这段描述转化虚拟内存的过程的<a href="https://www.five-embeddev.com/riscv-isa-manual/latest/supervisor.html#sv32algorithm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"/></svg></span>手册</a>中</p>
 <p>仔细阅读，其中第四点提到若当前页表项的权限表明了可读或者可执行，那么就会当作是最后一级页表，否则才会把它当作某一级的页表</p>
-<h3 id="debug">debug 注意<a class="headerlink" href="#debug" title="Anchor link to this section for reference">&para;</a></h3>
+<h2 id="debug">debug 注意<a class="headerlink" href="#debug" title="Anchor link to this section for reference">&para;</a></h2>
 <ul>
 <li>当我们按照文档修改了链接文件后，我们 gdb 中直接用符号来打断点之类的操作就都是按照修改了链接文件之后的虚拟地址了，所以启用虚拟内存之前为了在正确的物理地址打断点，需要手动输入地址.</li>
 <li>如果你跟我一样改完页表没事，但是一刷新 tlb 就寄了.于我的经验而言，是页表写的有问题.</li>
@@ -1316,7 +1300,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 11, 2023</span>
   </span>
 
     

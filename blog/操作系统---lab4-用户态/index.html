@@ -1094,16 +1094,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      注意事项
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="注意事项">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#uapp" class="md-nav__link">
     <span class="md-ellipsis">
       uapp 的加载
@@ -1111,8 +1101,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#phdr-p_flags" class="md-nav__link">
     <span class="md-ellipsis">
       phdr-&gt;p_flags
@@ -1120,36 +1110,31 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       执行权限
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       拷贝问题
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       栈切换
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1316,21 +1301,20 @@
 <li>sepc 在__switch_to 中就已经 load 好了</li>
 <li>这里加载的 PCB 就是我们 task_init 的时候写好的，注意这里加载的 ra 我们初始化时设置为__dummy</li>
 </ol>
-<h2 id="_1">注意事项<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
-<h3 id="uapp">uapp 的加载<a class="headerlink" href="#uapp" title="Anchor link to this section for reference">&para;</a></h3>
+<h2 id="uapp">uapp 的加载<a class="headerlink" href="#uapp" title="Anchor link to this section for reference">&para;</a></h2>
 <p>在 vmlinux.lds 中，我们指定的 uapp.S 文件会被加载到 _sramdisk，_eramdisk 之间</p>
 <ul>
 <li>如果 uapp.S 中我们用的是纯二进制文件，那么_sramdisk 第一行就是程序第一行</li>
 <li>如果 uapp.S 中我们用的是 elf 文件，我们需要解码 elf 头来定位具体的二进制位置， 同时elf中也制定了程序入口一类的信息</li>
 </ul>
-<h3 id="phdr-p_flags">phdr-&gt;p_flags<a class="headerlink" href="#phdr-p_flags" title="Anchor link to this section for reference">&para;</a></h3>
+<h2 id="phdr-p_flags">phdr-&gt;p_flags<a class="headerlink" href="#phdr-p_flags" title="Anchor link to this section for reference">&para;</a></h2>
 <p>注意这一项虽然是声明权限的的但定义不等同于页表项的 perm，定义如下：</p>
 <p><a class="glightbox" href="../images/OS_lab4/2023-12-01-17-51-47.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/OS_lab4/2023-12-01-17-51-47.png#pic" /></a></p>
-<h3 id="_2">执行权限<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h3>
+<h2 id="_1">执行权限<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
 <p>注意设置好页表和 sstatus 保证运行用户态代码时权限检查能够通过，否则会导致 scause = 0xc 的 inst page fault 此时也许我们可以在 gdb 中读信息但是一执行就出错</p>
-<h3 id="_3">拷贝问题<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h3>
+<h2 id="_2">拷贝问题<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
 <p>虚拟内存映射是以页为单位的，比如 0x00010000 起的虚拟页映射到 0x80000000 起的物理页，如果我们的程序入口在 0x100e8，那么我们应该把这个入口拷贝至 0x800000e8 而不是 0x80000000</p>
-<h3 id="_4">栈切换<a class="headerlink" href="#_4" title="Anchor link to this section for reference">&para;</a></h3>
+<h2 id="_3">栈切换<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
 <p>在_traps 中，对于一些内核线程发起的异常是不需要切换栈的，我们通过检查 sscratch 为 0 来确认这一点</p>
 <p>这一检查需要用到额外的寄存器（如 t0），但是我们是要保证 t0 的值在中断前后值不变，所以不能直接用，需要先压栈，返回之前记得恢复</p>
 <div class="admonition bug">
