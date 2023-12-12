@@ -1,5 +1,7 @@
 # Markdown All in One
 
+!!! info "[Typst](https://typst.app/) YYDS!!!"
+
 ## VSCode like highlighting
 
 即使用了 VSCode 的 MPE 的插件，Markdown 里的代码块还是十分的丑陋.这里提供了一种方法，可以让 Markdown 里的代码块的高亮效果和 VSCode 里的一样.
