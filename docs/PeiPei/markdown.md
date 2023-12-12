@@ -1,6 +1,9 @@
 # Markdown All in One
 
-!!! info "[Typst](https://typst.app/) YYDS!!!"
+!!! info "[:octicons-link-16:Typst](https://typst.app/) YYDS!!!"
+    造完板子之后写文档真的是太爽了，Typst 真的太好用了，强烈推荐！
+    写的时候像 Markdown 一样简单，导出的像 LaTeX 一样漂亮 😋
+    我自己的模板在 [:octicons-link-16:typst-template](https://github.com/PeiPei233/typst-template) 里，欢迎使用！
 
 ## VSCode like highlighting
 
