@@ -1,4 +1,4 @@
-# Missing Smester
+# Missing Semester
 
 !!! abstract
     Missing Semester 是来自 MIT 的一门计算机入么课程，这门课程不介绍具体的语言算法，而是介绍一些可以提高效率的工具的使用方法，普及计算机常识
