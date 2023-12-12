@@ -141,6 +141,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://stormckey.github.io/PeiPei/repository/</loc>
+         <lastmod>2023-12-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://stormckey.github.io/Research/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
