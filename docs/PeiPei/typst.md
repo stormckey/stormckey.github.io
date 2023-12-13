@@ -27,7 +27,25 @@
 ) <>
 ```
 
-## 一些坑点
+## 一些技巧
+
+### 中英文不同字体
+
+给 text 传入 font 时，如果传入一个 array，Typst 会按顺序选择第一个存在的字体。所以可以这样写：
+
+```typ
+#set text(font: ("Times New Roman", "SimSun"))
+```
+
+这样中文就会显示宋体，英文就会显示 Times New Roman。另外注意一下自带的 SimSun、SimHei 之类的字体不支持 Typst 传入的 weight 参数，建议使用思源黑体、思源宋体之类的字体。Typst 的 weight 是选择变体，而不是手动加粗字体，所以如果字体不支持变体，就会显示不出来。
+
+中文字体也不支持斜体，应该用楷体代替。`show` 一下再设置 `text` 就好了。例如：
+
+```typ
+#show emph: text.with(font: ("Linux Libertine", "STKaiti"))
+```
+
+更详细的看这个 [:octicons-link-16:issue](https://github.com/typst/typst/issues/725)
 
 ### 段落首行缩进
 
@@ -51,18 +69,28 @@ show heading: it => {
 }
 ```
 
-当然为了美观我这里另外加了个 `v(5pt)`，可以根据自己的喜好调整。对于代码块 `raw` 要注意一下，因为行内代码和代码块的 `raw` 似乎是一样的，我暂时是使用行数来判断的，如果行数大于 1 就加上假的段落，否则不加：
+当然为了美观我这里另外加了个 `v(5pt)`，可以根据自己的喜好调整。对于代码块 `raw` 要注意一下，因为行内代码和代码块的 `raw` 要做区别，行内代码不需要在后面加假的段落，所以要加一个 `block: true` 来区分：
 
 ```typ
-show raw: it => {
-  set text(font: ("Lucida Sans Typewriter", "Source Han Sans HW SC"))
-  if it.lines.len() > 1 [
-      #it
-      #fake-par
-  ] else [
-      #it
-  ]
+show raw.where(block: true): it => {
+  it
+  fake-par
 }
 ```
 
-这里同时也改了字体。这里有个技巧是这样写可以让中英文显示不一样的字体，Typst 会按顺序选择第一个存在的字体，所以这里中文会显示思源黑体，英文会显示 Lucida Sans Typewriter。
+### 代码块显示行号：
+
+```typ
+#show raw.where(block: true): it => { set par(justify: false); grid(
+  columns: (100%, 100%),
+  column-gutter: -100%,
+  block(width: 100%, inset: 1em, for i, line in it.text.split("\n") {
+    box(width: 0pt, align(right, str(i + 1) + h(2em)))
+    hide(line)
+    linebreak()
+  }),
+  block(radius: 1em, fill: luma(246), width: 100%, inset: 1em, it),
+)}
+```
+
+另外这个 [:octicons-link-16:issue](https://github.com/typst/typst/issues/344) 里面也给出了其他的方法。
