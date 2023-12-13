@@ -1,16 +1,18 @@
 # Typst is All You Need
 
+!!! info "我的一些自用模板在 [:octicons-mark-github-16:typst-template](https://github.com/PeiPei233/typst-template)"
+
 ## 如何开始
 
 因为 Typst 比较新，所以相关的（特别是中文的）文档还不是很多，所以目前还是靠官方的文档：[:octicons-link-16:Typst Documentation](https://typst.app/docs)，过一遍里面的 Tutorial 部分，就可以基本上掌握 Typst 的使用了。之后就是写的过程中遇到啥就在文档里搜啥。
 
-另外就是看看 [:octicons-link-16:awesome-typst-cn](https://github.com/typst-doc-cn/awesome-typst-cn) 里面的一些资源，比如 Typst 的模板，Typst 的插件等等。比较详细了，就不再赘述了。特别是遇到啥问题可以先看看这里面的模板里时怎么解决的。
+另外就是看看 [:octicons-mark-github-16:awesome-typst-cn](https://github.com/typst-doc-cn/awesome-typst-cn) 里面的一些资源，比如 Typst 的模板，Typst 的插件等等。比较详细了，就不再赘述了。特别是遇到啥问题可以先看看这里面的模板里时怎么解决的。
 
-尤其推荐其中的 [:octicons-link-16:nju-thesis-typst](https://github.com/nju-lug/nju-thesis-typst)，这是南京大学的本科生毕业论文的模板，里面的 README 里有详细的使用方法，而且代码也非常简洁高效，基本把所有坑都解决了，可以作为参考。
+尤其推荐其中的 [:octicons-mark-github-16:nju-thesis-typst](https://github.com/nju-lug/nju-thesis-typst)，这是南京大学的本科生毕业论文的模板，里面的 README 里有详细的使用方法，而且代码也非常简洁高效，基本把所有坑都解决了，可以作为参考。
 
 ## VSCode 插件
 
-首先是 [:octicons-link-16:awesome-typst-cn](https://github.com/typst-doc-cn/awesome-typst-cn) 里推荐的插件，这里我就不再赘述了，可以直接看上面的链接。我自己用了 [:octicons-link-16:Typst LSP](https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp) 和 [:octicons-link-16:Typst Preview](https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview) 这两个插件，可以在 VSCode 里直接预览 Typst 的效果，十分方便。
+首先是 [:octicons-mark-github-16:awesome-typst-cn](https://github.com/typst-doc-cn/awesome-typst-cn) 里推荐的插件，这里我就不再赘述了，可以直接看上面的链接。我自己用了 [:octicons-link-16:Typst LSP](https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp) 和 [:octicons-link-16:Typst Preview](https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview) 这两个插件，可以在 VSCode 里直接预览 Typst 的效果，十分方便。
 
 除此之外，我还用了 VSCode 的 [:octicons-link-16:Paste Image](https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image) 插件，可以直接粘贴图片，十分方便。然后顺带修改一下粘贴格式：
 
