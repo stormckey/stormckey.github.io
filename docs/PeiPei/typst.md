@@ -89,7 +89,7 @@ show terms: it => {
 }
 ```
 
-### 代码块显示行号：
+### 代码块显示行号
 
 ```typ
 #show raw.where(block: true): it => { set par(justify: false); grid(
