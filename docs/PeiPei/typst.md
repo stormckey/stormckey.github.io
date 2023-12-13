@@ -78,6 +78,17 @@ show raw.where(block: true): it => {
 }
 ```
 
+另外 `terms` 如果设置了首行缩进会有一些问题，所以在 `terms` 块里要取消缩进，例如：
+
+```typ
+show terms: it => {
+  set par(first-line-indent: 0pt)
+  set terms(indent: 10pt, hanging-indent: 9pt)
+  it
+  fake-par
+}
+```
+
 ### 代码块显示行号：
 
 ```typ
