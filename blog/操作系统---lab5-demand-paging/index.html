@@ -1302,7 +1302,7 @@
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>- `schedule`: 根据policy选择下一个要调度的线程,调用 switch_to 至该线程
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>- `switch_to`: 获取先后线程的PCB地址，调用__switch_to
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>- `__switch_to`: 当前上下文存入 PCB，加载下一个进程的 PCB
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>- `__dummy`: 切用户栈，sret 返回用户段，而 sepc 是我们初始化的时候就指定的的 USER_START
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>- `__dummy`: 切用户栈，sret 返回用户段，而 sepc 是我们初始化的时候就指定的的 ENTRY
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="hll">- `ENTRY`: PC跳转至ENTRY，但是此时该页的映射并未完成，PAGE FAULT
 </span></span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="hll">- `_traps`: PAGE FAULT，保存上下文进入trap_handler
 </span></span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="hll">- `trap_handler`: 确认是PAGE FAULT后，调用do_page_fault
