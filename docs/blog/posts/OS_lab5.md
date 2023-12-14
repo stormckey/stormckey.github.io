@@ -30,7 +30,7 @@ nostatistics: true
 - `schedule`: 根据policy选择下一个要调度的线程,调用 switch_to 至该线程
 - `switch_to`: 获取先后线程的PCB地址，调用__switch_to
 - `__switch_to`: 当前上下文存入 PCB，加载下一个进程的 PCB
-- `__dummy`: 切用户栈，sret 返回用户段，而 sepc 是我们初始化的时候就指定的的 USER_START
+- `__dummy`: 切用户栈，sret 返回用户段，而 sepc 是我们初始化的时候就指定的的 ENTRY
 - `ENTRY`: PC跳转至ENTRY，但是此时该页的映射并未完成，PAGE FAULT
 - `_traps`: PAGE FAULT，保存上下文进入trap_handler
 - `trap_handler`: 确认是PAGE FAULT后，调用do_page_fault
