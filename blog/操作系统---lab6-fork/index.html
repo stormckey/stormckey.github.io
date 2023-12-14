@@ -1146,6 +1146,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值异常
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1295,7 +1304,7 @@
 </span></span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="hll">          - task_struct: 位于该页低地址，其中内容在__switch_to到至子进程的时候会被加载，以下项需要改动
 </span></span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="hll">              - pid: 子进程的新pid
 </span></span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="hll">              - thread.sp: 换到子进程后系统栈的起始地址，注意切换过来时栈内已有数据
-</span></span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="hll">              - thread.ra: __switch_to到子进程后的返回地址
+</span></span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="hll">              - thread.ra: __switch_to到子进程后，__switch_to函数结束，应该ret到子进程的__return_from_fork
 </span></span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="hll">              - thread.sscratch: 子进程在内核态的sscratch，在返回用户态时会与sp交换，所以实质是子进程用户态的sp (1)
 </span></span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="hll">              - satp: 根据子进程页表修改
 </span></span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="hll">              - pgd: 子进程页表
@@ -1303,7 +1312,9 @@
 </span></span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="hll">              - a0: 返回用户态后携带的调用返回值，也就是子进程得到的fork返回值，0
 </span></span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="hll">              - sepc: fork对应ecall的下一条指令
 </span></span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="hll">- `_traps`: 父进程fork完毕，携带子进程pid恢复用户态上下文返回
-</span></span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="hll">- `fork`: 回到用户态，继续执行直到被调度走,随后调度算法选择子进程
+</span></span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="hll">- `fork`: 回到用户态，继续执行父进程直到被调度走,随后调度算法选择子进程
+</span></span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="hll">- `__switch_to`: 保存父进程上下文至父进程task_struct,从子进程task_struct中恢复子进程内核态上下文
+</span></span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="hll">- `__return_from_fork`: 子进程从pt_regs中恢复用户态上下文，包括返回值0，从trap返回ecall下一条指令，继续执行
 </span></span></code></pre></div>
 </div>
 <ol>
@@ -1315,6 +1326,15 @@
 <li>只初始化指定数量的进程，而不是填满整个数组</li>
 <li>调度的时候要遍历数组，但是只会调度那些有效的task</li>
 </ul>
+<h2 id="_2">返回值异常<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
+<p>如果忘了将子进程返回用户态的地址设置为ecall下一条，可能导致fork返回值异常。设想如下情况：</p>
+<ul>
+<li>idle进程pid为0，父进程为1，子进程为2</li>
+<li>调度子进程后sepc指向ecall，所以子进程返回用户态后继续执行ecall</li>
+<li>子进程执行ecall再次进行fork，fork出新的子进程，在此次fork中，父进程为2，子进程为3</li>
+<li>2进程完成fork返回，此时返回的是ecall的下一条（因为系统调用中会将sepc+4），返回值为3</li>
+</ul>
+<p>可以看到2进程因为额外进行了一次fork所以返回值不再是其作为1的子进程拿到的0，而是作为3的父进程拿到的3，这就发生了错误</p>
 
 
 
@@ -1337,7 +1357,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2023</span>
   </span>
 
     
