@@ -120,5 +120,8 @@ img[src*="pic1"] {
 /* new code highlight lines*/
 :root > * {
   --md-code-hl-color: rgb(255, 240, 166);
-  --md-code-hl-color--light: rgb(255, 240, 166, 0.35);
+  --md-code-hl-color--light: rgb(255, 240, 166, 0.20);
+}
+span.hll {
+  width: 135%;
 }
