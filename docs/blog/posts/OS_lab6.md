@@ -17,7 +17,7 @@ nostatistics: true
 ## kernel 执行流程
 
 <div class="annotate" markdown>
-```title="kernel 执行流程" hl_lines="18-34" linenums="0"
+```title="kernel 执行流程" hl_lines="18-36" linenums="0"
 - `opensbi` 执行完毕
 - `_start`: 完成 stvec， sie， mtimecmp， sstatus 和栈的设置，然后依次调用以下函数
     - `setup_vm`: 填写页表
@@ -43,7 +43,7 @@ nostatistics: true
           - task_struct: 位于该页低地址，其中内容在__switch_to到至子进程的时候会被加载，以下项需要改动
               - pid: 子进程的新pid
               - thread.sp: 换到子进程后系统栈的起始地址，注意切换过来时栈内已有数据
-              - thread.ra: __switch_to到子进程后的返回地址
+              - thread.ra: __switch_to到子进程后，__switch_to函数结束，应该ret到子进程的__return_from_fork
               - thread.sscratch: 子进程在内核态的sscratch，在返回用户态时会与sp交换，所以实质是子进程用户态的sp (1)
               - satp: 根据子进程页表修改
               - pgd: 子进程页表
@@ -51,7 +51,9 @@ nostatistics: true
               - a0: 返回用户态后携带的调用返回值，也就是子进程得到的fork返回值，0
               - sepc: fork对应ecall的下一条指令
 - `_traps`: 父进程fork完毕，携带子进程pid恢复用户态上下文返回
-- `fork`: 回到用户态，继续执行直到被调度走,随后调度算法选择子进程
+- `fork`: 回到用户态，继续执行父进程直到被调度走,随后调度算法选择子进程
+- `__switch_to`: 保存父进程上下文至父进程task_struct,从子进程task_struct中恢复子进程内核态上下文
+- `__return_from_fork`: 子进程从pt_regs中恢复用户态上下文，包括返回值0，从trap返回ecall下一条指令，继续执行
 ```
 </div>
 
@@ -63,3 +65,14 @@ nostatistics: true
 
 - 只初始化指定数量的进程，而不是填满整个数组
 - 调度的时候要遍历数组，但是只会调度那些有效的task
+
+## 返回值异常
+
+如果忘了将子进程返回用户态的地址设置为ecall下一条，可能导致fork返回值异常。设想如下情况：
+
+- idle进程pid为0，父进程为1，子进程为2
+- 调度子进程后sepc指向ecall，所以子进程返回用户态后继续执行ecall
+- 子进程执行ecall再次进行fork，fork出新的子进程，在此次fork中，父进程为2，子进程为3
+- 2进程完成fork返回，此时返回的是ecall的下一条（因为系统调用中会将sepc+4），返回值为3
+
+可以看到2进程因为额外进行了一次fork所以返回值不再是其作为1的子进程拿到的0，而是作为3的父进程拿到的3，这就发生了错误

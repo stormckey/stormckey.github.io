@@ -19,6 +19,6 @@ hide:
 欢迎来到我的主页！随便逛逛吧
 
 
-[:material-clock-time-two-outline: 更新日志](changelog.md) | [:eyes:样式一览](Format.md) | [:material-book-plus:建站指南](Build_this_website.md)
+[:material-clock-time-two-outline: 更新日志](changelog.md) | [:material-format-paint:样式一览](Format.md) | [:material-book-plus:建站指南](Build_this_website.md)
 
 

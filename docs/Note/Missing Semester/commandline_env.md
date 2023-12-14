@@ -77,6 +77,7 @@
     === "C-b \""
         上下分裂 pane，这会是新的进程和新的 tty
         ![](images/commandline_env/2023-03-27-01-41-57.png#pic)
+        
         ![](images/commandline_env/2023-03-27-01-43-10.png#pic)
     === "C-b %"
         左右分裂 pane

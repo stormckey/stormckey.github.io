@@ -53,8 +53,3 @@ Here some quotations from TAPL which I think describe the operational semantics 
 > For simple languages, a state of the machine is just a term, and the machine’s behavior is defined by a transition function that, for each state, either gives the next state by performing a step of simplification on the term or declares that the machine has halted.
 
 > The intuition is that, if t is the state of the abstract machine at a given moment, then the machine can make a step of computation and change its state to t′.
-
-
-
-
-    

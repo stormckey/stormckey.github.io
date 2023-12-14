@@ -1,4 +1,6 @@
 - "2023":
+  - "2023-12-13":
+    - refactor: 优化了图片样式
   - "2023-11-28":
     - refactor: 使用了meta-manager插件,简化了metadata的使用
     - newpage: Blog > PL > Y-combinator
