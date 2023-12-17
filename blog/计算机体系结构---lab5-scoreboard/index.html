@@ -1388,6 +1388,17 @@
 <li>对于所有FUS中的指令，如果其源寄存器跟我的目标寄存器一样，那么如果其Ready位为0，那么不构成 WAR hazard</li>
 <li>一旦存在某一FUS中的指令其源寄存器跟我的目标寄存器一样，且其Ready位为1，那么构成 WAR hazard，阻塞写回</li>
 </ul>
+<details class="info">
+<summary>证明 WAR 存在 <span class="arithmatex">\(\iff\)</span> FUS中存在源寄存器跟写回指令目的寄存器一样且Ready位为1的指令</summary>
+<p>(<span class="arithmatex">\(\Rightarrow\)</span>) WAR 存在，也就是说C指令要写回的话会把B指令还未读取的源寄存器的值给覆盖掉，那么C的目的寄存器一定和B的某一源寄存器相等，前半部分证毕。</p>
+<p>因为发射的第一条一般原则，C一定是FUS中唯一一条以此寄存器为目的寄存器的。那么B的Ready位一定为1而不是0，因为想要B的Ready位为0，我们需要：</p>
+<ul>
+<li>B之前存在A指令要写同一目的寄存器</li>
+<li>A还没写</li>
+</ul>
+<p>但是此时C已经发射了，这意味着A一定写完了，否则AC的目的寄存器相同C是发不出来的。所以B的Ready位一定位为1</p>
+<p>(<span class="arithmatex">\(\Leftarrow\)</span>) Trivil，可以参考写回原则中的表述</p>
+</details>
 
 
 
