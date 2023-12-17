@@ -123,5 +123,5 @@ nostatistics: true
 
     但是此时C已经发射了，这意味着A一定写完了，否则AC的目的寄存器相同C是发不出来的。所以B的Ready位一定位为1
 
-    ($\Leftarrow$) Trivil，可以参考写回原则中的表述
+    ($\Leftarrow$) Trivial，可以参考写回原则中的表述
 
