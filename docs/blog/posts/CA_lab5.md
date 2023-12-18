@@ -12,7 +12,7 @@ nostatistics: true
 # 计算机体系结构 - lab5 Scoreboard
 
 !!! abstract
-    介绍一下实验中 Scoreboard 设计的思想，包括一些运行的原则和对各种hazard的处理。在一些具体的细节上均按照实验给予的框架进行解释。包括功能单元的安排和表的设计等，详情请看 [实验指导:octicons-link-16:](https://zju-arch.pages.zjusct.io/arch-fa23/lab5/)。
+    介绍一下实验中 Scoreboard 设计的思想，包括一些运行的原则和对各种hazard的处理。在一些具体的细节上均按照实验给予的框架进行解释。包括功能单元的安排和表的设计等，详情请看 [:octicons-link-16:实验指导](https://zju-arch.pages.zjusct.io/arch-fa23/lab5/)。
 
 <!-- more -->
 
