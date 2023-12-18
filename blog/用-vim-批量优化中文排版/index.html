@@ -1852,7 +1852,7 @@
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>vim<span class="w"> </span>**/*.md
 </span></code></pre></div></td></tr></table></div>
 <p>那么所有符合格式的文件都被打开在缓存(buffer)中了，我们可以用<code>:ls</code>来查看，用<code>:n</code>来切换</p>
-<p>我们可以把 vim 的缓存和文件的关系理解成内存和磁盘的关系，我们在缓存中可以修改文件，但直到<code>w</code>之前都不会写入磁盘</p>
+<p>我们可以把 vim 的缓存和文件的关系理解成内存和磁盘的关系，我们在缓存中可以修改文件，但直到<code>update</code>或<code>w</code>之前都不会写入磁盘</p>
 <p>要批量处理，使用以下命令
 <div class="language-vim highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
@@ -1864,7 +1864,8 @@
 <p>我们可以把这一逻辑写入 bash 脚本中，下面是一个示例：</p>
 <p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>vim<span class="w"> </span>**/*.md<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;:silent! bufdo execute  &quot;PanguAll&quot; | update&#39;</span><span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;:q&#39;</span>
 </span></code></pre></div></td></tr></table></div>
-其中的 silent!可以让 vim 在执行命令时不输出任何信息，这样就不用按 more 了，之所以用 execute 而不直接 PanguAll 是因为好像后者会导致 bufdo 不执行后续的 update，具体为啥我还菜菜看不出来</p>
+其中的 silent!可以让 vim 在执行命令时不输出任何信息，这样就不用按 more 了</p>
+<p>之所以用 execute 而不直接 PanguAll 是因为好像后者会导致 bufdo 不执行后续的 update，具体为啥我还菜菜看不出来</p>
 <p>最后的退出放在另一个-c 可以保证是在前者执行完了才退出而不是每写一个文件就试着退出一次</p>
 <p>如果你还有其他的格式化的需求可以继续添加指令，不出意外的话上面的脚本是能够直接跑的</p>
 
