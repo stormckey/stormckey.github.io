@@ -10,7 +10,7 @@
         <meta name="author" content="Stormckey">
       
       
-        <link rel="canonical" href="https://stormckey.github.io/blog/%E7%94%A8-vim-%E6%89%B9%E9%87%8F%E6%A0%BC%E5%BC%8F%E5%8C%96/">
+        <link rel="canonical" href="https://stormckey.github.io/blog/%E7%94%A8-vim-%E6%89%B9%E9%87%8F%E4%BC%98%E5%8C%96%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88/">
       
       
         <link rel="prev" href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C---lab2-%E4%BD%BF%E7%94%A8%E4%BA%8C%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%BB%84%E7%BD%91/">
@@ -24,7 +24,7 @@
     
     
       
-        <title>用 Vim 批量格式化 - Stormckey's Page</title>
+        <title>用 Vim 批量优化中文排版 - Stormckey's Page</title>
       
     
     
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              用 Vim 批量格式化
+              用 Vim 批量优化中文排版
             
           </span>
         </div>
@@ -1832,7 +1832,7 @@
   
 
 
-<h1 id="vim">用 Vim 批量格式化<a class="headerlink" href="#vim" title="Anchor link to this section for reference">&para;</a></h1>
+<h1 id="vim">用 Vim 批量优化中文排版<a class="headerlink" href="#vim" title="Anchor link to this section for reference">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
 <p>众所周知中英文混杂的排版其实是有讲究的，但是实际操作起来输入法切来切去麻烦得很，本文讲的是用 vim 的 Pangu 插件来批量自动格式化的方法</p>
@@ -1864,8 +1864,8 @@
 <p>我们可以把这一逻辑写入 bash 脚本中，下面是一个示例：</p>
 <p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>vim<span class="w"> </span>**/*.md<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;:silent! bufdo execute  &quot;PanguAll&quot; | update&#39;</span><span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;:q&#39;</span>
 </span></code></pre></div></td></tr></table></div>
-其中的silent!可以让 vim 在执行命令时不输出任何信息，这样就不用按more了，之所以用execute而不直接 PanguAll是因为好像后者会导致bufdo不执行后续的update，具体为啥我还菜菜看不出来</p>
-<p>最后的退出放在另一个-c可以保证是在前者执行完了才退出而不是每写一个文件就试着退出一次</p>
+其中的 silent!可以让 vim 在执行命令时不输出任何信息，这样就不用按 more 了，之所以用 execute 而不直接 PanguAll 是因为好像后者会导致 bufdo 不执行后续的 update，具体为啥我还菜菜看不出来</p>
+<p>最后的退出放在另一个-c 可以保证是在前者执行完了才退出而不是每写一个文件就试着退出一次</p>
 <p>如果你还有其他的格式化的需求可以继续添加指令，不出意外的话上面的脚本是能够直接跑的</p>
 
 
