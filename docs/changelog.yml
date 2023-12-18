@@ -4,7 +4,6 @@
   - "2023-11-28":
     - refactor: 使用了meta-manager插件,简化了metadata的使用
     - newpage: Blog > PL > Y-combinator
-    - refactor: 新增了Reference样式
   - "2023-11-26":
     - refactor: 新增了Definition样式
     - refactor: 启用blog插件

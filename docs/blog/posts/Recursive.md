@@ -15,7 +15,9 @@ nostatistics: true
 
 <!-- more -->
 
-首先请看 xg[:octicons-link-16:的笔记这里](https://note.tonycrane.cc/cs/pl/ppl/topic1/#y-combinator)，推导的过程讲的很清楚了
+首先请看 xg的笔记[^1]，推导的过程讲的很清楚了
+
+[^1]: 这里是xg的[:octicons-link-16:笔记](https://note.tonycrane.cc/cs/pl/ppl/topic1/#y-combinator)
 
 这里主要讨论另外几个问题
 
@@ -100,10 +102,9 @@ nostatistics: true
 2. base case
 3. induction case
 
-以上推导的比较吊诡的地方是需要以这种运算顺序才好出结果，虽然我们这里对有好几个子项的时候先演算什么并没有规定
+以上推导的比较吊诡的地方是需要以这种运算顺序才好出结果[^2]，虽然我们这里对有好几个子项的时候先演算什么并没有规定
+
+[^2]: 以上的推导参考了这篇 [:octicons-link-16:博客](https://sookocheff.com/post/fp/recursive-lambda-functions/)
 
 有以上性质，毫无疑问$Y fact_2$也实现了递归
 
-!!! reference
-    - [:octicons-book-16: Lambda 演算](https://note.tonycrane.cc/cs/pl/ppl/topic1/#y-combinator)
-    - [:octicons-book-16: Recursive Lambda Functions the Y-Combinator](https://sookocheff.com/post/fp/recursive-lambda-functions/)
