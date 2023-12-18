@@ -47,8 +47,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -1752,22 +1752,22 @@
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
-<p>Minisql 是计算机科学与技术专业大二春夏的必修课数据库系统夏学期的大程.本博客记录了本人实现这一框架过程中遇到的问题和感想.</p>
+<p>Minisql 是计算机科学与技术专业大二春夏的必修课数据库系统夏学期的大程.本博客记录了本人实现这一框架过程中遇到的问题和感想。</p>
 </div>
 <h2 id="_1">简介<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
 <p>很早就听说了 Minisql 的大名了，对于这个大二春夏到来的据说非常庞大的一个工程，我心里其实是既非常害怕又非常期待的，之前做的大程总感觉缺那么点意思，但到这里就感觉味对了（笑哭）.</p>
 <p>这给项目是可以组队也可以单刷的，我选择了单刷完成，个人认为工作量是单人可以承担的，也比较推荐单人完成.一是很多模块只有自己上手写过了，debug 过了才有真切的感受；二是我觉得很酷！😎</p>
 <h2 id="_2">收获<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
 <ol>
-<li>练习巩固了 oop 和 db，前者是因为这个项目都是用 C++实现的.后者是因为这个项目很多部分都是把数据库理论应当用到实践中.</li>
+<li>练习巩固了 oop 和 db，前者是因为这个项目都是用 C++实现的.后者是因为这个项目很多部分都是把数据库理论应当用到实践中。</li>
 <li>熟悉了大项目的框架，以及 git，cmake 等工具，都是很实用的工具（当然在项目中我们只保持最低限度的使用也是可以的，但是感兴趣的话完全可以趁这个机会熟悉起来）</li>
 <li>熟悉了一些调试的技巧和好用的性能分析工具</li>
 <li>又被搭环境折磨了一遍，抗逆性提高了！😅</li>
 </ol>
 <h2 id="_3">总纲<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
-<p>这部分博客的组织形式大体还是按照项目主页上区分的模块顺序来的，在最开头还有一个搭建环境的踩坑记录.</p>
-<p>在具体实现的各部分的话，我主要是会介绍这些模块里面各个结构、函数在什么情境下应该被调用，被调用来做什么事，整个大的模块在做什么，以及如何优化.</p>
-<p>可以说和项目主页上的内容在倾向性上有一些重叠，但人家说过了我就尽量不再重复了，主要是从一个实现者的角度来讲困惑和理解的.</p>
+<p>这部分博客的组织形式大体还是按照项目主页上区分的模块顺序来的，在最开头还有一个搭建环境的踩坑记录。</p>
+<p>在具体实现的各部分的话，我主要是会介绍这些模块里面各个结构、函数在什么情境下应该被调用，被调用来做什么事，整个大的模块在做什么，以及如何优化。</p>
+<p>可以说和项目主页上的内容在倾向性上有一些重叠，但人家说过了我就尽量不再重复了，主要是从一个实现者的角度来讲困惑和理解的。</p>
 
 
 
@@ -1790,7 +1790,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     

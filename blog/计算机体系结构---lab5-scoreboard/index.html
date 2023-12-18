@@ -49,8 +49,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -1813,7 +1813,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -1852,15 +1852,15 @@
 <h1 id="-lab5-scoreboard">计算机体系结构 - lab5 Scoreboard<a class="headerlink" href="#-lab5-scoreboard" title="Anchor link to this section for reference">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
-<p>介绍一下实验中 Scoreboard 设计的思想，包括一些运行的原则和对各种hazard的处理。在一些具体的细节上均按照实验给予的框架进行解释。包括功能单元的安排和表的设计等，详情请看 <a href="https://zju-arch.pages.zjusct.io/arch-fa23/lab5/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>实验指导</a>。</p>
+<p>介绍一下实验中 Scoreboard 设计的思想，包括一些运行的原则和对各种 hazard 的处理。在一些具体的细节上均按照实验给予的框架进行解释。包括功能单元的安排和表的设计等，详情请看 <a href="https://zju-arch.pages.zjusct.io/arch-fa23/lab5/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>实验指导</a>。</p>
 </div>
 <!-- more -->
 
 <h2 id="_1">基本原则<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
-<p class="annotate">在Scoreboard算法中，我们主要维护的是两张表，FUS (1) 和 RRS(2)。我们用 issue(3)一词来指代我们将取到的指令放入FUS 和 RRS的过程</p>
+<p class="annotate">在 Scoreboard 算法中，我们主要维护的是两张表，FUS (1) 和 RRS(2)。我们用 issue(3)一词来指代我们将取到的指令放入 FUS 和 RRS 的过程</p>
 <ol>
 <li>Functional Unit Status，记录了正在每个功能单元上运行或等待运行的指令的状态</li>
-<li>Register Result Status，记录了每个寄存器正在被FUS中哪个单元作为目的寄存器，或者不被任何单元作为目的寄存器</li>
+<li>Register Result Status，记录了每个寄存器正在被 FUS 中哪个单元作为目的寄存器，或者不被任何单元作为目的寄存器</li>
 <li>发射</li>
 </ol>
 <p>以下是一些算法执行的基本原则：</p>
@@ -1868,48 +1868,48 @@
 <ul>
 <li>我们不会将错误取址(1)的指令发射</li>
 <li>从指令被发射的那一个周期到执行结束的那一个周期，指令都会存在于上述两张表中</li>
-<li>在本lab的设计实现中，当前IS指令被阻塞会导致后续指令也被阻塞，直至当前IS指令被成功发射或者被flush</li>
-<li>在IF阶段我们取得一条指令，该指令下一周期会进入IS阶段被决定发射或是阻塞</li>
+<li>在本 lab 的设计实现中，当前 IS 指令被阻塞会导致后续指令也被阻塞，直至当前 IS 指令被成功发射或者被 flush</li>
+<li>在 IF 阶段我们取得一条指令，该指令下一周期会进入 IS 阶段被决定发射或是阻塞</li>
 </ul>
 </div>
 <ol>
 <li>错误取址就是指跳转的过程中取得的其实不应被执行的指令</li>
 </ol>
 <h2 id="is">发射原则(IS)<a class="headerlink" href="#is" title="Anchor link to this section for reference">&para;</a></h2>
-<p>我们通过以下两条规则来在一般情况下决定一条指令是否可以被发射:</p>
+<p>我们通过以下两条规则来在一般情况下决定一条指令是否可以被发射：</p>
 <ul>
-<li>如果当前IS指令的目的寄存器同时也是表中某条指令的目的寄存器，那么阻塞该指令的发射直到不再存在冲突</li>
-<li>如果当前IS指令需要使用的运行单元已经被表中的指令占据，那么阻塞该指令直到不在存在该冲突</li>
+<li>如果当前 IS 指令的目的寄存器同时也是表中某条指令的目的寄存器，那么阻塞该指令的发射直到不再存在冲突</li>
+<li>如果当前 IS 指令需要使用的运行单元已经被表中的指令占据，那么阻塞该指令直到不在存在该冲突</li>
 </ul>
 <p>以上两个要求可以通过检测</p>
 <ul>
-<li>RRS中目的寄存器是否为空</li>
-<li>FUS中运行单元是否busy</li>
+<li>RRS 中目的寄存器是否为空</li>
+<li>FUS 中运行单元是否 busy</li>
 </ul>
 <p>来决定。</p>
 <p>可以看出上述两条原则是无论如何要被满足的，否则的话</p>
 <ul>
-<li>RRS对应状态会被新发射的指令覆盖</li>
-<li>FUS中的指令会被新发射的指令覆盖</li>
+<li>RRS 对应状态会被新发射的指令覆盖</li>
+<li>FUS 中的指令会被新发射的指令覆盖</li>
 </ul>
-<p>以上就是关于发射的一般原则，但是为了满足只有正确取址的指令才会被发射的原则，我们需要一些额外的检测，这些检测主要跟跳转指令有关，一般来说:</p>
+<p>以上就是关于发射的一般原则，但是为了满足只有正确取址的指令才会被发射的原则，我们需要一些额外的检测，这些检测主要跟跳转指令有关，一般来说：</p>
 <ul>
-<li>如果当前FUS中没有跳转指令   <ul>
+<li>如果当前 FUS 中没有跳转指令<ul>
 <li>无阻塞</li>
 </ul>
 </li>
-<li>如果当前FUS中有跳转指令<ul>
-<li>如果该跳转指令还未done<ul>
-<li>目前IS和IF阶段指令正确性未知，阻塞其发射</li>
+<li>如果当前 FUS 中有跳转指令<ul>
+<li>如果该跳转指令还未 done<ul>
+<li>目前 IS 和 IF 阶段指令正确性未知，阻塞其发射</li>
 </ul>
 </li>
-<li>如果跳转指令done并且<ul>
+<li>如果跳转指令 done 并且<ul>
 <li>不需要跳转<ul>
-<li>当前IS和IF中顺序取址的是对的指令，不再阻塞</li>
+<li>当前 IS 和 IF 中顺序取址的是对的指令，不再阻塞</li>
 </ul>
 </li>
 <li>需要跳转<ul>
-<li>当前IS和IF中顺序取址的是错的，刷新错误IF和IS，下一周期IF中会取上正确的指令</li>
+<li>当前 IS 和 IF 中顺序取址的是错的，刷新错误 IF 和 IS，下一周期 IF 中会取上正确的指令</li>
 </ul>
 </li>
 </ul>
@@ -1917,31 +1917,31 @@
 </ul>
 </li>
 </ul>
-<p>如果一条指令通过了跳转的发射检测和一般的发射检测，那么就可以发射了。并且我们应当注意到一般原则的第一条就阻止了WAW hazard的发生</p>
+<p>如果一条指令通过了跳转的发射检测和一般的发射检测，那么就可以发射了。并且我们应当注意到一般原则的第一条就阻止了 WAW hazard 的发生</p>
 <h2 id="ex">执行原则(EX)<a class="headerlink" href="#ex" title="Anchor link to this section for reference">&para;</a></h2>
-<p class="annotate">所有刚进入FUS的指令都要等待源寄存器均就位(1)，而后可以发送信号和数据给功能单元开始执行。</p>
+<p class="annotate">所有刚进入 FUS 的指令都要等待源寄存器均就位(1)，而后可以发送信号和数据给功能单元开始执行。</p>
 <ol>
-<li>这里的就位就是FUS中的Ready位均置1</li>
+<li>这里的就位就是 FUS 中的 Ready 位均置 1</li>
 </ol>
-<p>具体而言，FUS的Ready位的设置遵循以下原则：</p>
+<p>具体而言，FUS 的 Ready 位的设置遵循以下原则：</p>
 <div class="annotate">
 <ul>
-<li>指令被发射进入FUS时，表内已有的指令都必然是先于该指令的(1)，如果这些先前的指令需要写新指令的源寄存器，那么我们就应该等，初始Ready置0</li>
-<li>一条指令完写后，要回来把表中所有在他的目的寄存器上等待的指令的对应Ready位置1，以通知这些指令新数据已就位(2)</li>
-<li>若无先前指令要写，初始Ready置1</li>
+<li>指令被发射进入 FUS 时，表内已有的指令都必然是先于该指令的(1)，如果这些先前的指令需要写新指令的源寄存器，那么我们就应该等，初始 Ready 置 0</li>
+<li>一条指令完写后，要回来把表中所有在他的目的寄存器上等待的指令的对应 Ready 位置 1，以通知这些指令新数据已就位(2)</li>
+<li>若无先前指令要写，初始 Ready 置 1</li>
 </ul>
 </div>
 <ol>
 <li>发射上先于一定意味着指令顺序上先于，因为在本实验中只有一个发射口，前面的指令发射完了才能轮到后面的</li>
 <li>由于发射的第一条一般原则，对某一目标寄存器写的指令同时在表中只会有一条</li>
 </ol>
-<p>一条指令把数据和使能信号给功能单元后，执行开始，就只需要等数据而不在要读寄存器了，此时我们需要把Ready全置0并且清零Q位来表明这一点。另外等待数据就位的过程也是在解决RAW hazard</p>
+<p>一条指令把数据和使能信号给功能单元后，执行开始，就只需要等数据而不在要读寄存器了，此时我们需要把 Ready 全置 0 并且清零 Q 位来表明这一点。另外等待数据就位的过程也是在解决 RAW hazard</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>由于一条指令写完后，回头进行通知可能同时令多条指令就位。我们要多个周期把这些指令的Ready位请0表示读操作数结束并且开始执行。为了做到这一点，我们需要加上else保证一周期只有一条指令开始执行，并且保证未被执行的指令保持当前状态到下一周期</p>
+<p>由于一条指令写完后，回头进行通知可能同时令多条指令就位。我们要多个周期把这些指令的 Ready 位请 0 表示读操作数结束并且开始执行。为了做到这一点，我们需要加上 else 保证一周期只有一条指令开始执行，并且保证未被执行的指令保持当前状态到下一周期</p>
 </div>
 <h2 id="wb">写回原则(WB)<a class="headerlink" href="#wb" title="Anchor link to this section for reference">&para;</a></h2>
-<p>像执行原则中提到的一样，我们可能有多个功能单元在同一周期同时结束，我们需要多个周期让他们逐一写回。除此以外，我们还需要解决WAR hazard，具体来说，如果我们发现某个FUS中的指令的Ready位仍然是1，那么就意味着：</p>
+<p>像执行原则中提到的一样，我们可能有多个功能单元在同一周期同时结束，我们需要多个周期让他们逐一写回。除此以外，我们还需要解决 WAR hazard，具体来说，如果我们发现某个 FUS 中的指令的 Ready 位仍然是 1，那么就意味着：</p>
 <div class="annotate">
 <ul>
 <li>该寄存器当前值就是它需要拿去运算的源寄存器的值</li>
@@ -1949,24 +1949,24 @@
 </ul>
 </div>
 <ol>
-<li>这就解释了为什么执行原则中把数据读走执行后要把Ready置0了，这是告诉那些等WAR的指令说，我已经读完了，现在你把新数据覆盖上去也没关系</li>
+<li>这就解释了为什么执行原则中把数据读走执行后要把 Ready 置 0 了，这是告诉那些等 WAR 的指令说，我已经读完了，现在你把新数据覆盖上去也没关系</li>
 </ol>
-<p>所以显然这些寄存器我们现在是不能写的，否则FUS中的寄存器就没法拿正确的值去执行了</p>
+<p>所以显然这些寄存器我们现在是不能写的，否则 FUS 中的寄存器就没法拿正确的值去执行了</p>
 <p>总的来说，我们需要以下的检测：</p>
 <ul>
-<li>对于所有FUS中的指令，如果其源寄存器跟我的目标寄存器不一样，那么不构成 WAR hazard</li>
-<li>对于所有FUS中的指令，如果其源寄存器跟我的目标寄存器一样，那么如果其Ready位为0，那么不构成 WAR hazard</li>
-<li>一旦存在某一FUS中的指令其源寄存器跟我的目标寄存器一样，且其Ready位为1，那么构成 WAR hazard，阻塞写回</li>
+<li>对于所有 FUS 中的指令，如果其源寄存器跟我的目标寄存器不一样，那么不构成 WAR hazard</li>
+<li>对于所有 FUS 中的指令，如果其源寄存器跟我的目标寄存器一样，那么如果其 Ready 位为 0，那么不构成 WAR hazard</li>
+<li>一旦存在某一 FUS 中的指令其源寄存器跟我的目标寄存器一样，且其 Ready 位为 1，那么构成 WAR hazard，阻塞写回</li>
 </ul>
 <details class="info">
-<summary>证明 WAR 存在 <span class="arithmatex">\(\iff\)</span> FUS中存在源寄存器跟写回指令目的寄存器一样且Ready位为1的指令</summary>
-<p>(<span class="arithmatex">\(\Rightarrow\)</span>) WAR 存在，也就是说C指令要写回的话会把B指令还未读取的源寄存器的值给覆盖掉，那么C的目的寄存器一定和B的某一源寄存器相等，前半部分证毕。</p>
-<p>因为发射的第一条一般原则，C一定是FUS中唯一一条以此寄存器为目的寄存器的。那么B的Ready位一定为1而不是0，因为想要B的Ready位为0，我们需要：</p>
+<summary>证明 WAR 存在 <span class="arithmatex">\(\iff\)</span> FUS 中存在源寄存器跟写回指令目的寄存器一样且 Ready 位为 1 的指令</summary>
+<p>(<span class="arithmatex">\(\Rightarrow\)</span>) WAR 存在，也就是说 C 指令要写回的话会把 B 指令还未读取的源寄存器的值给覆盖掉，那么 C 的目的寄存器一定和 B 的某一源寄存器相等，前半部分证毕。</p>
+<p>因为发射的第一条一般原则，C 一定是 FUS 中唯一一条以此寄存器为目的寄存器的。那么 B 的 Ready 位一定为 1 而不是 0，因为想要 B 的 Ready 位为 0，我们需要：</p>
 <ul>
-<li>B之前存在A指令要写同一目的寄存器</li>
-<li>A还没写</li>
+<li>B 之前存在 A 指令要写同一目的寄存器</li>
+<li>A 还没写</li>
 </ul>
-<p>但是此时C已经发射了，这意味着A一定写完了，否则AC的目的寄存器相同C是发不出来的。所以B的Ready位一定位为1</p>
+<p>但是此时 C 已经发射了，这意味着 A 一定写完了，否则 AC 的目的寄存器相同 C 是发不出来的。所以 B 的 Ready 位一定位为 1</p>
 <p>(<span class="arithmatex">\(\Leftarrow\)</span>) Trivial，可以参考写回原则中的表述</p>
 </details>
 

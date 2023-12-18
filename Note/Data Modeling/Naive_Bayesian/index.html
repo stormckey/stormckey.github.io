@@ -51,8 +51,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -1834,12 +1834,12 @@
 <div class="arithmatex">\[
     P(X = x| Y = c_k) = P(X^{(1)} = x^{(1)}， X^{(2)} = x^{(2)} ... X^{(n)} = x^{(n)} | Y = c_k)=  \prod_{i=1}^{n}P(X^{(i)} = x^{(i)}| Y = c_k)
 \]</div>
-<p>上式的意思是在类别是<span class="arithmatex">\(c_k\)</span>的前提下，X 这一 n 维随机变量的取值为 x 的概率，就是<span class="arithmatex">\(c_k\)</span>这一类中每个维度的取值为<span class="arithmatex">\(x^{(i)}\)</span>的概率的乘积.</p>
+<p>上式的意思是在类别是<span class="arithmatex">\(c_k\)</span>的前提下，X 这一 n 维随机变量的取值为 x 的概率，就是<span class="arithmatex">\(c_k\)</span>这一类中每个维度的取值为<span class="arithmatex">\(x^{(i)}\)</span>的概率的乘积。</p>
 <p>学习到了联合概率分布之后，我们在分类的时候直接使用最大后验概率：</p>
 <div class="arithmatex">\[
     y = \underset{c_k}{\operatorname{arg max}} P(Y = c_k) \prod_{i=1}^{n}P(X^{(i)} = x^{(i)}| Y = c_k)
 \]</div>
-<p>上式的意思就是假设 x 的类别是<span class="arithmatex">\(c_k\)</span>，计算每个<span class="arithmatex">\(c_k\)</span>这一类中出现 x 的概率，找出概率最大的那一类作为 x 的分类.</p>
+<p>上式的意思就是假设 x 的类别是<span class="arithmatex">\(c_k\)</span>，计算每个<span class="arithmatex">\(c_k\)</span>这一类中出现 x 的概率，找出概率最大的那一类作为 x 的分类。</p>
 <details class="example">
 <summary>PPT 中的一个分类实例</summary>
 <p><a class="glightbox" href="../images/Naive_Bayesian/2023-11-21-16-12-56.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Naive_Bayesian/2023-11-21-16-12-56.png#pic" /></a></p>
@@ -1850,15 +1850,15 @@
     &amp;P(Y = c_k) = \frac{\sum_{i=1}^{N}I(y_i = c_k)}{N} \\
     &amp;P(X^{(i)} = a_{jl}| Y = c_k) = \frac{\sum_{i=1}^{N}I(x_i^{(i)} = a_{jl}，y_i = c_k)}{\sum_{i=1}^{N}I(y_i = c_k)}
 \end{aligned}\]</div>
-<p>指示函数的定义在<a href="https://stormckey.github.io/Note/Data%20Modeling/KNN/#_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>前面</a>已经有介绍，后续都默认使用这一定义.</p>
-<p>第一式的意思是不同类别的出现概率的先验概率直接为样本中该类别出现的频率.</p>
-<p>第二式的意思是在类别为<span class="arithmatex">\(c_k\)</span>的前提下，第 i 维取值为<span class="arithmatex">\(a_{jl}\)</span>的概率为样本中<span class="arithmatex">\(c_k\)</span>类中该分量为<span class="arithmatex">\(a_{jl}\)</span>的样本占<span class="arithmatex">\(c_k\)</span>类样本总数的比重.</p>
+<p>指示函数的定义在<a href="https://stormckey.github.io/Note/Data%20Modeling/KNN/#_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>前面</a>已经有介绍，后续都默认使用这一定义。</p>
+<p>第一式的意思是不同类别的出现概率的先验概率直接为样本中该类别出现的频率。</p>
+<p>第二式的意思是在类别为<span class="arithmatex">\(c_k\)</span>的前提下，第 i 维取值为<span class="arithmatex">\(a_{jl}\)</span>的概率为样本中<span class="arithmatex">\(c_k\)</span>类中该分量为<span class="arithmatex">\(a_{jl}\)</span>的样本占<span class="arithmatex">\(c_k\)</span>类样本总数的比重。</p>
 <div class="admonition note">
 <p class="admonition-title">思想</p>
 <p>极大似然估计在此处的结果基本上可以简单归结为：用频率估计概率</p>
 </div>
 <h2 id="_4">贝叶斯估计<a class="headerlink" href="#_4" title="Anchor link to this section for reference">&para;</a></h2>
-<p>上述的极大似然估计在一个情况下可能遇到问题，如果某个样本没有出现的话，对那个类别估计的信息完全丢失.</p>
+<p>上述的极大似然估计在一个情况下可能遇到问题，如果某个样本没有出现的话，对那个类别估计的信息完全丢失。</p>
 <p>为解决这一问题，我们可以手动为每一类别添加默认 n 次的出现频数：</p>
 <div class="arithmatex">\[\begin{aligned}
     &amp;P(Y = c_k) = \frac{\sum_{i=1}^{N}I(y_i = c_k) + \lambda}{N + K\lambda} \\
@@ -1867,7 +1867,7 @@
 <p>其中<span class="arithmatex">\(S_i\)</span>是第 i 维的取值个数，<span class="arithmatex">\(\lambda\)</span>是一个超参数，一般取 1.</p>
 <p>在第一式中，我们为每个类别都加入了<span class="arithmatex">\(\lambda\)</span>的频率，所以分子单独某类的频数加上了<span class="arithmatex">\(\lambda\)</span>，分母加上了总类别数 K 乘上<span class="arithmatex">\(\lambda\)</span>.</p>
 <p>在第二式中，我们为每个类别的每个维度都加入了<span class="arithmatex">\(\lambda\)</span>的频率，所以分子单独某类的频数加上了<span class="arithmatex">\(\lambda\)</span>，分母加上了该维度可能的取值个数数乘上<span class="arithmatex">\(\lambda\)</span>（因为有多少个取值，我们就人为的加上了多少个<span class="arithmatex">\(\lambda\)</span>）.</p>
-<p>可以认为贝叶斯估计是对极大似然估计进行了平滑.</p>
+<p>可以认为贝叶斯估计是对极大似然估计进行了平滑。</p>
 
 
 
@@ -1890,7 +1890,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     

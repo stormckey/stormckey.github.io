@@ -51,8 +51,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -1943,8 +1943,8 @@
 <h1 id="docker-minisql">用 Docker 搭建 minisql 环境<a class="headerlink" href="#docker-minisql" title="Anchor link to this section for reference">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
-<p>一个简易的教程来介绍如何在 MacOS 上用 docker 搭建 minisql 环境，那么有人要问了，为什么不直接本地部署呢.
-我也想本地部署啊，但是编译起来破事太多了😅，索性试一种跨平台的方案.</p>
+<p>一个简易的教程来介绍如何在 MacOS 上用 docker 搭建 minisql 环境，那么有人要问了，为什么不直接本地部署呢。
+我也想本地部署啊，但是编译起来破事太多了😅，索性试一种跨平台的方案。</p>
 </div>
 <!-- more -->
 
@@ -1956,39 +1956,39 @@ Ubuntu: 20.04</p>
 </div>
 <h2 id="1">1.启动容器<a class="headerlink" href="#1" title="Anchor link to this section for reference">&para;</a></h2>
 <h3 id="11-docker">1.1 下载 Docker<a class="headerlink" href="#11-docker" title="Anchor link to this section for reference">&para;</a></h3>
-<p>首先你要有 docker 软件，先去官网下一个.</p>
+<p>首先你要有 docker 软件，先去官网下一个。</p>
 <h3 id="12">1.2 拉取镜像<a class="headerlink" href="#12" title="Anchor link to this section for reference">&para;</a></h3>
 <p>启动 docker 软件.来到命令行中输入以下命令来拉取 ubuntu:20.04 镜像（minisql 当前推荐部署在 ubuntu:20.04）：
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>ubuntu:20.04
 </span></code></pre></div></td></tr></table></div></p>
 <details class="info">
 <summary>镜像</summary>
-<p>镜像（Image）是一个静态的、只读的文件，它包含了操作系统、文件系统和应用程序的所有文件和设置.镜像是构建容器的基础，可以看作是一个模板或者蓝图.镜像是通过 Dockerfile 文件定义和构建的，Dockerfile 中包含了一系列指令和配置，用于创建镜像.镜像可以存储在 Docker Registry 中，可以通过镜像名称和标签来唯一标识.镜像是不可修改的，如果需要对镜像进行更改，需要重新构建一个新的镜像.</p>
+<p>镜像（Image）是一个静态的、只读的文件，它包含了操作系统、文件系统和应用程序的所有文件和设置.镜像是构建容器的基础，可以看作是一个模板或者蓝图.镜像是通过 Dockerfile 文件定义和构建的，Dockerfile 中包含了一系列指令和配置，用于创建镜像.镜像可以存储在 Docker Registry 中，可以通过镜像名称和标签来唯一标识.镜像是不可修改的，如果需要对镜像进行更改，需要重新构建一个新的镜像。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">docker images</label><label for="__tabbed_1_2">docker pull</label><label for="__tabbed_1_3">docker rmi</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>使用<code>docker images</code>命令查看当前已有的镜像列表.这将显示所有已下载和构建的镜像，以及它们的相关信息，如镜像 ID、名称、标签、大小等.<a class="glightbox" href="../images/docker_minisql/2023-07-01-17-34-32.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-17-34-32.png#pic" /></a></p>
 </div>
 <div class="tabbed-block">
-<p>使用<code>docker pull</code>命令从 Docker Registry 中拉取镜像.如果不指定标签，默认拉取 latest 标签的镜像.例如，<code>docker pull ubuntu:20.04</code>将拉取 Ubuntu 20.04 镜像.</p>
+<p>使用<code>docker pull</code>命令从 Docker Registry 中拉取镜像.如果不指定标签，默认拉取 latest 标签的镜像.例如，<code>docker pull ubuntu:20.04</code>将拉取 Ubuntu 20.04 镜像。</p>
 </div>
 <div class="tabbed-block">
-<p>使用<code>docker rmi</code>命令删除镜像.例如，<code>docker rmi ubuntu:20.04</code>将删除 Ubuntu 20.04 镜像，这里也可以使用 ID 指定要删除的镜像.</p>
+<p>使用<code>docker rmi</code>命令删除镜像.例如，<code>docker rmi ubuntu:20.04</code>将删除 Ubuntu 20.04 镜像，这里也可以使用 ID 指定要删除的镜像。</p>
 </div>
 </div>
 </div>
 </details>
 <h3 id="13">1.3 启动容器<a class="headerlink" href="#13" title="Anchor link to this section for reference">&para;</a></h3>
-<p>用<code>docker run</code>启动一个容器，参数<code>-it</code>表示启动完后直接启动容器的终端以供操作，<code>-p</code>表示端口映射，这里把 loclahost:2333 映射为容器的 22 号端口，<code>--name</code>后接容器名字，<code>ubuntu:20.04</code>表示使用的镜像.
+<p>用<code>docker run</code>启动一个容器，参数<code>-it</code>表示启动完后直接启动容器的终端以供操作，<code>-p</code>表示端口映射，这里把 loclahost:2333 映射为容器的 22 号端口，<code>--name</code>后接容器名字，<code>ubuntu:20.04</code>表示使用的镜像。
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w">  </span>-p<span class="w"> </span><span class="m">2333</span>:22<span class="w"> </span>--name<span class="w"> </span>minisql<span class="w"> </span>ubuntu:20.04
 </span></code></pre></div></td></tr></table></div>
 执行完命令应看到我们以 root 用户进入了容器的终端：
 <a class="glightbox" href="../images/docker_minisql/2023-07-01-19-33-57.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-19-33-57.png#pic" /></a></p>
 <details class="info">
 <summary>端口映射</summary>
-<p>端口映射是一种将主机（宿主机）端口与容器内部端口进行绑定的技术.它允许从主机上的特定端口访问容器内运行的服务或应用程序.</p>
-<p>在 Docker 中，通过使用<code>-p</code>或<code>--publish</code>参数来进行端口映射.参数的格式为主机端口：容器端口，其中主机端口是您希望在主机上暴露的端口号，容器端口是容器内部正在运行的服务所监听的端口号.</p>
-<p><code>docker run -it -p 2333:22 --name minisql ubuntu:20.04</code>命令将主机的 2333 端口映射到容器的 22 号端口.这意味着主机上的任何请求发送到 2333 端口时，将被转发到容器的 22 号端口，22 号端口是 SSH 使用的默认端口.因此，可以通过访问主机的 2333 端口来访问容器内部运行的 SSH 服务，以便进行远程连接和操作.</p>
+<p>端口映射是一种将主机（宿主机）端口与容器内部端口进行绑定的技术.它允许从主机上的特定端口访问容器内运行的服务或应用程序。</p>
+<p>在 Docker 中，通过使用<code>-p</code>或<code>--publish</code>参数来进行端口映射.参数的格式为主机端口：容器端口，其中主机端口是您希望在主机上暴露的端口号，容器端口是容器内部正在运行的服务所监听的端口号。</p>
+<p><code>docker run -it -p 2333:22 --name minisql ubuntu:20.04</code>命令将主机的 2333 端口映射到容器的 22 号端口.这意味着主机上的任何请求发送到 2333 端口时，将被转发到容器的 22 号端口，22 号端口是 SSH 使用的默认端口.因此，可以通过访问主机的 2333 端口来访问容器内部运行的 SSH 服务，以便进行远程连接和操作。</p>
 </details>
 <h2 id="2">2.环境初步设置<a class="headerlink" href="#2" title="Anchor link to this section for reference">&para;</a></h2>
 <h3 id="21">2.1（可选）换源<a class="headerlink" href="#21" title="Anchor link to this section for reference">&para;</a></h3>
@@ -2050,8 +2050,8 @@ Ubuntu: 20.04</p>
 </span></code></pre></div></td></tr></table></div></p>
 <details class="info">
 <summary>换源</summary>
-<p>换源是指将默认的软件包源（镜像）替换为特定地区或网络环境下更快速、可靠的软件包源.这是为了提高软件包的下载速度、解决网络访问限制或访问特定地区的软件包而采取的措施.</p>
-<p>更换软件包源的具体方法会因不同的操作系统和软件包管理工具而有所差异.在基于 Ubuntu 的 Docker 容器中，可以编辑 /etc/apt/sources.list 文件，将默认的软件包源替换为国内的镜像源，如浙江大学、清华大学等.这样一来，通过容器中的 <code>apt-get</code> 或 <code>apt</code> 命令安装软件时，将从国内镜像源下载软件包，提高速度和稳定性.</p>
+<p>换源是指将默认的软件包源（镜像）替换为特定地区或网络环境下更快速、可靠的软件包源.这是为了提高软件包的下载速度、解决网络访问限制或访问特定地区的软件包而采取的措施。</p>
+<p>更换软件包源的具体方法会因不同的操作系统和软件包管理工具而有所差异.在基于 Ubuntu 的 Docker 容器中，可以编辑 /etc/apt/sources.list 文件，将默认的软件包源替换为国内的镜像源，如浙江大学、清华大学等.这样一来，通过容器中的 <code>apt-get</code> 或 <code>apt</code> 命令安装软件时，将从国内镜像源下载软件包，提高速度和稳定性。</p>
 </details>
 <h3 id="22">2.2 安装必要工具<a class="headerlink" href="#22" title="Anchor link to this section for reference">&para;</a></h3>
 <p>首先更新 apt
@@ -2104,7 +2104,7 @@ Ubuntu: 20.04</p>
 <a class="glightbox" href="../images/docker_minisql/2023-07-01-20-44-56.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-44-56.png#pic" /></a></p>
 <p>连接！
 <a class="glightbox" href="../images/docker_minisql/2023-07-01-20-45-37.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-45-37.png#pic" /></a></p>
-<p>此后就没有什么特别的了，打开终端直接按照助教的文档配置 minisql 即可.
+<p>此后就没有什么特别的了，打开终端直接按照助教的文档配置 minisql 即可。
 <a class="glightbox" href="../images/docker_minisql/2023-07-01-20-52-01.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-52-01.png#pic" /></a></p>
 <h2 id="4">4.更多设置<a class="headerlink" href="#4" title="Anchor link to this section for reference">&para;</a></h2>
 <p>现在你就可以用这个简陋的命令行开始工作了，但如果你喜欢的话可以加入更多设置！</p>
@@ -2137,7 +2137,7 @@ Ubuntu: 20.04</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     

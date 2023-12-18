@@ -47,8 +47,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -1795,8 +1795,8 @@
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">  </span>/Users/xxx/opt/anaconda3/lib/cmake/GTest/GTestConfig.cmake:32<span class="w"> </span><span class="o">(</span>include<span class="o">)</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span>thirdparty/glog/CMakeLists.txt:71<span class="w"> </span><span class="o">(</span>find_package<span class="o">)</span>
 </span></code></pre></div></td></tr></table></div></p>
-<p>我不懂 cmake，也搜不到这个问题，感觉可能跟版本兼容啥的有关（有知道的大佬可以直接在评论区里说说，感谢！）不过我看到了报错路径上了 anaconda3，想起来我终端的环境还是 conda base，所以我一个<code>conda deactivae</code>后，重建 build 目录，再 cmake 就没有这个问题了.</p>
-<p>但这个问题只是被暂时修复了算是，因为我调用 VSCode 的 cmake 插件啥的还是会这样，我也没找出来这里的要怎么解决.</p>
+<p>我不懂 cmake，也搜不到这个问题，感觉可能跟版本兼容啥的有关（有知道的大佬可以直接在评论区里说说，感谢！）不过我看到了报错路径上了 anaconda3，想起来我终端的环境还是 conda base，所以我一个<code>conda deactivae</code>后，重建 build 目录，再 cmake 就没有这个问题了。</p>
+<p>但这个问题只是被暂时修复了算是，因为我调用 VSCode 的 cmake 插件啥的还是会这样，我也没找出来这里的要怎么解决。</p>
 <h3 id="make">Make<a class="headerlink" href="#make" title="Anchor link to this section for reference">&para;</a></h3>
 <p>Cmake 通了 Make 又不通😅
 报错如下：
@@ -1824,13 +1824,13 @@
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>/Users/xxx/Desktop/minisql/test/include/utils/utils.h:24:41:<span class="w"> </span>note:<span class="w"> </span><span class="k">in</span><span class="w"> </span>instantiation<span class="w"> </span>of<span class="w"> </span>template<span class="w"> </span>class<span class="w"> </span><span class="s1">&#39;std::uniform_int_distribution&lt;char&gt;&#39;</span><span class="w"> </span>requested<span class="w"> </span>here
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span>std::uniform_int_distribution&lt;char&gt;<span class="w"> </span>uniform_dist<span class="o">(</span><span class="m">33</span>，<span class="w"> </span><span class="m">122</span><span class="o">)</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-看起来是框架里实例化模板的时候用的的 char 类型，但是这里不让用 char 类型，那怎么办，要我去改框架吗，这玩意万一耦合的很紧我的理解成本加修改成本估计都够我受的了.这里的两个选择一个是换个 SDK 版本，这个不知道能不能起效，另一个就是跑路，因为我还有一台 Windows 游戏本，所以果断润了.</p>
+看起来是框架里实例化模板的时候用的的 char 类型，但是这里不让用 char 类型，那怎么办，要我去改框架吗，这玩意万一耦合的很紧我的理解成本加修改成本估计都够我受的了.这里的两个选择一个是换个 SDK 版本，这个不知道能不能起效，另一个就是跑路，因为我还有一台 Windows 游戏本，所以果断润了。</p>
 <h2 id="wsl2">二试：WSL2<a class="headerlink" href="#wsl2" title="Anchor link to this section for reference">&para;</a></h2>
-<p>我的 Win 本早就装过 WSL2 了，之前跑一些模型的时候把 ssh 啥的也配好了（不过玉湖只能用动态 IP 我三天两头就得换一下😅），所以成本其实不大.
+<p>我的 Win 本早就装过 WSL2 了，之前跑一些模型的时候把 ssh 啥的也配好了（不过玉湖只能用动态 IP 我三天两头就得换一下😅），所以成本其实不大。
 这里遇到两个问题，一是 cmake 阶段跟上面一样的问题，解决方法还是<code>conda deactivate</code>，二是提示没有 gflag 模块，这个最简单，直接安装一下就好了
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>gflags
 </span></code></pre></div></td></tr></table></div></p>
-<p>然后就能跑了，虽然在这里用各种 Cmake 插件一类的还是没一个能跑的（报 Cmake 阶段的那个错），我试图用 Clion 远程开发结果后端也崩坏了开不起来，各种事情搞得我很烦，但总算有个能用的 VSCode + ssh + WSL2 的方案能跑了，他的优点是能跑，缺点是能跑的补集，但我实在折腾不动了就先这样了.</p>
+<p>然后就能跑了，虽然在这里用各种 Cmake 插件一类的还是没一个能跑的（报 Cmake 阶段的那个错），我试图用 Clion 远程开发结果后端也崩坏了开不起来，各种事情搞得我很烦，但总算有个能用的 VSCode + ssh + WSL2 的方案能跑了，他的优点是能跑，缺点是能跑的补集，但我实在折腾不动了就先这样了。</p>
 
 
 
@@ -1853,7 +1853,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     

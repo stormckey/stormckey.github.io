@@ -47,8 +47,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -1801,7 +1801,7 @@
           <li class="md-nav__item">
   <a href="#43-snippets" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3 使用snippets辅助写作
+      4.3 使用 snippets 辅助写作
     </span>
   </a>
   
@@ -1954,7 +1954,7 @@
 <a class="glightbox" href="../images/Build_this_website/2023-07-02-02-35-34.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Build_this_website/2023-07-02-02-35-34.png#pic" /></a></p>
 <details class="info">
 <summary>可选优化：自动编译部署</summary>
-<p>我们可以使用 GitHub action 来帮助我们每次更新 master 分支后自动编译网站并推送到 gh-pages 分支，这样我们就不用每次都手动执行<code>mkdocs gh-deploy</code>了，而只需要将新写的markdown推送至仓库就可以了。
+<p>我们可以使用 GitHub action 来帮助我们每次更新 master 分支后自动编译网站并推送到 gh-pages 分支，这样我们就不用每次都手动执行<code>mkdocs gh-deploy</code>了，而只需要将新写的 markdown 推送至仓库就可以了。
 这样做的另一个好处是其他人希望对仓库做贡献的时候可以只对文本内容进行修改，而不必在乎便已部署的问题。只有当贡献者希望预览的时候需要完整的安装环境。
 1. 在仓库中新建一个<code>.github/workflows/auto-deploy.yml</code>文件，内容如下：
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
@@ -1983,11 +1983,11 @@
 <span class="normal"><a href="#__codelineno-12-24">24</a></span>
 <span class="normal"><a href="#__codelineno-12-25">25</a></span>
 <span class="normal"><a href="#__codelineno-12-26">26</a></span>
-<span class="normal"><a href="#__codelineno-12-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a>name: ci 
+<span class="normal"><a href="#__codelineno-12-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a>name: ci
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>on:
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a>push:
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a>    branches:
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a>    - master 
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a>    - master
 </span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a>    - main
 </span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>permissions:
 </span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a>contents: write
@@ -2001,7 +2001,7 @@
 </span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16"></a>    - uses: actions/setup-python@v4
 </span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17"></a>        with:
 </span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18"></a>        python-version: 3.x
-</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19"></a>    - run: echo &quot;cache_id=$(date --utc &#39;+%V&#39;)&quot; &gt;&gt; $GITHUB_ENV 
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19"></a>    - run: echo &quot;cache_id=$(date --utc &#39;+%V&#39;)&quot; &gt;&gt; $GITHUB_ENV
 </span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20"></a>    - uses: actions/cache@v3
 </span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21"></a>        with:
 </span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22"></a>        key: mkdocs-material-${{ env.cache_id }}
@@ -2012,7 +2012,7 @@
 </span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27"></a>    - run: mkdocs gh-deploy --force
 </span></code></pre></div></td></tr></table></div>
 注意，推送到 Github 的话需要你的 token 有 workflow 权限
-此Action已经是根据本站安装的插件等进行了额外安装的，请按需使用。如果你依赖了额外的库，需要修改 Action</p>
+此 Action 已经是根据本站安装的插件等进行了额外安装的，请按需使用。如果你依赖了额外的库，需要修改 Action</p>
 </details>
 <h2 id="3">3.常规特性<a class="headerlink" href="#3" title="Anchor link to this section for reference">&para;</a></h2>
 <h3 id="31-css">3.1 修改网站的 css 样式<a class="headerlink" href="#31-css" title="Anchor link to this section for reference">&para;</a></h3>
@@ -2165,15 +2165,15 @@
 </span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="w">    </span><span class="nv">--my-changlog-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#161616</span><span class="p">;</span>
 </span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="p">}</span>
 </span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="p">.</span><span class="nc">md-grid</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">1400</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">1400</span><span class="kt">px</span><span class="p">;</span>
 </span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="p">}</span><span class="c">/* make the page wider */</span>
 </span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="c">/* changelog config*/</span>
 </span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="p">.</span><span class="nc">timeline-card</span><span class="p">{</span>
-</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--my-changlog-color</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--my-changlog-color</span><span class="p">);</span>
 </span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21"></a><span class="p">}</span>
 </span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22"></a><span class="p">.</span><span class="nc">timeline-content</span><span class="p">::</span><span class="nd">before</span><span class="p">{</span>
-</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23"></a><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--my-changlog-color</span><span class="p">);</span><span class="w"> </span>
-</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24"></a><span class="p">}</span><span class="w"> </span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23"></a><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--my-changlog-color</span><span class="p">);</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24"></a><span class="p">}</span>
 </span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25"></a><span class="p">.</span><span class="nc">changelog-type</span><span class="p">{</span>
 </span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26"></a><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#CC9052</span><span class="p">;</span>
 </span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27"></a><span class="p">}</span>
@@ -2184,7 +2184,7 @@
 </span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32"></a><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;文档更新&quot;</span><span class="p">;</span>
 </span><span id="__span-14-33"><a id="__codelineno-14-33" name="__codelineno-14-33"></a><span class="p">}</span>
 </span><span id="__span-14-34"><a id="__codelineno-14-34" name="__codelineno-14-34"></a>
-</span><span id="__span-14-35"><a id="__codelineno-14-35" name="__codelineno-14-35"></a><span class="c">/* 图片放大start */</span>
+</span><span id="__span-14-35"><a id="__codelineno-14-35" name="__codelineno-14-35"></a><span class="c">/* 图片放大 start */</span>
 </span><span id="__span-14-36"><a id="__codelineno-14-36" name="__codelineno-14-36"></a><span class="c">/* .shadow {</span>
 </span><span id="__span-14-37"><a id="__codelineno-14-37" name="__codelineno-14-37"></a><span class="c">box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);</span>
 </span><span id="__span-14-38"><a id="__codelineno-14-38" name="__codelineno-14-38"></a><span class="c">}</span>
@@ -2201,7 +2201,7 @@
 </span><span id="__span-14-49"><a id="__codelineno-14-49" name="__codelineno-14-49"></a><span class="c">z-index: 100;</span>
 </span><span id="__span-14-50"><a id="__codelineno-14-50" name="__codelineno-14-50"></a><span class="c">position: relative;</span>
 </span><span id="__span-14-51"><a id="__codelineno-14-51" name="__codelineno-14-51"></a><span class="c">} */</span>
-</span><span id="__span-14-52"><a id="__codelineno-14-52" name="__codelineno-14-52"></a><span class="c">/* 图片放大end */</span>
+</span><span id="__span-14-52"><a id="__codelineno-14-52" name="__codelineno-14-52"></a><span class="c">/* 图片放大 end */</span>
 </span><span id="__span-14-53"><a id="__codelineno-14-53" name="__codelineno-14-53"></a>
 </span><span id="__span-14-54"><a id="__codelineno-14-54" name="__codelineno-14-54"></a>
 </span><span id="__span-14-55"><a id="__codelineno-14-55" name="__codelineno-14-55"></a>
@@ -2214,7 +2214,7 @@
 </span><span id="__span-14-62"><a id="__codelineno-14-62" name="__codelineno-14-62"></a><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span>
 </span><span id="__span-14-63"><a id="__codelineno-14-63" name="__codelineno-14-63"></a><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
 </span><span id="__span-14-64"><a id="__codelineno-14-64" name="__codelineno-14-64"></a><span class="p">}</span>
-</span><span id="__span-14-65"><a id="__codelineno-14-65" name="__codelineno-14-65"></a><span class="c">/*样式1 同默认样式*/</span>
+</span><span id="__span-14-65"><a id="__codelineno-14-65" name="__codelineno-14-65"></a><span class="c">/*样式 1 同默认样式*/</span>
 </span><span id="__span-14-66"><a id="__codelineno-14-66" name="__codelineno-14-66"></a><span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="s2">&quot;pic1&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-14-67"><a id="__codelineno-14-67" name="__codelineno-14-67"></a><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="w"> </span><span class="mh">#666</span><span class="p">;</span>
 </span><span id="__span-14-68"><a id="__codelineno-14-68" name="__codelineno-14-68"></a><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
@@ -2398,11 +2398,11 @@
 <span class="normal"><a href="#__codelineno-24-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">glightbox</span>
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="43-snippets">4.3 使用snippets辅助写作<a class="headerlink" href="#43-snippets" title="Anchor link to this section for reference">&para;</a></h3>
+<h3 id="43-snippets">4.3 使用 snippets 辅助写作<a class="headerlink" href="#43-snippets" title="Anchor link to this section for reference">&para;</a></h3>
 <p>在文档中我们有许多固定格式的内容，比如说我在文档中所有的连接几乎都是
 <div class="language-markdown highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1"></a>[<span class="nt">:octicons-link-16:文字</span>](<span class="na">链接</span>)
 </span></code></pre></div></td></tr></table></div></p>
-<p>或者说我所有博客的post的开头都是
+<p>或者说我所有博客的 post 的开头都是
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
 <span class="normal"><a href="#__codelineno-26-2">2</a></span>
 <span class="normal"><a href="#__codelineno-26-3">3</a></span>
@@ -2416,17 +2416,17 @@
 </span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3"></a>authors:
 </span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4"></a>    - stormckey
 </span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5"></a>categories:
-</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6"></a>    - 
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6"></a>    -
 </span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7"></a>date: 2023-12-18
 </span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8"></a>nostatistics: true
 </span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9"></a>---
 </span></code></pre></div></td></tr></table></div></p>
-<p>重复性很高。如果你像我一样使用MacOS的话，可以使用raycast的snippet功能来简化这一过程，例如，对于前者，我设置了如下的snippet：</p>
+<p>重复性很高。如果你像我一样使用 MacOS 的话，可以使用 raycast 的 snippet 功能来简化这一过程，例如，对于前者，我设置了如下的 snippet：</p>
 <p><a class="glightbox" href="../images/Build_this_website/20231218183828.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Build_this_website/20231218183828.png#pic" /></a></p>
-<p>这样可以在敲入!!lk后自动转化为指定格式，插入剪切板文字并且将光标移动到指定位置。对于post的开头元数据，我的设置是：</p>
+<p>这样可以在敲入！!lk 后自动转化为指定格式，插入剪切板文字并且将光标移动到指定位置。对于 post 的开头元数据，我的设置是：</p>
 <p><a class="glightbox" href="../images/Build_this_website/20231218183959.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Build_this_website/20231218183959.png#pic" /></a></p>
-<p>类似的可以设置别的snippet。</p>
-<p>如果你不使用MacOS，VSCode应该也有类似的snippet的功能，可以自行探索。</p>
+<p>类似的可以设置别的 snippet。</p>
+<p>如果你不使用 MacOS，VSCode 应该也有类似的 snippet 的功能，可以自行探索。</p>
 <h3 id="44">4.4 自动给插入图片设置样式<a class="headerlink" href="#44" title="Anchor link to this section for reference">&para;</a></h3>
 <p>可以直接参考此篇<a href="https://stormckey.github.io/blog/%E5%9C%A8-vscode-%E4%B8%8A%E5%86%99-markdown/#_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>博客</a>中最后的为图片设置默认样式一栏</p>
 <p>本站采用的默认样式为圆角+阴影，另带居中和更合适的间隔</p>

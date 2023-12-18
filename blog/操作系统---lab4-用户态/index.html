@@ -51,8 +51,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -1883,30 +1883,30 @@
 </div>
 <h2 id="kernel">kernel 执行流程<a class="headerlink" href="#kernel" title="Anchor link to this section for reference">&para;</a></h2>
 <div class="annotate">
-<div class="language-text highlight"><span class="filename">kernel 执行流程</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>- `opensbi` 执行完毕
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- `_start`: 完成 stvec， sie， mtimecmp， sstatus(1) 和栈的设置，然后依次调用以下函数
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    - `setup_vm`: 填写页表
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    - `relocate`: 用设置好的页表修改 satp， 启动虚拟内存
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    - `mm_init`: 完成内存分配函数的初始化
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    - `setup_vm_final`: 切换到新的页表
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="hll">    - `task_init`: 初始化进程
+<div class="language-text highlight"><span class="filename">kernel 执行流程</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>- opensbi 执行完毕
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- _start: 完成 stvec， sie， mtimecmp， sstatus(1) 和栈的设置，然后依次调用以下函数
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    - setup_vm: 填写页表
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    - relocate: 用设置好的页表修改 satp， 启动虚拟内存
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    - mm_init: 完成内存分配函数的初始化
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    - setup_vm_final: 切换到新的页表
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="hll">    - task_init: 初始化进程
 </span></span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="hll">        - 对于 idle 以外的线程，需要在 task_struct 中额外给定以下信息：
-</span></span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="hll">            - `sepc`: 此线程被调度后从 S Mode 回 U Mode 的地址，显然就是用户程序起始地址 USER_START
-</span></span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="hll">            - `sscratch`: 用户栈顶，约定为 USER_END
-</span></span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="hll">            - `sstatus`: 进行设置使得 sret 后我们回到 U Mode 而非 S Mode
-</span></span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="hll">            - `satp`: 每个进程都有自己的物理地址空间和虚拟地址空间，彼此隔离
+</span></span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="hll">            - sepc: 此线程被调度后从 S Mode 回 U Mode 的地址，显然就是用户程序起始地址 USER_START
+</span></span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="hll">            - sscratch: 用户栈顶，约定为 USER_END
+</span></span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="hll">            - sstatus: 进行设置使得 sret 后我们回到 U Mode 而非 S Mode
+</span></span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="hll">            - satp: 每个进程都有自己的物理地址空间和虚拟地址空间，彼此隔离
 </span></span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="hll">                - 我们希望各进程间隔离，这就需要每个进程各自有一份二进制的文件的拷贝(2)
-</span></span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="hll">                - 分配新页拷贝二进制文件后，新建页表,把这些页的物理地址映射到 USER_START 开头的虚拟地址
+</span></span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="hll">                - 分配新页拷贝二进制文件后，新建页表，把这些页的物理地址映射到 USER_START 开头的虚拟地址
 </span></span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="hll">                - 分配新的一页作栈，把这一页的物理地址映射到 USER_END-4K
-</span></span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="hll">                - 根据新页表地址计算satp
-</span></span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="hll">- `start_kernel`: 不进入 test 等时钟中断(3)，而是直接调用 schedule 调度走
-</span></span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>- `schedule`: 根据policy选择下一个要调度的线程,调用 switch_to 至该线程
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>- `switch_to`: 获取先后线程的PCB地址，调用__switch_to
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="hll">- `__switch_to`: 当前上下文存入 PCB，加载下一个进程的 PCB(6)
-</span></span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="hll">- `__dummy`: 切用户栈，sret 返回用户段(4)，而 sepc 是我们初始化的时候就指定的的 USER_START(5)
-</span></span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="hll">- `USER_START`: 开始执行用户态代码，包括各种系统调用，直到时间片用完
-</span></span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>- `_traps`: 时钟中断，切系统栈，保存上下文，调度下一个进程
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>- `__switch_to`: 同上，此后轮流调度
+</span></span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="hll">                - 根据新页表地址计算 satp
+</span></span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="hll">- start_kernel: 不进入 test 等时钟中断(3)，而是直接调用 schedule 调度走
+</span></span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>- schedule: 根据 policy 选择下一个要调度的线程，调用 switch_to 至该线程
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>- switch_to: 获取先后线程的 PCB 地址，调用__switch_to
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="hll">- __switch_to: 当前上下文存入 PCB，加载下一个进程的 PCB(6)
+</span></span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="hll">- __dummy: 切用户栈，sret 返回用户段(4)，而 sepc 是我们初始化的时候就指定的的 USER_START(5)
+</span></span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="hll">- USER_START: 开始执行用户态代码，包括各种系统调用，直到时间片用完
+</span></span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>- _traps: 时钟中断，切系统栈，保存上下文，调度下一个进程
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>- __switch_to: 同上，此后轮流调度
 </span></code></pre></div>
 </div>
 <ol>
@@ -1921,7 +1921,7 @@
 <p>在 vmlinux.lds 中，我们指定的 uapp.S 文件会被加载到 _sramdisk，_eramdisk 之间</p>
 <ul>
 <li>如果 uapp.S 中我们用的是纯二进制文件，那么_sramdisk 第一行就是程序第一行</li>
-<li>如果 uapp.S 中我们用的是 elf 文件，我们需要解码 elf 头来定位具体的二进制位置， 同时elf中也制定了程序入口一类的信息</li>
+<li>如果 uapp.S 中我们用的是 elf 文件，我们需要解码 elf 头来定位具体的二进制位置， 同时 elf 中也制定了程序入口一类的信息</li>
 </ul>
 <h2 id="phdr-p_flags">phdr-&gt;p_flags<a class="headerlink" href="#phdr-p_flags" title="Anchor link to this section for reference">&para;</a></h2>
 <p>注意这一项虽然是声明权限的的但定义不等同于页表项的 perm，定义如下：</p>
@@ -1935,7 +1935,7 @@
 <p>这一检查需要用到额外的寄存器（如 t0），但是我们是要保证 t0 的值在中断前后值不变，所以不能直接用，需要先压栈，返回之前记得恢复</p>
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
-<p>这里提到的压栈的办法在此处仍然可行，但在Lab5中会遇到问题，现在有一个更好用也更简洁的<a href="https://stormckey.github.io/blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F---lab5-demand-paging/#_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>方法</a></p>
+<p>这里提到的压栈的办法在此处仍然可行，但在 Lab5 中会遇到问题，现在有一个更好用也更简洁的<a href="https://stormckey.github.io/blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F---lab5-demand-paging/#_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>方法</a></p>
 </div>
 
 
@@ -1959,7 +1959,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 11, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     

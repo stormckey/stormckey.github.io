@@ -51,8 +51,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -1933,16 +1933,16 @@
 <p class="admonition-title">记录 missing semester<a href="https://missing-semester-cn.github.io/2020/command-line/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>此堂课</a>的一些笔记</p>
 </div>
 <h2 id="job-control">Job Control<a class="headerlink" href="#job-control" title="Anchor link to this section for reference">&para;</a></h2>
-<p>终端的作业控制（Job Control）是一种在命令行环境下管理和控制正在运行的作业（Job）的机制.它提供了一些命令和技术，使用户能够在终端同时运行多个命令，并在需要时对其进行管理.</p>
+<p>终端的作业控制（Job Control）是一种在命令行环境下管理和控制正在运行的作业（Job）的机制.它提供了一些命令和技术，使用户能够在终端同时运行多个命令，并在需要时对其进行管理。</p>
 <div class="admonition info">
 <p class="admonition-title">作业</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">前台作业（Foreground Job）</label><label for="__tabbed_1_2">后台作业（Background Job）</label><label for="__tabbed_1_3">作业状态和信号</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>前台作业是当前活动的作业，它会在终端显示其输出，并占用终端的输入.只有当前前台作业执行完毕或被暂停时，才能执行其他命令.</p>
+<p>前台作业是当前活动的作业，它会在终端显示其输出，并占用终端的输入.只有当前前台作业执行完毕或被暂停时，才能执行其他命令。</p>
 </div>
 <div class="tabbed-block">
-<p>后台作业是在后台运行的作业，它不会占用终端的输入和输出.可以使用特殊字符 <code>&amp;</code> 将命令放置在后台运行，从而允许同时运行多个命令.</p>
+<p>后台作业是在后台运行的作业，它不会占用终端的输入和输出.可以使用特殊字符 <code>&amp;</code> 将命令放置在后台运行，从而允许同时运行多个命令。</p>
 </div>
 <div class="tabbed-block">
 <p>每个作业都具有一个状态，如运行中、停止或完成.可以使用信号来控制作业的行为，如 <code>Ctrl-C</code>（中断作业）和 <code>Ctrl-D</code>（结束作业输入）.</p>
@@ -1955,25 +1955,25 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:7"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">jobs</label><label for="__tabbed_2_2">fg</label><label for="__tabbed_2_3">bg</label><label for="__tabbed_2_4">kill</label><label for="__tabbed_2_5">man signal</label><label for="__tabbed_2_6">Ctrl-C</label><label for="__tabbed_2_7">Ctrl-Z</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><code>jobs</code> 命令用于列出当前正在运行的作业.每个作业都有一个唯一的 ID，前面带有一个 <code>+</code> 号的作业是当前的前台作业，前面带有一个 <code>-</code> 号的作业是当前的后台作业.</p>
+<p><code>jobs</code> 命令用于列出当前正在运行的作业.每个作业都有一个唯一的 ID，前面带有一个 <code>+</code> 号的作业是当前的前台作业，前面带有一个 <code>-</code> 号的作业是当前的后台作业。</p>
 </div>
 <div class="tabbed-block">
-<p><code>fg</code> 命令用于将后台作业切换到前台运行.可以使用作业 ID 或作业 PID 作为参数，也可以使用 <code>%</code> 符号加上作业 ID 作为参数.</p>
+<p><code>fg</code> 命令用于将后台作业切换到前台运行.可以使用作业 ID 或作业 PID 作为参数，也可以使用 <code>%</code> 符号加上作业 ID 作为参数。</p>
 </div>
 <div class="tabbed-block">
-<p><code>bg</code> 命令用于将前台作业切换到后台运行.可以使用作业 ID 或作业 PID 作为参数，也可以使用 <code>%</code> 符号加上作业 ID 作为参数.</p>
+<p><code>bg</code> 命令用于将前台作业切换到后台运行.可以使用作业 ID 或作业 PID 作为参数，也可以使用 <code>%</code> 符号加上作业 ID 作为参数。</p>
 </div>
 <div class="tabbed-block">
-<p><code>kill</code> 命令用于向作业发送信号.默认情况下，<code>kill</code> 命令会发送 <code>SIGTERM</code> 信号，可以使用 <code>-SIGNAL</code> 选项来指定信号类型.可以使用作业 ID 或作业 PID 作为参数，也可以使用 <code>%</code> 符号加上作业 ID 作为参数.</p>
+<p><code>kill</code> 命令用于向作业发送信号.默认情况下，<code>kill</code> 命令会发送 <code>SIGTERM</code> 信号，可以使用 <code>-SIGNAL</code> 选项来指定信号类型.可以使用作业 ID 或作业 PID 作为参数，也可以使用 <code>%</code> 符号加上作业 ID 作为参数。</p>
 </div>
 <div class="tabbed-block">
-<p><code>man signal</code> 命令用于查看所有可以发送给进程的信号.</p>
+<p><code>man signal</code> 命令用于查看所有可以发送给进程的信号。</p>
 </div>
 <div class="tabbed-block">
-<p><code>Ctrl-C</code> 快捷键用于向前台作业发送 <code>SIGINT</code> 信号，通常用于终止前台作业.</p>
+<p><code>Ctrl-C</code> 快捷键用于向前台作业发送 <code>SIGINT</code> 信号，通常用于终止前台作业。</p>
 </div>
 <div class="tabbed-block">
-<p><code>Ctrl-Z</code> 快捷键用于向前台作业发送 <code>SIGTSTP</code> 信号，通常用于暂停前台作业.</p>
+<p><code>Ctrl-Z</code> 快捷键用于向前台作业发送 <code>SIGTSTP</code> 信号，通常用于暂停前台作业。</p>
 </div>
 </div>
 </div>
@@ -2068,26 +2068,26 @@
 </div>
 </div>
 <h2 id="dotfiles">Dotfiles<a class="headerlink" href="#dotfiles" title="Anchor link to this section for reference">&para;</a></h2>
-<p>Dotfile 是以点（.）开头的配置文件，在 Unix-like 系统中被广泛使用.它们通常位于用户的主目录下，用于存储个人化和自定义的配置选项，以及其他应用程序和工具的设置.</p>
-<p>Dotfile 的名称以一个或多个点开头，例如 <code>.bashrc</code>、<code>.vimrc</code>、<code>.gitconfig</code> 等.由于在默认情况下，Unix-like 系统会将以点开头的文件视为隐藏文件，因此这些配置文件在文件管理器中默认是不可见的.但可以通过特定的选项或命令查看和编辑它们.</p>
+<p>Dotfile 是以点（.）开头的配置文件，在 Unix-like 系统中被广泛使用.它们通常位于用户的主目录下，用于存储个人化和自定义的配置选项，以及其他应用程序和工具的设置。</p>
+<p>Dotfile 的名称以一个或多个点开头，例如 <code>.bashrc</code>、<code>.vimrc</code>、<code>.gitconfig</code> 等.由于在默认情况下，Unix-like 系统会将以点开头的文件视为隐藏文件，因此这些配置文件在文件管理器中默认是不可见的.但可以通过特定的选项或命令查看和编辑它们。</p>
 <p>Dotfile 的用途因文件名和所针对的应用程序而异，以下是一些常见的例子：</p>
 <ul>
-<li><code>.bashrc</code>：Bash Shell 的配置文件，用于定义 Shell 的行为和环境变量.</li>
-<li><code>.vimrc</code>：Vim 文本编辑器的配置文件，用于定义 Vim 的编辑器设置和插件.</li>
-<li><code>.gitconfig</code>：Git 版本控制系统的配置文件，用于设置 Git 的用户信息、别名和其他选项.</li>
-<li><code>.ssh/config</code>：SSH 客户端的配置文件，用于配置 SSH 连接的主机和选项.</li>
-<li><code>.tmux.conf</code>：tmux 终端复用工具的配置文件，用于定义 tmux 的会话和窗格设置.</li>
+<li><code>.bashrc</code>：Bash Shell 的配置文件，用于定义 Shell 的行为和环境变量。</li>
+<li><code>.vimrc</code>：Vim 文本编辑器的配置文件，用于定义 Vim 的编辑器设置和插件。</li>
+<li><code>.gitconfig</code>：Git 版本控制系统的配置文件，用于设置 Git 的用户信息、别名和其他选项。</li>
+<li><code>.ssh/config</code>：SSH 客户端的配置文件，用于配置 SSH 连接的主机和选项。</li>
+<li><code>.tmux.conf</code>：tmux 终端复用工具的配置文件，用于定义 tmux 的会话和窗格设置。</li>
 </ul>
-<p>通过编辑和定制 Dotfile，用户可以按照个人偏好和需求来配置各种应用程序和工具.它们允许用户修改默认设置、添加快捷键、定义别名、设置环境变量等，以提升工作效率和个人化体验.</p>
+<p>通过编辑和定制 Dotfile，用户可以按照个人偏好和需求来配置各种应用程序和工具.它们允许用户修改默认设置、添加快捷键、定义别名、设置环境变量等，以提升工作效率和个人化体验。</p>
 <p>~/.zshrc 是 zsh 的默认配置文件，可以理解为每次启动 zsh，都会执行其中的语句.比如你在里面写上一句<code>echo Hello</code>，就会在每次启动 zsh 的时候自动问候你一句</p>
 <p>在 github 上可以找到许多人分享的配置文件，这里也贴上<a href="https://github.com/stormckey/dotfiles"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>我自己的</a></p>
 <h2 id="_1">符号连接<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
-<p>很多时候把配置文件放在～目录下并不方便，也不好混乱，也不好建立 GitHub 仓库进行管理，配置文件的读取位置往往是定死的，移动到别处就失效了，我们可以利符号连接来整理他们.</p>
-<p><code>ln -s TRUE_PATH VIRTUAL_PATH</code>: 软连接，VIRTUAL_PATH 上实际上什么文件都没有，但我们试图读写这个文件的时候，会被导向 TRUE_PATH 上那个真实存在的文件，利用这个就可以统一转移我们的配置文件了.</p>
+<p>很多时候把配置文件放在～目录下并不方便，也不好混乱，也不好建立 GitHub 仓库进行管理，配置文件的读取位置往往是定死的，移动到别处就失效了，我们可以利符号连接来整理他们。</p>
+<p><code>ln -s TRUE_PATH VIRTUAL_PATH</code>: 软连接，VIRTUAL_PATH 上实际上什么文件都没有，但我们试图读写这个文件的时候，会被导向 TRUE_PATH 上那个真实存在的文件，利用这个就可以统一转移我们的配置文件了。</p>
 <p>注意创建符号连接时 VIRTUAL_PATH 不能存在</p>
 <p>若删去 TRUE_PATH，符号连接仍然存在，但已不可访问（显示文件不存在）</p>
 <h2 id="remote-machine">Remote Machine<a class="headerlink" href="#remote-machine" title="Anchor link to this section for reference">&para;</a></h2>
-<p>详情可以看<a href="https://stormckey.github.io/Blog/Environment/ssh_wsl/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>这一篇</a>，是一个具体的 ssh 连接实践.在<a href="http://stormckey.github.io/Blog/Minisql/docker_minisql/">:ocitons-link-16:这一篇</a>中有关于 docker 的远程连接的实践，更加详细.</p>
+<p>详情可以看<a href="https://stormckey.github.io/Blog/Environment/ssh_wsl/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>这一篇</a>，是一个具体的 ssh 连接实践.在<a href="http://stormckey.github.io/Blog/Minisql/docker_minisql/">:ocitons-link-16:这一篇</a>中有关于 docker 的远程连接的实践，更加详细。</p>
 <div class="admonition info">
 <p class="admonition-title">常用指令</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:5"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><input id="__tabbed_7_5" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">ssh USERNAME@IP_ADDRESS</label><label for="__tabbed_7_2">ssh-keygen</label><label for="__tabbed_7_3">ssh-copy-id USERNAME@IP_ADDRESS</label><label for="__tabbed_7_4">scp -p xxxx LOCAL_PATH USERNAME@IP_ADDRESS:REMOTE_PATH</label><label for="__tabbed_7_5">scp -p xxxx USERNAME:IP_ADDRESS LOCAL_PATH</label></div>
@@ -2114,7 +2114,7 @@
 <a class="glightbox" href="../images/commandline_env/2023-03-27-02-36-41.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/commandline_env/2023-03-27-02-36-41.png#pic" /></a></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>在 remote machine 使用 tmux，可以在连接关闭后，连接回来，再重新 attach，之前运行的程序都会仍然存在.
+<p>在 remote machine 使用 tmux，可以在连接关闭后，连接回来，再重新 attach，之前运行的程序都会仍然存在。
 在远程的 tmux 的快捷键需要按两次 C-a</p>
 </div>
 <div class="admonition tip">
@@ -2143,7 +2143,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     

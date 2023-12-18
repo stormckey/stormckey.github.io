@@ -49,8 +49,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -1812,9 +1812,9 @@
 我自己的模板在 <a href="https://github.com/PeiPei233/typst-template"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg></span>typst-template</a> 里，欢迎使用！</p>
 </div>
 <h2 id="vscode-like-highlighting">VSCode like highlighting<a class="headerlink" href="#vscode-like-highlighting" title="Anchor link to this section for reference">&para;</a></h2>
-<p>即使用了 VSCode 的 MPE 的插件，Markdown 里的代码块还是十分的丑陋.这里提供了一种方法，可以让 Markdown 里的代码块的高亮效果和 VSCode 里的一样.</p>
-<p>首先，如果导出的是白色底，就把 VSCode 的主题改成白色底的，如果是黑色底，就改成黑色底的.下面的配置是白色底的.</p>
-<p>安装 <a href="https://marketplace.visualstudio.com/items?itemName=d3v.pastespecial">Paste Special</a> 插件，直接在 VSCode 里复制写好的代码，在 Markdown 文件里粘贴时右键选择 <code>Paste Special</code>，粘贴为 HTML 格式.为了和 MPE 的默认格式匹配，我们需要对 css 进行一些微调.</p>
+<p>即使用了 VSCode 的 MPE 的插件，Markdown 里的代码块还是十分的丑陋.这里提供了一种方法，可以让 Markdown 里的代码块的高亮效果和 VSCode 里的一样。</p>
+<p>首先，如果导出的是白色底，就把 VSCode 的主题改成白色底的，如果是黑色底，就改成黑色底的.下面的配置是白色底的。</p>
+<p>安装 <a href="https://marketplace.visualstudio.com/items?itemName=d3v.pastespecial">Paste Special</a> 插件，直接在 VSCode 里复制写好的代码，在 Markdown 文件里粘贴时右键选择 <code>Paste Special</code>，粘贴为 HTML 格式.为了和 MPE 的默认格式匹配，我们需要对 css 进行一些微调。</p>
 <p>例如如果粘贴完的如下：</p>
 <div class="language-html highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: #3b3b3b;background-color: #1f1f1f;font-family: Fira Code Retina， 思源黑体 HW， Consolas， &#39;Courier New&#39;， monospace， Consolas， &#39;Courier New&#39;， monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;&quot;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></code></pre></div></td></tr></table></div>
@@ -1853,7 +1853,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     

@@ -51,8 +51,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -1847,30 +1847,30 @@
 </div>
 <h2 id="kernel">kernel 执行流程<a class="headerlink" href="#kernel" title="Anchor link to this section for reference">&para;</a></h2>
 <div class="annotate">
-<div class="language-text highlight"><span class="filename">kernel 执行流程</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>- `opensbi`执行完毕
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- `_start`: 完成 stvec， sie， mtimecmp， sstatus 和栈的设置，然后依次调用以下函数
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    - `mm_init`: 完成内存分配函数的初始化
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="hll">    - `task_init`: 完成对所有线程的 PCB 的初始化(1)，包括当前正在运行的 idle 线程
-</span></span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="hll">        - `test_init`: 该函数调用会填好 task_test_counter 和 1task_test_priority 两个数组用于给我们后续初始化使用
+<div class="language-text highlight"><span class="filename">kernel 执行流程</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>- opensbi 执行完毕
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- _start: 完成 stvec， sie， mtimecmp， sstatus 和栈的设置，然后依次调用以下函数
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    - mm_init: 完成内存分配函数的初始化
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="hll">    - task_init: 完成对所有线程的 PCB 的初始化(1)，包括当前正在运行的 idle 线程
+</span></span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="hll">        - test_init: 该函数调用会填好 task_test_counter 和 1task_test_priority 两个数组用于给我们后续初始化使用
 </span></span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="hll">        - 分配新页作为 idle 的 PCB，填写并且设置为 current
 </span></span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="hll">        - 迭代为每个线程分配并填写 PCB，注意其中 ra 和 sp 的设置
 </span></span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="hll">            - ra: ra 固定为__dummy，这是我们为线程被调度后设置的返回地址
 </span></span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="hll">            - sp: 直接用分配给 PCB 的这一页做栈，栈顶自然就是 PCB 地址+4K
-</span></span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>- `start_kernel`: 进入 test()死循环，直到时钟中断
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="hll">- `_traps`: 时钟中断，保存好上下文后调用中断处理程序 trap_handler
-</span></span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="hll">- `trap_handler`: 确认是时钟中断后，设置下次中断时间，进入 do_timer()检查该线程剩余时间
-</span></span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="hll">- `do_timer`: 如果是 idle 或者时间用尽直接调用 schedule()调度走，否则时间减一
-</span></span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="hll">- `schedule`: 根据 policy 选择下一个要调度的线程，调用 switch_to()至该线程(2)，如果所有线程时间都用完了就先初始化时间再选择
-</span></span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="hll">- `switch_to`: 前后线程的 PCB，调用__switch_to
-</span></span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="hll">- `__switch_to`: 保存上下文，加载下一个线程的 PCB(3)
-</span></span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="hll">- `__dummy`: 从__switch_to 返回，返回地址就是 PCB 中恢复的__dummy.我们在 dummy 中结束此次中断用 sret 回到该线程执行的函数 dummy
-</span></span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="hll">- `dummy`: 该线程主函数，切换回来后进行一次输出然后循环等待时钟中断
-</span></span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>- `_traps`: 时钟中断，一般是剩余时间减一然后继续，直到时间用完，再次进入 schedule 循环
+</span></span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>- start_kernel: 进入 test()死循环，直到时钟中断
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="hll">- _traps: 时钟中断，保存好上下文后调用中断处理程序 trap_handler
+</span></span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="hll">- trap_handler: 确认是时钟中断后，设置下次中断时间，进入 do_timer()检查该线程剩余时间
+</span></span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="hll">- do_timer: 如果是 idle 或者时间用尽直接调用 schedule()调度走，否则时间减一
+</span></span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="hll">- schedule: 根据 policy 选择下一个要调度的线程，调用 switch_to()至该线程(2)，如果所有线程时间都用完了就先初始化时间再选择
+</span></span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="hll">- switch_to: 前后线程的 PCB，调用__switch_to
+</span></span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="hll">- __switch_to: 保存上下文，加载下一个线程的 PCB(3)
+</span></span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="hll">- __dummy: 从__switch_to 返回，返回地址就是 PCB 中恢复的__dummy.我们在 dummy 中结束此次中断用 sret 回到该线程执行的函数 dummy
+</span></span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="hll">- dummy: 该线程主函数，切换回来后进行一次输出然后循环等待时钟中断
+</span></span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>- _traps: 时钟中断，一般是剩余时间减一然后继续，直到时间用完，再次进入 schedule 循环
 </span></code></pre></div>
 </div>
 <ol>
 <li>也就是帮每个线程填好 task_struct</li>
-<li>对于这个被调度走的线程来说，他只是调用了 switch_to 函数，然后等着再返回罢了.虽然实际上 CPU 把此线程踢开去干别的活了，但本线程并不知道.所以 CPU 再次调度回此线程的时候，就该从 switch_to 函数返回，从而让该线程无感衔接.</li>
+<li>对于这个被调度走的线程来说，他只是调用了 switch_to 函数，然后等着再返回罢了.虽然实际上 CPU 把此线程踢开去干别的活了，但本线程并不知道.所以 CPU 再次调度回此线程的时候，就该从 switch_to 函数返回，从而让该线程无感衔接。</li>
 <li>加载后我们的 sp 会设为之前分配页的顶端，ra 会设置为__dummy，这都是初始化时设计的</li>
 </ol>
 <h2 id="_1">注意事项<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
@@ -1898,7 +1898,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     

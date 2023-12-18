@@ -51,8 +51,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -1857,13 +1857,13 @@ CodeLLDB: 1.8.0
 Code Runner: 0.12.0</p>
 </div>
 <h2 id="cc">C/C++<a class="headerlink" href="#cc" title="Anchor link to this section for reference">&para;</a></h2>
-<p>这是一个 VSCode 插件，启用后，会在 VSCode 中添加 C/C++的语法高亮、代码提示、代码跳转等功能.
+<p>这是一个 VSCode 插件，启用后，会在 VSCode 中添加 C/C++的语法高亮、代码提示、代码跳转等功能。
 同时右上角出现如下图标：
 <a class="glightbox" href="../images/Mac_VSC_DEBUG/2023-04-05-23-25-33.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Mac_VSC_DEBUG/2023-04-05-23-25-33.png#pic" /></a></p>
 <p>选择 run 的话，插件就会接着让我们选择使用的编译器
 <a class="glightbox" href="../images/Mac_VSC_DEBUG/2023-04-05-23-26-52.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Mac_VSC_DEBUG/2023-04-05-23-26-52.png#pic" /></a></p>
-<p>比如我选择 clang++，那么插件就会在当前工作区下自动生成相应的配置文件，并开始运行.</p>
-<p>对于调试，很遗憾的是，我们的程序是运行在 Debug Console 中的，而不是终端中，运行在 debug console 中的问题是没有 stdin 让我们输入.</p>
+<p>比如我选择 clang++，那么插件就会在当前工作区下自动生成相应的配置文件，并开始运行。</p>
+<p>对于调试，很遗憾的是，我们的程序是运行在 Debug Console 中的，而不是终端中，运行在 debug console 中的问题是没有 stdin 让我们输入。</p>
 <p>经过查询，发现 Mac 上 C/C++插件不支持 debugger 运行在内置终端中，setting 里也没有修改选项，只能运行在 debug console 或者外部终端.详见<a href="https://code.visualstudio.com/docs/cpp/launch-json-reference"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>官网</a>
 <a class="glightbox" href="../images/Mac_VSC_DEBUG/2023-04-05-23-32-55.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Mac_VSC_DEBUG/2023-04-05-23-32-55.png#pic" /></a></p>
 <p>如果希望在外部终端运行进行输入的话，我们要在 launch.json 中配置.注意，当前版本默认配置文件只会生成 task.json，没有 launch.json：
@@ -1879,18 +1879,18 @@ Code Runner: 0.12.0</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>&quot;program&quot;: &quot;${workspaceFolder}/${fileBasenameNoExtension}&quot;，
 </span></code></pre></div></td></tr></table></div>
 ，这样他运行的就会是当前目录下的当前文件（一般就是光标悬停的那个文件）同名的可执行文件（意思就是没后缀），如果我们编译出来的可执行文件叫做<code>a.out</code>，这个配置就不适用（会调用<code>a</code>），请在配置中修改为<code>/a.out</code>或者让编译出来的可执行文件名为<code>a</code>.</p>
-<p>新加一列<code>preLaunchTask</code>，值就是之前 task.json 上的 label，这样就会在运行前可执行文件前先运行 task 编译当前文件（这样比较方便，自动把最新的源代码编译，要多文件编译的话也在 task 设置.如果不使用 task 手动编译的话，记得加上-g）.最后，我们要把<code>"externalConsole": false，</code>改为<code>"externalConsole": true，</code>，这样就会在外部终端中运行了.
+<p>新加一列<code>preLaunchTask</code>，值就是之前 task.json 上的 label，这样就会在运行前可执行文件前先运行 task 编译当前文件（这样比较方便，自动把最新的源代码编译，要多文件编译的话也在 task 设置.如果不使用 task 手动编译的话，记得加上-g）.最后，我们要把<code>"externalConsole": false，</code>改为<code>"externalConsole": true，</code>，这样就会在外部终端中运行了。
 <a class="glightbox" href="../images/Mac_VSC_DEBUG/2023-04-05-23-45-03.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Mac_VSC_DEBUG/2023-04-05-23-45-03.png#pic" /></a></p>
 <p>笔者到这一步就可以在外部终端 debug 啦，也可以在 watch 窗口执行命令来监视变量，如全局变量一类的，但是 C/C++对一些类型的变量的监视支持不是很好，比如说 string：
 <a class="glightbox" href="../images/Mac_VSC_DEBUG/2023-04-05-23-47-26.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Mac_VSC_DEBUG/2023-04-05-23-47-26.png#pic" /></a>
-监视信息就是一坨.</p>
+监视信息就是一坨。</p>
 <h2 id="code-runner">Code Runner<a class="headerlink" href="#code-runner" title="Anchor link to this section for reference">&para;</a></h2>
 <p>另一个 VSCode 插件，启用后右上角又会多一个标：
 <a class="glightbox" href="../images/Mac_VSC_DEBUG/2023-04-05-23-49-08.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Mac_VSC_DEBUG/2023-04-05-23-49-08.png#pic" /></a></p>
 <p>这个是可以跑在内置终端里的：
 <a class="glightbox" href="../images/Mac_VSC_DEBUG/2023-04-05-23-49-51.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Mac_VSC_DEBUG/2023-04-05-23-49-51.png#pic" /></a></p>
 <h2 id="codelldb">CodeLLDB 👍<a class="headerlink" href="#codelldb" title="Anchor link to this section for reference">&para;</a></h2>
-<p>这个插件也可以进行 debug，我感觉比 C/C++好用多了.</p>
+<p>这个插件也可以进行 debug，我感觉比 C/C++好用多了。</p>
 <p>启用插件后，我们在 launch.json 中可选配置就多了几个，我们使用<code>CodeLLDB (launch)</code>模板：
 <a class="glightbox" href="../images/Mac_VSC_DEBUG/2023-04-05-23-51-28.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Mac_VSC_DEBUG/2023-04-05-23-51-28.png#pic" /></a></p>
 <p>同样稍微修改：
@@ -1909,7 +1909,7 @@ Code Runner: 0.12.0</p>
 <a class="glightbox" href="../images/Mac_VSC_DEBUG/2023-04-06-00-01-06.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Mac_VSC_DEBUG/2023-04-06-00-01-06.png#pic" /></a></p>
 <p>变量里的字符串支持也好一些：
 <a class="glightbox" href="../images/Mac_VSC_DEBUG/2023-04-06-00-01-51.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Mac_VSC_DEBUG/2023-04-06-00-01-51.png#pic" /></a></p>
-<p><a href="https://github.com/vadimcn/codelldb/blob/master/MANUAL.md"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>这里</a>还有官方文档，可以看看.</p>
+<p><a href="https://github.com/vadimcn/codelldb/blob/master/MANUAL.md"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>这里</a>还有官方文档，可以看看。</p>
 <div class="admonition info">
 <p class="admonition-title">手动创建一个 task.json</p>
 <p>在菜单 terminal &gt; Configure Tasks 选择 C/C++来生成模板</p>
@@ -1936,7 +1936,7 @@ Code Runner: 0.12.0</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     
