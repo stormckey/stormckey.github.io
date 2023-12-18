@@ -29,7 +29,7 @@ Pangu 的 [:octicons-book-16: 官方首页](https://github.com/hotoo/pangu.vim)�
 
 ## 批量使用 Pangu 格式化
 
-首先用 vim 批量打开想要格式化的文件,一般来说，我们需要格式化的是文件夹下的所有 markdown 文件
+首先用 vim 批量打开想要格式化的文件，一般来说，我们需要格式化的是文件夹下的所有 markdown 文件
 
 ```bash
 vim **/*.md
@@ -41,19 +41,22 @@ vim **/*.md
 
 要批量处理，使用以下命令
 ```vim
-:bufdo PanguAll | update
-:bufdo w
+:bufdo PanguAll
+:bufdo update
 :q
 ```
 
 其中的 bufdo 的意思就是对所有缓存中的文件执行命令
 
-我们可以把这一逻辑写入bash脚本中，下面是一个示例：
+我们可以把这一逻辑写入 bash 脚本中，下面是一个示例：
 
 ```bash
-vim **/*.md -c ':bufdo PanguAll | update; :bufdo w; :q'
+vim **/*.md -c ':silent! bufdo execute  "PanguAll" | update' -c ':q'
 ```
+其中的silent!可以让 vim 在执行命令时不输出任何信息，这样就不用按more了，之所以用execute而不直接 PanguAll是因为好像后者会导致bufdo不执行后续的update，具体为啥我还菜菜看不出来
 
-如果你还有其他的格式化的需求可以继续添加指令
+最后的退出放在另一个-c可以保证是在前者执行完了才退出而不是每写一个文件就试着退出一次
+
+如果你还有其他的格式化的需求可以继续添加指令，不出意外的话上面的脚本是能够直接跑的
 
 

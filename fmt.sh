@@ -1,1 +1,1 @@
-vim **/*.md -c ':bufdo PanguAll | update; :bufdo w; :q'
+vim **/*.md -c ':silent! bufdo execute  "PanguAll" | update' -c ':q'
