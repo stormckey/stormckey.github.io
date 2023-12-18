@@ -20,13 +20,13 @@ nostatistics: true
 !!! abstract "这一步我们要检查我们到要连接的系统的网络通路是正常的"
 
 
-Windows 会给 Wsl2 分配一个虚拟的本地的地址，在 Windows 输入`ipconfig`以查看该地址.
+Windows 会给 Wsl2 分配一个虚拟的本地的地址，在 Windows 输入`ipconfig`以查看该地址。
 我们在 Wsl 中启用 ssh 服务后，想要验证 Wsl 是否可被连接，可以先在 Windows 中试着用 ssh 连接 ifconfig 中看到的地址
 
-随后我们希望从局域网连接 Windows 也是通的，我们就用`ipconfig`得到服务器（也就是这台机器）ip，在另一台机器上（客户）尝试`ping <ip>`来试着连接，或者直接用 ssh 连接 Windows，保证局域网到 Windows 这条路都是通的.
+随后我们希望从局域网连接 Windows 也是通的，我们就用`ipconfig`得到服务器（也就是这台机器）ip，在另一台机器上（客户）尝试`ping <ip>`来试着连接，或者直接用 ssh 连接 Windows，保证局域网到 Windows 这条路都是通的。
 
 !!! warning
-    一些标明为“Secure”的局域网可能不允许局域网内连接，在这些局域网下是互相 ping 不通的，尝试换个局域网！这点坑了我很久.
+    一些标明为“Secure”的局域网可能不允许局域网内连接，在这些局域网下是互相 ping 不通的，尝试换个局域网！这点坑了我很久。
 
 最后我们需要确保把局域网，Windows，wsl 都连接起来，需要 Windows 把我们从 ssh 发来的连接请求转到内部的 wsl 的端口，这样就通了.（对应的操作在上文的博客中已经提及，如果还有问题，可以尝试[:octicons-link-16:这篇](https://cloud.tencent.com/developer/article/1420930)看看是不是局域网到 Windows 的问题）
 

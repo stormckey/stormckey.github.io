@@ -1,0 +1,1 @@
+vim **/*.md -c ':bufdo PanguAll | update; :bufdo w; :q'

@@ -12,7 +12,7 @@ nostatistics: true
 # 计算机体系结构 - lab4  Cache
 
 !!! abstract
-    介绍一下实验中 Cache 设计的思想，从模块抽象的层面讲讲各模块的功能和交互的逻辑.
+    介绍一下实验中 Cache 设计的思想，从模块抽象的层面讲讲各模块的功能和交互的逻辑。
 
 <!-- more -->
 
@@ -27,7 +27,7 @@ nostatistics: true
 
 ## Memory
 
-在本实验中 Memory 只与 CMU 交互.
+在本实验中 Memory 只与 CMU 交互。
 
 Memory 与 CMU 的交互只有一种：
 

@@ -1,6 +1,7 @@
 [data-md-color-primary=P] {
     --md-primary-fg-color:  #FFACA6;
     --md-primary-fg-color-light: #FFACA620;
+    --md-primary-fg-color-middle: #FFACA6D0;
 }
 [data-md-color-accent=P] {
   --md-accent-fg-color: #FFACA6;
@@ -36,7 +37,7 @@
 /*set the color for links*/
 article a[href^="http"],
 article a[href^="https://"] {
-    color: var(--md-primary-fg-color);
+    color: var(--md-primary-fg-color-middle);
 }
 
 /* 图片放大start */
@@ -68,11 +69,6 @@ img[src*="pic"] {
   width: 98%;
   display: block;
   margin: 10px auto;
-}
-/*样式1 同默认样式*/
-img[src*="pic1"] {
-  box-shadow: 4px 4px 15px #666;
-  border-radius: 10px;
 }
 
 /* beat like a heart */
@@ -126,15 +122,12 @@ img[src*="pic1"] {
 }
 /* new code highlight lines*/
 span.hll {
-  width: 150%;
+  width: 165%;
 }
 
 .highlight .hll{
   box-shadow: 2px 0 0 0 var(--md-primary-fg-color) inset;
   background-color: var(--md-primary-fg-color-light);
-}
-:root > * {
-
 }
 
 /*see https://xuan-insr.github.io/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E8%A7%A3%E5%86%B3%E5%85%AC%E5%BC%8F%E5%B8%A6%E7%BA%B5%E5%90%91%E6%BB%9A%E5%8A%A8%E6%9D%A1%E7%9A%84%E9%97%AE%E9%A2%98*/

@@ -32,16 +32,16 @@ nostatistics: true
 
 ## 快捷地插入图片
 
-就最原教旨主义的插入方式而言，需要把图片保存到指定文件夹，起好名字，再利用`![](url)`格式插入，步骤相当繁琐，跟 Word 的图片插入完全是两个量级的工作量.
+就最原教旨主义的插入方式而言，需要把图片保存到指定文件夹，起好名字，再利用`![](url)`格式插入，步骤相当繁琐，跟 Word 的图片插入完全是两个量级的工作量。
 
 推荐使用**Paste Image**插件：
 ![](images/VSCode-markdown/2023-03-23-14-37-41.png#pic)
 
 修改如下的设置：
 ![](images/VSCode-markdown/2023-03-23-14-38-36.png#pic)
-这会将图片插入到当前 md 文件下的 images/mdfilename/time.png 位置.
+这会将图片插入到当前 md 文件下的 images/mdfilename/time.png 位置。
 
-用系统自带的截屏工具截屏到粘贴板后 Command+Option+v 即可存入文件夹并自动引用正确的路径.
+用系统自带的截屏工具截屏到粘贴板后 Command+Option+v 即可存入文件夹并自动引用正确的路径。
 ??? tip "设置默认图片样式"
     本人使用 mkdocs for material 搭建此网页，可以给此插件添加的图片添加统一样式：
 

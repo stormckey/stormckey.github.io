@@ -15,9 +15,9 @@ nostatistics: true
 
 <!-- more -->
 
-首先请看 xg的笔记[^1]，推导的过程讲的很清楚了
+首先请看 xg 的笔记[^1]，推导的过程讲的很清楚了
 
-[^1]: 这里是xg的[:octicons-link-16:笔记](https://note.tonycrane.cc/cs/pl/ppl/topic1/#y-combinator)
+[^1]: 这里是 xg 的[:octicons-link-16:笔记](https://note.tonycrane.cc/cs/pl/ppl/topic1/#y-combinator)
 
 这里主要讨论另外几个问题
 

@@ -7,11 +7,11 @@
 
 ## VSCode like highlighting
 
-即使用了 VSCode 的 MPE 的插件，Markdown 里的代码块还是十分的丑陋.这里提供了一种方法，可以让 Markdown 里的代码块的高亮效果和 VSCode 里的一样.
+即使用了 VSCode 的 MPE 的插件，Markdown 里的代码块还是十分的丑陋.这里提供了一种方法，可以让 Markdown 里的代码块的高亮效果和 VSCode 里的一样。
 
-首先，如果导出的是白色底，就把 VSCode 的主题改成白色底的，如果是黑色底，就改成黑色底的.下面的配置是白色底的.
+首先，如果导出的是白色底，就把 VSCode 的主题改成白色底的，如果是黑色底，就改成黑色底的.下面的配置是白色底的。
 
-安装 [Paste Special](https://marketplace.visualstudio.com/items?itemName=d3v.pastespecial) 插件，直接在 VSCode 里复制写好的代码，在 Markdown 文件里粘贴时右键选择 `Paste Special`，粘贴为 HTML 格式.为了和 MPE 的默认格式匹配，我们需要对 css 进行一些微调.
+安装 [Paste Special](https://marketplace.visualstudio.com/items?itemName=d3v.pastespecial) 插件，直接在 VSCode 里复制写好的代码，在 Markdown 文件里粘贴时右键选择 `Paste Special`，粘贴为 HTML 格式.为了和 MPE 的默认格式匹配，我们需要对 css 进行一些微调。
 
 例如如果粘贴完的如下：
 

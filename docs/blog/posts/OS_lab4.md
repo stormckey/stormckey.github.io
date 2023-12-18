@@ -22,30 +22,30 @@ nostatistics: true
 
 <div class="annotate" markdown>
 ```title="kernel 执行流程" hl_lines="7-17 20-22" linenums="0"
-- `opensbi` 执行完毕
-- `_start`: 完成 stvec， sie， mtimecmp， sstatus(1) 和栈的设置，然后依次调用以下函数
-    - `setup_vm`: 填写页表
-    - `relocate`: 用设置好的页表修改 satp， 启动虚拟内存
-    - `mm_init`: 完成内存分配函数的初始化
-    - `setup_vm_final`: 切换到新的页表
-    - `task_init`: 初始化进程
+- opensbi 执行完毕
+- _start: 完成 stvec， sie， mtimecmp， sstatus(1) 和栈的设置，然后依次调用以下函数
+    - setup_vm: 填写页表
+    - relocate: 用设置好的页表修改 satp， 启动虚拟内存
+    - mm_init: 完成内存分配函数的初始化
+    - setup_vm_final: 切换到新的页表
+    - task_init: 初始化进程
         - 对于 idle 以外的线程，需要在 task_struct 中额外给定以下信息：
-            - `sepc`: 此线程被调度后从 S Mode 回 U Mode 的地址，显然就是用户程序起始地址 USER_START
-            - `sscratch`: 用户栈顶，约定为 USER_END
-            - `sstatus`: 进行设置使得 sret 后我们回到 U Mode 而非 S Mode
-            - `satp`: 每个进程都有自己的物理地址空间和虚拟地址空间，彼此隔离
+            - sepc: 此线程被调度后从 S Mode 回 U Mode 的地址，显然就是用户程序起始地址 USER_START
+            - sscratch: 用户栈顶，约定为 USER_END
+            - sstatus: 进行设置使得 sret 后我们回到 U Mode 而非 S Mode
+            - satp: 每个进程都有自己的物理地址空间和虚拟地址空间，彼此隔离
                 - 我们希望各进程间隔离，这就需要每个进程各自有一份二进制的文件的拷贝(2)
-                - 分配新页拷贝二进制文件后，新建页表,把这些页的物理地址映射到 USER_START 开头的虚拟地址
+                - 分配新页拷贝二进制文件后，新建页表，把这些页的物理地址映射到 USER_START 开头的虚拟地址
                 - 分配新的一页作栈，把这一页的物理地址映射到 USER_END-4K
-                - 根据新页表地址计算satp
-- `start_kernel`: 不进入 test 等时钟中断(3)，而是直接调用 schedule 调度走
-- `schedule`: 根据policy选择下一个要调度的线程,调用 switch_to 至该线程
-- `switch_to`: 获取先后线程的PCB地址，调用__switch_to
-- `__switch_to`: 当前上下文存入 PCB，加载下一个进程的 PCB(6)
-- `__dummy`: 切用户栈，sret 返回用户段(4)，而 sepc 是我们初始化的时候就指定的的 USER_START(5)
-- `USER_START`: 开始执行用户态代码，包括各种系统调用，直到时间片用完
-- `_traps`: 时钟中断，切系统栈，保存上下文，调度下一个进程
-- `__switch_to`: 同上，此后轮流调度
+                - 根据新页表地址计算 satp
+- start_kernel: 不进入 test 等时钟中断(3)，而是直接调用 schedule 调度走
+- schedule: 根据 policy 选择下一个要调度的线程，调用 switch_to 至该线程
+- switch_to: 获取先后线程的 PCB 地址，调用__switch_to
+- __switch_to: 当前上下文存入 PCB，加载下一个进程的 PCB(6)
+- __dummy: 切用户栈，sret 返回用户段(4)，而 sepc 是我们初始化的时候就指定的的 USER_START(5)
+- USER_START: 开始执行用户态代码，包括各种系统调用，直到时间片用完
+- _traps: 时钟中断，切系统栈，保存上下文，调度下一个进程
+- __switch_to: 同上，此后轮流调度
 ```
 </div>
 
@@ -61,7 +61,7 @@ nostatistics: true
 在 vmlinux.lds 中，我们指定的 uapp.S 文件会被加载到 _sramdisk，_eramdisk 之间
 
 - 如果 uapp.S 中我们用的是纯二进制文件，那么_sramdisk 第一行就是程序第一行
-- 如果 uapp.S 中我们用的是 elf 文件，我们需要解码 elf 头来定位具体的二进制位置， 同时elf中也制定了程序入口一类的信息
+- 如果 uapp.S 中我们用的是 elf 文件，我们需要解码 elf 头来定位具体的二进制位置， 同时 elf 中也制定了程序入口一类的信息
 
 ## phdr->p_flags
 
@@ -84,4 +84,4 @@ nostatistics: true
 这一检查需要用到额外的寄存器（如 t0），但是我们是要保证 t0 的值在中断前后值不变，所以不能直接用，需要先压栈，返回之前记得恢复
 
 !!! bug
-    这里提到的压栈的办法在此处仍然可行，但在Lab5中会遇到问题，现在有一个更好用也更简洁的[:octicons-link-16:方法](https://stormckey.github.io/blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F---lab5-demand-paging/#_1)
+    这里提到的压栈的办法在此处仍然可行，但在 Lab5 中会遇到问题，现在有一个更好用也更简洁的[:octicons-link-16:方法](https://stormckey.github.io/blog/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F---lab5-demand-paging/#_1)

@@ -48,7 +48,7 @@
 
 7.
 
-    伸展树的删除和插入，由于 1 都需要用 search 操作，search 完后 self/hot 会成为新的根节点，我们的插入删除只要在搜索完后对根操作即可.
+    伸展树的删除和插入，由于 1 都需要用 search 操作，search 完后 self/hot 会成为新的根节点，我们的插入删除只要在搜索完后对根操作即可。
 
     ![](image/BST_AVL_Splay/media/image7.png)
 

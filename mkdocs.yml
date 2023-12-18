@@ -18,7 +18,7 @@ theme:
   favicon: icons/cat.svg # put in /docs/icons/cat.svg
   font: 
     # text: Roboto Mono
-    code: Roboto Mono
+    code: JetBrains Mono
   features:
       # - navigation.prune
       - navigation.tracking

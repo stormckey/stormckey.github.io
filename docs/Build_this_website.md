@@ -106,15 +106,15 @@ mkdocs gh-deploy
 ![](images/Build_this_website/2023-07-02-02-35-34.png#pic)
 
 ??? info "可选优化：自动编译部署"
-    我们可以使用 GitHub action 来帮助我们每次更新 master 分支后自动编译网站并推送到 gh-pages 分支，这样我们就不用每次都手动执行`mkdocs gh-deploy`了，而只需要将新写的markdown推送至仓库就可以了。
+    我们可以使用 GitHub action 来帮助我们每次更新 master 分支后自动编译网站并推送到 gh-pages 分支，这样我们就不用每次都手动执行`mkdocs gh-deploy`了，而只需要将新写的 markdown 推送至仓库就可以了。
     这样做的另一个好处是其他人希望对仓库做贡献的时候可以只对文本内容进行修改，而不必在乎便已部署的问题。只有当贡献者希望预览的时候需要完整的安装环境。
     1. 在仓库中新建一个`.github/workflows/auto-deploy.yml`文件，内容如下：
     ```
-    name: ci 
+    name: ci
     on:
     push:
         branches:
-        - master 
+        - master
         - main
     permissions:
     contents: write
@@ -128,7 +128,7 @@ mkdocs gh-deploy
         - uses: actions/setup-python@v4
             with:
             python-version: 3.x
-        - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+        - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
         - uses: actions/cache@v3
             with:
             key: mkdocs-material-${{ env.cache_id }}
@@ -139,7 +139,7 @@ mkdocs gh-deploy
         - run: mkdocs gh-deploy --force
     ```
     注意，推送到 Github 的话需要你的 token 有 workflow 权限
-    此Action已经是根据本站安装的插件等进行了额外安装的，请按需使用。如果你依赖了额外的库，需要修改 Action
+    此 Action 已经是根据本站安装的插件等进行了额外安装的，请按需使用。如果你依赖了额外的库，需要修改 Action
 
 ## 3.常规特性
 
@@ -169,15 +169,15 @@ extra_css:
         --my-changlog-color: #161616;
     }
     .md-grid {
-    max-width: 1400px; 
+    max-width: 1400px;
     }/* make the page wider */
     /* changelog config*/
     .timeline-card{
-    background-color: var(--my-changlog-color); 
+    background-color: var(--my-changlog-color);
     }
     .timeline-content::before{
-    background-color: var(--my-changlog-color); 
-    } 
+    background-color: var(--my-changlog-color);
+    }
     .changelog-type{
     background-color: #CC9052;
     }
@@ -188,7 +188,7 @@ extra_css:
     content: "文档更新";
     }
 
-    /* 图片放大start */
+    /* 图片放大 start */
     /* .shadow {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
@@ -205,7 +205,7 @@ extra_css:
     z-index: 100;
     position: relative;
     } */
-    /* 图片放大end */
+    /* 图片放大 end */
 
 
 
@@ -218,7 +218,7 @@ extra_css:
     display: block;
     margin: 10px auto;
     }
-    /*样式1 同默认样式*/
+    /*样式 1 同默认样式*/
     img[src*="pic1"] {
     box-shadow: 4px 4px 15px #666;
     border-radius: 10px;
@@ -394,37 +394,37 @@ plugins:
 ```
 
 
-### 4.3 使用snippets辅助写作
+### 4.3 使用 snippets 辅助写作
 
 在文档中我们有许多固定格式的内容，比如说我在文档中所有的连接几乎都是
 ```markdown
 [:octicons-link-16:文字](链接)
 ```
 
-或者说我所有博客的post的开头都是
+或者说我所有博客的 post 的开头都是
 ```
 ---
 comments: true
 authors:
     - stormckey
 categories:
-    - 
+    -
 date: 2023-12-18
 nostatistics: true
 ---
 ```
 
-重复性很高。如果你像我一样使用MacOS的话，可以使用raycast的snippet功能来简化这一过程，例如，对于前者，我设置了如下的snippet：
+重复性很高。如果你像我一样使用 MacOS 的话，可以使用 raycast 的 snippet 功能来简化这一过程，例如，对于前者，我设置了如下的 snippet：
 
 ![](images/Build_this_website/20231218183828.png#pic)
 
-这样可以在敲入!!lk后自动转化为指定格式，插入剪切板文字并且将光标移动到指定位置。对于post的开头元数据，我的设置是：
+这样可以在敲入！!lk 后自动转化为指定格式，插入剪切板文字并且将光标移动到指定位置。对于 post 的开头元数据，我的设置是：
 
 ![](images/Build_this_website/20231218183959.png#pic)
 
-类似的可以设置别的snippet。
+类似的可以设置别的 snippet。
 
-如果你不使用MacOS，VSCode应该也有类似的snippet的功能，可以自行探索。
+如果你不使用 MacOS，VSCode 应该也有类似的 snippet 的功能，可以自行探索。
 
 ### 4.4 自动给插入图片设置样式
 

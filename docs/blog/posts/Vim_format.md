@@ -14,7 +14,7 @@ nostatistics: true
 <!-- more -->
 ## 安装 Vim 工具 Pangu
 
-首先安装 [:octicons-mark-github-16: vim-plug]()，这是一个可以帮助我们方便的安装 vim 插件的插件
+首先安装 [:octicons-mark-github-16: vim-plug](https://github.com/junegunn/vim-plug)，这是一个可以帮助我们方便的安装 vim 插件的插件
 
 随后安装 Pangu 插件，在 ~/.vimrc 中添加
 
@@ -29,10 +29,10 @@ Pangu 的 [:octicons-book-16: 官方首页](https://github.com/hotoo/pangu.vim)�
 
 ## 批量使用 Pangu 格式化
 
-首先用 vim 批量打开想要格式化的文件
+首先用 vim 批量打开想要格式化的文件,一般来说，我们需要格式化的是文件夹下的所有 markdown 文件
 
 ```bash
-vim *.md
+vim **/*.md
 ```
 
 那么所有符合格式的文件都被打开在缓存(buffer)中了，我们可以用`:ls`来查看，用`:n`来切换
@@ -48,4 +48,12 @@ vim *.md
 
 其中的 bufdo 的意思就是对所有缓存中的文件执行命令
 
-我们也可以把命令写入`.vim`后缀的脚本，然后直接在 vim 中用`:source`执行脚本就好
+我们可以把这一逻辑写入bash脚本中，下面是一个示例：
+
+```bash
+vim **/*.md -c ':bufdo PanguAll | update; :bufdo w; :q'
+```
+
+如果你还有其他的格式化的需求可以继续添加指令
+
+

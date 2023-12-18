@@ -20,19 +20,19 @@
     :   一个**object**是 blob、tree 或者 commit，每个对象都有自己对应的 hash.
 
     `reference`
-    :   一个**reference**是一个对象的别名，除了别名，我们还可以通过 hash 来引用一个对象.
+    :   一个**reference**是一个对象的别名，除了别名，我们还可以通过 hash 来引用一个对象。
 
     `main/master`
-    :   **main/master** 作为一个特殊的 reference 总是指向开发中的最新稳定版本.
+    :   **main/master** 作为一个特殊的 reference 总是指向开发中的最新稳定版本。
 
     `HEAD`
-    :   **HEAD** 作为一个特殊引用指向我们目前在历史中的位置.
+    :   **HEAD** 作为一个特殊引用指向我们目前在历史中的位置。
 
     `Git repository`
-    :   一个 **Git repository*** 是 object 和 reference 的集合.
+    :   一个 **Git repository*** 是 object 和 reference 的集合。
 
     `Staging area`
-    :   **Staging area** 是一种机制来让我们指定哪些对象要被 commit， 而非整个仓库.
+    :   **Staging area** 是一种机制来让我们指定哪些对象要被 commit， 而非整个仓库。
 
 ## Git Data Model
 首先定义数据对象
