@@ -1848,7 +1848,7 @@
 <p>随后在 vim 中执行<code>:PlugInstall</code>即可安装</p>
 <p>Pangu 的 <a href="https://github.com/hotoo/pangu.vim"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"/></svg></span> 官方首页</a>上已经有比较详细的说明了，想要启用其中的功能照着做就是了</p>
 <h2 id="pangu">批量使用 Pangu 格式化<a class="headerlink" href="#pangu" title="Anchor link to this section for reference">&para;</a></h2>
-<p>首先用 vim 批量打开想要格式化的文件,一般来说，我们需要格式化的是文件夹下的所有 markdown 文件</p>
+<p>首先用 vim 批量打开想要格式化的文件，一般来说，我们需要格式化的是文件夹下的所有 markdown 文件</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>vim<span class="w"> </span>**/*.md
 </span></code></pre></div></td></tr></table></div>
 <p>那么所有符合格式的文件都被打开在缓存(buffer)中了，我们可以用<code>:ls</code>来查看，用<code>:n</code>来切换</p>
@@ -1856,15 +1856,17 @@
 <p>要批量处理，使用以下命令
 <div class="language-vim highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">:</span><span class="k">bufdo</span> PanguAll <span class="p">|</span> <span class="k">update</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">:</span><span class="k">bufdo</span> <span class="k">w</span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">:</span><span class="k">bufdo</span> PanguAll
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">:</span><span class="k">bufdo</span> <span class="k">update</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="p">:</span><span class="k">q</span>
 </span></code></pre></div></td></tr></table></div></p>
 <p>其中的 bufdo 的意思就是对所有缓存中的文件执行命令</p>
-<p>我们可以把这一逻辑写入bash脚本中，下面是一个示例：</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>vim<span class="w"> </span>**/*.md<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;:bufdo PanguAll | update; :bufdo w; :q&#39;</span>
+<p>我们可以把这一逻辑写入 bash 脚本中，下面是一个示例：</p>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>vim<span class="w"> </span>**/*.md<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;:silent! bufdo execute  &quot;PanguAll&quot; | update&#39;</span><span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;:q&#39;</span>
 </span></code></pre></div></td></tr></table></div>
-<p>如果你还有其他的格式化的需求可以继续添加指令</p>
+其中的silent!可以让 vim 在执行命令时不输出任何信息，这样就不用按more了，之所以用execute而不直接 PanguAll是因为好像后者会导致bufdo不执行后续的update，具体为啥我还菜菜看不出来</p>
+<p>最后的退出放在另一个-c可以保证是在前者执行完了才退出而不是每写一个文件就试着退出一次</p>
+<p>如果你还有其他的格式化的需求可以继续添加指令，不出意外的话上面的脚本是能够直接跑的</p>
 
 
 
