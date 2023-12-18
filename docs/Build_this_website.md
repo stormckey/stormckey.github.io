@@ -106,14 +106,15 @@ mkdocs gh-deploy
 ![](images/Build_this_website/2023-07-02-02-35-34.png#pic)
 
 ??? info "可选优化：自动编译部署"
-    我们可以使用 GitHub action 来帮助我们每次更新 master 分支后自动编译网站并推送到 gh-pages 分支，这样我们就不用每次都手动执行`mkdocs gh-deploy`了.
+    我们可以使用 GitHub action 来帮助我们每次更新 master 分支后自动编译网站并推送到 gh-pages 分支，这样我们就不用每次都手动执行`mkdocs gh-deploy`了，而只需要将新写的markdown推送至仓库就可以了。
+    这样做的另一个好处是其他人希望对仓库做贡献的时候可以只对文本内容进行修改，而不必在乎便已部署的问题。只有当贡献者希望预览的时候需要完整的安装环境。
     1. 在仓库中新建一个`.github/workflows/auto-deploy.yml`文件，内容如下：
-    ```yaml
-    name: ci
+    ```
+    name: ci 
     on:
     push:
         branches:
-        - master
+        - master 
         - main
     permissions:
     contents: write
@@ -127,24 +128,24 @@ mkdocs gh-deploy
         - uses: actions/setup-python@v4
             with:
             python-version: 3.x
-        - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+        - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
         - uses: actions/cache@v3
             with:
             key: mkdocs-material-${{ env.cache_id }}
             path: .cache
             restore-keys: |
                 mkdocs-material-
-        - run: pip install  mkdocs-material mkdocs-changelog-plugin mkdocs-glightbox jieba pillow cairosvg mkdocs-tooltips mkdocs-statistics-plugin mkdocs-table-reader-plugin mkdocs-git-revision-date-localized-plugin
+        - run: pip install  mkdocs-material mkdocs-changelog-plugin mkdocs-glightbox jieba pillow cairosvg mkdocs-tooltips mkdocs-statistics-plugin mkdocs-table-reader-plugin mkdocs-git-revision-date-localized-plugin mkdocs-meta-manager mkdocs-macros-plugin
         - run: mkdocs gh-deploy --force
     ```
     注意，推送到 Github 的话需要你的 token 有 workflow 权限
-    如果你依赖了额外的库，需要修改 action
+    此Action已经是根据本站安装的插件等进行了额外安装的，请按需使用。如果你依赖了额外的库，需要修改 Action
 
-## 3.添加特性
+## 3.常规特性
 
 ### 3.1 修改网站的 css 样式
 
-我们需要新增的样式君放置于`docs/css/`目录下，每个 css 文件都要在`mkdocs.yml`中添加：
+我们需要新增的样式均放置于`docs/css/`目录下，每个 css 文件都要在`mkdocs.yml`中添加：
 
 ```yaml
 extra_css:
@@ -153,10 +154,10 @@ extra_css:
 
 ??? exmaple "我使用的的样式"
     ```css
-    [data-md-color-primary=indigo] {
+    [data-md-color-primary=P] {
         --md-primary-fg-color:  #FFACA6;
     }
-    [data-md-color-accent=indigo] {
+    [data-md-color-accent=P] {
     --md-accent-fg-color: #FFACA6;
     }
     [data-md-color-scheme=default] {
@@ -168,17 +169,17 @@ extra_css:
         --my-changlog-color: #161616;
     }
     .md-grid {
-    max-width: 1400px;
+    max-width: 1400px; 
     }/* make the page wider */
     /* changelog config*/
     .timeline-card{
-    background-color: var(--my-changlog-color);
+    background-color: var(--my-changlog-color); 
     }
     .timeline-content::before{
-    background-color: var(--my-changlog-color);
-    }
+    background-color: var(--my-changlog-color); 
+    } 
     .changelog-type{
-    background-color: #CC8A85;
+    background-color: #CC9052;
     }
     .changelog-type-newpage{
     background-color: #FF9C80;
@@ -187,11 +188,99 @@ extra_css:
     content: "文档更新";
     }
 
+    /* 图片放大start */
+    /* .shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .zoom {
+    transition: transform ease-in-out 0.5s;
+    cursor: zoom-in;
+    }
+
+    .image-zoom-large {
+    transform: scale(1.9);
+    cursor: zoom-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 100;
+    position: relative;
+    } */
+    /* 图片放大end */
+
+
+
     /*图片格式设置*/
     /*默认样式*/
     img[src*="pic"] {
     box-shadow: 2px 2px 10px #666;
     border-radius: 4px;
+    width: 98%;
+    display: block;
+    margin: 10px auto;
+    }
+    /*样式1 同默认样式*/
+    img[src*="pic1"] {
+    box-shadow: 4px 4px 15px #666;
+    border-radius: 10px;
+    }
+
+    /* beat like a heart */
+    @keyframes heart {
+    0%, 40%, 80%, 100% {
+        transform: scale(1);
+    }
+    20%, 60% {
+        transform: scale(1.15);
+    }
+    }
+    .heart {
+    animation: heart 1000ms infinite;
+    }
+
+    /* new admonitions */
+    :root {
+    --md-admonition-icon--definition: url('../icons/define.svg')
+    }
+    .md-typeset .admonition.definition,
+    .md-typeset details.definition {
+    border-color: rgb(43, 155, 70);
+    }
+    .md-typeset .definition > .admonition-title,
+    .md-typeset .definition > summary {
+    background-color: rgba(43, 155, 70, 0.1);
+    }
+    .md-typeset .definition > .admonition-title::before,
+    .md-typeset .definition > summary::before {
+    background-color: rgb(43, 155, 70);
+    -webkit-mask-image: var(--md-admonition-icon--definition);
+            mask-image: var(--md-admonition-icon--definition);
+    }
+
+    :root {
+    --md-admonition-icon--reference: url('../icons/reference.svg')
+    }
+    .md-typeset .admonition.reference,
+    .md-typeset details.reference {
+    border-color: rgb(223, 251, 13);
+    }
+    .md-typeset .reference > .admonition-title,
+    .md-typeset .reference > summary {
+    background-color: rgba(249, 249, 90, 0.1);
+    }
+    .md-typeset .reference > .admonition-title::before,
+    .md-typeset .reference > summary::before {
+    background-color: rgb(223, 251, 13);
+    -webkit-mask-image: var(--md-admonition-icon--reference);
+            mask-image: var(--md-admonition-icon--reference);
+    }
+    /* new code highlight lines*/
+    span.hll {
+    width: 150%;
+    }
+
+    /*see https://xuan-insr.github.io/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#%E8%A7%A3%E5%86%B3%E5%85%AC%E5%BC%8F%E5%B8%A6%E7%BA%B5%E5%90%91%E6%BB%9A%E5%8A%A8%E6%9D%A1%E7%9A%84%E9%97%AE%E9%A2%98*/
+    .md-typeset div.arithmatex {
+    overflow-y: hidden;
     }
     ```
 
@@ -213,6 +302,7 @@ extra_javascript:
 这里的 url 可以指向网络上的 js 文件，也可以是本地的
 
 ??? exmaple "我使用的的 js"
+
     === "extra.js"
         ```javascript
         document.querySelectorAll('.zoom').forEach(item => {
@@ -221,6 +311,7 @@ extra_javascript:
             })
         });
         ```
+
     === "mathjax.js"
         ```javascript
         window.MathJax = {
@@ -240,7 +331,8 @@ extra_javascript:
             MathJax.typesetPromise()
         })
         ```
-    === tablesort.js
+
+    === "tablesort.js"
         ```javascript
         document$.subscribe(function() {
             var tables = document.querySelectorAll("article table:not([class])")
@@ -250,28 +342,8 @@ extra_javascript:
         })
         ```
 
-### 3.3 添加全局脚注
 
-所有脚注都放在`includes/abbreviatioins.md`（在 docs 之外），格式为：
-```md
-*[HTML]: Hyper Text Markup Language
-*[W3C]: World Wide Web Consortium
-```
-
-在`mkdocs.yml`中添加：
-```yaml
-markdown_extensions:
-    - abbr
-    - attr_list
-    - pymdownx.snippets
-    - pymdownx.snippets:
-        auto_append:
-            - includes/abbreviations.md
-```
-
-??? example "效果图"
-
-### 3.4 启用网站数据分析
+### 3.3 启用网站数据分析
 
 在`mkdocs.yml`中添加：
 ```yaml
@@ -281,11 +353,20 @@ extra:
     property: G-XXXXXXXXXX
 ```
 
-随后前往 Google Analytics 注册使用即可.
+随后前往 Google Analytics 注册使用，并将对应代码插入首页即可。
 
-!!! warning "启用这项功能需要向每个网页注入 google code"
 
-### 3.5 启用最新更新时间
+### 3.4 启用评论区
+
+[:octicons-link-16:原文档](https://squidfunk.github.io/mkdocs-material/setup/setting-up-comments/)介绍的很清楚了
+
+### 3.5 启用 blog
+
+官方的起步[:octicons-link-16:指导](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/)很详细了，照着走就好！
+
+## 4.其他插件与痛点解决
+
+### 4.1 启用最新更新时间
 
 安装库：
 ```bash
@@ -298,19 +379,8 @@ plugins:
       enable_creation_date: true
 ```
 
-### 3.6 启用评论区
 
-[:octicons-link-16:原文档](https://squidfunk.github.io/mkdocs-material/setup/setting-up-comments/)介绍的很清楚了
-
-### 3.7 从文件读取表格
-
-参考[:octicons-link-16:原文档](https://squidfunk.github.io/mkdocs-material/reference/data-tables/#import-table-from-file)
-
-### 3.8 使用 emojis 和 icons
-
-这个[:octicons-link-16:链接](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search)可以搜索 emoji
-
-### 3.9 图片放大
+### 4.2 图片放大
 
 先安装插件：
 ```bash
@@ -323,181 +393,43 @@ plugins:
   - glightbox
 ```
 
-### 3.10 启用 blog
 
-官方的起步[:octicons-link-16:指导](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/)很详细了，照着走就好！
+### 4.3 使用snippets辅助写作
 
-### 3.11 我的所有配置
+在文档中我们有许多固定格式的内容，比如说我在文档中所有的连接几乎都是
+```markdown
+[:octicons-link-16:文字](链接)
+```
 
-以下附上我的`mkdocs.yml`文件，已经删去了导航部分，所以可以直接复制使用：
-??? example "mkdocs.yml"
-    ```yaml
-    # Project information
-    site_name: Stormckey's Page
-    site_url: https://stormckey.github.io/
-    site_author: Stormckey
-    # Repository
-    repo_name: stormckey
-    repo_url: https://github.com/stormckey/stormckey.github.io
+或者说我所有博客的post的开头都是
+```
+---
+comments: true
+authors:
+    - stormckey
+categories:
+    - 
+date: 2023-12-18
+nostatistics: true
+---
+```
 
-    # The path to edit the content
-    edit_uri: edit/main/docs/
+重复性很高。如果你像我一样使用MacOS的话，可以使用raycast的snippet功能来简化这一过程，例如，对于前者，我设置了如下的snippet：
 
-    # Copyright
-    copyright: Copyright &copy; stormckey
+![](images/Build_this_website/20231218183828.png#pic)
 
-    theme:
-    name: material
-    custom_dir: overrides
-    favicon: cat.svg # put in /docs/cat.svg
-    font:
-        text: Roboto Mono
-        code: Roboto Mono
-    features:
-        - content.action.edit # enable the button to edit the source code of the page
-        - content.action.view # enable the button to view the source code of the page
-        - content.code.copy # enable the button to copy the code block
-        - navigation.tabs  # enable the row of tabs under the title
-        # - navigation.sections # unfold the secondary titles to the left
-        # - navigation.footer # enable the next and previous button
-        - navigation.indexes # the index page will be incoperate into the tab
-        - search.suggest # auto suggestion
-        - search.highlight # highlight when search
-        - search.share # enable share when search
-        - navigation.instant # optimize loading
-        - navigation.tracking # URL will change as we scroll down
-        - toc.follow # the sidebar will scroll automatically following the user
-        - navigation.top # button to back to the top
-    palette: # my customized schema
-        - media: "(prefers-color-scheme: light)"
-        scheme: default
-        primary: indigo
-        accent: indigo
-        toggle:
-            icon: material/brightness-7
-            name: Switch to dark mode
-        - media: "(prefers-color-scheme: dark)"
-        scheme: slate
-        toggle:
-            icon: material/brightness-4
-            name: Switch to light mode
-    icon:
-        repo: fontawesome/brands/github-alt # the github cat icon in the topright
-        logo: material/cat # the cat icon in the topleft
+这样可以在敲入!!lk后自动转化为指定格式，插入剪切板文字并且将光标移动到指定位置。对于post的开头元数据，我的设置是：
 
-    plugins:
-    - search
-    # - social: #social card
-    #     enabled: !ENV [CI， false]
-    #     cards: !ENV [CI， false]
-    #     cards_font: Noto Sans SC
-    - git-revision-date-localized:
-        enabled: !ENV [CI， false]
-        enable_creation_date: true
-    - offline: # enable searching offline
-        enabled: !ENV [OFFLINE， false]
-    - table-reader
-    - changelog #see https://github.com/TonyCrane/mkdocs-changelog-plugin
-    - tooltips
-    - statistics
-    - glightbox
+![](images/Build_this_website/20231218183959.png#pic)
+
+类似的可以设置别的snippet。
+
+如果你不使用MacOS，VSCode应该也有类似的snippet的功能，可以自行探索。
+
+### 4.4 自动给插入图片设置样式
+
+可以直接参考此篇[:octicons-link-16:博客](https://stormckey.github.io/blog/%E5%9C%A8-vscode-%E4%B8%8A%E5%86%99-markdown/#_2)中最后的为图片设置默认样式一栏
+
+本站采用的默认样式为圆角+阴影，另带居中和更合适的间隔
 
 
-
-    markdown_extensions:
-    #enable admonition
-    - admonition
-    - pymdownx.details # enable ??? admonition
-    - pymdownx.betterem # better emphasize
-    - pymdownx.superfences: # allow nest codes
-        custom_fences:
-            - name: mermaid
-            class: mermaid
-            format: !!python/name:pymdownx.superfences.fence_code_format
-    #enable code config
-    - pymdownx.inlinehilite #inline code highlight
-    - pymdownx.snippets: #enable to embed arbitrary files
-        auto_append:
-            - includes/abbreviations.md
-    - pymdownx.highlight:
-            linenums: true # enable line display
-            line_spans: __span
-            pygments_lang_class: true # detect language automatically
-            anchor_linenums: true # offer line anchor
-    - pymdownx.keys # render key symbols
-    - pymdownx.smartsymbols
-    #enable button
-    - attr_list
-    #enable content tabs
-    - pymdownx.tabbed:
-        alternate_style: true
-    - tables
-    #daigrams are not enabled
-    - footnotes
-    #enable emoji
-    - pymdownx.emoji:
-        emoji_index: !!python/name:materialx.emoji.twemoji
-        emoji_generator: !!python/name:materialx.emoji.to_svg
-        options:
-            custom_icons:
-            - "overrides/.icons"
-    #image alignment
-    - md_in_html
-    #better list
-    - def_list
-    - pymdownx.tasklist:
-        custom_checkbox: true
-    #abbr
-    - abbr
-    #enable math syntax
-    - pymdownx.arithmatex:
-        generic: true
-    #enable table of content
-    - toc:
-        permalink: true
-        permalink_title: Anchor link to this section for reference
-    - pymdownx.caret
-    - pymdownx.mark
-    - pymdownx.tilde
-    - pymdownx.critic
-
-    extra_javascript:
-    - javascripts/extra.js
-    - javascripts/mathjax.js
-    - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js # enable table sort
-    - javascripts/tablesort.js # enable table sort
-    - https://polyfill.io/v3/polyfill.min.js?features=es6
-    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
-    extra:
-    social:
-        - icon: fontawesome/brands/github # icons to the right bottom of the page
-        link: https://github.com/stormckey
-        - icon: fontawesome/solid/paper-plane # icons to the right bottom of the page
-        link: mailto:sortygraph@gmail.com
-    alternate: # change the language， the link should point to different directories
-        - name: English
-        link: /
-        lang: en
-        - name: 中文
-        link: /
-        lang: zh
-    consent:
-        title: Cookie consent
-        description: >-
-        We use cookies to recognize your repeated visits and preferences， as well
-        as to measure the effectiveness of our documentation and whether users
-        find what they're searching for. With your consent， you're helping us to
-        make our documentation better.
-    analytics:
-        provider: google
-        property: G-XXXXXXXXXX
-
-    extra_css:
-    - css/hint.min.css
-    - css/extra.css
-    ```
-
-### 3.x 更多特性（我还不会用但考虑启用的）
-
-1. 自定义 html 样式[:octicons-link-16:](https://squidfunk.github.io/mkdocs-material/customization/#extending-the-theme)

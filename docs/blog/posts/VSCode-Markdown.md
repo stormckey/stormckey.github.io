@@ -45,11 +45,14 @@ nostatistics: true
 ??? tip "设置默认图片样式"
     本人使用 mkdocs for material 搭建此网页，可以给此插件添加的图片添加统一样式：
 
-    -  设置 css：比如阴影加圆角
-        ``` css
+    -  设置 css：比如阴影圆角等
+        ``` css title="我正在使用的"
         img[src*="pic"] {
-        box-shadow: 4px 4px 15px #666;
-        border-radius: 10px;
+            box-shadow: 2px 2px 10px #666;
+            border-radius: 4px;
+            width: 98%;
+            display: block;
+            margin: 10px auto;
         }
         ```
     - 在 mkdocs.yml 添加 css 作为额外 css：

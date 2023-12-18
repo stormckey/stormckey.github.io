@@ -20,21 +20,19 @@ theme:
     # text: Roboto Mono
     code: Roboto Mono
   features:
-      - navigation.prune
+      # - navigation.prune
+      - navigation.tracking
+      - navigation.instant # optimize loading
+      - navigation.tabs
+      - navigation.indexes
+      - navigation.top
       - content.action.edit # enable the button to edit the source code of the page
       - content.action.view # enable the button to view the source code of the page
       - content.code.copy # enable the button to copy the code block
-      - navigation.tabs  # enable the row of tabs under the title 
-      # - navigation.sections # unfold the secondary titles to the left
-      # - navigation.footer # enable the next and previous button
-      - navigation.indexes # the index page will be incoperate into the tab
       - search.suggest # auto suggestion
       - search.highlight # highlight when search
       - search.share # enable share when search
-      - navigation.instant # optimize loading
-      - navigation.tracking # URL will change as we scroll down
       - toc.follow # the sidebar will scroll automatically following the user
-      - navigation.top # button to back to the top
   palette: # my customized schema
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -94,9 +92,7 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 #enable code config
   - pymdownx.inlinehilite #inline code highlight
-  - pymdownx.snippets: #enable to embed arbitrary files
-      auto_append:
-          - includes/abbreviations.md
+  - pymdownx.snippets #enable to embed arbitrary files
   - pymdownx.highlight:
         linenums: true # enable line display
         line_spans: __span
