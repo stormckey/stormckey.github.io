@@ -32,6 +32,12 @@
   content: "文档更新";
 }
 
+/*set the color for links*/
+article a[href^="http"],
+article a[href^="https://"] {
+    color: var(--md-primary-fg-color);
+}
+
 /* 图片放大start */
 /* .shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
