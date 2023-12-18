@@ -16,6 +16,7 @@ nostatistics: true
 
 ## kernel 执行流程
 
+
 <div class="annotate" markdown>
 ```title="kernel 执行流程" hl_lines="18-36" linenums="0"
 - `opensbi` 执行完毕
