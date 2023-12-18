@@ -432,4 +432,8 @@ nostatistics: true
 
 本站采用的默认样式为圆角+阴影，另带居中和更合适的间隔
 
+### 4.5 自动中文排版优化
+
+关于这个问题我之前写过一篇 [:octicons-link-16:博客](https://stormckey.github.io/blog/%E7%94%A8-vim-%E6%89%B9%E9%87%8F%E4%BC%98%E5%8C%96%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88/)，欢迎参考。
+
 
