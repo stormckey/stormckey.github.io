@@ -57,8 +57,8 @@ nostatistics: true
               - sepc: fork 对应 ecall 的下一条指令
 - _traps: 父进程 fork 完毕，携带子进程 pid 恢复用户态上下文返回 ecall 下一条指令
 - fork: 回到用户态，继续执行父进程，打印信息直到被调度走，随后调度算法选择子进程
-- __switch_to: 保存父进程上下文至父进程 task_struct,从子进程 task_struct 中恢复子进程内核态上下文(2)
-- __return_from_fork: 子进程从 pt_regs 中恢复用户态上下文，包括返回值 0(3)，从 trap 返回 ecall 下一条指令，继续执行
+- __switch_to: 保存父进程上下文至父进程 task_struct,从子进程 task_struct 中恢复子进程内核态上下文(2)，ret 返回到__return_from_fork 继续执行用户态代码
+- __return_from_fork: 子进程从 pt_regs 中恢复用户态上下文(3)，包括返回值 0，从 trap 返回 ecall 下一条指令，继续执行
 ```
 </div>
 
