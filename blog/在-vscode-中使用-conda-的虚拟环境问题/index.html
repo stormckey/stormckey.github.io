@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../icons/cat.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -1694,6 +1694,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      新方法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      旧方法
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1809,21 +1835,29 @@
 <h1 id="vscode-conda">在 VSCode 中使用 conda 的虚拟环境问题<a class="headerlink" href="#vscode-conda" title="Anchor link to this section for reference">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
-<p>用 conda 的过程中遇到的一个神秘问题🤔</p>
 </div>
+<p>用 conda 的过程中遇到的一个神秘问题 🤔</p>
 <!-- more -->
 
+<h2 id="_1">新方法<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
+<p>下面的旧方法是好久以前不知道从哪个犄角旮旯里找出来的，我使用到目前也没有问题。</p>
+<p>但最近看到 <a href="https://code.visualstudio.com/updates/v1_36#_launch-terminals-with-clean-environments"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>建议</a>，试着换了其中建议的方法，发现也是可行的。</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">请在setting.json中加入</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>  &quot;terminal.integrated.inheritEnv&quot;: false,
+</span></code></pre></div></td></tr></table></div>
+<h2 id="_2">旧方法<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
 <p>最近开始使用 conda，试图在 VSCode 终端里切换虚拟环境，命令行提示已经切换，但是 python 环境实际上没有变。
 解决方案如下：</p>
 <ol>
 <li>快捷键<code>command shift p</code>，搜索 settings，打开 user settings json</li>
-<li>加入如下内容：
-  <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>    &quot;terminal.integrated.env.osx&quot;: {
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>      &quot;PATH&quot;: &quot;&quot;
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>  }，
-</span></code></pre></div></td></tr></table></div></li>
+<li>加入如下内容：</li>
+</ol>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>    &quot;terminal.integrated.env.osx&quot;: {
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>      &quot;PATH&quot;: &quot;&quot;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>  }，
+</span></code></pre></div></td></tr></table></div>
+<ol>
 <li>重启 VSCode 即可</li>
 </ol>
 
@@ -1848,7 +1882,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 24, 2023</span>
   </span>
 
     
