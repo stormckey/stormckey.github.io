@@ -642,6 +642,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -671,6 +677,29 @@
             Categories
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/bug/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bug
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -773,11 +802,80 @@
   
   
     <li class="md-nav__item">
-      <a href="../category/%E7%A5%9E%E7%A7%98-bug/" class="md-nav__link">
+      <a href="../category/vscode/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    神秘 bug
+    VSCode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/vim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vim
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/%E6%95%88%E7%8E%87/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    效率
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    环境
   </span>
   
 
@@ -801,29 +899,6 @@
   
   <span class="md-ellipsis">
     计算机体系结构
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../category/%E9%85%8D%E7%8E%AF%E5%A2%83/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    配环境
   </span>
   
 
@@ -1785,7 +1860,8 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../category/%E9%85%8D%E7%8E%AF%E5%A2%83/">配环境</a></span>
+                              <a href="../category/%E7%8E%AF%E5%A2%83/">环境</a>, 
+                              <a href="../category/vscode/">VSCode</a></span>
                         </div>
                       </li>
                     
@@ -1842,7 +1918,7 @@
 <h2 id="_1">新方法<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
 <p>下面的旧方法是好久以前不知道从哪个犄角旮旯里找出来的，我使用到目前也没有问题。</p>
 <p>但最近看到 <a href="https://code.visualstudio.com/updates/v1_36#_launch-terminals-with-clean-environments"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>建议</a>，试着换了其中建议的方法，发现也是可行的。</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">请在setting.json中加入</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>  &quot;terminal.integrated.inheritEnv&quot;: false,
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">请在 setting.json 中加入</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>  &quot;terminal.integrated.inheritEnv&quot;: false,
 </span></code></pre></div></td></tr></table></div>
 <h2 id="_2">旧方法<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
 <p>最近开始使用 conda，试图在 VSCode 终端里切换虚拟环境，命令行提示已经切换，但是 python 环境实际上没有变。

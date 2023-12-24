@@ -261,6 +261,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://stormckey.github.io/blog/vscode-snippet/</loc>
+         <lastmod>2023-12-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://stormckey.github.io/blog/%E7%94%A8-vim-%E6%89%B9%E9%87%8F%E4%BC%98%E5%8C%96%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88/</loc>
          <lastmod>2023-12-24</lastmod>
          <changefreq>daily</changefreq>
@@ -301,6 +306,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://stormckey.github.io/blog/category/%E6%95%88%E7%8E%87/</loc>
+         <lastmod>2023-12-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/blog/category/vscode/</loc>
+         <lastmod>2023-12-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://stormckey.github.io/blog/category/lab/</loc>
          <lastmod>2023-12-24</lastmod>
          <changefreq>daily</changefreq>
@@ -321,17 +336,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://stormckey.github.io/blog/category/vim/</loc>
+         <lastmod>2023-12-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://stormckey.github.io/blog/category/%E7%8E%AF%E5%A2%83/</loc>
+         <lastmod>2023-12-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://stormckey.github.io/blog/category/cool/</loc>
          <lastmod>2023-12-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stormckey.github.io/blog/category/%E9%85%8D%E7%8E%AF%E5%A2%83/</loc>
-         <lastmod>2023-12-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stormckey.github.io/blog/category/%E7%A5%9E%E7%A7%98-bug/</loc>
+         <loc>https://stormckey.github.io/blog/category/bug/</loc>
          <lastmod>2023-12-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
