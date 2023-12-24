@@ -3,7 +3,9 @@ comments: true
 authors:
     - stormckey
 categories:
-    - 配环境
+    - 环境
+    - 效率
+    - VSCode
 date: 2023-03-23
 nostatistics: true
 ---

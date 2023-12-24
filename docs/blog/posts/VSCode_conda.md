@@ -3,7 +3,8 @@ comments: true
 authors:
   - stormckey
 categories:
-  - 配环境
+  - 环境
+  - VSCode
 date: 2023-03-21
 nostatistics: true
 ---
@@ -21,7 +22,7 @@ nostatistics: true
 
 但最近看到 [:octicons-link-16:建议](https://code.visualstudio.com/updates/v1_36#_launch-terminals-with-clean-environments)，试着换了其中建议的方法，发现也是可行的。
 
-```title="请在setting.json中加入"
+```title="请在 setting.json 中加入"
   "terminal.integrated.inheritEnv": false,
 ```
 

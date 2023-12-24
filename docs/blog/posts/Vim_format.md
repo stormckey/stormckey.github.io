@@ -3,7 +3,8 @@ comments: true
 authors:
     - stormckey
 categories:
-    - Cool
+    - 效率
+    - Vim
 date: 2023-11-26
 nostatistics: true
 ---

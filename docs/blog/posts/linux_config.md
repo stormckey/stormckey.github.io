@@ -3,7 +3,8 @@ comments: true
 authors:
     - stormckey
 categories:
-    - 配环境
+    - 效率
+    - 环境
 date: 2023-03-22
 nostatistics: true
 ---

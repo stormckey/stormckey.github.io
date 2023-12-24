@@ -3,7 +3,8 @@ comments: true
 authors:
     - stormckey
 categories:
-    - 配环境
+    - 环境
+    - VSCode
 date: 2023-04-05
 nostatistics: true
 ---

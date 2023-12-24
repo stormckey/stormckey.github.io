@@ -3,7 +3,7 @@ comments: true
 authors:
     - stormckey
 categories:
-    - 神秘 bug
+    - Bug
 date: 2023-03-20
 nostatistics: true
 ---
