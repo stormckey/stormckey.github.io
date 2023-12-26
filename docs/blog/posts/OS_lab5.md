@@ -57,7 +57,7 @@ nostatistics: true
 
 可以看到 linux 使用了 tp（thread pointer）以及指令`csrwr`,前者倒不是必要的使用，我们主要关注到`csrwr`指令可以实现 csr 与其他寄存器的交换，从而我们 sp 与`sscratch`的切换就不需要其他寄存器了，这就是正确的解决方式。
 
-## PAGE FAULT
+<!-- ## PAGE FAULT
 
 处理缺页异常时要仔细处理文件页的复制问题，如果要复制的一页中既有 file_content，也有一些不在 file 之中的（如 bss 段），我们就需要分别处理这两段，前者复制，后者清零。
 
@@ -68,7 +68,7 @@ nostatistics: true
 - 起地址不应小于文件内容开头地址`vm_start`
 - 起地址不应大于文件内容结尾地址`vm_start + vm_content_size_in_file`
 - 终地址不应大于文件内容结尾地址`vm_start + vm_content_size_in_file`
-- 拷贝
+- 拷贝 -->
 
 ## vmas
 
