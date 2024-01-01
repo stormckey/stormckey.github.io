@@ -2042,7 +2042,7 @@ Ubuntu: 20.04</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">docker images</label><label for="__tabbed_1_2">docker pull</label><label for="__tabbed_1_3">docker rmi</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>使用<code>docker images</code>命令查看当前已有的镜像列表.这将显示所有已下载和构建的镜像，以及它们的相关信息，如镜像 ID、名称、标签、大小等.<a class="glightbox" href="../images/docker_minisql/2023-07-01-17-34-32.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-17-34-32.png#pic" /></a></p>
+<p>使用<code>docker images</code>命令查看当前已有的镜像列表.这将显示所有已下载和构建的镜像，以及它们的相关信息，如镜像 ID、名称、标签、大小等.<a class="glightbox" href="../images/docker_minisql/2023-07-01-17-34-32.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-17-34-32.png#pic" /></a></p>
 </div>
 <div class="tabbed-block">
 <p>使用<code>docker pull</code>命令从 Docker Registry 中拉取镜像.如果不指定标签，默认拉取 latest 标签的镜像.例如，<code>docker pull ubuntu:20.04</code>将拉取 Ubuntu 20.04 镜像。</p>
@@ -2058,7 +2058,7 @@ Ubuntu: 20.04</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w">  </span>-p<span class="w"> </span><span class="m">2333</span>:22<span class="w"> </span>--name<span class="w"> </span>minisql<span class="w"> </span>ubuntu:20.04
 </span></code></pre></div></td></tr></table></div>
 执行完命令应看到我们以 root 用户进入了容器的终端：
-<a class="glightbox" href="../images/docker_minisql/2023-07-01-19-33-57.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-19-33-57.png#pic" /></a></p>
+<a class="glightbox" href="../images/docker_minisql/2023-07-01-19-33-57.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-19-33-57.png#pic" /></a></p>
 <details class="info">
 <summary>端口映射</summary>
 <p>端口映射是一种将主机（宿主机）端口与容器内部端口进行绑定的技术.它允许从主机上的特定端口访问容器内运行的服务或应用程序。</p>
@@ -2070,7 +2070,7 @@ Ubuntu: 20.04</p>
 <details class="warning">
 <summary>可能存在的问题</summary>
 <p>有时候直接换源会遇到报错：
-<a class="glightbox" href="../images/docker_minisql/2023-07-01-19-42-06.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-19-42-06.png#pic" /></a>
+<a class="glightbox" href="../images/docker_minisql/2023-07-01-19-42-06.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-19-42-06.png#pic" /></a>
 这需要我们先使用 http，运行如下命令换 http 源：
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
@@ -2146,7 +2146,7 @@ Ubuntu: 20.04</p>
 </span></code></pre></div></td></tr></table></div>
 这里的 stormckey 换成你自己起的用户名</p>
 <p>给用户添加 sudo 权限，需要在<code>/etc/sudoers</code>文件中<code># User privilege specification</code>添加：</p>
-<p><a class="glightbox" href="../images/docker_minisql/2023-07-01-21-25-52.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-21-25-52.png#pic" /></a></p>
+<p><a class="glightbox" href="../images/docker_minisql/2023-07-01-21-25-52.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-21-25-52.png#pic" /></a></p>
 <h3 id="32">3.2 配置免密登陆<a class="headerlink" href="#32" title="Anchor link to this section for reference">&para;</a></h3>
 <p>来到远程连接的发起者端（这里就是宿主机），执行下面命令生成密钥，输入 paseephrase 时直接回车（为空）
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a>ssh-keygen
@@ -2161,8 +2161,8 @@ Ubuntu: 20.04</p>
 <p>接着配置容器的 sshd:
 <code>vim /etc/ssh/sshd_config</code></p>
 <p>去掉以下的注释：
-<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-23-02.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-23-02.png#pic" /></a>
-<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-23-44.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-23-44.png#pic" /></a>
+<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-23-02.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-23-02.png#pic" /></a>
+<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-23-44.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-23-44.png#pic" /></a>
 注意第二张图中的文件一定是你之前放公钥的文件，路径从用户根目录开始</p>
 <p>更改完配置后启动/重启 sshd
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a>service<span class="w"> </span>ssh<span class="w"> </span>start
@@ -2171,16 +2171,16 @@ Ubuntu: 20.04</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;service ssh start&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc
 </span></code></pre></div></td></tr></table></div></p>
 <p>此时你在宿主机上就可以通过<code>ssh stormckey@localhost -p 2333</code>登陆容器了：
-<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-42-07.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-42-07.png#pic" /></a></p>
+<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-42-07.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-42-07.png#pic" /></a></p>
 <h3 id="33-vscode">3.3 配置 VSCode<a class="headerlink" href="#33-vscode" title="Anchor link to this section for reference">&para;</a></h3>
 <p>下载插件 Remote-SSH 插件，点击右边出现的插件图标，在侧栏中选择设置 SSH：
-<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-43-59.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-43-59.png#pic" /></a></p>
+<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-43-59.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-43-59.png#pic" /></a></p>
 <p>写入如下的配置信息：
-<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-44-56.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-44-56.png#pic" /></a></p>
+<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-44-56.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-44-56.png#pic" /></a></p>
 <p>连接！
-<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-45-37.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-45-37.png#pic" /></a></p>
+<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-45-37.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-45-37.png#pic" /></a></p>
 <p>此后就没有什么特别的了，打开终端直接按照助教的文档配置 minisql 即可。
-<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-52-01.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-52-01.png#pic" /></a></p>
+<a class="glightbox" href="../images/docker_minisql/2023-07-01-20-52-01.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-52-01.png#pic" /></a></p>
 <h2 id="4">4.更多设置<a class="headerlink" href="#4" title="Anchor link to this section for reference">&para;</a></h2>
 <p>现在你就可以用这个简陋的命令行开始工作了，但如果你喜欢的话可以加入更多设置！</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">终端美化</label></div>

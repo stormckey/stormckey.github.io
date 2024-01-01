@@ -2000,7 +2000,7 @@
 </ul>
 <h2 id="phdr-p_flags">phdr-&gt;p_flags<a class="headerlink" href="#phdr-p_flags" title="Anchor link to this section for reference">&para;</a></h2>
 <p>注意这一项虽然是声明权限的的但定义不等同于页表项的 perm，定义如下：</p>
-<p><a class="glightbox" href="../images/OS_lab4/2023-12-01-17-51-47.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/OS_lab4/2023-12-01-17-51-47.png#pic" /></a></p>
+<p><a class="glightbox" href="../images/OS_lab4/2023-12-01-17-51-47.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/OS_lab4/2023-12-01-17-51-47.png#pic" /></a></p>
 <h2 id="_1">执行权限<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
 <p>注意设置好页表和 sstatus 保证运行用户态代码时权限检查能够通过，否则会导致 scause = 0xc 的 inst page fault 此时也许我们可以在 gdb 中读信息但是一执行就出错</p>
 <h2 id="_2">拷贝问题<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>

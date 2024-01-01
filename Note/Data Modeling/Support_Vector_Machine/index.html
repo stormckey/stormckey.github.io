@@ -2138,7 +2138,7 @@
 \]</div>
 <p>可以看出，其绝对值也就是函数间隔除去了<span class="arithmatex">\(||w||\)</span>这个因素</p>
 </div>
-<p><a class="glightbox" href="../images/Support_Vector_Machine/2023-11-25-23-37-51.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Support_Vector_Machine/2023-11-25-23-37-51.png#pic" /></a></p>
+<p><a class="glightbox" href="../images/Support_Vector_Machine/2023-11-25-23-37-51.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Support_Vector_Machine/2023-11-25-23-37-51.png#pic" /></a></p>
 <p>上述的变量的绝对值含义都表示某种距离，而符号表示分类正确与否，分类正确时间隔为正，分类错误时间隔为负</p>
 <p>给定一组数据点和一个超平面，我们可以计算出各个函数间隔和几何间隔.但是如果我们成比例的同时放缩 w 和 b，那么超平面和几何间隔都完全不变，但是所有点的函数间隔都会随着 w 的变化而变化，因为函数间隔其实就是几何间隔（不变）乘上 w 的模（正在被成比例放缩）</p>
 <p>为了提高分类的确信度和泛化能力，我们希望最大化最小几何间隔，也就是尽量提高所有点到超平面的距离的下界，也就是让所有点都尽可能离超平面远一点（离超平面很近的话，稍微有一点扰动就容易被分成另一类）</p>
@@ -2237,7 +2237,7 @@
 <p>这也是上述条件中出现<span class="arithmatex">\(\alpha_i \leq C\)</span>的原因</p>
 <p>同样求解最优解<span class="arithmatex">\(\alpha^*\)</span>，然后带回原式，得到最优解<span class="arithmatex">\(w^*，b^*，\xi^*\)</span>，构成最优分离超平面</p>
 <p>那些被松弛的点的位置和<span class="arithmatex">\(\xi\)</span>的的关系为：</p>
-<p><a class="glightbox" href="../images/Support_Vector_Machine/2023-11-26-00-47-33.png#pic" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Support_Vector_Machine/2023-11-26-00-47-33.png#pic" /></a></p>
+<p><a class="glightbox" href="../images/Support_Vector_Machine/2023-11-26-00-47-33.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/Support_Vector_Machine/2023-11-26-00-47-33.png#pic" /></a></p>
 <h2 id="_11">核函数<a class="headerlink" href="#_11" title="Anchor link to this section for reference">&para;</a></h2>
 <p>我们想要把点<span class="arithmatex">\(x， z \in \mathbb{R}^n\)</span>映射到一个更高维的空间，也就是(<span class="arithmatex">\(\phi(x)\)</span>被映射到更高维），在这个映射中，我们需要保证高维空间中二者的点积是原空间中点积的函数，也就是</p>
 <div class="arithmatex">\[

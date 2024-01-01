@@ -1881,7 +1881,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -1962,10 +1962,11 @@
 </span></span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="hll">          - pt_regs: 位于该页高地址，其中内容在子进程从内核态返回用户态时将会被加载，以下项需要改动
 </span></span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="hll">              - a0: 返回用户态后携带的调用返回值，也就是子进程得到的 fork 返回值，0
 </span></span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="hll">              - sepc: fork 对应 ecall 的下一条指令
-</span></span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="hll">- _traps: 父进程 fork 完毕，携带子进程 pid 恢复用户态上下文返回 ecall 下一条指令
-</span></span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="hll">- fork: 回到用户态，继续执行父进程，打印信息直到被调度走，随后调度算法选择子进程
-</span></span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="hll">- __switch_to: 保存父进程上下文至父进程 task_struct,从子进程 task_struct 中恢复子进程内核态上下文(2)，ret 返回到__return_from_fork 继续执行用户态代码
-</span></span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="hll">- __return_from_fork: 子进程从 pt_regs 中恢复用户态上下文(3)，包括返回值 0，从 trap 返回 ecall 下一条指令，继续执行
+</span></span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="hll">    - 将父进程的用户态页内容都拷贝一份给子进程，并在子进程的页表中添加这些页的映射
+</span></span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="hll">- _traps: 父进程 fork 完毕，携带子进程 pid 恢复用户态上下文返回 ecall 下一条指令
+</span></span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="hll">- fork: 回到用户态，继续执行父进程，打印信息直到被调度走，随后调度算法选择子进程
+</span></span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="hll">- __switch_to: 保存父进程上下文至父进程 task_struct,从子进程 task_struct 中恢复子进程内核态上下文(2)，ret 返回到__return_from_fork 继续执行用户态代码
+</span></span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="hll">- __return_from_fork: 子进程从 pt_regs 中恢复用户态上下文(3)，包括返回值 0，从 trap 返回 ecall 下一条指令，继续执行
 </span></span></code></pre></div>
 </div>
 <ol>
@@ -2010,7 +2011,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 19, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 1, 2024</span>
   </span>
 
     
