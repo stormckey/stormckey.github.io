@@ -22,7 +22,7 @@ nostatistics: true
 
 
 <div class="annotate" markdown>
-```title="kernel 执行流程" hl_lines="18-36" linenums="0"
+```title="kernel 执行流程" hl_lines="18-37" linenums="0"
 - opensbi 执行完毕
 - _start: 完成 stvec， sie， mtimecmp， sstatus 和栈的设置，然后依次调用以下函数
     - setup_vm: 填写页表
@@ -55,6 +55,7 @@ nostatistics: true
           - pt_regs: 位于该页高地址，其中内容在子进程从内核态返回用户态时将会被加载，以下项需要改动
               - a0: 返回用户态后携带的调用返回值，也就是子进程得到的 fork 返回值，0
               - sepc: fork 对应 ecall 的下一条指令
+    - 将父进程的用户态页内容都拷贝一份给子进程，并在子进程的页表中添加这些页的映射
 - _traps: 父进程 fork 完毕，携带子进程 pid 恢复用户态上下文返回 ecall 下一条指令
 - fork: 回到用户态，继续执行父进程，打印信息直到被调度走，随后调度算法选择子进程
 - __switch_to: 保存父进程上下文至父进程 task_struct,从子进程 task_struct 中恢复子进程内核态上下文(2)，ret 返回到__return_from_fork 继续执行用户态代码
