@@ -16,23 +16,23 @@ theme:
   name: material
   custom_dir: overrides
   favicon: icons/cat.svg # put in /docs/icons/cat.svg
-  font: 
-    # text: Roboto Mono
-    code: JetBrains Mono
+  font:
+    text: Comic Sans MS
+    code: Monaspace Krypton
   features:
-      # - navigation.prune
-      - navigation.tracking
-      - navigation.instant # optimize loading
-      - navigation.tabs
-      - navigation.indexes
-      - navigation.top
-      - content.action.edit # enable the button to edit the source code of the page
-      - content.action.view # enable the button to view the source code of the page
-      - content.code.copy # enable the button to copy the code block
-      - search.suggest # auto suggestion
-      - search.highlight # highlight when search
-      - search.share # enable share when search
-      - toc.follow # the sidebar will scroll automatically following the user
+    # - navigation.prune
+    - navigation.tracking
+    - navigation.instant # optimize loading
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - content.action.edit # enable the button to edit the source code of the page
+    - content.action.view # enable the button to view the source code of the page
+    - content.code.copy # enable the button to copy the code block
+    - search.suggest # auto suggestion
+    - search.highlight # highlight when search
+    - search.share # enable share when search
+    - toc.follow # the sidebar will scroll automatically following the user
   palette: # my customized schema
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -69,7 +69,7 @@ plugins:
   - tooltips
   - macros
   - statistics
-      # page_check_metadata: statistics
+    # page_check_metadata: statistics
   - glightbox
   - blog:
       post_url_format: "{slug}"
@@ -78,10 +78,8 @@ plugins:
       post_excerpt: required
       post_readtime_words_per_minute: 150
 
-
-
 markdown_extensions:
-#enable admonition
+  #enable admonition
   - admonition
   - pymdownx.details # enable ??? admonition
   - pymdownx.betterem # better emphasize
@@ -89,41 +87,45 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-#enable code config
+          format:
+            !!python/name:pymdownx.superfences.fence_code_format #enable code config
+
+
   - pymdownx.inlinehilite #inline code highlight
   - pymdownx.snippets #enable to embed arbitrary files
   - pymdownx.highlight:
-        linenums: true # enable line display
-        line_spans: __span
-        pygments_lang_class: true # detect language automatically
-        anchor_linenums: true # offer line anchor
+      linenums: true # enable line display
+      line_spans: __span
+      pygments_lang_class: true # detect language automatically
+      anchor_linenums: true # offer line anchor
   - pymdownx.keys # render key symbols
   - pymdownx.smartsymbols
-#enable button
-  - attr_list  
-#enable content tabs
+  #enable button
+  - attr_list
+  #enable content tabs
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - tables
-#daigrams are not enabled
+  #daigrams are not enabled
   - footnotes
-#enable emoji
+  #enable emoji
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-#image alignment
+      emoji_generator:
+        !!python/name:material.extensions.emoji.to_svg #image alignment
+
+
   - md_in_html
-#better list
+  #better list
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
-#abbr
+  #abbr
   - abbr
-#enable math syntax
+  #enable math syntax
   - pymdownx.arithmatex:
       generic: true
-#enable table of content
+  #enable table of content
   - toc:
       permalink: true
       permalink_title: Anchor link to this section for reference
@@ -155,7 +157,7 @@ extra:
       lang: zh
   # consent:
   #   title: Cookie consent
-  #   description: >- 
+  #   description: >-
   #     We use cookies to recognize your repeated visits and preferences, as well
   #     as to measure the effectiveness of our documentation and whether users
   #     find what they're searching for. With your consent, you're helping us to
@@ -168,12 +170,11 @@ extra_css:
   - css/hint.min.css
   - css/extra.css
 
-
 nav:
-  - Home: 
-    - index.md
-  - Blog: 
-    - blog/index.md
+  - Home:
+      - index.md
+  - Blog:
+      - blog/index.md
     # - Environment:
     #   - blog/Environment/zsh_arg.md
     #   - blog/Environment/VSCode_conda.md
@@ -190,7 +191,7 @@ nav:
     #   - blog/Labs/CN_lab2.md
     #   - blog/Labs/OS_lab3.md
 
-    # - Minisql: 
+    # - Minisql:
     #   - Minisql#0: Blog/Minisql/minisql_part0.md
     #   - Minisql#1: Blog/Minisql/minisql_part1.md
     # - Fun:
@@ -201,42 +202,41 @@ nav:
   #     - Blog/Cool/GPT_academic.md
   #     - Blog/Cool/github_profile.md
   #     - Blog/Cool/Vim_standardise.md
-    
 
   - Note:
-    - Note/index.md
-    - Note/CO_review.md
-    # - DS:
-    #   - BST,AVL,Splay: Note/ADS/BST_AVL_Splay.md
-    #   - B-Tree,B+Tree: Note/ADS/B-Tree_B+Tree.md
-    #   - Red-Black Tree: Note/ADS/RBTree.md
-    - Missing Semester:
-      - Note/Missing Semester/index.md
-      - Shell: Note/Missing Semester/Shell.md
-      - Vim: Note/Missing Semester/Vim.md
-      - Data: Note/Missing Semester/Data.md
-      - Git: Note/Missing Semester/Git.md
-      - Commandline Environment: Note/Missing Semester/commandline_env.md
-    - 数据建模与分析:
-      - Note/Data Modeling/index.md
-      - 感知机: Note/Data Modeling/Perceptron.md
-      - Note/Data Modeling/KNN.md
-      - 朴素贝叶斯算法: Note/Data Modeling/Naive_Bayesian.md
-      - 决策树: Note/Data Modeling/Decision_Tree.md
-      - 逻辑斯蒂回归: Note/Data Modeling/Logistic_Regression.md
-      - Note/Data Modeling/Max_Entropy.md
-      - Note/Data Modeling/Support_Vector_Machine.md
-      - Note/Data Modeling/Boosting.md
-      - Note/Data Modeling/Centering.md
+      - Note/index.md
+      - Note/CO_review.md
+      # - DS:
+      #   - BST,AVL,Splay: Note/ADS/BST_AVL_Splay.md
+      #   - B-Tree,B+Tree: Note/ADS/B-Tree_B+Tree.md
+      #   - Red-Black Tree: Note/ADS/RBTree.md
+      - Missing Semester:
+          - Note/Missing Semester/index.md
+          - Shell: Note/Missing Semester/Shell.md
+          - Vim: Note/Missing Semester/Vim.md
+          - Data: Note/Missing Semester/Data.md
+          - Git: Note/Missing Semester/Git.md
+          - Commandline Environment: Note/Missing Semester/commandline_env.md
+      - 数据建模与分析:
+          - Note/Data Modeling/index.md
+          - 感知机: Note/Data Modeling/Perceptron.md
+          - Note/Data Modeling/KNN.md
+          - 朴素贝叶斯算法: Note/Data Modeling/Naive_Bayesian.md
+          - 决策树: Note/Data Modeling/Decision_Tree.md
+          - 逻辑斯蒂回归: Note/Data Modeling/Logistic_Regression.md
+          - Note/Data Modeling/Max_Entropy.md
+          - Note/Data Modeling/Support_Vector_Machine.md
+          - Note/Data Modeling/Boosting.md
+          - Note/Data Modeling/Centering.md
 
   - Research:
-    - Research/index.md
-    - Diffusion Model: 
-      - DDPM: Research/Diffusion Model/DDPM.md
-      - DDIM: Research/Diffusion Model/DDIM.md
-  
+      - Research/index.md
+      - Diffusion Model:
+          - DDPM: Research/Diffusion Model/DDPM.md
+          - DDIM: Research/Diffusion Model/DDIM.md
+
   - PeiPei:
-    - PeiPei/index.md
-    - PeiPei/repository.md
-    - PeiPei/typst.md
-    - PeiPei/markdown.md
+      - PeiPei/index.md
+      - PeiPei/repository.md
+      - PeiPei/typst.md
+      - PeiPei/markdown.md
