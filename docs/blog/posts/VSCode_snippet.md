@@ -36,7 +36,7 @@ nostatistics: true
 
 解决方法正如回答中所说，我们需要手动为 markdown 开启自动补全；
 
-```json title="settings.json
+```json title="settings.json"
   "[markdown]": {
     "editor.quickSuggestions": {
       "other": true,
