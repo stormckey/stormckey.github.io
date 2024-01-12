@@ -29,7 +29,7 @@ nostatistics: true
 
 ## Markdown 中的自动补全问题
 
-可以发现在 markdown 中输入文本并不会触发自动补全，这一现象在这个 [:octicons-link-16:问题](https://stackoverflow.com/questions/43639841/how-to-set-markdown-snippet-trigger-automatically) 中已有讨论
+你或许注意到了 markdown 中输入文本并不会触发自动补全(1)，这一现象在这个 [:octicons-link-16:问题](https://stackoverflow.com/questions/43639841/how-to-set-markdown-snippet-trigger-automatically) 中已有讨论
 { .annotate }
 
 1.  又或者其实你没注意到（乐）
