@@ -1961,7 +1961,7 @@
 
 <h1 id="_1">奇异值分解<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1285 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 4 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1322 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 4 分钟</p>
 </div>
 <h2 id="_2">引入<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
 <p class="annotate">我们希望找到一种对任意非零实矩阵(1)的分解方式，使得其可以被对角化，奇异值分解（Singular Value Decomposition，SVD）就是这样一种分解方式。</p>
@@ -2031,7 +2031,7 @@
 \]</div>
 <h2 id="_5">变体<a class="headerlink" href="#_5" title="Anchor link to this section for reference">&para;</a></h2>
 <p>不难发现，我们只需要<span class="arithmatex">\(U_1, \Sigma_1, V_1\)</span>就可以还原出<span class="arithmatex">\(A\)</span>了，所以我们可以只取这三个矩阵作为一个分解，这就是紧奇异值分解。</p>
-<p>更进一步的，如果我们连 r 维的矩阵都无法接受的话，我们可以选择只保留前<span class="arithmatex">\(k\)</span>维，这样得到的就是截断奇异值分解。</p>
+<p>更进一步的，如果我们连 r 维的矩阵都无法接受的话，我们可以选择只保留前<span class="arithmatex">\(k\)</span>维，这样得到的就是截断奇异值分解。截断奇异值分解午饭准确的还原出<span class="arithmatex">\(A\)</span>了，但是可以保证是所有 k 维的分解中的最佳近似。</p>
 <h2 id="_6">性质<a class="headerlink" href="#_6" title="Anchor link to this section for reference">&para;</a></h2>
 <p>左右奇异向量互相转化：</p>
 <div class="arithmatex">\[\begin{align*}
