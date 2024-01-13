@@ -364,6 +364,25 @@ extra:
 
 官方的起步[:octicons-link-16:指导](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/)很详细了，照着走就好！
 
+### 3.6 启用特殊的字体
+
+本文档目前采用的是 [:octicons-link-16:霞鹜文楷](https://github.com/lxgw/LxgwWenKai)，但直接使用该字体直接修改。
+
+需要先在`mkdocs.yml`中添加：
+
+```yaml
+extra_css:
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+```
+
+然后再切换语言就可以正常渲染了。
+
+```yaml
+theme:
+  font:
+    text: LXGW WenKai Screen
+```
+
 ## 4.其他插件与痛点解决
 
 ### 4.1 启用最新更新时间

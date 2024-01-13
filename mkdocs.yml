@@ -17,7 +17,7 @@ theme:
   custom_dir: overrides
   favicon: icons/cat.svg # put in /docs/icons/cat.svg
   font:
-    text: Comic Sans MS
+    text: LXGW WenKai Screen
     code: Monaspace Krypton
   features:
     # - navigation.prune
@@ -169,6 +169,7 @@ extra:
 extra_css:
   - css/hint.min.css
   - css/extra.css
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
 
 nav:
   - Home:
