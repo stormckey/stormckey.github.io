@@ -176,33 +176,6 @@ nav:
       - index.md
   - Blog:
       - blog/index.md
-    # - Environment:
-    #   - blog/Environment/zsh_arg.md
-    #   - blog/Environment/VSCode_conda.md
-    #   - blog/Environment/VSCode-Markdown.md
-    #   - blog/Environment/wsl_cuda.md
-    #   - blog/Environment/ssh_wsl.md
-    #   - blog/Environment/Mac_VSC_DEBUG.md
-    #   - blog/Environment/index.md
-    #   - blog/Environment/linux_config.md
-    #   - blog/Environment/CLI_tools.md
-    # - Lab:
-    #   - blog/Labs/index.md
-    #   - blog/Labs/docker_minisql.md
-    #   - blog/Labs/CN_lab2.md
-    #   - blog/Labs/OS_lab3.md
-
-    # - Minisql:
-    #   - Minisql#0: Blog/Minisql/minisql_part0.md
-    #   - Minisql#1: Blog/Minisql/minisql_part1.md
-    # - Fun:
-    #   - Blog/Fun/index.md
-    #   - 原型: Blog/Fun/Women_and_prototype.md
-  #   - Cool:
-  #     - Blog/Cool/index.md
-  #     - Blog/Cool/GPT_academic.md
-  #     - Blog/Cool/github_profile.md
-  #     - Blog/Cool/Vim_standardise.md
 
   - Note:
       - Note/index.md
@@ -229,6 +202,7 @@ nav:
           - Note/Data Modeling/Support_Vector_Machine.md
           - Note/Data Modeling/Boosting.md
           - Note/Data Modeling/Centering.md
+          - Note/Data Modeling/SVD.md
 
   - Research:
       - Research/index.md

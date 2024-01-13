@@ -26,7 +26,7 @@ let g:pangu_rule_date = 1
 
 随后在 vim 中执行`:PlugInstall`即可安装
 
-Pangu 的 [:octicons-book-16: 官方首页](https://github.com/hotoo/pangu.vim)上已经有比较详细的说明了，想要启用其中的功能照着做就是了
+Pangu 的 [:octicons-book-16: 官方首页](https://github.com/hotoo/pangu.vim) 上已经有比较详细的说明了，想要启用其中的功能照着做就是了
 
 ## 批量使用 Pangu 格式化
 
