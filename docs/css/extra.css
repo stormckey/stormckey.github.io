@@ -65,7 +65,7 @@ article a[href^="https://"]
 img[src*="pic"] {
   box-shadow: 2px 2px 10px #666;
   border-radius: 4px;
-  width: 98%;
+  width: 90%;
   display: block;
   margin: 10px auto;
 }
