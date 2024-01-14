@@ -203,6 +203,7 @@ nav:
           - Note/Data Modeling/Boosting.md
           - Note/Data Modeling/Centering.md
           - Note/Data Modeling/SVD.md
+          - Note/Data Modeling/PCA.md
 
   - Research:
       - Research/index.md
