@@ -130,11 +130,9 @@ $$
 \operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
 $$
 
-【鼠标悬停！】{😋}
 
 [:material-information-outline:]{Important information}
 
-[Hover me](https://example.com "I'm a tooltip!")
 
 The HTML specification is maintained by the W3C.
 
