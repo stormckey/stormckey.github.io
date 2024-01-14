@@ -1501,7 +1501,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      引入
+      动机
     </span>
   </a>
   
@@ -1538,6 +1538,15 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       性质
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      几何解释
     </span>
   </a>
   
@@ -1886,7 +1895,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      引入
+      动机
     </span>
   </a>
   
@@ -1928,6 +1937,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      几何解释
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1961,9 +1979,9 @@
 
 <h1 id="_1">奇异值分解<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1322 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 4 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1597 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 5 分钟</p>
 </div>
-<h2 id="_2">引入<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
+<h2 id="_2">动机<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
 <p class="annotate">我们希望找到一种对任意非零实矩阵(1)的分解方式，使得其可以被对角化，奇异值分解（Singular Value Decomposition，SVD）就是这样一种分解方式。</p>
 <ol>
 <li>即使是非方阵</li>
@@ -2031,7 +2049,10 @@
 \]</div>
 <h2 id="_5">变体<a class="headerlink" href="#_5" title="Anchor link to this section for reference">&para;</a></h2>
 <p>不难发现，我们只需要<span class="arithmatex">\(U_1, \Sigma_1, V_1\)</span>就可以还原出<span class="arithmatex">\(A\)</span>了，所以我们可以只取这三个矩阵作为一个分解，这就是紧奇异值分解。</p>
-<p>更进一步的，如果我们连 r 维的矩阵都无法接受的话，我们可以选择只保留前<span class="arithmatex">\(k\)</span>维，这样得到的就是截断奇异值分解。截断奇异值分解午饭准确的还原出<span class="arithmatex">\(A\)</span>了，但是可以保证是所有 k 维的分解中的最佳近似。</p>
+<p class="annotate">更进一步的，如果我们连 r 维的矩阵都无法接受的话，我们可以选择只保留前<span class="arithmatex">\(k\)</span>维，这样得到的就是截断奇异值分解。截断奇异值分就无法准确的还原出<span class="arithmatex">\(A\)</span>了，但是可以证明，截断奇异值分解是弗洛贝尼乌斯范数(1)下的最优近似。</p>
+<ol>
+<li><span class="arithmatex">\(\|A\|_F = \sqrt{\sum_{i=1}^m \sum_{j=1}^n a_{ij}^2}\)</span></li>
+</ol>
 <h2 id="_6">性质<a class="headerlink" href="#_6" title="Anchor link to this section for reference">&para;</a></h2>
 <p>左右奇异向量互相转化：</p>
 <div class="arithmatex">\[\begin{align*}
@@ -2051,6 +2072,21 @@
     \end{align*}\]</div>
 </li>
 </ol>
+<p><span class="arithmatex">\(A^T A\)</span>和<span class="arithmatex">\(A A^T\)</span>的特征值分解存在，并且可以方便的得到：</p>
+<div class="arithmatex">\[\begin{align*}
+    A^T A = (U \Sigma V^T)^T (U \Sigma V^T) = V \Sigma^T U^T U \Sigma V^T = V \Sigma^T \Sigma V^T \\
+    A A^T = (U \Sigma V^T) (U \Sigma V^T)^T = U \Sigma V^T V \Sigma^T U^T = U \Sigma \Sigma^T U^T
+\end{align*}\]</div>
+<h2 id="_7">几何解释<a class="headerlink" href="#_7" title="Anchor link to this section for reference">&para;</a></h2>
+<p>作为一个 m*n 矩阵，我们可以吧<span class="arithmatex">\(A\)</span>理解成一个从<span class="arithmatex">\(\mathbb{R}^n\)</span>到<span class="arithmatex">\(\mathbb{R}^m\)</span>的线性变换，而奇异值分解就是把这个线性变换分解成三个部分：</p>
+<ul>
+<li><span class="arithmatex">\(V^T\)</span>：从<span class="arithmatex">\(\mathbb{R}^n\)</span>到<span class="arithmatex">\(\mathbb{R}^n\)</span>的旋转变换</li>
+<li><span class="arithmatex">\(\Sigma\)</span>：从<span class="arithmatex">\(\mathbb{R}^n\)</span>到<span class="arithmatex">\(\mathbb{R}^m\)</span>的缩放变换</li>
+<li><span class="arithmatex">\(U\)</span>：从<span class="arithmatex">\(\mathbb{R}^m\)</span>到<span class="arithmatex">\(\mathbb{R}^m\)</span>的旋转变换</li>
+</ul>
+<p>因为<span class="arithmatex">\(U,V\)</span>都是正交矩阵，所以它们天然的对应一个旋转变换，而<span class="arithmatex">\(\Sigma\)</span>作为对角矩阵，对应一个缩放变换。</p>
+<p>奇异值分解的存在性隐含了这种变换分解的存在性，也就是任意一个非零的实变换都可以分解为这三个变换的组合。</p>
+<p><a class="glightbox" href="../images/SVD/image.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/SVD/image.png#pic" /></a></p>
 
 
 
@@ -2073,7 +2109,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2024</span>
   </span>
 
     
