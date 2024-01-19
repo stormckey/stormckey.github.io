@@ -29,19 +29,19 @@ nostatistics: true
 
     但前一段时间新发布的 m3 mbp 产品线实在是刀法太恶心人了，疯狂阉割，就是要让人说着虽然这边阉一点那边阉一点问题也不大啦然后为了新芯片去购买它，好像非要到 m3max 才能感觉没被恶心到，但那性能就溢出太多了。而 mbp m1pro 算是跟方面都没有阉割的一版但又会感觉芯片略有点旧了。
 
-    回头一看 PC 阵营，机械革命的无界 14pro 卖 3999 实在是想得可以，回头一看买 10000 的 mbp m1pro 都显得冤种了。
+    回头一看 PC 阵营，机械革命的无界 14pro 卖 3999 实在是香得可以，回头一看买 10000 的 mbp m1pro 都显得太冤种了。
 
     但是用了这么久 MacOS 实在是觉得 windows 的系统没有达到可用的水平😇，续航也不行，除了打游戏非常方便很难说有别的优点。
 
     那么怎办呢，当然是买一台便宜强劲（如无界 14pro）的电脑同时配置一个比较好用的系统啦，所以就要开始折腾 Linux
 
--   第二个原因就是最近在备战托福但是放寒假了又想摸鱼，然后就在油管上看了不少英文视频，还看到了非常流畅的 hyperland（tiling window manager），然后渐渐的就对这方面感兴趣了。
+-   第二个原因就是最近在备战托福但是放寒假了又想摸鱼，然后就在油管上看了不少英文视频。当时就注意到了非常流畅的 hyperland（tiling window manager），然后渐渐的就对这方面感兴趣了。
 -   最后一个原因其实就是我本身就挺喜欢这种 customizable 的东西，所以折腾起来也感觉不错。
 -   这学期刚好学完了 OS
 
 ## 为什么是 Arch Linux
 
--   首先感觉很酷
+-   首先感觉很酷，并且可以在玩系统的过程中学点东西
 -   然后想要使用 hyperland 的话是需要一些最新的软件的，所以只对 Arch Linux， NixOS 一类的系统支持比较好
 -   我比较爱折腾
 
@@ -55,6 +55,8 @@ nostatistics: true
 
 ## 成功做到的
 
+### 虚拟机
+
 下午又小捣鼓了一会儿在 pd 上装好了虚拟机
 
 ![](images/arch_day1/image.png)
@@ -62,6 +64,53 @@ nostatistics: true
 算是初步跑起来了吧， 后面要怎么办我也不太清楚，可以先在虚拟机上先捣鼓捣鼓看看效果如何。
 
 哦对了，在 pd 上跑我遇得到问题是没法 cmd+q 呼出 kitty 终端，方法是用 cmd+r 手动启动 kitty，然后去配置里另设一个快捷键，就可以用快捷键启动 kitty 了。
+
+### 移动硬盘
+
+但是虚拟机上在太卡了，于是我一转移动硬盘，虽然说 90 块的小硬盘盒最高读写速度也就 1GBps 左右，但是也将将够用了。
+
+#### 网络
+刚进来并没有网，作为小白跟安装的时候一样直接用`iwctl`结果等 daemon 等了半天，原来 daemon 要自己手动开💦
+
+```bash
+systemctl start iwd
+```
+
+但是用了 iwctl 也不能像之前那样直接连上了，我也不知道为啥
+
+最后转而使用`nmcli`,其实也没啥熟悉一下语法就行了，顺便一提`iwctl`找不到我的热点但是`nmcli`可以
+
+还有很诡异的事情是连接校网不需要账号密码
+
+#### 大杂烩
+初进 hyperland 的字体对我来说太大了，去配置文件中将 moniter 一项的最后一个 auto 改成 1 会好很多
+
+随后试着安装了 nix 来进行包管理，但感觉并不算特别方便🤔
+
+首先是 zsh 装在了奇怪的地方，我用了软连接连到`/bin/zsh`去了
+
+nix 似乎也可以装字体，但我不知道装到哪去了，起码我翻了一下字体文件夹没看见，所以最后用`pacman`装了 meslo，然后在 kitty 的配置文件中加了一行`font_family MesloLGS NF`，这样就可以用了
+
+nix 装`autojump`同样不行，并不直接提供 j 而是提供 autojump，并且好像没有包含 script 所以跑不通。
+
+我最后选择用 pacman 从 aur 中安装：
+
+```bash
+# first install base-devel
+sudo pacman -S base-devel
+# then clone the repo from aur
+git clone https://aur.archlinux.org/autojump.git
+# then cd into the repo
+cd autojump
+# then build the package
+makepkg -si
+```
+
+上面的做完了之后还会提示将一行命令加入 bashrc 中。
+
+接下来是安装 QQ，我是直接用 nix，注意到中文刚开始显示不出来，在 wiki 中提示使用`winetricks fakechinese`可解决
+
+截图工具似乎要自己备，我选了`grimblast`
 
 
 
