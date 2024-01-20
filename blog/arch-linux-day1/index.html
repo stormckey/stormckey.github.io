@@ -2138,9 +2138,9 @@
 <p>后来我爸突然给我买了台 macbook pro 16 英寸，重量减轻了足足 0.1kg，并且 intel 芯片的 macbook 嘛，续航也很难说达到了令人满意的水平（3-4h 吧）。</p>
 <p>所以为了满足这方面的需求，就一直在观察着新出的笔记本，并且由于续航的原因大部分时候都在盯着 macbook，因为其他阵营的续航还真就没一个能打的。</p>
 <p>但前一段时间新发布的 m3 mbp 产品线实在是刀法太恶心人了，疯狂阉割，就是要让人说着虽然这边阉一点那边阉一点问题也不大啦然后为了新芯片去购买它，好像非要到 m3max 才能感觉没被恶心到，但那性能就溢出太多了。而 mbp m1pro 算是跟方面都没有阉割的一版但又会感觉芯片略有点旧了。</p>
-<p>回头一看 PC 阵营，机械革命的无界 14pro 卖 3999 实在是香得可以，回头一看买 10000 的 mbp m1pro 都显得太冤种了。</p>
-<p>但是用了这么久 MacOS 实在是觉得 windows 的系统没有达到可用的水平😇，续航也不行，除了打游戏非常方便很难说有别的优点。</p>
-<p>那么怎办呢，当然是买一台便宜强劲（如无界 14pro）的电脑同时配置一个比较好用的系统啦，所以就要开始折腾 Linux</p>
+<p>一看 PC 阵营，机械革命的无界 14pro 首发 3999 实在是香，现在的话无界 13+搭载 AMD R7-7840HS 只要 2599，搭载 2.8K 屏 120HZ（虽然观感一般）但都这价位了还要什么自行车。相比之下 10000 的 mbp m1pro 就显得有点冤种了。</p>
+<p>不过一大问题是，用了这么久 MacOS 实在是觉得 windows 的系统没有达到可用的水平😇，续航也不行，除了打游戏非常方便很难说有别的优点。</p>
+<p>那么怎办呢，当然是买一台便宜强劲（如无界 14+）的电脑同时配置一个比较好用的系统啦，所以就要开始折腾 Linux</p>
 </li>
 <li>
 <p>第二个原因就是最近在备战托福但是放寒假了又想摸鱼，然后就在油管上看了不少英文视频。当时就注意到了非常流畅的 hyperland（tiling window manager），然后渐渐的就对这方面感兴趣了。</p>
@@ -2166,10 +2166,11 @@
 <p>哦对了，在 pd 上跑我遇得到问题是没法 cmd+q 呼出 kitty 终端，方法是用 cmd+r 手动启动 kitty，然后去配置里另设一个快捷键，就可以用快捷键启动 kitty 了。</p>
 <h3 id="_5">移动硬盘<a class="headerlink" href="#_5" title="Anchor link to this section for reference">&para;</a></h3>
 <p>但是虚拟机上在太卡了，于是我一转移动硬盘，虽然说 90 块的小硬盘盒最高读写速度也就 1GBps 左右，但是也将将够用了。</p>
-<p>有几步可能要注意的，开始安装之前可以换源，虽然我没换。</p>
+<p>有几步可能要注意的：</p>
+<p>开始安装之前可以换源，虽然我没换。</p>
 <p>无线网的话要用<code>iwctl</code>先联网，可以用<code>baidu.com</code>测试</p>
 <p>然后可以设置<code>http_proxy https_proxy all_proxy</code>等环境变量到同一局域网下允许局域网连接的梯子的对应端口，就可以走代理了。</p>
-<p>接下来都是常规设置，注意<code>profile</code>中<code>window</code>要选择<code>hyperland</code></p>
+<p>接下来都是常规设置，<code>profile</code>中<code>window</code>我选择的是<code>hyperland</code></p>
 <p>如果开始安装了之后卡在了某一步 reflector 一类的话，可以试试在安装之前输入</p>
 <p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>systemctl<span class="w"> </span>mask<span class="w"> </span>reflector.service
