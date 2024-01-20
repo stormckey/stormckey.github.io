@@ -44,3 +44,20 @@ https_proxy=http://127.0.0.1:7890
 all_proxy=http://127.0.0.1:7890
 ```
 
+### python 环境
+
+python 应该是预装的
+
+anaconda 通过：
+
+```bash
+yay -S anaconda
+```
+
+安装
+
+然后用 conda 安装 pip，pacman 装的 pip 疑似跟 conda 配合得不是很好
+
+VSCode 也一并装了
+
+
