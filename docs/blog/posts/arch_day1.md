@@ -57,7 +57,7 @@ nostatistics: true
 
 ### 虚拟机
 
-下午又小捣鼓了一会儿在 pd 上装好了虚拟机
+下午又小捣鼓了一会儿在 pd 上装好了 arch linux
 
 ![](images/arch_day1/image.png)
 
@@ -68,6 +68,16 @@ nostatistics: true
 ### 移动硬盘
 
 但是虚拟机上在太卡了，于是我一转移动硬盘，虽然说 90 块的小硬盘盒最高读写速度也就 1GBps 左右，但是也将将够用了。
+
+有几步可能要注意的，开始安装之前可以换源，虽然我没换。
+
+无线网的话要用`iwctl`先联网，可以用`baidu.com`测试
+
+然后可以设置`http_proxy https_proxy all_proxy`等环境变量到同一局域网下允许局域网连接的梯子的对应端口，就可以走代理了。
+
+接下来都是常规设置，注意`profile`中`window`要选择`hyperland`
+
+安装完成后什么 post installation 选 no，然后重启即可。
 
 #### 网络
 刚进来并没有网，作为小白跟安装的时候一样直接用`iwctl`结果等 daemon 等了半天，原来 daemon 要自己手动开💦
@@ -90,6 +100,8 @@ systemctl start iwd
 首先是 zsh 装在了奇怪的地方，我用了软连接连到`/bin/zsh`去了
 
 nix 似乎也可以装字体，但我不知道装到哪去了，起码我翻了一下字体文件夹没看见，所以最后用`pacman`装了 meslo，然后在 kitty 的配置文件中加了一行`font_family MesloLGS NF`，这样就可以用了
+
+终端美化参考之前的 [:octicons-link-16:博客](https://stormckey.github.io/blog/linux-%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/)。
 
 nix 装`autojump`同样不行，并不直接提供 j 而是提供 autojump，并且好像没有包含 script 所以跑不通。
 
