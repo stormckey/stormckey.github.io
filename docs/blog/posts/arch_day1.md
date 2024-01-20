@@ -93,7 +93,7 @@ systemctl start iwd
 还有很诡异的事情是连接校网不需要账号密码
 
 #### 大杂烩
-初进 hyperland 的字体对我来说太大了，去配置文件中将 moniter 一项的最后一个 auto 改成 1 会好很多
+初进 hyperland 的字体对我来说太大了，去配置文件中将 monitor 一项的最后一个 auto 改成 1 会好很多
 
 随后试着安装了 nix 来进行包管理，但感觉并不算特别方便🤔
 
