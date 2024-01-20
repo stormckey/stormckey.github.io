@@ -2170,37 +2170,43 @@
 <p>无线网的话要用<code>iwctl</code>先联网，可以用<code>baidu.com</code>测试</p>
 <p>然后可以设置<code>http_proxy https_proxy all_proxy</code>等环境变量到同一局域网下允许局域网连接的梯子的对应端口，就可以走代理了。</p>
 <p>接下来都是常规设置，注意<code>profile</code>中<code>window</code>要选择<code>hyperland</code></p>
+<p>如果开始安装了之后卡在了某一步 reflector 一类的话，可以试试在安装之前输入</p>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>systemctl<span class="w"> </span>mask<span class="w"> </span>reflector.service
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>systemctl<span class="w"> </span>stop<span class="w"> </span>reflector
+</span></code></pre></div></td></tr></table></div>
+起码这对我是有效的。</p>
 <p>安装完成后什么 post installation 选 no，然后重启即可。</p>
 <h4 id="_6">网络<a class="headerlink" href="#_6" title="Anchor link to this section for reference">&para;</a></h4>
 <p>刚进来并没有网，作为小白跟安装的时候一样直接用<code>iwctl</code>结果等 daemon 等了半天，原来 daemon 要自己手动开💦</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>systemctl<span class="w"> </span>start<span class="w"> </span>iwd
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>systemctl<span class="w"> </span>start<span class="w"> </span>iwd
 </span></code></pre></div></td></tr></table></div>
 <p>但是用了 iwctl 也不能像之前那样直接连上了，我也不知道为啥</p>
 <p>最后转而使用<code>nmcli</code>,其实也没啥熟悉一下语法就行了，顺便一提<code>iwctl</code>找不到我的热点但是<code>nmcli</code>可以</p>
 <p>还有很诡异的事情是连接校网不需要账号密码</p>
 <h4 id="_7">大杂烩<a class="headerlink" href="#_7" title="Anchor link to this section for reference">&para;</a></h4>
-<p>初进 hyperland 的字体对我来说太大了，去配置文件中将 monitor 一项的最后一个 auto 改成 1 会好很多</p>
+<p>初进 hyperland 的字体对我来说太大了，去配置文件中将 monitor 一项的最后一个 auto 改成 1 会好很多，这一项是缩放系数，系数越大，字体越大</p>
 <p>随后试着安装了 nix 来进行包管理，但感觉并不算特别方便🤔</p>
 <p>首先是 zsh 装在了奇怪的地方，我用了软连接连到<code>/bin/zsh</code>去了</p>
 <p>nix 似乎也可以装字体，但我不知道装到哪去了，起码我翻了一下字体文件夹没看见，所以最后用<code>pacman</code>装了 meslo，然后在 kitty 的配置文件中加了一行<code>font_family MesloLGS NF</code>，这样就可以用了</p>
 <p>终端美化参考之前的 <a href="https://stormckey.github.io/blog/linux-%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>博客</a>。</p>
 <p>nix 装<code>autojump</code>同样不行，并不直接提供 j 而是提供 autojump，并且好像没有包含 script 所以跑不通。</p>
 <p>我最后选择用 pacman 从 aur 中安装：</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span>
-<span class="normal"><a href="#__codelineno-1-7">7</a></span>
-<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># first install base-devel</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>base-devel
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1"># then clone the repo from aur</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/autojump.git
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1"># then cd into the repo</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="nb">cd</span><span class="w"> </span>autojump
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1"># then build the package</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>makepkg<span class="w"> </span>-si
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># first install base-devel</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>base-devel
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1"># then clone the repo from aur</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/autojump.git
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1"># then cd into the repo</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nb">cd</span><span class="w"> </span>autojump
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1"># then build the package</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>makepkg<span class="w"> </span>-si
 </span></code></pre></div></td></tr></table></div>
 <p>上面的做完了之后还会提示将一行命令加入 bashrc 中。</p>
 <p>接下来是安装 QQ，我是直接用 nix，注意到中文刚开始显示不出来，在 wiki 中提示使用<code>winetricks fakechinese</code>可解决</p>
