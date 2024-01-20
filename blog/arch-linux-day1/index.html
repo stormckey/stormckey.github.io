@@ -16,6 +16,8 @@
         <link rel="prev" href="../vscode-snippet/">
       
       
+        <link rel="next" href="../arch-linux-day2/">
+      
       
       <link rel="icon" href="../../icons/cat.svg">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
@@ -2158,12 +2160,17 @@
 <p>然后用游戏本呢，此时唯一遇到的问题是安装的过程中选择磁盘时没有 SSD，只让我装在 U 盘上，奔前走后也不知道该怎么解决（作的😇）</p>
 <h2 id="_3">成功做到的<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
 <h3 id="_4">虚拟机<a class="headerlink" href="#_4" title="Anchor link to this section for reference">&para;</a></h3>
-<p>下午又小捣鼓了一会儿在 pd 上装好了虚拟机</p>
+<p>下午又小捣鼓了一会儿在 pd 上装好了 arch linux</p>
 <p><a class="glightbox" href="../images/arch_day1/image.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/arch_day1/image.png" /></a></p>
 <p>算是初步跑起来了吧， 后面要怎么办我也不太清楚，可以先在虚拟机上先捣鼓捣鼓看看效果如何。</p>
 <p>哦对了，在 pd 上跑我遇得到问题是没法 cmd+q 呼出 kitty 终端，方法是用 cmd+r 手动启动 kitty，然后去配置里另设一个快捷键，就可以用快捷键启动 kitty 了。</p>
 <h3 id="_5">移动硬盘<a class="headerlink" href="#_5" title="Anchor link to this section for reference">&para;</a></h3>
 <p>但是虚拟机上在太卡了，于是我一转移动硬盘，虽然说 90 块的小硬盘盒最高读写速度也就 1GBps 左右，但是也将将够用了。</p>
+<p>有几步可能要注意的，开始安装之前可以换源，虽然我没换。</p>
+<p>无线网的话要用<code>iwctl</code>先联网，可以用<code>baidu.com</code>测试</p>
+<p>然后可以设置<code>http_proxy https_proxy all_proxy</code>等环境变量到同一局域网下允许局域网连接的梯子的对应端口，就可以走代理了。</p>
+<p>接下来都是常规设置，注意<code>profile</code>中<code>window</code>要选择<code>hyperland</code></p>
+<p>安装完成后什么 post installation 选 no，然后重启即可。</p>
 <h4 id="_6">网络<a class="headerlink" href="#_6" title="Anchor link to this section for reference">&para;</a></h4>
 <p>刚进来并没有网，作为小白跟安装的时候一样直接用<code>iwctl</code>结果等 daemon 等了半天，原来 daemon 要自己手动开💦</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>systemctl<span class="w"> </span>start<span class="w"> </span>iwd
@@ -2176,6 +2183,7 @@
 <p>随后试着安装了 nix 来进行包管理，但感觉并不算特别方便🤔</p>
 <p>首先是 zsh 装在了奇怪的地方，我用了软连接连到<code>/bin/zsh</code>去了</p>
 <p>nix 似乎也可以装字体，但我不知道装到哪去了，起码我翻了一下字体文件夹没看见，所以最后用<code>pacman</code>装了 meslo，然后在 kitty 的配置文件中加了一行<code>font_family MesloLGS NF</code>，这样就可以用了</p>
+<p>终端美化参考之前的 <a href="https://stormckey.github.io/blog/linux-%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>博客</a>。</p>
 <p>nix 装<code>autojump</code>同样不行，并不直接提供 j 而是提供 autojump，并且好像没有包含 script 所以跑不通。</p>
 <p>我最后选择用 pacman 从 aur 中安装：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
@@ -2219,7 +2227,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 19, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 20, 2024</span>
   </span>
 
     
