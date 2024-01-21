@@ -156,8 +156,11 @@ makepkg -si
 ### 输入法
 
 ```bash
-sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-configtool
+sudo pacman -S fcitx5-im fcitx5-chinese-addons
 ```
+
+!!! warning
+    fcitx5-im 内部包含四个包，我的建议是全都下，我之前只下了前两个结果 qq，vscode 一类的 xwayland 的程序死活没法用输入法，我把后两个包加装回去就可以了
 
 先跑
 ```bash
