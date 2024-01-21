@@ -2257,8 +2257,12 @@
 </span></code></pre></div></td></tr></table></div>
 <p>安装，并依照提示把响应命令输入.zshrc</p>
 <h3 id="_6">输入法<a class="headerlink" href="#_6" title="Anchor link to this section for reference">&para;</a></h3>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>fcitx5<span class="w"> </span>fcitx5-chinese-addons<span class="w"> </span>fcitx5-configtool
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>fcitx5-im<span class="w"> </span>fcitx5-chinese-addons
 </span></code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>fcitx5-im 内部包含四个包，我的建议是全都下，我之前只下了前两个结果 qq，vscode 一类的 xwayland 的程序死活没法用输入法，我把后两个包加装回去就可以了</p>
+</div>
 <p>先跑
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>fcitx5<span class="w"> </span>--replace<span class="w"> </span>-d
 </span></code></pre></div></td></tr></table></div></p>
