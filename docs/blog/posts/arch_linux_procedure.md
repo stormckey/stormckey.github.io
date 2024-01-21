@@ -277,3 +277,8 @@ monitor=HDMI-A-1,preferred,auto,1.666667
 ```
 更多诸如刷新率色深之类的请参考官网
 
+### 截图
+
+使用 yay 安装 grimblast，如果没有 wl-clipboard 的话，还需要用 Pacman 来安装 wl-clipboard
+
+
