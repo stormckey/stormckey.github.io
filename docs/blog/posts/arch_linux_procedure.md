@@ -13,7 +13,7 @@ nostatistics: true
 # Arch Linux + Hyprland 安装全流程
 
 !!! abstract
-    今天很不幸的经历了第二和第三次的重装系统😇，在间隙决定把一整个流程写下来，供大家（以及以后的我参考）
+    今天很不幸的经历了第二和第三次的重装系统😇，在间隙决定把一整个流程写下来，供大家（以及以后的我）参考
 
 <!-- more -->
 
@@ -39,7 +39,7 @@ nostatistics: true
 
 此时 curl baidu.com 应该是通的
 
-然后还需要代理（或者换源也可以？我一直是代理），在另一个设备上开启 lash 的允许局域网联机安，并且记住该设备的 ip 和端口（一般是 7890 端口）
+然后还需要代理（或者换源也可以？我一直是代理），在另一个设备上开启 clash 的允许局域网联机，并且记住该设备的 ip 和端口（一般是 7890 端口）
 
 然后用环境变量设置代理，我一般设置 http_proxy,https_proxy,all_proxy 三个，格式为
 
@@ -62,7 +62,7 @@ export http_proxy=http://ip:7890 https_proxy=...
     ```
     或者
     ```bash
-    system stop reflector
+    systemctl stop reflector
     ```
 
 进入 archinstall 设置页面
@@ -72,11 +72,11 @@ mirrors 进去第一项然后选择地区就好，我选择中国，完毕后 lo
 disk configuration 进入后选择第一项最大化利用，然后选择你想要安装的盘，文件系统我选 btrfs，后续的选项都是默认
 
 !!! bug
-    此处我不知道为什么是无法选择电脑内部的盘而只能选择这个安戒介质，我还不知道怎么解决这个问题，现在我的系统就装在当时的安装介质，也就是一块 U 盘上面
+    此处我不知道为什么是无法选择电脑内部的盘而只能选择这个安装介质，我还不知道怎么解决这个问题，现在我的系统就装在当时的安装介质，也就是一块移动硬盘上面
 
 可以不加 root password 只要创建一个 user 并且加入 sudo 就可以了
 
-profile 选择 desktop 和 hyprland，后续选项中唯一注意的是显卡驱动使用开源驱动还是 n 卡专有驱动，n 卡专有驱动更强大一点但是可能会有位未知的问题（兼容性不好）
+profile 选择 desktop ， hyprland，后续选项中唯一注意的是显卡驱动使用开源驱动还是 n 卡专有驱动，n 卡专有驱动更强大一点但是可能会有位未知的问题（兼容性不好）
 
 network configuration 选择 use network management
 
@@ -102,9 +102,9 @@ optional repo 选择 multilib
 
 ### 联网
 
-不推荐继续使用哦 iwctl，因为我用了以后连不上并且它收搜不到热点，如果要用的话要记得先用 systemctl start iwd 开启 daemon
+不推荐继续使用 iwctl，因为我用了以后连不上并且它搜不到热点，如果要用的话要记得先用 systemctl start iwd 开启 daemon
 
-使用 nmcli，教程网上都是，我只要一句
+使用 nmcli，教程网上都是，我用的是
 
 ```bash
 nmcli dev wifi connect ZJUWLAN
@@ -137,7 +137,7 @@ font_family MesloLGS NF
 
 新的终端中继续完成终端的优化
 
-其中 autojump 通过
+其中 autojump 位于 aur 中，通过
 
 ```bash
 # first install base-devel
@@ -168,7 +168,7 @@ fcitx5 --replace -d
 ```
 
 !!! bug
-    对我而言此处会有一个 DBus call error，或者是是三个，但其实不用管，虽然有这个 error 但是输入法还是照样可以使用的，我两次重装系统就是因为无法去掉这个 error 还以为，输入法就跑不了了，重装是为了从 nvidia 的专有驱动换到开源驱动看看能不能解决问题
+    对我而言此处会有一个 DBus call error，或者是三个，但其实不用管，虽然有这个 error 但是输入法还是照样可以使用的，我两次重装系统就是因为无法去掉这个 error ，还以为输入法就跑不了了，重装是为了从 nvidia 的专有驱动换到开源驱动看看能不能解决问题，答案是不能😇
 
 启动 fcitx5-configtool，去掉 only show current languages,滑到底双击 pinyin，apply
 
@@ -182,9 +182,9 @@ sudo pacman -S noto-fonts-cjk
 
 在/etc/locale.gen 中去掉 zh_CN.UTF8 那一行的注释，保存后执行 locale-gen 指令，然后重启
 
-现在只要我们想上面一样启动 fcitx5 --replace -d 就可以切换输入法了，我们可以吧这一项集成进 hyprland 启动项中
+现在只要我们像上面一样启动 fcitx5 --replace -d 就可以切换输入法了，我们可以吧这一项集成进 hyprland 启动项中
 
-```title="hyprland.conf
+```title="hyprland.conf"
 exec-once=fcitx5 --replace -d
 ```
 
@@ -267,7 +267,7 @@ all_proxy=http://127.0.0.1:7897
 
 这个 hyprland 的官网说的比较清楚了，tldr：
 
-首先用黄炎培日产天籁 monitors list 列出所有连接的显示器，找到你要设置的显示器的标识符，比如我这里是 HDMI-A-1
+首先用 hyprctl monitors list 列出所有连接的显示器，找到你要设置的显示器的标识符，比如我这里是 HDMI-A-1
 
 然后在~/.config/hypr/hyperland.conf 中修改 monitor 的配置
 比如我的第二块屏幕的配置就是
