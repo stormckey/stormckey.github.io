@@ -5,7 +5,7 @@ authors:
 categories:
     - Linux
     - Arch
-    - Hyperland
+    - Hyprland
 date: 2024-01-19
 nostatistics: true
 ---

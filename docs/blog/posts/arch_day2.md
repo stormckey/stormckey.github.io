@@ -4,7 +4,7 @@ authors:
     - stormckey
 categories:
     - Linux
-    - Hyperland
+    - Hyprland
     - Arch
 date: 2024-01-20
 nostatistics: true
