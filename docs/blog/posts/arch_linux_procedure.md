@@ -188,6 +188,17 @@ sudo pacman -S noto-fonts-cjk
 exec-once=fcitx5 --replace -d
 ```
 
+按照一般的教程，还需要添加以下环境变量到/etc/environment 中
+
+```bash
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_MOULE=fcitx
+```
+
+作用是什么暂时还不知道
+
+
 重启可以看出已经自动启动了
 
 ### QQ
