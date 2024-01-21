@@ -114,6 +114,41 @@ nmcli dev wifi connect ZJUWLAN
 
 然后一样的代理，测试 baidu 和 google 的连通性
 
+### Pacman设置
+
+其实需要改得不多，之前提到的并行下载，还有Color也可以像开启
+
+还可以加入一行ILOveCandy来把进度条切换成pacman特有的吃豆子样式
+
+接下来是换源，首先安装reflector(1)
+{.annotate}
+
+1.  extra/reflector 2023-1
+    A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
+
+```bash
+sudo pacman -S reflector
+```
+
+然后备份
+
+```bash
+sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+```
+
+然后使用该指令寻找十个最快的源：
+
+```bash
+sudo reflector --verbose --latest 10 --country China --protocol http --sort rate --save /etc/pacman.d/mirrorlist
+```
+
+最后更新一下pacman
+
+```bash
+sudo pacman -Sy
+```
+
+
 ### shell 切换
 
 ```bash
@@ -291,5 +326,15 @@ monitor=HDMI-A-1,preferred,auto,1.666667
 ### 截图
 
 使用 yay 安装 grimblast，如果没有 wl-clipboard 的话，还需要用 Pacman 来安装 wl-clipboard
+
+### 其他
+
+其他还可以安装的工具有
+
+- neofetch
+- flatpak
+- preload
+
+
 
 
