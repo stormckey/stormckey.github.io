@@ -114,13 +114,13 @@ nmcli dev wifi connect ZJUWLAN
 
 然后一样的代理，测试 baidu 和 google 的连通性
 
-### Pacman设置
+### Pacman 设置
 
-其实需要改得不多，之前提到的并行下载，还有Color也可以像开启
+其实需要改得不多，之前提到的并行下载，还有 Color 也可以像开启
 
-还可以加入一行ILOveCandy来把进度条切换成pacman特有的吃豆子样式
+还可以加入一行 ILOveCandy 来把进度条切换成 pacman 特有的吃豆子样式
 
-接下来是换源，首先安装reflector(1)
+接下来是换源，首先安装 reflector(1)
 {.annotate}
 
 1.  extra/reflector 2023-1
@@ -142,7 +142,7 @@ sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 sudo reflector --verbose --latest 10 --country China --protocol http --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
-最后更新一下pacman
+最后更新一下 pacman
 
 ```bash
 sudo pacman -Sy

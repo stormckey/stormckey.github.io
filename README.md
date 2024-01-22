@@ -4,4 +4,4 @@
 
 我自己也写了一个手把手的[建站教程](https://stormckey.github.io/Build_this_website/)
 
-也可以直接去看[:octicons-link-16:网站](https://stormckey.github.io/)
+也可以直接去看[网站](https://stormckey.github.io/)
