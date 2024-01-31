@@ -42,7 +42,7 @@ nostatistics: true
 ## 为什么是 Arch Linux
 
 -   首先感觉很酷，并且可以在玩系统的过程中学点东西
--   然后想要使用 hyperland 的话是需要一些最新的软件的，所以只对 Arch Linux， NixOS 一类的系统支持比较好
+-   然后想要使用 hyprland 的话是需要一些最新的软件的，所以只对 Arch Linux， NixOS 一类的系统支持比较好
 -   我比较爱折腾
 
 ## 今天遇到的问题
