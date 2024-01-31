@@ -38,7 +38,7 @@
 article a[href^="http"],
 article a[href^="https://"]
 {
-  color: var(--md-primary-fg-color-middle);
+  font-weight: 800;
 }
 
 /* 图片放大start */
