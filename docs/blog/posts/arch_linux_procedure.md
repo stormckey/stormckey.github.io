@@ -55,7 +55,7 @@ export http_proxy=http://ip:7890 https_proxy=...
 
 ## archinstall
 
-!!! wanrning
+!!! warning
     如果 archinstall 后卡在了某个 reflector 那里动不了的话，试试
     ```bash
     systemctl mask reflector.service
@@ -64,6 +64,13 @@ export http_proxy=http://ip:7890 https_proxy=...
     ```bash
     systemctl stop reflector
     ```
+
+!!! warning
+    如果你有一整个硬盘来装载 Linux 系统的话，可以直接在 Disk 中选择第一项 use the best,这会抹掉并且使用整个硬盘的空间
+
+    如果你希望在同一个硬盘上保留 windows 和 Linux 双系统的话，需要手动做好分区挂载等等，可以参考 [:octicons-link-16:视频](https://www.youtube.com/watch?v=9jTk3K3ExaI)
+
+
 
 进入 archinstall 设置页面
 
@@ -335,6 +342,8 @@ monitor=HDMI-A-1,preferred,auto,1.666667
 - flatpak
 - preload
 
+还有一些好用的 hyprland 的设置：
 
+- input:touchpad:natural_scroll
 
 
