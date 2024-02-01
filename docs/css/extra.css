@@ -38,7 +38,7 @@
 article a[href^="http"],
 article a[href^="https://"]
 {
-  font-weight: 550;
+  font-weight: 650;
 }
 
 /* 图片放大start */
