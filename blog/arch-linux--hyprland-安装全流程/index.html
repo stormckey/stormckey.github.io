@@ -2311,37 +2311,45 @@
 <p>在~/.config/kitty/kitty.conf 中加入</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a>font_family<span class="w"> </span>MesloLGS<span class="w"> </span>NF
 </span></code></pre></div></td></tr></table></div>
-<p>然后参考我的这篇 <a href="https://stormckey.github.io/blog/linux-%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>博客</a> 进行美化，使用 firefox 打开可以直接复制命令</p>
+<p>如果是alacrity终端的话，应该使用的是
+<div class="language-toml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">[font.normal]</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MesloLGS Nerd Font&quot;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Regular&quot;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>具体一个字体应该用什么来指代，可以参考fc-list的输出</p>
+<p>然后可以参考我的这篇 <a href="https://stormckey.github.io/blog/linux-%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>博客</a> 进行美化，使用 firefox 打开可以直接复制命令</p>
 <p>我是跑完 powerlevel10k 那一段后直接令开一个终端进入 zsh 开始初始化 powerlevel10k 了</p>
 <p>新的 shell 中 proxy 又失效了，直接把 export 那一行在 zshrc 中设置为 proxy 的 alias，此后就用 proxy 直接启动代理，直到我们跑起来本计算机的代理</p>
 <p>新的终端中继续完成终端的优化</p>
 <p>其中 autojump 位于 aur 中，通过</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span>
-<span class="normal"><a href="#__codelineno-10-3">3</a></span>
-<span class="normal"><a href="#__codelineno-10-4">4</a></span>
-<span class="normal"><a href="#__codelineno-10-5">5</a></span>
-<span class="normal"><a href="#__codelineno-10-6">6</a></span>
-<span class="normal"><a href="#__codelineno-10-7">7</a></span>
-<span class="normal"><a href="#__codelineno-10-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1"># first install base-devel</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>base-devel
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="c1"># then clone the repo from aur</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/autojump.git
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="c1"># then cd into the repo</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="nb">cd</span><span class="w"> </span>autojump
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="c1"># then build the package</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a>makepkg<span class="w"> </span>-si
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span>
+<span class="normal"><a href="#__codelineno-11-6">6</a></span>
+<span class="normal"><a href="#__codelineno-11-7">7</a></span>
+<span class="normal"><a href="#__codelineno-11-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># first install base-devel</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>base-devel
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="c1"># then clone the repo from aur</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/autojump.git
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="c1"># then cd into the repo</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="nb">cd</span><span class="w"> </span>autojump
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="c1"># then build the package</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a>makepkg<span class="w"> </span>-si
 </span></code></pre></div></td></tr></table></div>
 <p>安装，并依照提示把响应命令输入.zshrc</p>
 <h3 id="_7">输入法<a class="headerlink" href="#_7" title="Anchor link to this section for reference">&para;</a></h3>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>fcitx5-im<span class="w"> </span>fcitx5-chinese-addons
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>fcitx5-im<span class="w"> </span>fcitx5-chinese-addons
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>fcitx5-im 内部包含四个包，我的建议是全都下，我之前只下了前两个结果 qq，vscode 一类的 xwayland 的程序死活没法用输入法，我把后两个包加装回去就可以了</p>
 </div>
 <p>先跑
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a>fcitx5<span class="w"> </span>--replace<span class="w"> </span>-d
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a>fcitx5<span class="w"> </span>--replace<span class="w"> </span>-d
 </span></code></pre></div></td></tr></table></div></p>
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
@@ -2354,42 +2362,42 @@
 </div>
 <p>不出意外此时 ctrl+space 就可以切换到输入法了，虽然看起来全是乱码，我们还需要中文环境</p>
 <p>安装中文字体</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>noto-fonts-cjk
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>noto-fonts-cjk
 </span></code></pre></div></td></tr></table></div>
 <p>在/etc/locale.gen 中去掉 zh_CN.UTF8 那一行的注释，保存后执行 locale-gen 指令，然后重启</p>
 <p>现在只要我们像上面一样启动 fcitx5 --replace -d 就可以切换输入法了，我们可以吧这一项集成进 hyprland 启动项中</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hyprland.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a>exec-once=fcitx5 --replace -d
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hyprland.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a>exec-once=fcitx5 --replace -d
 </span></code></pre></div></td></tr></table></div>
 <p>按照一般的教程，还需要添加以下环境变量到/etc/environment 中</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
-<span class="normal"><a href="#__codelineno-15-2">2</a></span>
-<span class="normal"><a href="#__codelineno-15-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="nv">QT_IM_MODULE</span><span class="o">=</span>fcitx
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="nv">XMODIFIERS</span><span class="o">=</span>@im<span class="o">=</span>fcitx
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="nv">SDL_MOULE</span><span class="o">=</span>fcitx
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="nv">QT_IM_MODULE</span><span class="o">=</span>fcitx
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="nv">XMODIFIERS</span><span class="o">=</span>@im<span class="o">=</span>fcitx
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="nv">SDL_MOULE</span><span class="o">=</span>fcitx
 </span></code></pre></div></td></tr></table></div>
 <p>作用是什么暂时还不知道</p>
 <p>重启可以看出已经自动启动了</p>
 <h3 id="qq">QQ<a class="headerlink" href="#qq" title="Anchor link to this section for reference">&para;</a></h3>
 <p>qq 并不在 extra 目录中，而是跟 autojump 一样在 aur 中，为了从 aur 中安装，我们可以像 autojump 那样 clone repo 然后 makepkg，也可以使用一些自动化工具来帮我专门做这件事，比如 yay 或者 paru（用 rust 重写的）</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">安装 yay</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
-<span class="normal"><a href="#__codelineno-16-2">2</a></span>
-<span class="normal"><a href="#__codelineno-16-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/yay.git
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="nb">cd</span><span class="w"> </span>yay
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a>makepkg<span class="w"> </span>-si
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">安装 yay</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/yay.git
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="nb">cd</span><span class="w"> </span>yay
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a>makepkg<span class="w"> </span>-si
 </span></code></pre></div></td></tr></table></div>
 <p>然后用 yay 安装 qq</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a>yay<span class="w"> </span>-S<span class="w"> </span>qq
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a>yay<span class="w"> </span>-S<span class="w"> </span>qq
 </span></code></pre></div></td></tr></table></div>
 <p>两个选项一般选 None</p>
 <p>安装完毕后用 linuxqq 命令就可以启动 qq 了</p>
 <h3 id="python">python 环境<a class="headerlink" href="#python" title="Anchor link to this section for reference">&para;</a></h3>
 <p>首先用 yay 安装 anaconda</p>
-<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a>yay<span class="w"> </span>-S<span class="w"> </span>anaconda
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a>yay<span class="w"> </span>-S<span class="w"> </span>anaconda
 </span></code></pre></div></td></tr></table></div>
 安装完成后按照指示 activate 了之后就可以在命令行使用 conda 了</p>
 <p>然后如常使用即可，我的 pip 也是用 conda 装的因为 pacman 装的似乎和 conda 配合得不是很好</p>
 <p>IDE 选择 code</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>code
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>code
 </span></code></pre></div></td></tr></table></div>
 <h3 id="_8">命令行工具<a class="headerlink" href="#_8" title="Anchor link to this section for reference">&para;</a></h3>
 <p>有些用 rust 重写的命令行工具都还挺好用的</p>
@@ -2401,32 +2409,32 @@
 <p>并且可以使用 alias 无感代替它们的原版</p>
 <h3 id="_9">代理<a class="headerlink" href="#_9" title="Anchor link to this section for reference">&para;</a></h3>
 <p>很不幸的是 clash 一系前不久删库跑路了，不过还有一支 clash-verge-rev 仍然在维护，我们可以从 aur 安装</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
-<span class="normal"><a href="#__codelineno-20-2">2</a></span>
-<span class="normal"><a href="#__codelineno-20-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/clash-verge-rev-bin.git
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="nb">cd</span><span class="w"> </span>clash-verge-rev-bin
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a>makepkg<span class="w"> </span>-si
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/clash-verge-rev-bin.git
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="nb">cd</span><span class="w"> </span>clash-verge-rev-bin
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a>makepkg<span class="w"> </span>-si
 </span></code></pre></div></td></tr></table></div>
 <p>完成后使用 clash-verge 启动即可，用法是使用机场给的 url</p>
 <p>但我貌似开启了 system proxy 之后其他的应用仍然没有直接走梯子？</p>
 <p>对于这样的情况，我们可以手动设置 system proxy</p>
 <p>在/etc/environment 中加入</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
-<span class="normal"><a href="#__codelineno-21-2">2</a></span>
-<span class="normal"><a href="#__codelineno-21-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="nv">http_proxy</span><span class="o">=</span>http://127.0.0.1:7897
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="nv">https_proxy</span><span class="o">=</span>http://127.0.0.1:7897
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="nv">all_proxy</span><span class="o">=</span>http://127.0.0.1:7897
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="nv">http_proxy</span><span class="o">=</span>http://127.0.0.1:7897
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="nv">https_proxy</span><span class="o">=</span>http://127.0.0.1:7897
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="nv">all_proxy</span><span class="o">=</span>http://127.0.0.1:7897
 </span></code></pre></div></td></tr></table></div>
 <p>重启实验即可</p>
 <p>如果想要随 hyprland 自启动的话，hyprland 配置文件加入</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a>exec-once<span class="o">=</span>calsh-verge
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a>exec-once<span class="o">=</span>calsh-verge
 </span></code></pre></div></td></tr></table></div>
 <h3 id="_10">外接显示器<a class="headerlink" href="#_10" title="Anchor link to this section for reference">&para;</a></h3>
 <p>这个 hyprland 的官网说的比较清楚了，tldr：</p>
 <p>首先用 hyprctl monitors list 列出所有连接的显示器，找到你要设置的显示器的标识符，比如我这里是 HDMI-A-1</p>
 <p>然后在~/.config/hypr/hyprland.conf 中修改 monitor 的配置
 比如我的第二块屏幕的配置就是</p>
-<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="nv">monitor</span><span class="o">=</span>HDMI-A-1,preferred,auto,1.666667
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="nv">monitor</span><span class="o">=</span>HDMI-A-1,preferred,auto,1.666667
 </span></code></pre></div></td></tr></table></div>
 更多诸如刷新率色深之类的请参考官网</p>
 <h3 id="_11">截图<a class="headerlink" href="#_11" title="Anchor link to this section for reference">&para;</a></h3>
@@ -2445,6 +2453,7 @@
 <li>krita</li>
 <li>vlc</li>
 <li>ufw</li>
+<li>keyd</li>
 </ul>
 <p>还有一些好用的 hyprland 的设置：</p>
 <ul>
