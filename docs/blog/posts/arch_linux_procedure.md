@@ -377,7 +377,7 @@ monitor=HDMI-A-1,preferred,auto,1.666667
 - vlc
 - ufw
 - keyd
-
+- ranger
 还有一些好用的 hyprland 的设置：
 
 - input:touchpad:natural_scroll
