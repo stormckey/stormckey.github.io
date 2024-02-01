@@ -113,6 +113,10 @@ optional repo 选择 multilib
 
 把 monitor 的最后一个 auto（缩放倍数）改成 1，退出
 
+### 时区设置
+
+如果安装的时候忘了选时区，请参考这篇 [:octicons-link-16:博客](https://blog.csdn.net/chuiqingdian1964/article/details/101049514)
+
 ### 联网
 
 不推荐继续使用 iwctl，因为我用了以后连不上并且它搜不到热点，如果要用的话要记得先用 systemctl start iwd 开启 daemon
@@ -152,7 +156,7 @@ sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 然后使用该指令寻找十个最快的源：
 
 ```bash
-sudo reflector --verbose --latest 10 --country China --protocol http --sort rate --save /etc/pacman.d/mirrorlist
+sudo reflector --verbose --latest 10 --country China --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 最后更新一下 pacman
@@ -219,6 +223,9 @@ fcitx5 --replace -d
     对我而言此处会有一个 DBus call error，或者是三个，但其实不用管，虽然有这个 error 但是输入法还是照样可以使用的，我两次重装系统就是因为无法去掉这个 error ，还以为输入法就跑不了了，重装是为了从 nvidia 的专有驱动换到开源驱动看看能不能解决问题，答案是不能😇
 
 启动 fcitx5-configtool，去掉 only show current languages,滑到底双击 pinyin，apply
+
+!!! bug
+    如果启动 fcitx5-configtool 的过程中出现 Could not find the Qt platform plugin 的问题，请安装 qt5-wayland
 
 不出意外此时 ctrl+space 就可以切换到输入法了，虽然看起来全是乱码，我们还需要中文环境
 
@@ -322,6 +329,11 @@ all_proxy=http://127.0.0.1:7897
 
 重启实验即可
 
+如果想要随 hyprland 自启动的话，hyprland 配置文件加入
+
+```bash
+exec-once=calsh-verge
+```
 ### 外接显示器
 
 这个 hyprland 的官网说的比较清楚了，tldr：
@@ -347,6 +359,14 @@ monitor=HDMI-A-1,preferred,auto,1.666667
 - neofetch
 - flatpak
 - preload
+- auto-cpufreq
+- amd-ucode/intel-ucode
+- libreoffice-fresh
+- gimp
+- thunderbird
+- krita
+- vlc
+- ufw
 
 还有一些好用的 hyprland 的设置：
 

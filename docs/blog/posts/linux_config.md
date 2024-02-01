@@ -53,6 +53,11 @@ echo '#Enable autojump' >> ~/.zshrc
 echo 'source  /usr/share/autojump/autojump.sh'>>~/.zshrc
 ```
 
+或者(Arch based)
+```
+yay -S autojump
+```
+
 ## 在命令行中启用 vi
 ```
 git clone https://github.com/soheilpro/zsh-vi-search.git ~/.zsh/plugins/zsh-vi-search
