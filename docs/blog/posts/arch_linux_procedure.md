@@ -85,6 +85,9 @@ disk configuration 进入后选择第一项最大化利用，然后选择你想�
 
 profile 选择 desktop ， hyprland，后续选项中唯一注意的是显卡驱动使用开源驱动还是 n 卡专有驱动，n 卡专有驱动更强大一点但是可能会有位未知的问题（兼容性不好）
 
+!!! tip "路径分岔"
+    此处有一分支选项，可以选择只安装 minimal 然后使用其他开发者提供的 dotfiles 进行安装，推荐使用的有 [:octicons-link-16:这份](https://gitlab.com/stephan-raabe/dotfiles) 以及相应的 [:octicons-link-16:视频](https://www.youtube.com/watch?v=kHG5czrQ7WA) ，详情请查看相应介绍
+
 network configuration 选择 use network management
 
 timzezone 选上海
@@ -92,6 +95,9 @@ timzezone 选上海
 optional repo 选择 multilib
 
 然后安装
+
+!!! bug
+    在此处我还遇到了一个找不到到 uuid 的 bug，输入指令 lsblk -f 后发现确实有一个分区没有 uuid，为了修复这个问题，我选择了上文提到的视频中的手动分区的方法，因为自动分区疑似不会给我们加 swap 分区
 
 结束后 post-installation configuration 直接选 no 然后 reboot 重启
 
