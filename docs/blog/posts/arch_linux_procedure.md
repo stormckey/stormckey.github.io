@@ -181,7 +181,16 @@ chsh -s zsh
 font_family MesloLGS NF
 ```
 
-然后参考我的这篇 [:octicons-link-16:博客](https://stormckey.github.io/blog/linux-%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/) 进行美化，使用 firefox 打开可以直接复制命令
+如果是alacrity终端的话，应该使用的是
+```toml
+[font.normal]
+family = "MesloLGS Nerd Font"
+style = "Regular"
+```
+
+具体一个字体应该用什么来指代，可以参考fc-list的输出
+
+然后可以参考我的这篇 [:octicons-link-16:博客](https://stormckey.github.io/blog/linux-%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/) 进行美化，使用 firefox 打开可以直接复制命令
 
 我是跑完 powerlevel10k 那一段后直接令开一个终端进入 zsh 开始初始化 powerlevel10k 了
 
@@ -367,6 +376,7 @@ monitor=HDMI-A-1,preferred,auto,1.666667
 - krita
 - vlc
 - ufw
+- keyd
 
 还有一些好用的 hyprland 的设置：
 
