@@ -378,8 +378,11 @@ monitor=HDMI-A-1,preferred,auto,1.666667
 - ufw
 - keyd
 - ranger
+- usbutils
+
 还有一些好用的 hyprland 的设置：
 
 - input:touchpad:natural_scroll
-
+- input:touchpad:tap-and-drag
+- input:touchpad:drag_lock
 
