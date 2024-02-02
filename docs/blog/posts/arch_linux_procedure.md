@@ -367,22 +367,28 @@ monitor=HDMI-A-1,preferred,auto,1.666667
 
 - neofetch
 - flatpak
-- preload
-- auto-cpufreq
-- amd-ucode/intel-ucode
-- libreoffice-fresh
+- preload： app启动加速
+- auto-cpufreq： 省电
+- amd-ucode/intel-ucode： 增强内核稳定性
+- libreoffice-fresh： office替代
 - gimp
 - thunderbird
 - krita
 - vlc
-- ufw
-- keyd
-- ranger
-- usbutils
+- ufw： 高度可配置的防火墙
+- keyd： 高度可配置的键盘映射管理
+- ranger： 高度可配置的文件管理器，对于文本的预览支持很好
+- usbutils： 查看与管理设备
+- libinput-gestures： 多指滑动和按压手势
+- rofi: 程序启动和app切换
 
 还有一些好用的 hyprland 的设置：
 
 - input:touchpad:natural_scroll
-- input:touchpad:tap-and-drag
-- input:touchpad:drag_lock
+- input:touchpad:tap-and-drag： 轻点后可拖拽/选中
+- input:touchpad:drag_lock： 拖拽/选中过程中间允许短暂的离开触控板
+- input:accel_profile: 指针加速
+
+除此之外还有一些可以自行设置的比如开机自动启动代理（理论上只需要后台启动代理而不需要gui,但是我还没搞清楚要怎么实现，目前是用hyprctl把gui杀掉），QQ,微信等
+
 
