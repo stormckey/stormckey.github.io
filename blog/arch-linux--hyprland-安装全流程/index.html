@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../icons/cat.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -2167,7 +2167,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              6 min read
+                              7 min read
                             
                           </span>
                         </div>
@@ -2207,9 +2207,14 @@
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
 <p>今天很不幸的经历了第二和第三次的重装系统😇，在间隙决定把一整个流程写下来，供大家（以及以后的我）参考</p>
+<p>后续：此流程在搭载7840HS的机械革命无界14+上可以顺利跑通</p>
 </div>
 <!-- more -->
 
+<div class="admonition info">
+<p class="admonition-title">硬件信息</p>
+<p><a class="glightbox" href="../images/arch_linux_procedure/image.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/arch_linux_procedure/image.png" /></a></p>
+</div>
 <h2 id="_1">启动盘<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
 <ul>
 <li>前往 arch linux 官网下载最新镜像，后缀 iso</li>
@@ -2369,14 +2374,17 @@
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hyprland.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a>exec-once=fcitx5 --replace -d
 </span></code></pre></div></td></tr></table></div>
 <p>按照一般的教程，还需要添加以下环境变量到/etc/environment 中</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
 <span class="normal"><a href="#__codelineno-16-2">2</a></span>
 <span class="normal"><a href="#__codelineno-16-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="nv">QT_IM_MODULE</span><span class="o">=</span>fcitx
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="nv">XMODIFIERS</span><span class="o">=</span>@im<span class="o">=</span>fcitx
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="nv">SDL_MOULE</span><span class="o">=</span>fcitx
 </span></code></pre></div></td></tr></table></div>
-<p>作用是什么暂时还不知道</p>
+作用是什么暂时还不知道</p>
 <p>重启可以看出已经自动启动了</p>
+<p>但是根据hyprland的提示似乎我们需要去掉第一项，我最后只保留了中间一项，工作正常，作用是什么以后再研究把</p>
+<p>于我而言，上面选择的pinyin对emoji的支持不是很好，需要配置一个对emoji支持很好的输入法的话，可以参考 <a href="https://blog.beautyyu.one/archlinux-gnome-chinese-input-fcitx5-rime-ice-solution"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>博客</a></p>
+<p>还可以修改输入法的主题，我是用的是 [<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>这个]（https://github.com/thep0y/fcitx5-themes）中的macOS-dark</p>
 <h3 id="qq">QQ<a class="headerlink" href="#qq" title="Anchor link to this section for reference">&para;</a></h3>
 <p>qq 并不在 extra 目录中，而是跟 autojump 一样在 aur 中，为了从 aur 中安装，我们可以像 autojump 那样 clone repo 然后 makepkg，也可以使用一些自动化工具来帮我专门做这件事，比如 yay 或者 paru（用 rust 重写的）</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">安装 yay</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
@@ -2456,7 +2464,7 @@
 <li>keyd： 高度可配置的键盘映射管理</li>
 <li>ranger： 高度可配置的文件管理器，对于文本的预览支持很好</li>
 <li>usbutils： 查看与管理设备</li>
-<li>libinput-gestures： 多指滑动和按压手势</li>
+<li>libinput-gestures： 多指滑动和按压手势，可以触发制定的脚本或者把特定的按键组合发给当前应用（xwayland独占，貌似）</li>
 <li>rofi: 程序启动和app切换</li>
 </ul>
 <p>还有一些好用的 hyprland 的设置：</p>
@@ -2489,7 +2497,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2024</span>
   </span>
 
     
@@ -2632,7 +2640,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "content.action.edit", "content.action.view", "content.code.copy", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e1c3ead8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.caa56a14.min.js"></script>
       
         <script src="../../javascripts/extra.js"></script>
       
