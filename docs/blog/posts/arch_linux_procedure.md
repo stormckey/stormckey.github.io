@@ -14,8 +14,13 @@ nostatistics: true
 
 !!! abstract
     今天很不幸的经历了第二和第三次的重装系统😇，在间隙决定把一整个流程写下来，供大家（以及以后的我）参考
+    
+    后续：此流程在搭载7840HS的机械革命无界14+上可以顺利跑通
 
 <!-- more -->
+
+!!! info "硬件信息"
+    ![](images/arch_linux_procedure/image.png)
 
 ## 启动盘
 
@@ -259,11 +264,16 @@ QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
 SDL_MOULE=fcitx
 ```
-
 作用是什么暂时还不知道
 
-
 重启可以看出已经自动启动了
+
+但是根据hyprland的提示似乎我们需要去掉第一项，我最后只保留了中间一项，工作正常，作用是什么以后再研究把
+
+于我而言，上面选择的pinyin对emoji的支持不是很好，需要配置一个对emoji支持很好的输入法的话，可以参考 [:octicons-link-16:博客](https://blog.beautyyu.one/archlinux-gnome-chinese-input-fcitx5-rime-ice-solution)
+
+还可以修改输入法的主题，我是用的是 [:octicons-link-16:这个]（https://github.com/thep0y/fcitx5-themes）中的macOS-dark
+
 
 ### QQ
 
@@ -379,7 +389,7 @@ monitor=HDMI-A-1,preferred,auto,1.666667
 - keyd： 高度可配置的键盘映射管理
 - ranger： 高度可配置的文件管理器，对于文本的预览支持很好
 - usbutils： 查看与管理设备
-- libinput-gestures： 多指滑动和按压手势
+- libinput-gestures： 多指滑动和按压手势，可以触发制定的脚本或者把特定的按键组合发给当前应用（xwayland独占，貌似）
 - rofi: 程序启动和app切换
 
 还有一些好用的 hyprland 的设置：
