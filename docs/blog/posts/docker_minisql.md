@@ -140,11 +140,6 @@ passwd stormckey
 ssh-keygen
 ```
 来到提示的目录下，复制 id_rsa.pub 的内容，将它写入被连接端（这里是容器）的`/home/stormckey/.ssh/authorized_keys`文件中
-??? info "另一种更方便的方案"
-    在可以用密码登录了之后，可以用`ssh-copy-id`命令一键把密钥放置到服务器并做好相应的设置
-    ```bash
-    ssh-copy-id -i ~/.ssh/id_rsa.pub stormckey@localhost -p 2333
-    ```
 
 
 接着配置容器的 sshd:
@@ -164,9 +159,15 @@ service ssh start
 echo "service ssh start" >> /root/.bashrc
 ```
 
-此时你在宿主机上就可以通过`ssh stormckey@localhost -p 2333`登陆容器了：
+此时你在宿主机上就可以通过`ssh stormckey@127.0.0.1 -p 2333`登陆容器了：
 ![](images/docker_minisql/2023-07-01-20-42-07.png#pic)
 
+??? info "另一种更方便的方案"
+    在可以用密码登录了之后，可以用`ssh-copy-id`命令一键把密钥放置到服务器并做好相应的设置
+    ```bash
+    ssh-copy-id -i ~/.ssh/id_rsa.pub -p 2333 stormckey@127.0.0.1
+    ```
+    
 ### 3.3 配置 VSCode
 
 下载插件 Remote-SSH 插件，点击右边出现的插件图标，在侧栏中选择设置 SSH：
@@ -188,7 +189,16 @@ echo "service ssh start" >> /root/.bashrc
 === "终端美化"
     见[:octicons-link-16:此博客](https://stormckey.github.io/Blog/wsl_config/)
 
-
+=== "更改git用户名"
+    有些镜像中有预设好的GitHub用户名和邮箱等，如果你不希望以其名义提交的话，请修改成自己的
+    ```
+    git config --global user.name stormckey
+    git config --gloabal user.email sortygraph@gmail.com
+    ```
+    同时也设置git记住你的认证资格
+    ```
+    git config --global credential.helper store
+    ```
 
 
 
