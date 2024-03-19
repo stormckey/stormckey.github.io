@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../icons/cat.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.10ba22f1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -442,14 +442,12 @@
       
     
     
-    
-    
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
@@ -506,14 +504,15 @@
       
     
     
-    
-    
+      
+        
+        
       
       
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
@@ -562,11 +561,12 @@
       
     
     
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
@@ -681,11 +681,12 @@
       
     
     
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
@@ -1044,14 +1045,12 @@
       
     
     
-    
-    
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
@@ -1070,7 +1069,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1131,11 +1130,12 @@
       
     
     
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
@@ -1319,11 +1319,12 @@
       
     
     
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
@@ -1620,14 +1621,12 @@
       
     
     
-    
-    
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
@@ -1646,7 +1645,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1676,11 +1675,12 @@
       
     
     
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
@@ -1782,14 +1782,12 @@
       
     
     
-    
-    
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
@@ -1808,7 +1806,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2298,12 +2296,6 @@ Ubuntu: 20.04</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a>ssh-keygen
 </span></code></pre></div></td></tr></table></div>
 来到提示的目录下，复制 id_rsa.pub 的内容，将它写入被连接端（这里是容器）的<code>/home/stormckey/.ssh/authorized_keys</code>文件中</p>
-<details class="info">
-<summary>另一种更方便的方案</summary>
-<p>在可以用密码登录了之后，可以用<code>ssh-copy-id</code>命令一键把密钥放置到服务器并做好相应的设置
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a>ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_rsa.pub<span class="w"> </span>stormckey@localhost<span class="w"> </span>-p<span class="w"> </span><span class="m">2333</span>
-</span></code></pre></div></td></tr></table></div></p>
-</details>
 <p>接着配置容器的 sshd:
 <code>vim /etc/ssh/sshd_config</code></p>
 <p>去掉以下的注释：
@@ -2311,13 +2303,19 @@ Ubuntu: 20.04</p>
 <a class="glightbox" href="../images/docker_minisql/2023-07-01-20-23-44.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-23-44.png#pic" /></a>
 注意第二张图中的文件一定是你之前放公钥的文件，路径从用户根目录开始</p>
 <p>更改完配置后启动/重启 sshd
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a>service<span class="w"> </span>ssh<span class="w"> </span>start
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a>service<span class="w"> </span>ssh<span class="w"> </span>start
 </span></code></pre></div></td></tr></table></div>
 我们最好把自动启动 ssh 服务加入 bashrc，这样启动容器的时候就会自动启动 ssh 服务了
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;service ssh start&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;service ssh start&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc
 </span></code></pre></div></td></tr></table></div></p>
-<p>此时你在宿主机上就可以通过<code>ssh stormckey@localhost -p 2333</code>登陆容器了：
+<p>此时你在宿主机上就可以通过<code>ssh stormckey@127.0.0.1 -p 2333</code>登陆容器了：
 <a class="glightbox" href="../images/docker_minisql/2023-07-01-20-42-07.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-42-07.png#pic" /></a></p>
+<details class="info">
+<summary>另一种更方便的方案</summary>
+<p>在可以用密码登录了之后，可以用<code>ssh-copy-id</code>命令一键把密钥放置到服务器并做好相应的设置
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a>ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_rsa.pub<span class="w"> </span>-p<span class="w"> </span><span class="m">2333</span><span class="w"> </span>stormckey@127.0.0.1
+</span></code></pre></div></td></tr></table></div></p>
+</details>
 <h3 id="33-vscode">3.3 配置 VSCode<a class="headerlink" href="#33-vscode" title="Anchor link to this section for reference">&para;</a></h3>
 <p>下载插件 Remote-SSH 插件，点击右边出现的插件图标，在侧栏中选择设置 SSH：
 <a class="glightbox" href="../images/docker_minisql/2023-07-01-20-43-59.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-43-59.png#pic" /></a></p>
@@ -2329,10 +2327,20 @@ Ubuntu: 20.04</p>
 <a class="glightbox" href="../images/docker_minisql/2023-07-01-20-52-01.png#pic" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/docker_minisql/2023-07-01-20-52-01.png#pic" /></a></p>
 <h2 id="4">4.更多设置<a class="headerlink" href="#4" title="Anchor link to this section for reference">&para;</a></h2>
 <p>现在你就可以用这个简陋的命令行开始工作了，但如果你喜欢的话可以加入更多设置！</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">终端美化</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">终端美化</label><label for="__tabbed_2_2">更改git用户名</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>见<a href="https://stormckey.github.io/Blog/wsl_config/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span>此博客</a></p>
+</div>
+<div class="tabbed-block">
+<p>有些镜像中有预设好的GitHub用户名和邮箱等，如果你不希望以其名义提交的话，请修改成自己的
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a>git config --global user.name stormckey
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a>git config --gloabal user.email sortygraph@gmail.com
+</span></code></pre></div></td></tr></table></div>
+同时也设置git记住你的认证资格
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a>git config --global credential.helper store
+</span></code></pre></div></td></tr></table></div></p>
 </div>
 </div>
 </div>
@@ -2358,7 +2366,7 @@ Ubuntu: 20.04</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 19, 2024</span>
   </span>
 
     
@@ -2501,7 +2509,7 @@ Ubuntu: 20.04</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "content.action.edit", "content.action.view", "content.code.copy", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.caa56a14.min.js"></script>
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
       
         <script src="../../javascripts/extra.js"></script>
       
