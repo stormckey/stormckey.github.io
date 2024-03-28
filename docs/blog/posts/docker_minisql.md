@@ -187,7 +187,7 @@ echo "service ssh start" >> /root/.bashrc
 现在你就可以用这个简陋的命令行开始工作了，但如果你喜欢的话可以加入更多设置！
 
 === "终端美化"
-    见[:octicons-link-16:此博客](https://stormckey.github.io/Blog/wsl_config/)
+    见[:octicons-link-16:此博客](https://stormckey.github.io/blog/linux-%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/)
 
 === "更改git用户名"
     有些镜像中有预设好的GitHub用户名和邮箱等，如果你不希望以其名义提交的话，请修改成自己的
