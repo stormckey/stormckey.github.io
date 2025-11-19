@@ -205,14 +205,14 @@ nav:
           - Note/Data Modeling/SVD.md
           - Note/Data Modeling/PCA.md
 
-  - Research:
-      - Research/index.md
-      - Diffusion Model:
-          - DDPM: Research/Diffusion Model/DDPM.md
-          - DDIM: Research/Diffusion Model/DDIM.md
+  # - Research:
+  #     - Research/index.md
+  #     - Diffusion Model:
+  #         - DDPM: Research/Diffusion Model/DDPM.md
+  #         - DDIM: Research/Diffusion Model/DDIM.md
 
-  - PeiPei:
-      - PeiPei/index.md
-      - PeiPei/repository.md
-      - PeiPei/typst.md
-      - PeiPei/markdown.md
+  # - PeiPei:
+  #     - PeiPei/index.md
+  #     - PeiPei/repository.md
+  #     - PeiPei/typst.md
+  #     - PeiPei/markdown.md
